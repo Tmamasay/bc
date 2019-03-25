@@ -1,0 +1,600 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="browsermode" content="application">
+  <meta name="x5-page-mode" content="app">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title id="headTitle">鑫亿彩-登陆</title>
+  <script>
+    (function () {
+      var IEvar = '9'
+      var IEnum = navigator.userAgent.toLowerCase()
+      if (IEnum.indexOf('msie') > -1) {
+        if (Number(IEnum.match(/msie ([\d.]+)/)[1]) < IEvar) {
+          location.href = '/updateBrowser.html'
+        }
+      } else {
+        if (window.localStorage && window.sessionStorage) {
+          try {
+            sessionStorage.setItem('TextLocalStorage', 'hello world')
+            sessionStorage.removeItem('TextLocalStorage')
+            localStorage.setItem('TextLocalStorage', 'hello world')
+            localStorage.removeItem('TextLocalStorage')
+          } catch (e) {
+            alert('您的浏览器太旧或者开启了隐私模式/无痕模式，无法浏览网页，请更换浏览器或使用常规模式，给您带来的不便，表示抱歉！')
+          }
+        } else {
+          location.href = '/updateBrowser.html'
+        };
+      }
+    })();
+    (function () {
+      if (location.href.search('CanPc') > -1) {
+        sessionStorage.setItem('CanPc', 1)
+      }
+      var u = navigator.userAgent
+      if (!!u.match(/AppleWebKit.*Mobile.*/) && !sessionStorage.getItem('CanPc') && location.href.indexOf('//m.') <
+        0) {
+        location.href = location.href.replace('www.', '').replace('//', '//m.').replace('.html', '')
+      }
+    })();
+    (function () {
+      if (typeof (Promise) === 'undefined') {
+        document.write('<script src="/static/local/js/common/es6-promise.auto.min.js"><\/script>')
+      };
+      if (typeof (fetch) === 'undefined') {
+        document.write('<script src="/static/local/js/common/fetch.min.js"><\/script>')
+      };
+    })()
+
+
+
+
+    document.oncontextmenu = function () {
+      return false
+    }
+  </script>
+  <link href="/static/css/app.0a479b1093772707c8b4ddbc7a72ec64.css" rel="stylesheet">
+  <link href="/static/local/css/common/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+  <style type="text/css">
+    .vue-slider-component {
+      position: relative;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .vue-slider-component.vue-slider-disabled {
+      opacity: .5;
+      cursor: not-allowed
+    }
+
+    .vue-slider-component.vue-slider-has-label {
+      margin-bottom: 15px
+    }
+
+    .vue-slider-component.vue-slider-disabled .vue-slider-dot {
+      cursor: not-allowed
+    }
+
+    .vue-slider-component .vue-slider {
+      position: relative;
+      display: block;
+      border-radius: 15px;
+      background-color: #ccc
+    }
+
+    .vue-slider-component .vue-slider:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2
+    }
+
+    .vue-slider-component .vue-slider-process {
+      position: absolute;
+      border-radius: 15px;
+      background-color: #3498db;
+      transition: all 0s;
+      z-index: 1
+    }
+
+    .vue-slider-component.vue-slider-horizontal .vue-slider-process {
+      width: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
+      will-change: width
+    }
+
+    .vue-slider-component.vue-slider-vertical .vue-slider-process {
+      width: 100%;
+      height: 0;
+      bottom: 0;
+      left: 0;
+      will-change: height
+    }
+
+    .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-process {
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0
+    }
+
+    .vue-slider-component.vue-slider-vertical-reverse .vue-slider-process {
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0
+    }
+
+    .vue-slider-component .vue-slider-dot {
+      position: absolute;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: .5px .5px 2px 1px rgba(0, 0, 0, .32);
+      transition: all 0s;
+      will-change: transform;
+      cursor: pointer;
+      z-index: 3
+    }
+
+    .vue-slider-component.vue-slider-horizontal .vue-slider-dot {
+      left: 0
+    }
+
+    .vue-slider-component.vue-slider-vertical .vue-slider-dot {
+      bottom: 0
+    }
+
+    .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-dot {
+      right: 0
+    }
+
+    .vue-slider-component.vue-slider-vertical-reverse .vue-slider-dot {
+      top: 0
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap {
+      display: none;
+      position: absolute;
+      z-index: 9
+    }
+
+    .vue-slider-component .vue-slider-tooltip {
+      display: block;
+      font-size: 14px;
+      white-space: nowrap;
+      padding: 2px 5px;
+      min-width: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid #3498db;
+      background-color: #3498db
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top {
+      top: -9px;
+      left: 50%;
+      transform: translate(-50%, -100%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom {
+      bottom: -9px;
+      left: 50%;
+      transform: translate(-50%, 100%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left {
+      top: 50%;
+      left: -9px;
+      transform: translate(-100%, -50%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right {
+      top: 50%;
+      right: -9px;
+      transform: translate(100%, -50%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top .vue-slider-tooltip:before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border: 6px solid transparent\0;
+      border-top-color: inherit;
+      transform: translate(-50%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom .vue-slider-tooltip:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border: 6px solid transparent\0;
+      border-bottom-color: inherit;
+      transform: translate(-50%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left .vue-slider-tooltip:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border: 6px solid transparent\0;
+      border-left-color: inherit;
+      transform: translateY(-50%)
+    }
+
+    .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right .vue-slider-tooltip:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border: 6px solid transparent\0;
+      border-right-color: inherit;
+      transform: translateY(-50%)
+    }
+
+    .vue-slider-component .vue-slider-dot.vue-slider-hover:hover .vue-slider-tooltip-wrap {
+      display: block
+    }
+
+    .vue-slider-component .vue-slider-dot.vue-slider-always .vue-slider-tooltip-wrap {
+      display: block !important
+    }
+
+    .vue-slider-component .vue-slider-piecewise {
+      position: absolute;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      left: 0;
+      top: 0;
+      height: 100%;
+      list-style: none
+    }
+
+    .vue-slider-component .vue-slider-piecewise-item {
+      position: absolute;
+      width: 8px;
+      height: 8px
+    }
+
+    .vue-slider-component .vue-slider-piecewise-dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, .16);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      transition: all .3s
+    }
+
+    .vue-slider-component .vue-slider-piecewise-item:first-child .vue-slider-piecewise-dot,
+    .vue-slider-component .vue-slider-piecewise-item:last-child .vue-slider-piecewise-dot {
+      visibility: hidden
+    }
+
+    .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-piecewise-label,
+    .vue-slider-component.vue-slider-horizontal .vue-slider-piecewise-label {
+      position: absolute;
+      display: inline-block;
+      top: 100%;
+      left: 50%;
+      white-space: nowrap;
+      font-size: 12px;
+      color: #333;
+      transform: translate(-50%, 8px);
+      visibility: visible
+    }
+
+    .vue-slider-component.vue-slider-vertical-reverse .vue-slider-piecewise-label,
+    .vue-slider-component.vue-slider-vertical .vue-slider-piecewise-label {
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 100%;
+      white-space: nowrap;
+      font-size: 12px;
+      color: #333;
+      transform: translate(8px, -50%);
+      visibility: visible
+    }
+
+    .vue-slider-component .vue-slider-sr-only {
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      position: absolute !important
+    }
+  </style>
+  <link type="image/x-icon" rel="shortcut icon"
+    href="../../static/local/img/uploads/images/B256/6d33d78b-8a99-4201-a3c2-a8e035b456cc.jpg">
+</head>
+
+<body>
+  <div id="app" class="login">
+    <div>
+      <div data-v-d539ba84 class="header head3">
+        <div data-v-18d75892 data-v-d539ba84 id="HeaderTop">
+          <div data-v-18d75892 class="snav">
+            <div data-v-18d75892 class="container">
+              <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="/home" class>Hi，欢迎来到鑫亿彩!<span
+                    data-v-18d75892 class="red" style="display: none;"></span></a> <ins data-v-18d75892> | </ins>
+                <a data-v-18d75892 class="betNavMore">全部彩票</a></div>
+              <ul data-v-18d75892 class="snavInfo">
+                <li data-v-18d75892><a data-v-18d75892 href="/login"
+                    class="router-link-exact-active curr">亲，请登录</a> <i data-v-18d75892 class="vertical"></i></li>
+                <li data-v-18d75892><a data-v-18d75892 href="/register" class>用户注册</a></li> <a
+                  data-v-18d75892 class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
+                    data-v-18d75892></span></a>
+              </ul>
+              <ul data-v-18d75892 class="snavInfo" style="display: none;">
+                <li data-v-18d75892 class="userName MsgShow"><a data-v-18d75892 id="userName"
+                    class="_personalInfo"><a data-v-18d75892 href="/memberCenter/personalInfo" class><img
+                        data-v-18d75892 alt src> <i data-v-18d75892></i></a></a> <a data-v-18d75892><a
+                      data-v-18d75892 href="/memberCenter/letter" class><span data-v-18d75892>0</span></a>
+                    <div data-v-18d75892 class="messageShow MessageShowContent hide"><i data-v-18d75892></i>
+                      <dl data-v-18d75892>
+                        <dt data-v-18d75892>
+                          <p data-v-18d75892><a data-v-18d75892 href="/memberCenter/letter" class>
+                              我的未读消息(<small data-v-18d75892>0</small>) </a></p> <a data-v-18d75892
+                            href="/memberCenter/letter" class> 更多 </a>
+                        </dt>
+                      </dl>
+                    </div>
+                  </a></li>
+                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="/memberCenter/securityCenter"
+                    class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
+                  <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a data-v-18d75892
+                      href="/memberCenter/betRecord" class>投注记录</a> <a data-v-18d75892
+                      href="/memberCenter/BillRecord" class>交易记录</a> <a data-v-18d75892
+                      href="/memberCenter/personalInfo" class>个人信息</a> <a data-v-18d75892
+                      href="/memberCenter/securityCenter" class>安全中心</a>
+                    <!---->
+                  </div>
+                </li>
+                <li data-v-18d75892>余额：
+                  <!----> <span data-v-18d75892 class="ShowMoney showMoney">已隐藏
+                    <i data-v-18d75892>显示</i></span></li>
+                <li data-v-18d75892><a data-v-18d75892 href="payment">充值</a></li>
+                <li data-v-18d75892><a data-v-18d75892 href="withdraw">提现</a></li>
+                <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
+                  class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
+                    data-v-18d75892></span></a>
+              </ul>
+              <ul data-v-18d75892></ul>
+            </div>
+          </div>
+          <div data-v-18d75892 id="cardBoxId" class="cardBox hide" style>
+            <div data-v-da0d86b6 data-v-18d75892 class="card">
+              <div data-v-da0d86b6 class="cardLeft"><img data-v-da0d86b6 src alt>
+                <h6 data-v-da0d86b6>昵称未设置</h6>
+              </div>
+              <div data-v-da0d86b6 class="cardInfo">
+                <ul data-v-da0d86b6>
+                  <li data-v-da0d86b6>性别：</li>
+                  <li data-v-da0d86b6>账号：</li>
+                  <li data-v-da0d86b6>等级：</li>
+                  <li data-v-da0d86b6>累计中奖：</li>
+                </ul>
+              </div>
+              <ul data-v-da0d86b6 class="cardIcon">
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/K3/OG1K3" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_K3 noActive"></i></a></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/FFC/JLFFC" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_SSC noActive"></i></a></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/XX5/GD11X5" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_SYX5 noActive"></i></a></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/BSC/BJPK10" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_BSC noActive"></i></a></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/KL8/BJKL8" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_KL8 noActive"></i></a></li>
+                <li data-v-da0d86b6><i data-v-da0d86b6 class="iconfont L_Common L_FC3D noActive"></i></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/PL3/PL3CP" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_PL35 noActive"></i></a></li>
+                <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/LHC/XGLHC" class><i data-v-da0d86b6
+                      class="iconfont L_Common L_LHC noActive"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div data-v-783aad40 data-v-d539ba84 class="nav" style="display: block;">
+          <div data-v-783aad40 class="container fix">
+            <h3 data-v-783aad40><a data-v-783aad40 href="/home" class><img data-v-783aad40
+                  src="../../../static/local/img//uploads/images/B256/b00259ff-80c0-4b2d-9b6c-f7f7e67856b6.png"></a>
+            </h3>
+            <ul data-v-783aad40 class="navItem fix flr">
+              <li data-v-783aad40 class><a data-v-783aad40 href="/home" class>首页</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/lobby" class>购彩大厅</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/memberCenter/securityCenter"
+                  class>我的账户</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/help" class>帮助指南</a></li> <span
+                data-v-783aad40></span>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div data-v-34fea933 s="[object Object]" class="container registerPage">
+        <h3 data-v-34fea933 class="reg_tit">用户登录</h3>
+        <p data-v-34fea933 class="reg_small"></p>
+        <ul data-v-34fea933 class="submitContent mglr30 regMain">
+          <li data-v-34fea933><span data-v-34fea933>账 号：</span> 
+          <input data-v-34fea933 tabindex="1" tag="帐号" type="text" autocomplete="off" class="userInput username1"> 
+              <!-- <em data-v-34fea933 class="verifyWrong" style="display: none;"><i data-v-34fea933></i></em> -->
+               <!-- <em data-v-34fea933 class="verifyRight" style="display: none;"><i data-v-34fea933></i></em> -->
+               </li>
+          <li data-v-34fea933><span data-v-34fea933>密 码：</span>
+           <input data-v-34fea933 tabindex="2" tag="密码" regmsg="密码应为6-16位字符" type="password" autocomplete="off" class="userInput userpassword">
+            <!-- <em data-v-34fea933  class="verifyWrong" style="display: none;"><i data-v-34fea933></i></em> -->
+             <!-- <em data-v-34fea933 class="verifyRight" style="display: none;"><i data-v-34fea933></i></em> -->
+             </li>
+          <!---->
+          <li data-v-34fea933 style="margin-top: 33px;"><span data-v-34fea933></span> <input data-v-34fea933
+              tabindex="3" type="button" value="登 录" class="mainColorBtn submitBtnBig ClickShade2">
+               <!-- <a data-v-34fea933 href="/forgetPwd" class tabindex="4"><a data-v-34fea933 class="forgetPwd">忘记密码?</a></a> -->
+            <!---->
+          </li>
+        </ul>
+      </div>
+      <div data-v-6e6663f0 class="footer mgt40">
+        <div data-v-6e6663f0 class="ftadCon">
+          <div data-v-6e6663f0 class="container">
+            <ul data-v-6e6663f0 class="ftad fix">
+              <li data-v-6e6663f0><a data-v-6e6663f0 id="dafaCloud" class="technicalArea">
+                  <p data-v-6e6663f0 class="technicalTitle">技术支持<i data-v-6e6663f0>Technical support</i></p>
+                  <div data-v-6e6663f0 class="technicalSupport fix"><img data-v-6e6663f0
+                      src="../../../static/local/img/common/ab_footer_logo.png">
+                    <p data-v-6e6663f0 class="tecSupportParagraphLine2">
+                      亚博技术支持
+                      <br data-v-6e6663f0>
+                      专业的彩票系统平台
+                    </p>
+                  </div>
+                </a></li>
+              <li data-v-6e6663f0>
+                <p data-v-6e6663f0>服务体验<i data-v-6e6663f0>Service experience</i></p>
+                <ul data-v-6e6663f0 class="serviceExperience">
+                  <li data-v-6e6663f0>昨日充值到账平均时间
+                    <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0 style="width: 2.71429%;"></span></p>
+                    <em data-v-6e6663f0>0'19</em><i data-v-6e6663f0>秒</i></li>
+                  <li data-v-6e6663f0>昨日提现到账平均时间
+                    <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0 style="width: 22.4286%;"></span></p>
+                    <em data-v-6e6663f0>1'57</em><i data-v-6e6663f0>秒</i></li>
+                </ul>
+              </li>
+              <li data-v-6e6663f0>
+                <p data-v-6e6663f0>充值方式<i data-v-6e6663f0>Recharge method</i></p>
+                <div data-v-6e6663f0 class="rechargeMethod"><i data-v-6e6663f0 class="wechat"></i><i
+                    data-v-6e6663f0 class="alipay"></i><i data-v-6e6663f0 class="cup"></i></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div data-v-6e6663f0 class="container _about aboutText">
+          <p data-v-6e6663f0 class="fix"><a data-v-6e6663f0 target="_blank" href="http://cbaward.com/"
+              style="display: none;">中博开奖网</a><span data-v-6e6663f0 style="display: none;">|</span> <a
+              data-v-6e6663f0>关于我们</a>|
+            <a data-v-6e6663f0>联系我们</a>|
+            <a data-v-6e6663f0>法律声明</a>|
+            <a data-v-6e6663f0>隐私声明</a>|
+          </p>
+          <p data-v-6e6663f0 class="copyright">Copyright © <span data-v-6e6663f0 class="siteName">鑫亿彩</span>
+            Reserved | 18+</p>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <!---->
+      <div class="layermbox layermbox2 layermshow" style="display: none;">
+        <div id="profit" class="laymshade"></div>
+        <div class="layermmain">
+          <div class="section">
+            <div id="notShow" class="layermchild  layermanim">
+              <div class="layermcont"><i class="laymloadone"></i> <i class="laymloadtwo"></i> <i
+                  class="laymloadthree"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/local/js/common/layer.m.js"></script>
+  <script src="/static/local/js/common/laypage.js"></script>
+  <script src="/static/local/js/common/xss.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+  <script type="text/javascript" src="/static/js/manifest.178f0388419058262eb8.js"></script>
+  <script type="text/javascript" src="/static/js/vendor.6f6a549ca23ad8b3db5f.js"></script>
+  <!-- <script type="text/javascript" src="/static/js/app.8e19d886c2179d435e5a.js"></script> -->
+  <script src="https://js.users.51.la/19560031.js"></script>
+  <script>
+    $('.ClickShade2').click(function () {
+        // var code=$('.usercode').val();
+        // var code="NN6EZZg%2fNXI%3d";
+            var user=$('.username1').val();
+            var pass=$('.userpassword').val();
+            console.log(user)
+            console.log(pass)
+            var _parms= {
+                "VC_Account":user,
+                "Password":pass,
+                "secretkey": ""
+                }
+        if(user&&pass){
+         $.ajax({
+             type: "POST",
+             url: "http://www.chinadecen.com:85/mobileApi/Login/login",
+             data:_parms,
+            //  ContentType: "application/json",
+		        datType: "JSON",
+             success: function(res){
+                 if(+res.Code===1){
+                   localStorage.setItem("userinfo",JSON.stringify(res) );
+                   localStorage.setItem("tem",'1221');
+                   console.log(res)
+                     window.location.href='./home.html'
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+            
+        }else{
+    //    if()
+
+        alert('请输入账号或密码')
+            return false;
+        }
+        })
+    
+    </script>
+</body>
+
+</html>
