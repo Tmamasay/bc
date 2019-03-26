@@ -379,8 +379,9 @@
               </ul>
               <ul data-v-18d75892 class="snavInfo snavInfo_true" >
                 <li data-v-18d75892 class="userName MsgShow"><a data-v-18d75892 id="userName"
-                    class="_personalInfo"><a data-v-18d75892 href="/memberCenter/personalInfo" class><img
-                        data-v-18d75892 alt src> <i data-v-18d75892></i></a></a> <a data-v-18d75892><a
+                    class="_personalInfo"><a data-v-18d75892 href="./mymo.html" class>
+                    <!-- <img data-v-18d75892 alt src> -->
+                     <i data-v-18d75892 class="usershow"></i></a></a> <a data-v-18d75892><a
                       data-v-18d75892 href="/memberCenter/letter" class><span data-v-18d75892>0</span></a>
                     <div data-v-18d75892 class="messageShow MessageShowContent hide"><i data-v-18d75892></i>
                       <dl data-v-18d75892>
@@ -392,8 +393,8 @@
                       </dl>
                     </div>
                   </a></li>
-                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="/memberCenter/securityCenter"
-                    class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
+                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="./mymo.html"
+                    class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
                   <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a data-v-18d75892
                       href="/memberCenter/betRecord" class>投注记录</a> <a data-v-18d75892
                       href="/memberCenter/BillRecord" class>交易记录</a> <a data-v-18d75892
@@ -403,8 +404,8 @@
                   </div>
                 </li>
                 <li data-v-18d75892>余额：
-                  <!----> <span data-v-18d75892 class="ShowMoney showMoney">已隐藏
-                    <i data-v-18d75892>显示</i></span></li>
+                  <!----> <span data-v-18d75892 class="ShowMoney showMoney monenyed">0.00
+                    <!-- <i data-v-18d75892>显示</i></span></li> -->
                 <li data-v-18d75892><a data-v-18d75892 href="payment">充值</a></li>
                 <li data-v-18d75892><a data-v-18d75892 href="withdraw">提现</a></li>
                 <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
@@ -459,7 +460,9 @@
               <li data-v-783aad40 class><a data-v-783aad40 href="/hall.html">购彩大厅</a></li>
               <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
               <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li>
-              <li data-v-783aad40 class><a data-v-783aad40 href="/memberCenter/securityCenter"
+              <li data-v-783aad40 class="mymo_null"><a data-v-783aad40 href="/res.html"
+                  class>我的账户</a></li>
+                  <li data-v-783aad40 class="mymo_true"><a data-v-783aad40 href="/mymo.html"
                   class>我的账户</a></li>
               <li data-v-783aad40 class><a data-v-783aad40 href="/gonggao.html" class>帮助指南</a></li> <span
                 data-v-783aad40></span>
@@ -590,12 +593,28 @@
           </div>
         </div>
         <div data-v-c4b403f6 class="wrapR">
-          <div data-v-4d32caaa data-v-c4b403f6>
-            <div data-v-4d32caaa class="loginRegister"><a data-v-4d32caaa href="/login" class><i
-                  data-v-4d32caaa class="iconfont"></i>登 录</a> <a data-v-4d32caaa href="/register" class><i
-                  data-v-4d32caaa class="iconfont"></i>用户注册</a></div>
-            <!---->
+          <div data-v-4d32caaa data-v-c4b403f6 class="login_null">
+            <div data-v-4d32caaa class="loginRegister">
+              <a data-v-4d32caaa href="/login" class><i
+                  data-v-4d32caaa class="iconfont"></i>登 录</a> <a data-v-4d32caaa href="/register" class><i
+                  data-v-4d32caaa class="iconfont"></i>用户注册</a></div>
           </div>
+
+          <div data-v-4d32caaa data-v-c4b403f6 class="login_true">
+           <div data-v-4d32caaa class="logined">
+             <h3 data-v-4d32caaa>
+               <i data-v-4d32caaa class="iconfont"></i>
+                <b data-v-4d32caaa class="usershow">nana3344</b>
+                </h3> <a data-v-4d32caaa class="LoginOut">
+                  <em data-v-4d32caaa>退出</em>
+                   <i data-v-4d32caaa class="iconfont">
+
+                   </i></a>
+                   </div>
+                   </div>
+          
+          
+          
           <div data-v-c4b403f6 class="slide">
             <h6 data-v-c4b403f6>昨日奖金榜</h6>
             <div data-v-3edefb97 data-v-c4b403f6>
@@ -1083,13 +1102,24 @@
     <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
   <script>
     var user_data=JSON.parse(localStorage.getItem("userinfo"))
-    console.log(user_data.Token)
+    // console.log(user_data.Token)
   if(localStorage.getItem("userinfo")){
     $('.snavInfo_null').addClass('isshow');
     $('.snavInfo_true').removeClass('isshow');
+     $('.mymo_null').addClass('isshow');
+    $('.mymo_true').removeClass('isshow');
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+     $('.monenyed').html(user_data.LogHava)
+    $('.usershow').html(user_data.LogAccount);
   }else{
     $('.snavInfo_null').removeClass('isshow');
     $('.snavInfo_true').addClass('isshow');
+    $('.mymo_null').removeClass('isshow');
+    $('.mymo_true').addClass('isshow');
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+    $('.usershow').html('');
   }
   </script>
 </body>
