@@ -867,32 +867,32 @@
                     </div>
                   </a>
                   <div data-v-f0901ce0 class="lotteryNow">
-                    <a data-v-f0901ce0 href="/lottery/PL3/PL3CP" class="now MustLogin">立即投注</a>
+                    <a data-v-f0901ce0 href="/push.html?id=0" class="now MustLogin">立即投注</a>
                        <!-- <a data-v-f0901ce0 class="help">
                         <i data-v-f0901ce0 class="iconfont"></i></a> <span data-v-f0901ce0 class="helpTip" style="display: none;"><em  data-v-f0901ce0>玩法说明</em></span> -->
                   </div>
 
-                   <li data-v-f0901ce0 class="ClickShade"><a data-v-f0901ce0><i data-v-f0901ce0
+                   <li data-v-f0901ce0 class="ClickShade"><a data-v-f0901ce0 ><i data-v-f0901ce0
                       class="iconfont L_Common L_PL3"></i>
                     <div data-v-f0901ce0 class="lotteryDetail">
                       <h4 data-v-f0901ce0>北京赛车</h4> <em data-v-f0901ce0>全天1期</em>
                     </div>
                   </a>
                   <div data-v-f0901ce0 class="lotteryNow">
-                    <a data-v-f0901ce0 href="/lottery/PL3/PL3CP" class="now MustLogin">立即投注</a>
+                    <a data-v-f0901ce0 href="/push.html?id=1" class="now MustLogin">立即投注</a>
                        <!-- <a data-v-f0901ce0 class="help">
                         <i data-v-f0901ce0 class="iconfont"></i></a> <span data-v-f0901ce0 class="helpTip" style="display: none;"><em  data-v-f0901ce0>玩法说明</em></span> -->
                   </div>
                 </li>
                 
-                 <li data-v-f0901ce0 class="ClickShade"><a data-v-f0901ce0><i data-v-f0901ce0
+                 <li data-v-f0901ce0 class="ClickShade"><ahref="/push.html?id=2" data-v-f0901ce0><i data-v-f0901ce0
                       class="iconfont L_Common L_PL3"></i>
                     <div data-v-f0901ce0 class="lotteryDetail">
                       <h4 data-v-f0901ce0>幸运28</h4> <em data-v-f0901ce0>全天1期</em>
                     </div>
                   </a>
                   <div data-v-f0901ce0 class="lotteryNow">
-                    <a data-v-f0901ce0 href="/lottery/PL3/PL3CP" class="now MustLogin">立即投注</a>
+                    <a data-v-f0901ce0 href="/push.html?id=2" class="now MustLogin">立即投注</a>
                        <!-- <a data-v-f0901ce0 class="help">
                         <i data-v-f0901ce0 class="iconfont"></i></a> <span data-v-f0901ce0 class="helpTip" style="display: none;"><em  data-v-f0901ce0>玩法说明</em></span> -->
                   </div>
@@ -905,7 +905,7 @@
                     </div>
                   </a>
                   <div data-v-f0901ce0 class="lotteryNow">
-                    <a data-v-f0901ce0 href="/lottery/PL3/PL3CP" class="now MustLogin">立即投注</a>
+                    <a data-v-f0901ce0 href="/push.html?id=3" class="now MustLogin">立即投注</a>
                        <!-- <a data-v-f0901ce0 class="help">
                         <i data-v-f0901ce0 class="iconfont"></i></a> <span data-v-f0901ce0 class="helpTip" style="display: none;"><em  data-v-f0901ce0>玩法说明</em></span> -->
                   </div>
@@ -1009,6 +1009,15 @@
     localStorage.setItem("userinfo",0);
      window.location.href='./login.html'
   })
+  $('.MustLogin').click(function(){
+    if (JSON.parse(localStorage.getItem('userinfo')).Token) {
+      // alert('ok')
+    } else {
+      $(this).attr('href','#')
+      window.location.href = '/login.html'
+    }
+  })
+  console.log(JSON.parse(localStorage.getItem('userinfo')).Token)
   </script>
 </body>
 
