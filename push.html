@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script> 
 </head>
 <style>
     .iframe{width:100%;display: block; margin: 0 auto}
@@ -11,8 +11,9 @@
     .body{width:1100px;height: 1000px;}
 </style>
 <body>   
+    <!--<header></header>-->
   <iframe class="iframe head" src="./header.html" frameborder="0"></iframe>
-  <iframe class="iframe body" src="" frameborder="1"></iframe>
+  <iframe class="iframe body" src="" frameborder="0"></iframe>
     <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
     <script>
     $(function() {
@@ -39,11 +40,20 @@ switch (+location.search.split('=')[1]){
     case 2: $('.body').attr('src', './xx28.html')
     break;  
     case 3: $('.body').attr('src', './ssc.html')
+    break;   
+    case 4: $('.body').attr('src', './ssc_xx.html')
     break;      
+    case 5: $('.body').attr('src', './fx28.html')
+    break;  
+    case 6: $('.body').attr('src', './bjcar_xx.html')
+    break;   
+    case 7: $('.body').attr('src', './11x5.html')
+    break;   
 }
 window.onload = function(){
   console.log(location.search.split('=')[1])
   console.log($('.head').attr('src'))
+//   $('header').load('./header.html')
 }
 
 </script>

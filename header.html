@@ -371,12 +371,12 @@
         <div data-v-18d75892 data-v-d539ba84 id="HeaderTop">
           <div data-v-18d75892 class="snav">
             <div data-v-18d75892 class="container">
-              <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="/index.html"
+              <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="#" class="index"
                   class="router-link-exact-active curr">Hi，欢迎来到鑫亿彩!<span data-v-18d75892 class="red"
                     style="display: none;"></span></a> <ins data-v-18d75892> | </ins> <a data-v-18d75892
                   class="betNavMore">全部彩票</a></div>
               <ul data-v-18d75892 class="snavInfo snavInfo_null">
-                <li data-v-18d75892><a data-v-18d75892 href="/login.html" class>亲，请登录</a> <i data-v-18d75892
+                <li data-v-18d75892><a data-v-18d75892 href="#" class="login">亲，请登录</a> <i data-v-18d75892
                     class="vertical"></i></li>
                 <li data-v-18d75892><a data-v-18d75892 href="/res.html" class>用户注册</a></li> <a
                   data-v-18d75892 class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
@@ -491,5 +491,10 @@
   })
   </script> -->
 </body>
-
+<script>
+  $('.index').click(function(){
+    window.parent.location.href = '/index.html'
+    alert('')
+  })
+</script>
 </html>
