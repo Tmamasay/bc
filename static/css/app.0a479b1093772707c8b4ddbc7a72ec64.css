@@ -195,8 +195,8 @@ template {
 
 @font-face {
     font-family: iconfont;
-    src: url(/static/local/font/font_tb0xdfoci4er8uxr.eot?v=20190307);
-    src: url(/static/local/font/font_tb0xdfoci4er8uxr.eot?#iefix?v=20190307) format("embedded-opentype"), url(/static/local/font/font_tb0xdfoci4er8uxr.woff?v=20190307) format("woff"), url(/static/local/font/font_tb0xdfoci4er8uxr.ttf?v=20190307) format("truetype"), url(/static/local/font/font_tb0xdfoci4er8uxr.svg#iconfont?v=20190307) format("svg")
+    src: url(http://www.yicai001.com/static/local/font/font_tb0xdfoci4er8uxr.eot?v=20190307);
+    src: url(http://www.yicai001.com/static/local/font/font_tb0xdfoci4er8uxr.eot?#iefix?v=20190307) format("embedded-opentype"), url(http://www.yicai001.com/static/local/font/font_tb0xdfoci4er8uxr.woff?v=20190307) format("woff"), url(http://www.yicai001.com/static/local/font/font_tb0xdfoci4er8uxr.ttf?v=20190307) format("truetype"), url(http://www.yicai001.com/static/local/font/font_tb0xdfoci4er8uxr.svg#iconfont?v=20190307) format("svg")
 }
 
 #app,

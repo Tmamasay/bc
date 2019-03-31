@@ -20,6 +20,9 @@ function lunxu(strUser) {
                 //  localStorage.getItem("userinfo")
                  localStorage.setItem("userinfo",JSON.stringify(user_data2));
                  $('.monenyed').html(res.LogHava)
+                 $('#myframe').load(function () {
+                 var cont=$("#myframe").contents().find(".monenyed").html(res.LogHava)
+                });
                   
                  }else{
                     
