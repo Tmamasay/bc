@@ -13,6 +13,19 @@
 <body>   
   <iframe class="iframe head" src="./header.html" frameborder="0"></iframe>
   <iframe class="iframe body" src="" frameborder="1"></iframe>
+    <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+    <script>
+    $(function() {
+    // $(".monenyed",document.frames("myframe").document).click(function() {
+    //   alert('cass')
+    // });//jquery 方法2 
+$('#myframe').load(function () {
+    $("#myframe").contents().find(".monenyed").html('2333')
+    })
+    });
+    </script>
+    
+    
     
     
 </body>
