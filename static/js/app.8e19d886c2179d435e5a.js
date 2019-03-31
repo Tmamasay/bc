@@ -12107,7 +12107,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             component: i.a,
             name: "help",
             meta: {
-                title: "帮助指南",
+                title: "在线客服",
                 user: !1
             }
         }
@@ -48183,7 +48183,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                         path: "/gonggao.html"
                     }
                 }
-            }, [t._v("帮助指南")])], 1), t._v(" "), a("span")])])])
+            }, [t._v("在线客服")])], 1), t._v(" "), a("span")])])])
         },
         staticRenderFns: []
     }
@@ -56800,7 +56800,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 }
             }, [t._v("提现")])])]), t._v(" "), a("div", {
                 staticClass: "userTip mg30"
-            }, [a("p", [t._v("※ 温馨提示：\n          "), a("br"), t._v(" 计算公式: 可提现金额＝帐户余额-手续费-行政费用-充值优惠(详细说明请见帮助指南)\n          "), a("br"), t._v(" 单笔提现：最低\n          "), a("ins", {
+            }, [a("p", [t._v("※ 温馨提示：\n          "), a("br"), t._v(" 计算公式: 可提现金额＝帐户余额-手续费-行政费用-充值优惠(详细说明请见在线客服)\n          "), a("br"), t._v(" 单笔提现：最低\n          "), a("ins", {
                 attrs: {
                     id: "minMoney"
                 }
