@@ -396,18 +396,18 @@
                 <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="./mymo.html"
                     class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
                   <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a data-v-18d75892
-                      href="/memberCenter/betRecord" class>投注记录</a> <a data-v-18d75892
+                      href="/recoder.html" class>投注记录</a> <a data-v-18d75892
                       href="/memberCenter/BillRecord" class>交易记录</a> <a data-v-18d75892
-                      href="/memberCenter/personalInfo" class>个人信息</a> <a data-v-18d75892
-                      href="/memberCenter/securityCenter" class>安全中心</a>
+                      href="/mymo.html" class>个人信息</a> <a data-v-18d75892
+                      href="/mymo.html" class>安全中心</a>
                     <!---->
                   </div>
                 </li>
                 <li data-v-18d75892>余额：
                   <!----> <span data-v-18d75892 class="ShowMoney showMoney monenyed">0.00
                     <!-- <i data-v-18d75892>显示</i></span></li> -->
-                <li data-v-18d75892><a data-v-18d75892 href="payment">充值</a></li>
-                <li data-v-18d75892><a data-v-18d75892 href="withdraw">提现</a></li>
+                <li data-v-18d75892><a data-v-18d75892 href="chongzhi.html">充值</a></li>
+                <li data-v-18d75892><a data-v-18d75892 href="./tixian.html">提现</a></li>
                 <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
                   class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
                     data-v-18d75892></span></a>
@@ -457,8 +457,8 @@
               <li data-v-783aad40 class><a data-v-783aad40 href="/home.html" class>首页</a></li>
               <li data-v-783aad40 class="curr"><a data-v-783aad40 href="/hall.html"
                   class="router-link-exact-active curr">购彩大厅</a></li>
-              <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
-              <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li>
+              <!-- <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li> -->
               <li data-v-783aad40 class="mymo_null"><a data-v-783aad40 href="/res.html"
                   class>我的账户</a></li>
                   <li data-v-783aad40 class="mymo_true"><a data-v-783aad40 href="/mymo.html"
@@ -989,9 +989,9 @@
   <script src="https://js.users.51.la/19560031.js"></script>
    <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
   <script>
-    var user_data=JSON.parse(localStorage.getItem("userinfo"))
+    var user_data=localStorage.getItem("userinfo")==0?0:JSON.parse(localStorage.getItem("userinfo"))
     // console.log(user_data.Token)
-  if(localStorage.getItem("userinfo")){
+  if(user_data){
     $('.snavInfo_null').addClass('isshow');
     $('.snavInfo_true').removeClass('isshow');
     $('.mymo_null').addClass('isshow');
@@ -1005,6 +1005,10 @@
     $('.mymo_true').addClass('isshow');
     $('.usershow').html('');
   }
+  $('.LoginOut').click(function() {
+    localStorage.setItem("userinfo",0);
+     window.location.href='./login.html'
+  })
   </script>
 </body>
 

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.lottery_area .lottery_table .lottery_num .num_open .each {
+    font-size: 30px
+}
+
+#lotteryDetail .each .numList li {
+    margin: 0 4px
+}
+
+#lotteryDetail .each .numList .selected {
+    margin: 0 4px
+}
+
+#lotteryDetail .each .selectType {
+    margin: 7px 1px 0px
+}
+
+* {
+    -webkit-user-drag: none
+}

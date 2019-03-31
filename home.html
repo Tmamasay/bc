@@ -352,7 +352,13 @@
       position: absolute !important
     }
     .isshow{
-      display: none
+      display: none !important;
+    }
+    .showtrue{
+      display: block
+    }
+    .showfasle{
+      display: none !important;
     }
   </style>
   <link type="image/x-icon" rel="shortcut icon"
@@ -396,18 +402,18 @@
                 <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="./mymo.html"
                     class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
                   <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a data-v-18d75892
-                      href="/memberCenter/betRecord" class>投注记录</a> <a data-v-18d75892
+                      href="/recoder.html" class>投注记录</a> <a data-v-18d75892
                       href="/memberCenter/BillRecord" class>交易记录</a> <a data-v-18d75892
-                      href="/memberCenter/personalInfo" class>个人信息</a> <a data-v-18d75892
-                      href="/memberCenter/securityCenter" class>安全中心</a>
+                      href="/mymo.html" class>个人信息</a> <a data-v-18d75892
+                      href="/mymo.html" class>安全中心</a>
                     <!---->
                   </div>
                 </li>
                 <li data-v-18d75892>余额：
                   <!----> <span data-v-18d75892 class="ShowMoney showMoney monenyed">0.00
                     <!-- <i data-v-18d75892>显示</i></span></li> -->
-                <li data-v-18d75892><a data-v-18d75892 href="payment">充值</a></li>
-                <li data-v-18d75892><a data-v-18d75892 href="withdraw">提现</a></li>
+                <li data-v-18d75892><a data-v-18d75892 href="chongzhi.html">充值</a></li>
+                <li data-v-18d75892><a data-v-18d75892 href="tixian.html">提现</a></li>
                 <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
                   class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
                     data-v-18d75892></span></a>
@@ -458,8 +464,8 @@
               <li data-v-783aad40 class="curr"><a data-v-783aad40 href="/home.html"
                   class="router-link-exact-active curr">首页</a></li>
               <li data-v-783aad40 class><a data-v-783aad40 href="/hall.html">购彩大厅</a></li>
-              <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
-              <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li>
+              <!-- <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a></li>
+              <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li> -->
               <li data-v-783aad40 class="mymo_null"><a data-v-783aad40 href="/res.html"
                   class>我的账户</a></li>
                   <li data-v-783aad40 class="mymo_true"><a data-v-783aad40 href="/mymo.html"
@@ -564,13 +570,13 @@
             <div data-v-067c60fe class="slideTxtBox">
               <div data-v-067c60fe class="hd">
                 <ul data-v-067c60fe class="fix">
-                  <li data-v-067c60fe class="on">江苏快３</li>
-                  <li data-v-067c60fe class>重庆时时彩</li>
-                  <li data-v-067c60fe class>北京赛车</li>
+                  <li data-v-067c60fe class="on head_1">江苏快３</li>
+                  <li data-v-067c60fe class="head_2">重庆时时彩</li>
+                  <li data-v-067c60fe class="head_3">北京赛车</li>
                 </ul>
               </div>
-              <div data-v-067c60fe class="bd">
-                <ul data-v-067c60fe>
+              <div data-v-067c60fe class="bd showcont">
+                <ul data-v-067c60fe class="showtrue">
                   <li data-v-067c60fe class="jsk3">
                     <div data-v-067c60fe align="center" class="dice"><span data-v-067c60fe
                         style="background-position: 0px 0px;"></span><i data-v-067c60fe>+</i> <span
@@ -587,7 +593,55 @@
                   </li>
                 </ul>
                 <!---->
+                <ul data-v-067c60fe class="showfasle">
+                    <li data-v-067c60fe class="cqssc fix">
+                        <div data-v-067c60fe class="number"><em data-v-067c60fe>9</em><em
+                                data-v-067c60fe>2</em><em data-v-067c60fe>8</em><em
+                                data-v-067c60fe>9</em><em data-v-067c60fe>6</em></div> <a
+                            data-v-067c60fe href="/lottery/SSC/CQSSC"
+                            class="mainColorBtn MustLogin">立即投注</a>
+                    </li>
+                    <li data-v-067c60fe class="text">
+                        <p data-v-067c60fe><span data-v-067c60fe>当前期：第
+                                <i data-v-067c60fe>20190329059</i> 期 </span><span
+                                data-v-067c60fe>开奖号码：<i data-v-067c60fe>9,2,8,9,6</i></span></p>
+                    </li>
+                </ul>
                 <!---->
+                <ul data-v-067c60fe class="roundNo showfasle">
+                  <div data-v-067c60fe id="Results" class="announced">
+                      <ul data-v-067c60fe class="roundNo fix numberbox">
+                          <li data-v-067c60fe class="number04 item1"><i data-v-067c60fe>04</i>
+                          </li>
+                          <li data-v-067c60fe class="number06 item2"><i data-v-067c60fe>06</i>
+                          </li>
+                          <li data-v-067c60fe class="number09 item3"><i data-v-067c60fe>09</i>
+                          </li>
+                          <li data-v-067c60fe class="number02 item4"><i data-v-067c60fe>02</i>
+                          </li>
+                          <li data-v-067c60fe class="number08 item5"><i data-v-067c60fe>08</i>
+                          </li>
+                          <li data-v-067c60fe class="number01 item6"><i data-v-067c60fe>01</i>
+                          </li>
+                          <li data-v-067c60fe class="number10 item7"><i data-v-067c60fe>10</i>
+                          </li>
+                          <li data-v-067c60fe class="number03 item8"><i data-v-067c60fe>03</i>
+                          </li>
+                          <li data-v-067c60fe class="number07 item9"><i data-v-067c60fe>07</i>
+                          </li>
+                          <li data-v-067c60fe class="number05 item10"><i data-v-067c60fe>05</i>
+                          </li>
+                      </ul>
+                  </div>
+                  <div data-v-067c60fe class="text">
+                      <p data-v-067c60fe><span data-v-067c60fe>当前期：第
+                              <i data-v-067c60fe>731468</i> 期 </span><span
+                              data-v-067c60fe>开奖号码：<i
+                                  data-v-067c60fe>04,06,09,02,08,01,10,03,07,05</i></span></p>
+                  </div> <a data-v-067c60fe href="/lottery/BSC/BJPK10"
+                      class="mainColorBtn MustLogin">立即投注</a>
+              </ul>
+              <!---->
               </div>
             </div>
           </div>
@@ -595,8 +649,8 @@
         <div data-v-c4b403f6 class="wrapR">
           <div data-v-4d32caaa data-v-c4b403f6 class="login_null">
             <div data-v-4d32caaa class="loginRegister">
-              <a data-v-4d32caaa href="/login" class><i
-                  data-v-4d32caaa class="iconfont"></i>登 录</a> <a data-v-4d32caaa href="/register" class><i
+              <a data-v-4d32caaa href="/login.html" class><i
+                  data-v-4d32caaa class="iconfont"></i>登 录</a> <a data-v-4d32caaa href="/res.html" class><i
                   data-v-4d32caaa class="iconfont"></i>用户注册</a></div>
           </div>
 
@@ -604,12 +658,8 @@
            <div data-v-4d32caaa class="logined">
              <h3 data-v-4d32caaa>
                <i data-v-4d32caaa class="iconfont"></i>
-                <b data-v-4d32caaa class="usershow">nana3344</b>
-                </h3> <a data-v-4d32caaa class="LoginOut">
-                  <em data-v-4d32caaa>退出</em>
-                   <i data-v-4d32caaa class="iconfont">
-
-                   </i></a>
+                <b data-v-4d32caaa class="usershow"></b>
+                </h3>
                    </div>
                    </div>
           
@@ -1097,13 +1147,13 @@
   <script src="/static/local/js/common/xss.min.js"></script>
   <script type="text/javascript" src="/static/js/manifest.178f0388419058262eb8.js"></script>
   <script type="text/javascript" src="/static/js/vendor.6f6a549ca23ad8b3db5f.js"></script>
-  <!-- <script type="text/javascript" src="/static/js/app.8e19d886c2179d435e5a.js"></script> -->
+  <!-- <script type="text/javascript"logined src="/static/js/app.8e19d886c2179d435e5a.js"></script> -->
   <script src="https://js.users.51.la/19560031.js"></script>
     <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
   <script>
-    var user_data=JSON.parse(localStorage.getItem("userinfo"))
+    var user_data=localStorage.getItem("userinfo")==0?0:JSON.parse(localStorage.getItem("userinfo"))
     // console.log(user_data.Token)
-  if(localStorage.getItem("userinfo")){
+  if(user_data){
     $('.snavInfo_null').addClass('isshow');
     $('.snavInfo_true').removeClass('isshow');
      $('.mymo_null').addClass('isshow');
@@ -1117,10 +1167,29 @@
     $('.snavInfo_true').addClass('isshow');
     $('.mymo_null').removeClass('isshow');
     $('.mymo_true').addClass('isshow');
-    $('.login_null').addClass('isshow');
-     $('.login_true').removeClass('isshow');
+    $('.login_null').removeClass('isshow');
+     $('.login_true').addClass('isshow');
     $('.usershow').html('');
   }
+  $('.head_1').click(function() {
+    $(this).addClass('on').siblings().removeClass('on');
+    console.log($('.showcont').children('ul').eq(0))
+    $('.showcont').children('ul').eq(0).removeClass('showfasle').siblings().addClass('showfasle')
+  });
+  $('.head_2').click(function() {
+    $(this).addClass('on').siblings().removeClass('on')
+    $('.showcont').children('ul').eq(1).removeClass('showfasle').siblings().addClass('showfasle')
+
+  });
+  $('.head_3').click(function() {
+    $(this).addClass('on').siblings().removeClass('on')
+    $('.showcont').children('ul').eq(2).removeClass('showfasle').siblings().addClass('showfasle')
+
+  });
+  $('.LoginOut').click(function() {
+    localStorage.setItem("userinfo",0);
+     window.location.href='./login.html'
+  })
   </script>
 </body>
 

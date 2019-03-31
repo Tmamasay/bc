@@ -1,0 +1,882 @@
+ <html>
+
+ <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta name="robots" content="noindex,nofollow">
+     <meta name="apple-touch-fullscreen" content="yes">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <meta name="format-detection" content="telephone=no">
+     <meta name="format-detection" content="email=no">
+     <meta name="renderer" content="webkit">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="HandheldFriendly" content="true">
+     <meta name="MobileOptimized" content="320">
+     <meta name="screen-orientation" content="portrait">
+     <meta name="x5-orientation" content="portrait">
+     <meta name="full-screen" content="yes">
+     <meta name="x5-fullscreen" content="true">
+     <meta name="browsermode" content="application">
+     <meta name="x5-page-mode" content="app">
+     <meta name="msapplication-tap-highlight" content="no">
+     <meta name="renderer" content="webkit">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <title id="headTitle">鑫亿彩-银行转帐</title>
+     <script>
+         (function () {
+             var IEvar = '9'
+             var IEnum = navigator.userAgent.toLowerCase()
+             if (IEnum.indexOf('msie') > -1) {
+                 if (Number(IEnum.match(/msie ([\d.]+)/)[1]) < IEvar) {
+                     location.href = '/updateBrowser.html'
+                 }
+             } else {
+                 if (window.localStorage && window.sessionStorage) {
+                     try {
+                         sessionStorage.setItem('TextLocalStorage', 'hello world')
+                         sessionStorage.removeItem('TextLocalStorage')
+                         localStorage.setItem('TextLocalStorage', 'hello world')
+                         localStorage.removeItem('TextLocalStorage')
+                     } catch (e) {
+                         alert('您的浏览器太旧或者开启了隐私模式/无痕模式，无法浏览网页，请更换浏览器或使用常规模式，给您带来的不便，表示抱歉！')
+                     }
+                 } else {
+                     location.href = '/updateBrowser.html'
+                 };
+             }
+         })();
+        //  (function () {
+        //      if (location.href.search('CanPc') > -1) {
+        //          sessionStorage.setItem('CanPc', 1)
+        //      }
+        //      var u = navigator.userAgent
+        //      if (!!u.match(/AppleWebKit.*Mobile.*/) && !sessionStorage.getItem('CanPc') && location.href.indexOf(
+        //              '//m.') < 0) {
+        //          location.href = location.href.replace('www.', '').replace('//', '//m.').replace('.html', '')
+        //      }
+        //  })();
+         (function () {
+             if (typeof (Promise) === 'undefined') {
+                 document.write('<script src="/static/local/js/common/es6-promise.auto.min.js"><\/script>')
+             };
+             if (typeof (fetch) === 'undefined') {
+                 document.write('<script src="/static/local/js/common/fetch.min.js"><\/script>')
+             };
+         })()
+
+
+
+
+         document.oncontextmenu = function () {
+             return false
+         }
+     </script>
+     <link href="/static/css/app.494b84cb285e583686316845e572b995.css" rel="stylesheet">
+     <link href="/static/local/css/common/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+     <style type="text/css">
+         .vue-slider-component {
+             position: relative;
+             box-sizing: border-box;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none
+         }
+
+         .vue-slider-component.vue-slider-disabled {
+             opacity: .5;
+             cursor: not-allowed
+         }
+
+         .vue-slider-component.vue-slider-has-label {
+             margin-bottom: 15px
+         }
+
+         .vue-slider-component.vue-slider-disabled .vue-slider-dot {
+             cursor: not-allowed
+         }
+
+         .vue-slider-component .vue-slider {
+             position: relative;
+             display: block;
+             border-radius: 15px;
+             background-color: #ccc
+         }
+
+         .vue-slider-component .vue-slider:after {
+             content: "";
+             position: absolute;
+             left: 0;
+             top: 0;
+             width: 100%;
+             height: 100%;
+             z-index: 2
+         }
+
+         .vue-slider-component .vue-slider-process {
+             position: absolute;
+             border-radius: 15px;
+             background-color: #3498db;
+             transition: all 0s;
+             z-index: 1
+         }
+
+         .vue-slider-component.vue-slider-horizontal .vue-slider-process {
+             width: 0;
+             height: 100%;
+             top: 0;
+             left: 0;
+             will-change: width
+         }
+
+         .vue-slider-component.vue-slider-vertical .vue-slider-process {
+             width: 100%;
+             height: 0;
+             bottom: 0;
+             left: 0;
+             will-change: height
+         }
+
+         .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-process {
+             width: 0;
+             height: 100%;
+             top: 0;
+             right: 0
+         }
+
+         .vue-slider-component.vue-slider-vertical-reverse .vue-slider-process {
+             width: 100%;
+             height: 0;
+             top: 0;
+             left: 0
+         }
+
+         .vue-slider-component .vue-slider-dot {
+             position: absolute;
+             border-radius: 50%;
+             background-color: #fff;
+             box-shadow: .5px .5px 2px 1px rgba(0, 0, 0, .32);
+             transition: all 0s;
+             will-change: transform;
+             cursor: pointer;
+             z-index: 3
+         }
+
+         .vue-slider-component.vue-slider-horizontal .vue-slider-dot {
+             left: 0
+         }
+
+         .vue-slider-component.vue-slider-vertical .vue-slider-dot {
+             bottom: 0
+         }
+
+         .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-dot {
+             right: 0
+         }
+
+         .vue-slider-component.vue-slider-vertical-reverse .vue-slider-dot {
+             top: 0
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap {
+             display: none;
+             position: absolute;
+             z-index: 9
+         }
+
+         .vue-slider-component .vue-slider-tooltip {
+             display: block;
+             font-size: 14px;
+             white-space: nowrap;
+             padding: 2px 5px;
+             min-width: 20px;
+             text-align: center;
+             color: #fff;
+             border-radius: 5px;
+             border: 1px solid #3498db;
+             background-color: #3498db
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top {
+             top: -9px;
+             left: 50%;
+             transform: translate(-50%, -100%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom {
+             bottom: -9px;
+             left: 50%;
+             transform: translate(-50%, 100%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left {
+             top: 50%;
+             left: -9px;
+             transform: translate(-100%, -50%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right {
+             top: 50%;
+             right: -9px;
+             transform: translate(100%, -50%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top .vue-slider-tooltip:before {
+             content: "";
+             position: absolute;
+             bottom: -10px;
+             left: 50%;
+             width: 0;
+             height: 0;
+             border: 5px solid transparent;
+             border: 6px solid transparent\0;
+             border-top-color: inherit;
+             transform: translate(-50%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom .vue-slider-tooltip:before {
+             content: "";
+             position: absolute;
+             top: -10px;
+             left: 50%;
+             width: 0;
+             height: 0;
+             border: 5px solid transparent;
+             border: 6px solid transparent\0;
+             border-bottom-color: inherit;
+             transform: translate(-50%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left .vue-slider-tooltip:before {
+             content: "";
+             position: absolute;
+             top: 50%;
+             right: -10px;
+             width: 0;
+             height: 0;
+             border: 5px solid transparent;
+             border: 6px solid transparent\0;
+             border-left-color: inherit;
+             transform: translateY(-50%)
+         }
+
+         .vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right .vue-slider-tooltip:before {
+             content: "";
+             position: absolute;
+             top: 50%;
+             left: -10px;
+             width: 0;
+             height: 0;
+             border: 5px solid transparent;
+             border: 6px solid transparent\0;
+             border-right-color: inherit;
+             transform: translateY(-50%)
+         }
+
+         .vue-slider-component .vue-slider-dot.vue-slider-hover:hover .vue-slider-tooltip-wrap {
+             display: block
+         }
+
+         .vue-slider-component .vue-slider-dot.vue-slider-always .vue-slider-tooltip-wrap {
+             display: block !important
+         }
+
+         .vue-slider-component .vue-slider-piecewise {
+             position: absolute;
+             width: 100%;
+             padding: 0;
+             margin: 0;
+             left: 0;
+             top: 0;
+             height: 100%;
+             list-style: none
+         }
+
+         .vue-slider-component .vue-slider-piecewise-item {
+             position: absolute;
+             width: 8px;
+             height: 8px
+         }
+
+         .vue-slider-component .vue-slider-piecewise-dot {
+             position: absolute;
+             left: 50%;
+             top: 50%;
+             width: 100%;
+             height: 100%;
+             display: inline-block;
+             background-color: rgba(0, 0, 0, .16);
+             border-radius: 50%;
+             transform: translate(-50%, -50%);
+             z-index: 2;
+             transition: all .3s
+         }
+
+         .vue-slider-component .vue-slider-piecewise-item:first-child .vue-slider-piecewise-dot,
+         .vue-slider-component .vue-slider-piecewise-item:last-child .vue-slider-piecewise-dot {
+             visibility: hidden
+         }
+
+         .vue-slider-component.vue-slider-horizontal-reverse .vue-slider-piecewise-label,
+         .vue-slider-component.vue-slider-horizontal .vue-slider-piecewise-label {
+             position: absolute;
+             display: inline-block;
+             top: 100%;
+             left: 50%;
+             white-space: nowrap;
+             font-size: 12px;
+             color: #333;
+             transform: translate(-50%, 8px);
+             visibility: visible
+         }
+
+         .vue-slider-component.vue-slider-vertical-reverse .vue-slider-piecewise-label,
+         .vue-slider-component.vue-slider-vertical .vue-slider-piecewise-label {
+             position: absolute;
+             display: inline-block;
+             top: 50%;
+             left: 100%;
+             white-space: nowrap;
+             font-size: 12px;
+             color: #333;
+             transform: translate(8px, -50%);
+             visibility: visible
+         }
+
+         .vue-slider-component .vue-slider-sr-only {
+             clip: rect(1px, 1px, 1px, 1px);
+             height: 1px;
+             width: 1px;
+             overflow: hidden;
+             position: absolute !important
+         }
+          .isshow {
+            display: none
+        }
+     </style>
+     <link type="image/x-icon" rel="shortcut icon"
+         href="../../static/local/img/uploads/images/B256/6d33d78b-8a99-4201-a3c2-a8e035b456cc.jpg">
+ </head>
+
+ <body>
+     <div id="app" class="ebankPay">
+         <div>
+             <div data-v-d539ba84 class="header head3">
+                 <div data-v-18d75892 data-v-d539ba84 id="HeaderTop">
+                     <div data-v-18d75892 class="snav">
+                         <div data-v-18d75892 class="container">
+                            <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="/home" class>Hi，欢迎来到鑫亿彩!<span
+                                        data-v-18d75892 class="red" style="display: none;"></span></a> <ins
+                                    data-v-18d75892> | </ins> <a data-v-18d75892 class="betNavMore">全部彩票</a></div>
+                            <ul data-v-18d75892 class="snavInfo" style="display: none;">
+                                <li data-v-18d75892><a data-v-18d75892 href="/login.html" class>亲，请登录</a> <i
+                                        data-v-18d75892 class="vertical"></i></li>
+                                <li data-v-18d75892><a data-v-18d75892 href="/res.html" class>用户注册</a></li> <a
+                                    data-v-18d75892 class="serviceLink ServiceBtn"><i data-v-18d75892
+                                        class="iconfont"></i> <span data-v-18d75892></span></a>
+                            </ul>
+                            <ul data-v-18d75892 class="snavInfo" style>
+                                <li data-v-18d75892 class="userName MsgShow"><a data-v-18d75892 id="userName"
+                                        class="_personalInfo"><a data-v-18d75892 href="/mymo.html" class>
+                                            <i data-v-18d75892 class="usershow"></i></a></a>
+                                    <a data-v-18d75892><a data-v-18d75892 href="/mymo.html" class><span
+                                                data-v-18d75892>0</span></a>
+                                        <div data-v-18d75892 class="messageShow MessageShowContent hide"><i
+                                                data-v-18d75892></i>
+                                            <dl data-v-18d75892>
+                                                <dt data-v-18d75892>
+                                                    <p data-v-18d75892><a data-v-18d75892 href="/memberCenter/letter"
+                                                            class> 我的未读消息(<small data-v-18d75892>0</small>) </a></p> <a
+                                                        data-v-18d75892 href="/memberCenter/letter" class> 更多 </a>
+                                                </dt>
+                                            </dl>
+                                        </div>
+                                    </a></li>
+                                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="/mymo.html" class>我的账户 <i
+                                            data-v-18d75892 class="iconfont"></i></a>
+                                    <!-- <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a
+                                            data-v-18d75892 href="/recoder.html" class>投注记录</a> <a
+                                            data-v-18d75892 href="/memberCenter/BillRecord" class>交易记录</a> <a
+                                            data-v-18d75892 href="/mymo.html" class>个人信息</a> <a
+                                            data-v-18d75892 href="/mymo.html" class>安全中心</a> <a
+                                            data-v-18d75892 href="/memberCenter/agentReport" class>代理中心</a></div> -->
+                                </li>
+                                <li data-v-18d75892>余额：
+                                    <span data-v-18d75892 class="GetMoney getMoney monenyed"><em
+                                            data-v-18d75892>0.00</em>
+                                        <!-- <i data-v-18d75892 id="icon" class="iconfont"></i> <i
+                                            data-v-18d75892>隐藏</i></span> <span data-v-18d75892
+                                        class="ShowMoney showMoney" style="display: none;">已隐藏
+                                        <i data-v-18d75892>显示</i></span> -->
+                                </li>
+                                <li data-v-18d75892><a data-v-18d75892 href="chongzhi.html">充值</a></li>
+                                <li data-v-18d75892><a data-v-18d75892 href="./tixian.html">提现</a></li>
+                                <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
+                                    class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
+                                        data-v-18d75892></span></a>
+                            </ul>
+                            <ul data-v-18d75892></ul>
+                        </div>
+                     </div>
+                     <div data-v-18d75892 id="cardBoxId" class="cardBox hide" style>
+                         <div data-v-da0d86b6 data-v-18d75892 class="card">
+                             <div data-v-da0d86b6 class="cardLeft"><img data-v-da0d86b6 src alt>
+                                 <h6 data-v-da0d86b6>昵称未设置</h6>
+                             </div>
+                             <!-- <div data-v-da0d86b6 class="cardInfo">
+                                 <ul data-v-da0d86b6>
+                                     <li data-v-da0d86b6>性别：</li>
+                                     <li data-v-da0d86b6>账号：</li>
+                                     <li data-v-da0d86b6>等级：</li>
+                                     <li data-v-da0d86b6>累计中奖：</li>
+                                 </ul>
+                             </div> -->
+                             <ul data-v-da0d86b6 class="cardIcon">
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/K3/OG1K3" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_K3 noActive"></i></a></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/FFC/JLFFC" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_SSC noActive"></i></a></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/XX5/GD11X5" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_SYX5 noActive"></i></a></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/BSC/BJPK10" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_BSC noActive"></i></a></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/KL8/BJKL8" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_KL8 noActive"></i></a></li>
+                                 <li data-v-da0d86b6><i data-v-da0d86b6
+                                         class="iconfont L_Common L_FC3D noActive"></i></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/PL3/PL3CP" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_PL35 noActive"></i></a></li>
+                                 <li data-v-da0d86b6><a data-v-da0d86b6 href="/lottery/LHC/XGLHC" class><i
+                                             data-v-da0d86b6 class="iconfont L_Common L_LHC noActive"></i></a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+                 <div data-v-783aad40 data-v-d539ba84 class="nav" style="display: block;">
+                     <div data-v-783aad40 class="container fix">
+                         <h3 data-v-783aad40><a data-v-783aad40 href="/home" class><img data-v-783aad40
+                                     src="../../../static/local/img//uploads/images/B256/b00259ff-80c0-4b2d-9b6c-f7f7e67856b6.png"></a>
+                         </h3>
+                         <ul data-v-783aad40 class="navItem fix flr">
+                             <li data-v-783aad40 class><a data-v-783aad40 href="/home.html" class>首页</a></li>
+                             <li data-v-783aad40 class><a data-v-783aad40 href="/hall.html" class>购彩大厅</a></li>
+                             <!-- <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a>
+                             </li>
+                             <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li> -->
+                             <li data-v-783aad40 class><a data-v-783aad40 href="/mymo.html"
+                                     class>我的账户</a></li>
+                             <li data-v-783aad40 class><a data-v-783aad40 href="/gonggao.html" class>帮助指南</a></li>
+                             <span data-v-783aad40></span>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+             <div data-v-f6839e60 class="container containerUser fix pt15">
+                 <div data-v-6d48a7d0 data-v-f6839e60 class="slideUser">
+                     <ul data-v-6d48a7d0 class="sildeSession">
+                         <h3 data-v-6d48a7d0><span data-v-6d48a7d0></span>账号管理</h3>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/mymo.html"
+                                 class>个人信息</a></li>
+                         <!-- <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/securityCenter"
+                                 class>安全中心</a></li> -->
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/card.html"
+                                 class>银行卡管理</a></li>
+                         <!-- <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/checkRecord"
+                                 class>即时稽核记录</a></li> -->
+                     </ul>
+                     <ul data-v-6d48a7d0 class="sildeSession">
+                         <h3 data-v-6d48a7d0><span data-v-6d48a7d0></span>投注管理</h3>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/recoder.html" class>投注记录</a>
+                         </li>
+                         <!-- <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/seekOrder" class>追号记录</a>
+                         </li> -->
+                     </ul>
+                     <!-- <ul data-v-6d48a7d0 class="sildeSession">
+                         <h3 data-v-6d48a7d0><span data-v-6d48a7d0></span>资金管理</h3>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/BillRecord" class>交易记录</a>
+                         </li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/PLstatement" class>今日盈亏</a>
+                         </li>
+                     </ul>
+                     <ul data-v-6d48a7d0 class="sildeSession">
+                         <h3 data-v-6d48a7d0><span data-v-6d48a7d0></span>代理中心</h3>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/agentIntro" class>代理说明</a>
+                         </li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/agentReport" class>代理报表</a>
+                         </li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/lowerReport" class>下级报表</a>
+                         </li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/manageInvite"
+                                 class>下级开户</a></li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/agentMember" class>会员管理</a>
+                         </li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/agentBetRecord"
+                                 class>投注明细</a></li>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/agentBillRecord"
+                                 class>交易明细</a></li>
+                     </ul> -->
+                     <ul data-v-6d48a7d0 class="sildeSession">
+                         <h3 data-v-6d48a7d0><span data-v-6d48a7d0></span>消息管理</h3>
+                         <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/letter" class>站内信</a></li>
+                         <!-- <li data-v-6d48a7d0><a data-v-6d48a7d0 href="/memberCenter/Notice" class>网站公告</a></li> -->
+                     </ul>
+                 </div>
+                 <div data-v-f6839e60 class="userRight">
+                     <div data-v-f6839e60 class="userTitle mgb10">我要充值</div>
+                     <div data-v-f6839e60 class="userMain mgb10">
+                         <div data-v-56029aa4 data-v-f6839e60 class="newTab pt15 fix">
+                             <a data-v-56029aa4
+                                 class="curr"href="javascript:void(0);" onclick="payin(1,this)">银行转账</a>
+                                  <a data-v-56029aa4 href="javascript:void(0);" onclick="payin(2,this)"> 微信转账</a>
+                                  <a data-v-56029aa4 href="javascript:void(0);" onclick="payin(3,this)"> 支付宝转账</a>
+                         </div>
+                         <div data-v-14725e44 data-v-f6839e60 id="isShow">
+                             <div data-v-14725e44 class="stepBox" id="payY">
+                                 <em data-v-14725e44></em>
+                                 <span data-v-14725e44><b data-v-14725e44>请转账到以下银行账户：</b>单笔最低<ins
+                                         data-v-14725e44>100</ins>元，最高<ins data-v-14725e44>1000000 元</ins></span>
+                                 <ul data-v-14725e44 class="bankStyle">
+                                     <li data-v-14725e44 class="bankTable"><ins data-v-14725e44>收款银行：</ins> <ins
+                                             data-v-14725e44>
+                                             <div data-v-14725e44 class="bankblockList fix">
+                                                 <div data-v-14725e44 class="rb rb_active"><span data-v-14725e44
+                                                         class="ICBC">{{infoY.VC_OpenBank}}</span></div>
+                                             </div>
+                                         </ins></li>
+                                     <!---->
+                                     <li data-v-14725e44><ins data-v-14725e44 style="width: 30px;">银行账户：</ins><ins
+                                             data-v-14725e44>{{infoY.VC_BankName}}</ins></li>
+                                     <li data-v-14725e44><ins data-v-14725e44 style="width: 30px;">银行账号：</ins><ins
+                                             data-v-14725e44>{{infoY.VC_BankNo}}</ins></li>
+                                   
+                                 </ul>
+                             </div>
+                             <!--2-->
+                             <div data-v-14725e44 class="stepBox isshow" id="payW">
+                                 <em data-v-14725e44></em>
+                                 <span data-v-14725e44><b data-v-14725e44>请转账到以下微信：</b>单笔最低<ins
+                                         data-v-14725e44>100</ins>元，最高<ins data-v-14725e44>10000 元</ins></span>
+                                 <ul data-v-14725e44 class="bankStyle">
+                                    <div style="width:200px;height:300px">
+                                    <img :src="infoW.Img_Bank|myCurrency" alt="" srcset="" width="100%" height="100%">
+                                    </div>
+                                 </ul>
+                             </div>
+                             <!--3-->
+                         <div data-v-14725e44 class="stepBox isshow" id="payZ">
+                                 <em data-v-14725e44></em>
+                                 <span data-v-14725e44><b data-v-14725e44>请转账到以下支付宝：</b>单笔最低<ins
+                                         data-v-14725e44>100</ins>元，最高<ins data-v-14725e44>1000000 元</ins></span>
+                                 <ul data-v-14725e44 class="bankStyle">
+                                    <ul data-v-14725e44 class="bankStyle">
+                                    <div style="width:200px;height:300px">
+                                    <img :src="infoZ.Img_Bank|myCurrency" alt="" srcset="" width="100%" height="100%">
+                                    </div>
+                                 </ul>
+                                 </ul>
+                             </div>
+                             <!---rr-->
+                             <div data-v-14725e44 class="stepBox"><em data-v-14725e44></em><span
+                                     data-v-14725e44><b data-v-14725e44>请认真填写您的转账信息：</b><em data-v-14725e44
+                                         class="notice">请务必转账后再提交订单</em>,否则无法及时查到您的款项！</span>
+                                 <ul data-v-14725e44>
+                                     <li data-v-14725e44><ins data-v-14725e44><span
+                                                 data-v-14725e44>充值金额：</span> <input data-v-14725e44 type="number" oninput="if(value<0){value=0}"
+                                                 tag="充值金额" class="userInput moneyYH"> <em data-v-14725e44 data-v-break
+                                                 class><i data-v-14725e44></i></em></ins> <ins
+                                             data-v-14725e44><span data-v-14725e44>您的账户名：</span><input
+                                                 data-v-14725e44 type="text" tag="银行账户名" maxlength="30"
+                                                 class="userInput nameYH"> <em data-v-14725e44 data-v-break class><i
+                                                     data-v-14725e44></i></em></ins></li>
+                                 </ul>
+                                 <ul data-v-14725e44>
+                                     <h6 data-v-14725e44><a data-v-14725e44 class="submitBtn submitCZ">提交充值订单</a></h6>
+                                 </ul>
+                                 <div data-v-14725e44 class="userTip">
+                                     <p data-v-14725e44>※ 温馨提示：
+                                         <br data-v-14725e44> 1、请正确填写您的户名和充值金额。
+                                         <br data-v-14725e44> 2、请务必转账后，再提交充值订单。
+                                         <br data-v-14725e44> 3、转账一笔提交1次，请勿重复提交订单。
+                                         <br data-v-14725e44> 4、转账时，务必增加小数点(如：500.77)，以便财务查款。
+                                         <br data-v-14725e44> 5、转帐后请保留单据作为核对证明。
+                                     </p>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div data-v-6e6663f0 class="footer mgt40">
+                 <div data-v-6e6663f0 class="ftadCon">
+                     <div data-v-6e6663f0 class="container">
+                         <ul data-v-6e6663f0 class="ftad fix">
+                             <li data-v-6e6663f0><a data-v-6e6663f0 id="dafaCloud" class="technicalArea">
+                                     <p data-v-6e6663f0 class="technicalTitle">技术支持<i data-v-6e6663f0>Technical
+                                             support</i></p>
+                                     <div data-v-6e6663f0 class="technicalSupport fix"><img data-v-6e6663f0
+                                             src="../../../static/local/img/common/ab_footer_logo.png">
+                                         <p data-v-6e6663f0 class="tecSupportParagraphLine2">
+                                             亚博技术支持
+                                             <br data-v-6e6663f0>
+                                             专业的彩票系统平台
+                                         </p>
+                                     </div>
+                                 </a></li>
+                             <li data-v-6e6663f0>
+                                 <p data-v-6e6663f0>服务体验<i data-v-6e6663f0>Service experience</i></p>
+                                 <ul data-v-6e6663f0 class="serviceExperience">
+                                     <li data-v-6e6663f0>昨日充值到账平均时间
+                                         <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0
+                                                 style="width: 1.42857%;"></span></p> <em data-v-6e6663f0>0'10</em><i
+                                             data-v-6e6663f0>秒</i></li>
+                                     <li data-v-6e6663f0>昨日提现到账平均时间
+                                         <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0
+                                                 style="width: 19.2857%;"></span></p> <em data-v-6e6663f0>1'35</em><i
+                                             data-v-6e6663f0>秒</i></li>
+                                 </ul>
+                             </li>
+                             <li data-v-6e6663f0>
+                                 <p data-v-6e6663f0>充值方式<i data-v-6e6663f0>Recharge method</i></p>
+                                 <div data-v-6e6663f0 class="rechargeMethod"><i data-v-6e6663f0
+                                         class="wechat"></i><i data-v-6e6663f0 class="alipay"></i><i
+                                         data-v-6e6663f0 class="cup"></i></div>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div data-v-6e6663f0 class="container _about aboutText">
+                     <p data-v-6e6663f0 class="fix"><a data-v-6e6663f0 target="_blank" href="http://cbaward.com/"
+                             style="display: none;">中博开奖网</a><span data-v-6e6663f0 style="display: none;">|</span> <a
+                             data-v-6e6663f0>关于我们</a>|
+                         <a data-v-6e6663f0>联系我们</a>|
+                         <a data-v-6e6663f0>法律声明</a>|
+                         <a data-v-6e6663f0>隐私声明</a>|
+                     </p>
+                     <p data-v-6e6663f0 class="copyright">Copyright © <span data-v-6e6663f0
+                             class="siteName">鑫亿彩</span> Reserved | 18+</p>
+                 </div>
+             </div>
+             <!---->
+             <!---->
+             <!---->
+             <div class="layermbox layermbox2 layermshow" style="display: none;">
+                 <div id="profit" class="laymshade"></div>
+                 <div class="layermmain">
+                     <div class="section">
+                         <div id="notShow" class="layermchild  layermanim">
+                             <div class="layermcont"><i class="laymloadone"></i> <i class="laymloadtwo"></i> <i
+                                     class="laymloadthree"></i></div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <script src="/static/local/js/common/layer.m.js"></script>
+     <script src="/static/local/js/common/laypage.js"></script>
+     <script src="/static/local/js/common/xss.min.js"></script>
+     <script type="text/javascript" src="/static/js/manifest.b087bbe953e2331d7ae5.js"></script>
+     <script type="text/javascript" src="/static/js/vendor.45b4d0332c0e26d1e7cb.js"></script>
+     <!-- <script type="text/javascript" src="/static/js/app.e616060ca43b17ef233a.js"></script> -->
+     <script src="https://js.users.51.la/19560031.js"></script>
+          <script type="text/javascript" src="/static/js/vue.js"></script>
+      <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+  <script>
+    var user_data=localStorage.getItem("userinfo")==0?0:JSON.parse(localStorage.getItem("userinfo"))
+    // console.log(user_data.Token)
+    var key=3;
+  if(user_data){
+    $('.snavInfo_null').addClass('isshow');
+    $('.snavInfo_true').removeClass('isshow');
+     $('.mymo_null').addClass('isshow');
+    $('.mymo_true').removeClass('isshow');
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+     $('.monenyed').html(user_data.LogHava)
+    $('.usershow').html(user_data.LogAccount);
+  }else{
+    $('.snavInfo_null').removeClass('isshow');
+    $('.snavInfo_true').addClass('isshow');
+    $('.mymo_null').removeClass('isshow');
+    $('.mymo_true').addClass('isshow');
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+    $('.usershow').html('');
+  }
+          beg();
+          function beg() {
+              $('#payY').removeClass('isshow')
+          $('#payW').addClass('isshow')
+          $('#payZ').addClass('isshow')
+              $.ajax({
+             type: "GET",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: `http://www.chinadecen.com:85/mobileApi/Common/Fun_GetPaymentInformation?I_Style=1`,
+             success: function(res){
+                 if(+res.Code===1){
+                      var vm = new Vue({
+                    el: '#payY',
+                    data: {
+                        infoY:JSON.parse(res.data)
+                    }
+                    })
+                //    alert(res.Message)
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+        });
+          }
+            
+  function payin(e,b) {
+      $(b).addClass('curr').siblings().removeClass('curr')
+      if(e==1){//英航卡
+          $('#payY').removeClass('isshow')
+          $('#payW').addClass('isshow')
+          $('#payZ').addClass('isshow')
+          key=3;
+            $.ajax({
+             type: "GET",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: `http://www.chinadecen.com:85/mobileApi/Common/Fun_GetPaymentInformation?I_Style=${e}`,
+             success: function(res){
+                 if(+res.Code===1){
+                      var vm = new Vue({
+                    el: '#payY',
+                    data: {
+                        infoY:JSON.parse(res.data)
+                    }
+                    })
+                //    alert(res.Message)
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+      }else if(e==2){//微信
+          $('#payW').removeClass('isshow')
+          $('#payY').addClass('isshow')
+          $('#payZ').addClass('isshow')
+           key=1;
+           $.ajax({
+             type: "GET",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: `http://www.chinadecen.com:85/mobileApi/Common/Fun_GetPaymentInformation?I_Style=${e}`,
+             success: function(res){
+                 if(+res.Code===1){
+                //    alert(res.Message)
+                var vm = new Vue({
+                    el: '#payW',
+                    data: {
+                        infoW:JSON.parse(res.data)
+                    },
+                    filters:{
+            　　　　　　myCurrency:function(value){
+                         value='data:image/png;base64,'+value
+            　　　　　　　　return value
+            　　　　　　}
+            }
+                    })
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+
+      }else if(e==3){//支付宝
+          $('#payZ').removeClass('isshow')
+          $('#payY').addClass('isshow')
+          $('#payW').addClass('isshow')
+          key=2;
+           $.ajax({
+             type: "GET",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: `http://www.chinadecen.com:85/mobileApi/Common/Fun_GetPaymentInformation?I_Style=${e}`,
+             success: function(res){
+                 if(+res.Code===1){
+                //    alert(res.Message)
+                var vm = new Vue({
+                    el: '#payZ',
+                    data: {
+                        infoZ:JSON.parse(res.data)
+                    },
+                    filters:{
+            　　　　　　myCurrency:function(value){
+                         value='data:image/png;base64,'+value
+            　　　　　　　　return value
+            　　　　　　}
+                    }
+                    })
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+
+      }
+  }
+  $('.submitCZ').click(function () {
+        // var code=$('.usercode').val();
+        // var code="NN6EZZg%2fNXI%3d";
+            var _parms= {
+                "strUser":user_data.LogUid,
+                "I_CZStyle":key,
+                "VC_PayName":$('.nameYH').val(),
+                "D_Money":$('.moneyYH').val()
+                }
+           
+                if(!_parms.VC_PayName){
+                    alert('请输入账户名字');
+                    return false;
+                }
+                 if(!_parms.D_Money){
+                    alert('请输入充值金额');
+                    return false;
+                }
+         $.ajax({
+             type: "POST",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: "http://www.chinadecen.com:85/mobileApi/Member/Fun_CZ",
+             data:_parms,
+            //  beforeSend: function(request) {
+            //     request.setRequestHeader("auth", user_data.Token);
+            //     },
+            // headers:{
+            //     "auth":user_data.Token
+            //     },
+            //  ContentType: "application/json",
+		        datType: "JSON",
+             success: function(res){
+                 if(+res.Code===1){
+                   alert(res.Message)
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+        
+        })
+        $('.LoginOut').click(function() {
+    localStorage.setItem("userinfo",0);
+     window.location.href='./login.html'
+  })
+  </script>
+ </body>
+
+ </html>

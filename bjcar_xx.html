@@ -1,0 +1,1239 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/web/base.css?v=20190318" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/web/layout.css?v=20190203" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/web/lottery_frame.css" media="all" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/web/wish_style.css?v=20190316"/>
+<title>::::大众游戏::::</title>
+
+<script type="text/javascript" src="js/web/png/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="js/web/jquery-1.7.min.js"></script>
+
+
+<script type="text/javascript" src="js/web/iframe.js"></script>
+<!--消息框代码开始-->
+<script type="text/javascript" src="js/web/dialogUI/jquery.dialogUI.js"></script>
+<script type="text/javascript" src="js/web/dialogUI/jquery.dragdrop.js"></script>
+<link href="js/web/dialogUI/dialogUI.css" media="all" type="text/css" rel="stylesheet"/>
+<!--消息框代码结束-->
+<script type="text/javascript" src="js/web/main.js?v=20190308"></script>
+
+</head>
+    <body><link href="css/web/11to5.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="js/web/tab.js"></script>
+<script src="js/common/calendar/jquery.dyndatetime.js" type="text/javascript"></script>
+<script src="js/common/calendar/lang/calendar-utf8.js" type="text/javascript"></script>
+<link href="js/common/calendar/css/calendar-blue.css" media="all" type="text/css" rel="stylesheet">
+<!--------------------->
+<script language="javascript" src="js/web/common.js"></script>
+<script language="javascript" src="js/web/lottery/youxi_lang_zh.js?v=20171226"></script>
+<script language="javascript" src="js/web/Tab_query.js"></script>
+
+<script language="javascript">
+    function intval(mixed_var, base) {
+        var tmp;
+        var type = typeof (mixed_var);
+        if (type === 'boolean') {
+            return +mixed_var;
+        } else if (type === 'string') {
+            tmp = parseInt(mixed_var, base || 10);
+            return (isNaN(tmp) || !isFinite(tmp)) ? 0 : tmp;
+        } else if (type === 'number' && isFinite(mixed_var)) {
+            return mixed_var | 0;
+        } else {
+            return 0;
+        }
+    }
+    function show_on() {
+        $("#lt_help_div").show("slow");
+    }
+    function close_on() {
+        $("#lt_help_div").hide("slow");
+    }
+    (function ($) {
+        $(document).ready(function () {
+            $.gameInit({
+                cnLotteryName: '极速PK拾',
+                data_label: [
+                {
+                    isnew: "0", isdefault: "1", title: "猜冠军", label: [{
+                        gtitle: '猜冠军', label: [{
+                            methoddesc: '第一位至少选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择1个号码组成一注，所选号码与当期顺序摇出的10个号码中的前1个号码相同即为中奖。',
+                            methodexample: '如：第一位选择01，开奖号码顺序为01，* * * * * * * * * ，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '冠军', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X',
+                            code_sp: ' ',
+                            methodid: 33358,
+                            name: '复式',
+                            prize: { 1: '17.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜冠亚军", label: [{
+                        gtitle: '猜冠亚军', label: [{
+                            methoddesc: '从第一位、第二位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择2个不重复的号码组成一注，所选号码与当期顺序摇出的10个号码中的前2个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，开奖号码顺序为01，02，**********，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '冠军', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '亚军', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X,X,-,-,-',
+                            code_sp: ' ',
+                            methodid: 33360,
+                            name: '复式',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个两位数号码组成一注。',
+                            methodhelp: '手动输入2个号码组成一注，所输入的号码与当期顺序摇出的5个号码中的前2个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入 01 02，开奖号码为01 02 * * *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33360,
+                            name: '单式',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }, {
+                            methoddesc: '从3-19中任意选择1个或1个以上的和值号码。',
+                            methodhelp: '所选数值等于开奖号码的冠军位、亚军位二个数字相加之和，即为中奖。',
+                            methodexample: '投注方案：和值3；开奖号码前二位：01,02，即中直选和值。',
+                            selectarea: {
+                                type: 'digital',
+                                layout: [{ title: '', no: '3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19', place: 0, cols: 1 }
+                                ],
+                                noBigIndex: 5,
+                                isButton: false
+                            },
+                            show_str: 'X',
+                            code_sp: ',',
+                            methodid: 33385,
+                            name: '直选和值',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '和值', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前三名", label: [{
+                        gtitle: '猜前三名', label: [{
+                            methoddesc: '从第一位、第二位、第三位中至少各选择1个号码。',
+                            methodhelp: '从01-11共11个号码中选择3个不重复的号码组成一注，所选号码与当期顺序摇出的5个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，开奖号码顺序为01，02，03 * *，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X',
+                            code_sp: '&',
+                            methodid: 33362,
+                            name: '复式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个三位数号码组成一注。',
+                            methodhelp: '手动输入3个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03，开奖号码为是01 02 03 * *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33362,
+                            name: '单式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前四名", label: [{
+                        gtitle: '猜前四名', label: [{
+                            methoddesc: '从第一位、第二位、第三位、第四位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择4个不重复的号码组成一注，所选号码与当期顺序开出的10个号码中的前4个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，第四位选择04，开奖号码顺序为01，02，03 04 *，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }, { title: '第四位', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X|X',
+                            code_sp: '&',
+                            methodid: 33382,
+                            name: '复式',
+                            prize: { 1: '8568.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '8568.00', defaultprize: 8568.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个四位数号码组成一注。',
+                            methodhelp: '手动输入4个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前4个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03 04，开奖号码为是01 02 03 04 *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33382,
+                            name: '单式',
+                            prize: { 1: '8568.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '8568.00', defaultprize: 8568.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前五名", label: [{
+                        gtitle: '猜前五名', label: [{
+                            methoddesc: '从第一位、第二位、第三位、第四位、第五位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择5个不重复的号码组成一注，所选号码与当期顺序开出的10个号码中的前5个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，第四位选择04，第五位选择05，开奖号码顺序为01，02，03 04 05，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }, { title: '第四位', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 }, { title: '第五位', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X|X|X',
+                            code_sp: '&',
+                            methodid: 33384,
+                            name: '复式',
+                            prize: { 1: '51408.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '51408.00', defaultprize: 51408.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个五位数号码组成一注。',
+                            methodhelp: '手动输入5个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前5个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03 04 05，开奖号码为是01 02 03 04 05，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33384,
+                            name: '单式',
+                            prize: { 1: '51408.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '51408.00', defaultprize: 51408.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                },  {
+                    isnew: "0", isdefault: "0", title: "定位胆", label: [{
+                        gtitle: '定位胆', label: [{
+                            methoddesc: '在第一名，第二名，第三名，第四名，第五名任意位置上任意选择1个或1个以上号码。',
+                            methodhelp: '从第一名，第二名，第三名，第四名，第五名任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。',
+                            methodexample: '投注方案：1；开奖号码第一名：1，即中定位胆第一名一等奖。',
+                            selectarea: {
+                                type: 'digital',
+                                layout: [
+                                    { title: '第一名', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 },
+                                    { title: '第二名', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 },
+                                    { title: '第三名', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 },
+                                    { title: '第四名', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 },
+                                    { title: '第五名', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }
+                                ],
+                                noBigIndex: 5,
+                                isButton: true
+                            },
+                            show_str: 'X,X,X,X,X',
+                            code_sp: '',
+                            methodid: 33366,
+                            name: '第1~5名【复式】',
+                            prize: { 1: '17.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '第1~5名【复式】', maxcodecount: 0
+                        }, {
+                            methoddesc: '在第六名，第七名，第八名，第九名，第拾名任意位置上任意选择1个或1个以上号码。',
+                            methodhelp: '从第六名，第七名，第八名，第九名，第拾名任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。',
+                            methodexample: '投注方案：1；开奖号码第六名：1，即中定位胆第六名一等奖。',
+                            selectarea: {
+                                type: 'digital',
+                                layout: [
+                                    { title: '第六名', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 },
+                                    { title: '第七名', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 },
+                                    { title: '第八名', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 },
+                                    { title: '第九名', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 },
+                                    { title: '第拾名', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }
+                                ],
+                                noBigIndex: 5,
+                                isButton: true
+                            },
+                            show_str: 'X,X,X,X,X',
+                            code_sp: '',
+                            methodid: 33371,
+                            name: '第6~10名【复式】',
+                            prize: { 1: '17.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '第6~10名【复式】', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "大小单双", label: [{
+                        gtitle: '大小单双', label: [{
+                            methoddesc: '从第一名、第二名、第三名中的“大、小、单、双”中至少选一个组成一注。',
+                            methodhelp: '对第一名、第二名、第三的“大（56789）小（01234）、单（13579）双（02468）”形态进行购买，所选号码的位置、形态与开奖号码的位置、形态相同，即为中奖。',
+                            methodexample: '投注方案：第一名小；开奖号码第一名：小，即中第一名大小单双一等奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '第一名', no: '大|小|单|双', place: 0, cols: 1 },
+                                     { title: '第二名', no: '大|小|单|双', place: 1, cols: 1 },
+                                             { title: '第三名', no: '大|小|单|双', place: 2, cols: 1 }]
+                            },
+                            show_str: 'X,X,X',
+                            code_sp: '',
+                            methodid: 33378,
+                            name: '前一名',
+                            prize: { 1: '3.40' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.40', defaultprize: 3.40, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '前一名', maxcodecount: 0
+                        }, {
+                            methoddesc: '从“大、双”中至少选一个组成一注。',
+                            methodhelp: '以冠军车号和亚军车号之和大小来判断胜负，“冠亚和”大于11为大，小于或等于11为小，双数为双，单数为单，所选形态与开奖号码冠亚军和值形态一致即为中奖。',
+                            methodexample: '投注方案：双，冠亚军号码和值为双数即中奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '大双', no: '大|双', place: 0, cols: 1 }]
+                            },
+                            show_str: 'X',
+                            code_sp: '',
+                            methodid: 33395,
+                            name: '冠亚和值大双',
+                            prize: { 1: '3.83' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.825', defaultprize: 3.83, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '冠亚和值大双', maxcodecount: 0
+                        }, {
+                            methoddesc: '从“小、单”中至少选一个组成一注。',
+                            methodhelp: '以冠军车号和亚军车号之和大小来判断胜负，“冠亚和”大于11为大，小于或等于11为小，双数为双，单数为单，所选形态与开奖号码冠亚军和值形态一致即为中奖。',
+                            methodexample: '投注方案：单，冠亚军号码和值为单数即中奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '小单', no: '小|单', place: 0, cols: 1 }]
+                            },
+                            show_str: 'X',
+                            code_sp: '',
+                            methodid: 33397,
+                            name: '冠亚和值小单',
+                            prize: { 1: '3.06' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.060', defaultprize: 3.06, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '冠亚和值小单', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "龙虎", label: [{
+                        gtitle: '龙虎斗', label: [{
+                            methoddesc: '任意选择一个号码组成一注。',
+                            methodhelp: '从1v10 2v9 3v8 4v7 5v6 中的龙，虎 至少选择一个，选择龙时，指定位号前者大于后者即为中奖；选择虎时，指定位号后者大于前者即为中奖。',
+                            methodexample: '龙虎是由两两名次进行号码PK，第一名VS第十名、第二名VS第九名、第三名VS第八名、第四名VS第七名、第五名VS第六名。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '一 VS 十', no: '龙|虎', place: 0, cols: 1 },
+                                     { title: '二 VS 九', no: '龙|虎', place: 1, cols: 1 },
+                                             { title: '三 VS 八', no: '龙|虎', place: 2, cols: 1 },
+                                             { title: '四 VS 七', no: '龙|虎', place: 3, cols: 1 },
+                                             { title: '五 VS 六', no: '龙|虎', place: 4, cols: 1 }]
+                            },
+                            show_str: 'X,X,X,X,X',
+                            code_sp: '|',
+                            methodid: 33389,
+                            name: '一 VS 十',
+                            prize: { 1: '3.40' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.400', defaultprize: 3.40, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '龙虎斗', maxcodecount: 0
+                        }]
+                    }]
+                }],
+                cur_issue: { issue: '20190331-0677', endtime: '2019-03-31 11:16:55' },
+                issues: {//所有的可追号期数集合
+                    today: [
+                        { issue: '20190331-0677', endtime: '2019-03-31 11:16:55' }, { issue: '20190331-0678', endtime: '2019-03-31 11:17:55' }, { issue: '20190331-0679', endtime: '2019-03-31 11:18:55' }, { issue: '20190331-0680', endtime: '2019-03-31 11:19:55' }, { issue: '20190331-0681', endtime: '2019-03-31 11:20:55' }, { issue: '20190331-0682', endtime: '2019-03-31 11:21:55' }, { issue: '20190331-0683', endtime: '2019-03-31 11:22:55' }, { issue: '20190331-0684', endtime: '2019-03-31 11:23:55' }, { issue: '20190331-0685', endtime: '2019-03-31 11:24:55' }, { issue: '20190331-0686', endtime: '2019-03-31 11:25:55' }, { issue: '20190331-0687', endtime: '2019-03-31 11:26:55' }, { issue: '20190331-0688', endtime: '2019-03-31 11:27:55' }, { issue: '20190331-0689', endtime: '2019-03-31 11:28:55' }, { issue: '20190331-0690', endtime: '2019-03-31 11:29:55' }, { issue: '20190331-0691', endtime: '2019-03-31 11:30:55' }, { issue: '20190331-0692', endtime: '2019-03-31 11:31:55' }, { issue: '20190331-0693', endtime: '2019-03-31 11:32:55' }, { issue: '20190331-0694', endtime: '2019-03-31 11:33:55' }, { issue: '20190331-0695', endtime: '2019-03-31 11:34:55' }, { issue: '20190331-0696', endtime: '2019-03-31 11:35:55' }, { issue: '20190331-0697', endtime: '2019-03-31 11:36:55' }, { issue: '20190331-0698', endtime: '2019-03-31 11:37:55' }, { issue: '20190331-0699', endtime: '2019-03-31 11:38:55' }, { issue: '20190331-0700', endtime: '2019-03-31 11:39:55' }, { issue: '20190331-0701', endtime: '2019-03-31 11:40:55' }, { issue: '20190331-0702', endtime: '2019-03-31 11:41:55' }, { issue: '20190331-0703', endtime: '2019-03-31 11:42:55' }, { issue: '20190331-0704', endtime: '2019-03-31 11:43:55' }, { issue: '20190331-0705', endtime: '2019-03-31 11:44:55' }, { issue: '20190331-0706', endtime: '2019-03-31 11:45:55' }, { issue: '20190331-0707', endtime: '2019-03-31 11:46:55' }, { issue: '20190331-0708', endtime: '2019-03-31 11:47:55' }, { issue: '20190331-0709', endtime: '2019-03-31 11:48:55' }, { issue: '20190331-0710', endtime: '2019-03-31 11:49:55' }, { issue: '20190331-0711', endtime: '2019-03-31 11:50:55' }, { issue: '20190331-0712', endtime: '2019-03-31 11:51:55' }, { issue: '20190331-0713', endtime: '2019-03-31 11:52:55' }, { issue: '20190331-0714', endtime: '2019-03-31 11:53:55' }, { issue: '20190331-0715', endtime: '2019-03-31 11:54:55' }, { issue: '20190331-0716', endtime: '2019-03-31 11:55:55' }, { issue: '20190331-0717', endtime: '2019-03-31 11:56:55' }, { issue: '20190331-0718', endtime: '2019-03-31 11:57:55' }, { issue: '20190331-0719', endtime: '2019-03-31 11:58:55' }, { issue: '20190331-0720', endtime: '2019-03-31 11:59:55' }, { issue: '20190331-0721', endtime: '2019-03-31 12:00:55' }, { issue: '20190331-0722', endtime: '2019-03-31 12:01:55' }, { issue: '20190331-0723', endtime: '2019-03-31 12:02:55' }, { issue: '20190331-0724', endtime: '2019-03-31 12:03:55' }, { issue: '20190331-0725', endtime: '2019-03-31 12:04:55' }, { issue: '20190331-0726', endtime: '2019-03-31 12:05:55' }, { issue: '20190331-0727', endtime: '2019-03-31 12:06:55' }, { issue: '20190331-0728', endtime: '2019-03-31 12:07:55' }, { issue: '20190331-0729', endtime: '2019-03-31 12:08:55' }, { issue: '20190331-0730', endtime: '2019-03-31 12:09:55' }, { issue: '20190331-0731', endtime: '2019-03-31 12:10:55' }, { issue: '20190331-0732', endtime: '2019-03-31 12:11:55' }, { issue: '20190331-0733', endtime: '2019-03-31 12:12:55' }, { issue: '20190331-0734', endtime: '2019-03-31 12:13:55' }, { issue: '20190331-0735', endtime: '2019-03-31 12:14:55' }, { issue: '20190331-0736', endtime: '2019-03-31 12:15:55' }, { issue: '20190331-0737', endtime: '2019-03-31 12:16:55' }, { issue: '20190331-0738', endtime: '2019-03-31 12:17:55' }, { issue: '20190331-0739', endtime: '2019-03-31 12:18:55' }, { issue: '20190331-0740', endtime: '2019-03-31 12:19:55' }, { issue: '20190331-0741', endtime: '2019-03-31 12:20:55' }, { issue: '20190331-0742', endtime: '2019-03-31 12:21:55' }, { issue: '20190331-0743', endtime: '2019-03-31 12:22:55' }, { issue: '20190331-0744', endtime: '2019-03-31 12:23:55' }, { issue: '20190331-0745', endtime: '2019-03-31 12:24:55' }, { issue: '20190331-0746', endtime: '2019-03-31 12:25:55' }, { issue: '20190331-0747', endtime: '2019-03-31 12:26:55' }, { issue: '20190331-0748', endtime: '2019-03-31 12:27:55' }, { issue: '20190331-0749', endtime: '2019-03-31 12:28:55' }, { issue: '20190331-0750', endtime: '2019-03-31 12:29:55' }, { issue: '20190331-0751', endtime: '2019-03-31 12:30:55' }, { issue: '20190331-0752', endtime: '2019-03-31 12:31:55' }, { issue: '20190331-0753', endtime: '2019-03-31 12:32:55' }, { issue: '20190331-0754', endtime: '2019-03-31 12:33:55' }, { issue: '20190331-0755', endtime: '2019-03-31 12:34:55' }, { issue: '20190331-0756', endtime: '2019-03-31 12:35:55' }, { issue: '20190331-0757', endtime: '2019-03-31 12:36:55' }, { issue: '20190331-0758', endtime: '2019-03-31 12:37:55' }, { issue: '20190331-0759', endtime: '2019-03-31 12:38:55' }, { issue: '20190331-0760', endtime: '2019-03-31 12:39:55' }, { issue: '20190331-0761', endtime: '2019-03-31 12:40:55' }, { issue: '20190331-0762', endtime: '2019-03-31 12:41:55' }, { issue: '20190331-0763', endtime: '2019-03-31 12:42:55' }, { issue: '20190331-0764', endtime: '2019-03-31 12:43:55' }, { issue: '20190331-0765', endtime: '2019-03-31 12:44:55' }, { issue: '20190331-0766', endtime: '2019-03-31 12:45:55' }, { issue: '20190331-0767', endtime: '2019-03-31 12:46:55' }, { issue: '20190331-0768', endtime: '2019-03-31 12:47:55' }, { issue: '20190331-0769', endtime: '2019-03-31 12:48:55' }, { issue: '20190331-0770', endtime: '2019-03-31 12:49:55' }, { issue: '20190331-0771', endtime: '2019-03-31 12:50:55' }, { issue: '20190331-0772', endtime: '2019-03-31 12:51:55' }, { issue: '20190331-0773', endtime: '2019-03-31 12:52:55' }, { issue: '20190331-0774', endtime: '2019-03-31 12:53:55' }, { issue: '20190331-0775', endtime: '2019-03-31 12:54:55' }, { issue: '20190331-0776', endtime: '2019-03-31 12:55:55' }, { issue: '20190331-0777', endtime: '2019-03-31 12:56:55' }, { issue: '20190331-0778', endtime: '2019-03-31 12:57:55' }, { issue: '20190331-0779', endtime: '2019-03-31 12:58:55' }, { issue: '20190331-0780', endtime: '2019-03-31 12:59:55' }, { issue: '20190331-0781', endtime: '2019-03-31 13:00:55' }, { issue: '20190331-0782', endtime: '2019-03-31 13:01:55' }, { issue: '20190331-0783', endtime: '2019-03-31 13:02:55' }, { issue: '20190331-0784', endtime: '2019-03-31 13:03:55' }, { issue: '20190331-0785', endtime: '2019-03-31 13:04:55' }, { issue: '20190331-0786', endtime: '2019-03-31 13:05:55' }, { issue: '20190331-0787', endtime: '2019-03-31 13:06:55' }, { issue: '20190331-0788', endtime: '2019-03-31 13:07:55' }, { issue: '20190331-0789', endtime: '2019-03-31 13:08:55' }, { issue: '20190331-0790', endtime: '2019-03-31 13:09:55' }, { issue: '20190331-0791', endtime: '2019-03-31 13:10:55' }, { issue: '20190331-0792', endtime: '2019-03-31 13:11:55' }, { issue: '20190331-0793', endtime: '2019-03-31 13:12:55' }, { issue: '20190331-0794', endtime: '2019-03-31 13:13:55' }, { issue: '20190331-0795', endtime: '2019-03-31 13:14:55' }, { issue: '20190331-0796', endtime: '2019-03-31 13:15:55' }, { issue: '20190331-0797', endtime: '2019-03-31 13:16:55' }, { issue: '20190331-0798', endtime: '2019-03-31 13:17:55' }, { issue: '20190331-0799', endtime: '2019-03-31 13:18:55' }, { issue: '20190331-0800', endtime: '2019-03-31 13:19:55' }, { issue: '20190331-0801', endtime: '2019-03-31 13:20:55' }, { issue: '20190331-0802', endtime: '2019-03-31 13:21:55' }, { issue: '20190331-0803', endtime: '2019-03-31 13:22:55' }, { issue: '20190331-0804', endtime: '2019-03-31 13:23:55' }, { issue: '20190331-0805', endtime: '2019-03-31 13:24:55' }, { issue: '20190331-0806', endtime: '2019-03-31 13:25:55' }, { issue: '20190331-0807', endtime: '2019-03-31 13:26:55' }, { issue: '20190331-0808', endtime: '2019-03-31 13:27:55' }, { issue: '20190331-0809', endtime: '2019-03-31 13:28:55' }, { issue: '20190331-0810', endtime: '2019-03-31 13:29:55' }, { issue: '20190331-0811', endtime: '2019-03-31 13:30:55' }, { issue: '20190331-0812', endtime: '2019-03-31 13:31:55' }, { issue: '20190331-0813', endtime: '2019-03-31 13:32:55' }, { issue: '20190331-0814', endtime: '2019-03-31 13:33:55' }, { issue: '20190331-0815', endtime: '2019-03-31 13:34:55' }, { issue: '20190331-0816', endtime: '2019-03-31 13:35:55' }, { issue: '20190331-0817', endtime: '2019-03-31 13:36:55' }, { issue: '20190331-0818', endtime: '2019-03-31 13:37:55' }, { issue: '20190331-0819', endtime: '2019-03-31 13:38:55' }, { issue: '20190331-0820', endtime: '2019-03-31 13:39:55' }, { issue: '20190331-0821', endtime: '2019-03-31 13:40:55' }, { issue: '20190331-0822', endtime: '2019-03-31 13:41:55' }, { issue: '20190331-0823', endtime: '2019-03-31 13:42:55' }, { issue: '20190331-0824', endtime: '2019-03-31 13:43:55' }, { issue: '20190331-0825', endtime: '2019-03-31 13:44:55' }, { issue: '20190331-0826', endtime: '2019-03-31 13:45:55' }, { issue: '20190331-0827', endtime: '2019-03-31 13:46:55' }, { issue: '20190331-0828', endtime: '2019-03-31 13:47:55' }, { issue: '20190331-0829', endtime: '2019-03-31 13:48:55' }, { issue: '20190331-0830', endtime: '2019-03-31 13:49:55' }, { issue: '20190331-0831', endtime: '2019-03-31 13:50:55' }, { issue: '20190331-0832', endtime: '2019-03-31 13:51:55' }, { issue: '20190331-0833', endtime: '2019-03-31 13:52:55' }, { issue: '20190331-0834', endtime: '2019-03-31 13:53:55' }, { issue: '20190331-0835', endtime: '2019-03-31 13:54:55' }, { issue: '20190331-0836', endtime: '2019-03-31 13:55:55' }, { issue: '20190331-0837', endtime: '2019-03-31 13:56:55' }, { issue: '20190331-0838', endtime: '2019-03-31 13:57:55' }, { issue: '20190331-0839', endtime: '2019-03-31 13:58:55' }, { issue: '20190331-0840', endtime: '2019-03-31 13:59:55' }, { issue: '20190331-0841', endtime: '2019-03-31 14:00:55' }, { issue: '20190331-0842', endtime: '2019-03-31 14:01:55' }, { issue: '20190331-0843', endtime: '2019-03-31 14:02:55' }, { issue: '20190331-0844', endtime: '2019-03-31 14:03:55' }, { issue: '20190331-0845', endtime: '2019-03-31 14:04:55' }, { issue: '20190331-0846', endtime: '2019-03-31 14:05:55' }, { issue: '20190331-0847', endtime: '2019-03-31 14:06:55' }, { issue: '20190331-0848', endtime: '2019-03-31 14:07:55' }, { issue: '20190331-0849', endtime: '2019-03-31 14:08:55' }, { issue: '20190331-0850', endtime: '2019-03-31 14:09:55' }, { issue: '20190331-0851', endtime: '2019-03-31 14:10:55' }, { issue: '20190331-0852', endtime: '2019-03-31 14:11:55' }, { issue: '20190331-0853', endtime: '2019-03-31 14:12:55' }, { issue: '20190331-0854', endtime: '2019-03-31 14:13:55' }, { issue: '20190331-0855', endtime: '2019-03-31 14:14:55' }, { issue: '20190331-0856', endtime: '2019-03-31 14:15:55' }, { issue: '20190331-0857', endtime: '2019-03-31 14:16:55' }, { issue: '20190331-0858', endtime: '2019-03-31 14:17:55' }, { issue: '20190331-0859', endtime: '2019-03-31 14:18:55' }, { issue: '20190331-0860', endtime: '2019-03-31 14:19:55' }, { issue: '20190331-0861', endtime: '2019-03-31 14:20:55' }, { issue: '20190331-0862', endtime: '2019-03-31 14:21:55' }, { issue: '20190331-0863', endtime: '2019-03-31 14:22:55' }, { issue: '20190331-0864', endtime: '2019-03-31 14:23:55' }, { issue: '20190331-0865', endtime: '2019-03-31 14:24:55' }, { issue: '20190331-0866', endtime: '2019-03-31 14:25:55' }, { issue: '20190331-0867', endtime: '2019-03-31 14:26:55' }, { issue: '20190331-0868', endtime: '2019-03-31 14:27:55' }, { issue: '20190331-0869', endtime: '2019-03-31 14:28:55' }, { issue: '20190331-0870', endtime: '2019-03-31 14:29:55' }, { issue: '20190331-0871', endtime: '2019-03-31 14:30:55' }, { issue: '20190331-0872', endtime: '2019-03-31 14:31:55' }, { issue: '20190331-0873', endtime: '2019-03-31 14:32:55' }, { issue: '20190331-0874', endtime: '2019-03-31 14:33:55' }, { issue: '20190331-0875', endtime: '2019-03-31 14:34:55' }, { issue: '20190331-0876', endtime: '2019-03-31 14:35:55' }, { issue: '20190331-0877', endtime: '2019-03-31 14:36:55' }, { issue: '20190331-0878', endtime: '2019-03-31 14:37:55' }, { issue: '20190331-0879', endtime: '2019-03-31 14:38:55' }, { issue: '20190331-0880', endtime: '2019-03-31 14:39:55' }, { issue: '20190331-0881', endtime: '2019-03-31 14:40:55' }, { issue: '20190331-0882', endtime: '2019-03-31 14:41:55' }, { issue: '20190331-0883', endtime: '2019-03-31 14:42:55' }, { issue: '20190331-0884', endtime: '2019-03-31 14:43:55' }, { issue: '20190331-0885', endtime: '2019-03-31 14:44:55' }, { issue: '20190331-0886', endtime: '2019-03-31 14:45:55' }, { issue: '20190331-0887', endtime: '2019-03-31 14:46:55' }, { issue: '20190331-0888', endtime: '2019-03-31 14:47:55' }, { issue: '20190331-0889', endtime: '2019-03-31 14:48:55' }, { issue: '20190331-0890', endtime: '2019-03-31 14:49:55' }, { issue: '20190331-0891', endtime: '2019-03-31 14:50:55' }, { issue: '20190331-0892', endtime: '2019-03-31 14:51:55' }, { issue: '20190331-0893', endtime: '2019-03-31 14:52:55' }, { issue: '20190331-0894', endtime: '2019-03-31 14:53:55' }, { issue: '20190331-0895', endtime: '2019-03-31 14:54:55' }, { issue: '20190331-0896', endtime: '2019-03-31 14:55:55' }, { issue: '20190331-0897', endtime: '2019-03-31 14:56:55' }, { issue: '20190331-0898', endtime: '2019-03-31 14:57:55' }, { issue: '20190331-0899', endtime: '2019-03-31 14:58:55' }, { issue: '20190331-0900', endtime: '2019-03-31 14:59:55' }, { issue: '20190331-0901', endtime: '2019-03-31 15:00:55' }, { issue: '20190331-0902', endtime: '2019-03-31 15:01:55' }, { issue: '20190331-0903', endtime: '2019-03-31 15:02:55' }, { issue: '20190331-0904', endtime: '2019-03-31 15:03:55' }, { issue: '20190331-0905', endtime: '2019-03-31 15:04:55' }, { issue: '20190331-0906', endtime: '2019-03-31 15:05:55' }, { issue: '20190331-0907', endtime: '2019-03-31 15:06:55' }, { issue: '20190331-0908', endtime: '2019-03-31 15:07:55' }, { issue: '20190331-0909', endtime: '2019-03-31 15:08:55' }, { issue: '20190331-0910', endtime: '2019-03-31 15:09:55' }, { issue: '20190331-0911', endtime: '2019-03-31 15:10:55' }, { issue: '20190331-0912', endtime: '2019-03-31 15:11:55' }, { issue: '20190331-0913', endtime: '2019-03-31 15:12:55' }, { issue: '20190331-0914', endtime: '2019-03-31 15:13:55' }, { issue: '20190331-0915', endtime: '2019-03-31 15:14:55' }, { issue: '20190331-0916', endtime: '2019-03-31 15:15:55' }, { issue: '20190331-0917', endtime: '2019-03-31 15:16:55' }, { issue: '20190331-0918', endtime: '2019-03-31 15:17:55' }, { issue: '20190331-0919', endtime: '2019-03-31 15:18:55' }, { issue: '20190331-0920', endtime: '2019-03-31 15:19:55' }, { issue: '20190331-0921', endtime: '2019-03-31 15:20:55' }, { issue: '20190331-0922', endtime: '2019-03-31 15:21:55' }, { issue: '20190331-0923', endtime: '2019-03-31 15:22:55' }, { issue: '20190331-0924', endtime: '2019-03-31 15:23:55' }, { issue: '20190331-0925', endtime: '2019-03-31 15:24:55' }, { issue: '20190331-0926', endtime: '2019-03-31 15:25:55' }, { issue: '20190331-0927', endtime: '2019-03-31 15:26:55' }, { issue: '20190331-0928', endtime: '2019-03-31 15:27:55' }, { issue: '20190331-0929', endtime: '2019-03-31 15:28:55' }, { issue: '20190331-0930', endtime: '2019-03-31 15:29:55' }, { issue: '20190331-0931', endtime: '2019-03-31 15:30:55' }, { issue: '20190331-0932', endtime: '2019-03-31 15:31:55' }, { issue: '20190331-0933', endtime: '2019-03-31 15:32:55' }, { issue: '20190331-0934', endtime: '2019-03-31 15:33:55' }, { issue: '20190331-0935', endtime: '2019-03-31 15:34:55' }, { issue: '20190331-0936', endtime: '2019-03-31 15:35:55' }, { issue: '20190331-0937', endtime: '2019-03-31 15:36:55' }, { issue: '20190331-0938', endtime: '2019-03-31 15:37:55' }, { issue: '20190331-0939', endtime: '2019-03-31 15:38:55' }, { issue: '20190331-0940', endtime: '2019-03-31 15:39:55' }, { issue: '20190331-0941', endtime: '2019-03-31 15:40:55' }, { issue: '20190331-0942', endtime: '2019-03-31 15:41:55' }, { issue: '20190331-0943', endtime: '2019-03-31 15:42:55' }, { issue: '20190331-0944', endtime: '2019-03-31 15:43:55' }, { issue: '20190331-0945', endtime: '2019-03-31 15:44:55' }, { issue: '20190331-0946', endtime: '2019-03-31 15:45:55' }, { issue: '20190331-0947', endtime: '2019-03-31 15:46:55' }, { issue: '20190331-0948', endtime: '2019-03-31 15:47:55' }, { issue: '20190331-0949', endtime: '2019-03-31 15:48:55' }, { issue: '20190331-0950', endtime: '2019-03-31 15:49:55' }, { issue: '20190331-0951', endtime: '2019-03-31 15:50:55' }, { issue: '20190331-0952', endtime: '2019-03-31 15:51:55' }, { issue: '20190331-0953', endtime: '2019-03-31 15:52:55' }, { issue: '20190331-0954', endtime: '2019-03-31 15:53:55' }, { issue: '20190331-0955', endtime: '2019-03-31 15:54:55' }, { issue: '20190331-0956', endtime: '2019-03-31 15:55:55' }, { issue: '20190331-0957', endtime: '2019-03-31 15:56:55' }, { issue: '20190331-0958', endtime: '2019-03-31 15:57:55' }, { issue: '20190331-0959', endtime: '2019-03-31 15:58:55' }, { issue: '20190331-0960', endtime: '2019-03-31 15:59:55' }, { issue: '20190331-0961', endtime: '2019-03-31 16:00:55' }, { issue: '20190331-0962', endtime: '2019-03-31 16:01:55' }, { issue: '20190331-0963', endtime: '2019-03-31 16:02:55' }, { issue: '20190331-0964', endtime: '2019-03-31 16:03:55' }, { issue: '20190331-0965', endtime: '2019-03-31 16:04:55' }, { issue: '20190331-0966', endtime: '2019-03-31 16:05:55' }, { issue: '20190331-0967', endtime: '2019-03-31 16:06:55' }, { issue: '20190331-0968', endtime: '2019-03-31 16:07:55' }, { issue: '20190331-0969', endtime: '2019-03-31 16:08:55' }, { issue: '20190331-0970', endtime: '2019-03-31 16:09:55' }, { issue: '20190331-0971', endtime: '2019-03-31 16:10:55' }, { issue: '20190331-0972', endtime: '2019-03-31 16:11:55' }, { issue: '20190331-0973', endtime: '2019-03-31 16:12:55' }, { issue: '20190331-0974', endtime: '2019-03-31 16:13:55' }, { issue: '20190331-0975', endtime: '2019-03-31 16:14:55' }, { issue: '20190331-0976', endtime: '2019-03-31 16:15:55' }, { issue: '20190331-0977', endtime: '2019-03-31 16:16:55' }, { issue: '20190331-0978', endtime: '2019-03-31 16:17:55' }, { issue: '20190331-0979', endtime: '2019-03-31 16:18:55' }, { issue: '20190331-0980', endtime: '2019-03-31 16:19:55' }, { issue: '20190331-0981', endtime: '2019-03-31 16:20:55' }, { issue: '20190331-0982', endtime: '2019-03-31 16:21:55' }, { issue: '20190331-0983', endtime: '2019-03-31 16:22:55' }, { issue: '20190331-0984', endtime: '2019-03-31 16:23:55' }, { issue: '20190331-0985', endtime: '2019-03-31 16:24:55' }, { issue: '20190331-0986', endtime: '2019-03-31 16:25:55' }, { issue: '20190331-0987', endtime: '2019-03-31 16:26:55' }, { issue: '20190331-0988', endtime: '2019-03-31 16:27:55' }, { issue: '20190331-0989', endtime: '2019-03-31 16:28:55' }, { issue: '20190331-0990', endtime: '2019-03-31 16:29:55' }, { issue: '20190331-0991', endtime: '2019-03-31 16:30:55' }, { issue: '20190331-0992', endtime: '2019-03-31 16:31:55' }, { issue: '20190331-0993', endtime: '2019-03-31 16:32:55' }, { issue: '20190331-0994', endtime: '2019-03-31 16:33:55' }, { issue: '20190331-0995', endtime: '2019-03-31 16:34:55' }, { issue: '20190331-0996', endtime: '2019-03-31 16:35:55' }, { issue: '20190331-0997', endtime: '2019-03-31 16:36:55' }, { issue: '20190331-0998', endtime: '2019-03-31 16:37:55' }, { issue: '20190331-0999', endtime: '2019-03-31 16:38:55' }, { issue: '20190331-1000', endtime: '2019-03-31 16:39:55' }, { issue: '20190331-1001', endtime: '2019-03-31 16:40:55' }, { issue: '20190331-1002', endtime: '2019-03-31 16:41:55' }, { issue: '20190331-1003', endtime: '2019-03-31 16:42:55' }, { issue: '20190331-1004', endtime: '2019-03-31 16:43:55' }, { issue: '20190331-1005', endtime: '2019-03-31 16:44:55' }, { issue: '20190331-1006', endtime: '2019-03-31 16:45:55' }, { issue: '20190331-1007', endtime: '2019-03-31 16:46:55' }, { issue: '20190331-1008', endtime: '2019-03-31 16:47:55' }, { issue: '20190331-1009', endtime: '2019-03-31 16:48:55' }, { issue: '20190331-1010', endtime: '2019-03-31 16:49:55' }, { issue: '20190331-1011', endtime: '2019-03-31 16:50:55' }, { issue: '20190331-1012', endtime: '2019-03-31 16:51:55' }, { issue: '20190331-1013', endtime: '2019-03-31 16:52:55' }, { issue: '20190331-1014', endtime: '2019-03-31 16:53:55' }, { issue: '20190331-1015', endtime: '2019-03-31 16:54:55' }, { issue: '20190331-1016', endtime: '2019-03-31 16:55:55' }, { issue: '20190331-1017', endtime: '2019-03-31 16:56:55' }, { issue: '20190331-1018', endtime: '2019-03-31 16:57:55' }, { issue: '20190331-1019', endtime: '2019-03-31 16:58:55' }, { issue: '20190331-1020', endtime: '2019-03-31 16:59:55' }, { issue: '20190331-1021', endtime: '2019-03-31 17:00:55' }, { issue: '20190331-1022', endtime: '2019-03-31 17:01:55' }, { issue: '20190331-1023', endtime: '2019-03-31 17:02:55' }, { issue: '20190331-1024', endtime: '2019-03-31 17:03:55' }, { issue: '20190331-1025', endtime: '2019-03-31 17:04:55' }, { issue: '20190331-1026', endtime: '2019-03-31 17:05:55' }, { issue: '20190331-1027', endtime: '2019-03-31 17:06:55' }, { issue: '20190331-1028', endtime: '2019-03-31 17:07:55' }, { issue: '20190331-1029', endtime: '2019-03-31 17:08:55' }, { issue: '20190331-1030', endtime: '2019-03-31 17:09:55' }, { issue: '20190331-1031', endtime: '2019-03-31 17:10:55' }, { issue: '20190331-1032', endtime: '2019-03-31 17:11:55' }, { issue: '20190331-1033', endtime: '2019-03-31 17:12:55' }, { issue: '20190331-1034', endtime: '2019-03-31 17:13:55' }, { issue: '20190331-1035', endtime: '2019-03-31 17:14:55' }, { issue: '20190331-1036', endtime: '2019-03-31 17:15:55' }, { issue: '20190331-1037', endtime: '2019-03-31 17:16:55' }, { issue: '20190331-1038', endtime: '2019-03-31 17:17:55' }, { issue: '20190331-1039', endtime: '2019-03-31 17:18:55' }, { issue: '20190331-1040', endtime: '2019-03-31 17:19:55' }, { issue: '20190331-1041', endtime: '2019-03-31 17:20:55' }, { issue: '20190331-1042', endtime: '2019-03-31 17:21:55' }, { issue: '20190331-1043', endtime: '2019-03-31 17:22:55' }, { issue: '20190331-1044', endtime: '2019-03-31 17:23:55' }, { issue: '20190331-1045', endtime: '2019-03-31 17:24:55' }, { issue: '20190331-1046', endtime: '2019-03-31 17:25:55' }, { issue: '20190331-1047', endtime: '2019-03-31 17:26:55' }, { issue: '20190331-1048', endtime: '2019-03-31 17:27:55' }, { issue: '20190331-1049', endtime: '2019-03-31 17:28:55' }, { issue: '20190331-1050', endtime: '2019-03-31 17:29:55' }, { issue: '20190331-1051', endtime: '2019-03-31 17:30:55' }, { issue: '20190331-1052', endtime: '2019-03-31 17:31:55' }, { issue: '20190331-1053', endtime: '2019-03-31 17:32:55' }, { issue: '20190331-1054', endtime: '2019-03-31 17:33:55' }, { issue: '20190331-1055', endtime: '2019-03-31 17:34:55' }, { issue: '20190331-1056', endtime: '2019-03-31 17:35:55' }, { issue: '20190331-1057', endtime: '2019-03-31 17:36:55' }, { issue: '20190331-1058', endtime: '2019-03-31 17:37:55' }, { issue: '20190331-1059', endtime: '2019-03-31 17:38:55' }, { issue: '20190331-1060', endtime: '2019-03-31 17:39:55' }, { issue: '20190331-1061', endtime: '2019-03-31 17:40:55' }, { issue: '20190331-1062', endtime: '2019-03-31 17:41:55' }, { issue: '20190331-1063', endtime: '2019-03-31 17:42:55' }, { issue: '20190331-1064', endtime: '2019-03-31 17:43:55' }, { issue: '20190331-1065', endtime: '2019-03-31 17:44:55' }, { issue: '20190331-1066', endtime: '2019-03-31 17:45:55' }, { issue: '20190331-1067', endtime: '2019-03-31 17:46:55' }, { issue: '20190331-1068', endtime: '2019-03-31 17:47:55' }, { issue: '20190331-1069', endtime: '2019-03-31 17:48:55' }, { issue: '20190331-1070', endtime: '2019-03-31 17:49:55' }, { issue: '20190331-1071', endtime: '2019-03-31 17:50:55' }, { issue: '20190331-1072', endtime: '2019-03-31 17:51:55' }, { issue: '20190331-1073', endtime: '2019-03-31 17:52:55' }, { issue: '20190331-1074', endtime: '2019-03-31 17:53:55' }, { issue: '20190331-1075', endtime: '2019-03-31 17:54:55' }, { issue: '20190331-1076', endtime: '2019-03-31 17:55:55' }, { issue: '20190331-1077', endtime: '2019-03-31 17:56:55' }, { issue: '20190331-1078', endtime: '2019-03-31 17:57:55' }, { issue: '20190331-1079', endtime: '2019-03-31 17:58:55' }, { issue: '20190331-1080', endtime: '2019-03-31 17:59:55' }, { issue: '20190331-1081', endtime: '2019-03-31 18:00:55' }, { issue: '20190331-1082', endtime: '2019-03-31 18:01:55' }, { issue: '20190331-1083', endtime: '2019-03-31 18:02:55' }, { issue: '20190331-1084', endtime: '2019-03-31 18:03:55' }, { issue: '20190331-1085', endtime: '2019-03-31 18:04:55' }, { issue: '20190331-1086', endtime: '2019-03-31 18:05:55' }, { issue: '20190331-1087', endtime: '2019-03-31 18:06:55' }, { issue: '20190331-1088', endtime: '2019-03-31 18:07:55' }, { issue: '20190331-1089', endtime: '2019-03-31 18:08:55' }, { issue: '20190331-1090', endtime: '2019-03-31 18:09:55' }, { issue: '20190331-1091', endtime: '2019-03-31 18:10:55' }, { issue: '20190331-1092', endtime: '2019-03-31 18:11:55' }, { issue: '20190331-1093', endtime: '2019-03-31 18:12:55' }, { issue: '20190331-1094', endtime: '2019-03-31 18:13:55' }, { issue: '20190331-1095', endtime: '2019-03-31 18:14:55' }, { issue: '20190331-1096', endtime: '2019-03-31 18:15:55' }, { issue: '20190331-1097', endtime: '2019-03-31 18:16:55' }, { issue: '20190331-1098', endtime: '2019-03-31 18:17:55' }, { issue: '20190331-1099', endtime: '2019-03-31 18:18:55' }, { issue: '20190331-1100', endtime: '2019-03-31 18:19:55' }, { issue: '20190331-1101', endtime: '2019-03-31 18:20:55' }, { issue: '20190331-1102', endtime: '2019-03-31 18:21:55' }, { issue: '20190331-1103', endtime: '2019-03-31 18:22:55' }, { issue: '20190331-1104', endtime: '2019-03-31 18:23:55' }, { issue: '20190331-1105', endtime: '2019-03-31 18:24:55' }, { issue: '20190331-1106', endtime: '2019-03-31 18:25:55' }, { issue: '20190331-1107', endtime: '2019-03-31 18:26:55' }, { issue: '20190331-1108', endtime: '2019-03-31 18:27:55' }, { issue: '20190331-1109', endtime: '2019-03-31 18:28:55' }, { issue: '20190331-1110', endtime: '2019-03-31 18:29:55' }, { issue: '20190331-1111', endtime: '2019-03-31 18:30:55' }, { issue: '20190331-1112', endtime: '2019-03-31 18:31:55' }, { issue: '20190331-1113', endtime: '2019-03-31 18:32:55' }, { issue: '20190331-1114', endtime: '2019-03-31 18:33:55' }, { issue: '20190331-1115', endtime: '2019-03-31 18:34:55' }, { issue: '20190331-1116', endtime: '2019-03-31 18:35:55' }, { issue: '20190331-1117', endtime: '2019-03-31 18:36:55' }, { issue: '20190331-1118', endtime: '2019-03-31 18:37:55' }, { issue: '20190331-1119', endtime: '2019-03-31 18:38:55' }, { issue: '20190331-1120', endtime: '2019-03-31 18:39:55' }, { issue: '20190331-1121', endtime: '2019-03-31 18:40:55' }, { issue: '20190331-1122', endtime: '2019-03-31 18:41:55' }, { issue: '20190331-1123', endtime: '2019-03-31 18:42:55' }, { issue: '20190331-1124', endtime: '2019-03-31 18:43:55' }, { issue: '20190331-1125', endtime: '2019-03-31 18:44:55' }, { issue: '20190331-1126', endtime: '2019-03-31 18:45:55' }, { issue: '20190331-1127', endtime: '2019-03-31 18:46:55' }, { issue: '20190331-1128', endtime: '2019-03-31 18:47:55' }, { issue: '20190331-1129', endtime: '2019-03-31 18:48:55' }, { issue: '20190331-1130', endtime: '2019-03-31 18:49:55' }, { issue: '20190331-1131', endtime: '2019-03-31 18:50:55' }, { issue: '20190331-1132', endtime: '2019-03-31 18:51:55' }, { issue: '20190331-1133', endtime: '2019-03-31 18:52:55' }, { issue: '20190331-1134', endtime: '2019-03-31 18:53:55' }, { issue: '20190331-1135', endtime: '2019-03-31 18:54:55' }, { issue: '20190331-1136', endtime: '2019-03-31 18:55:55' }, { issue: '20190331-1137', endtime: '2019-03-31 18:56:55' }, { issue: '20190331-1138', endtime: '2019-03-31 18:57:55' }, { issue: '20190331-1139', endtime: '2019-03-31 18:58:55' }, { issue: '20190331-1140', endtime: '2019-03-31 18:59:55' }, { issue: '20190331-1141', endtime: '2019-03-31 19:00:55' }, { issue: '20190331-1142', endtime: '2019-03-31 19:01:55' }, { issue: '20190331-1143', endtime: '2019-03-31 19:02:55' }, { issue: '20190331-1144', endtime: '2019-03-31 19:03:55' }, { issue: '20190331-1145', endtime: '2019-03-31 19:04:55' }, { issue: '20190331-1146', endtime: '2019-03-31 19:05:55' }, { issue: '20190331-1147', endtime: '2019-03-31 19:06:55' }, { issue: '20190331-1148', endtime: '2019-03-31 19:07:55' }, { issue: '20190331-1149', endtime: '2019-03-31 19:08:55' }, { issue: '20190331-1150', endtime: '2019-03-31 19:09:55' }, { issue: '20190331-1151', endtime: '2019-03-31 19:10:55' }, { issue: '20190331-1152', endtime: '2019-03-31 19:11:55' }, { issue: '20190331-1153', endtime: '2019-03-31 19:12:55' }, { issue: '20190331-1154', endtime: '2019-03-31 19:13:55' }, { issue: '20190331-1155', endtime: '2019-03-31 19:14:55' }, { issue: '20190331-1156', endtime: '2019-03-31 19:15:55' }, { issue: '20190331-1157', endtime: '2019-03-31 19:16:55' }, { issue: '20190331-1158', endtime: '2019-03-31 19:17:55' }, { issue: '20190331-1159', endtime: '2019-03-31 19:18:55' }, { issue: '20190331-1160', endtime: '2019-03-31 19:19:55' }, { issue: '20190331-1161', endtime: '2019-03-31 19:20:55' }, { issue: '20190331-1162', endtime: '2019-03-31 19:21:55' }, { issue: '20190331-1163', endtime: '2019-03-31 19:22:55' }, { issue: '20190331-1164', endtime: '2019-03-31 19:23:55' }, { issue: '20190331-1165', endtime: '2019-03-31 19:24:55' }, { issue: '20190331-1166', endtime: '2019-03-31 19:25:55' }, { issue: '20190331-1167', endtime: '2019-03-31 19:26:55' }, { issue: '20190331-1168', endtime: '2019-03-31 19:27:55' }, { issue: '20190331-1169', endtime: '2019-03-31 19:28:55' }, { issue: '20190331-1170', endtime: '2019-03-31 19:29:55' }, { issue: '20190331-1171', endtime: '2019-03-31 19:30:55' }, { issue: '20190331-1172', endtime: '2019-03-31 19:31:55' }, { issue: '20190331-1173', endtime: '2019-03-31 19:32:55' }, { issue: '20190331-1174', endtime: '2019-03-31 19:33:55' }, { issue: '20190331-1175', endtime: '2019-03-31 19:34:55' }, { issue: '20190331-1176', endtime: '2019-03-31 19:35:55' }, { issue: '20190331-1177', endtime: '2019-03-31 19:36:55' }, { issue: '20190331-1178', endtime: '2019-03-31 19:37:55' }, { issue: '20190331-1179', endtime: '2019-03-31 19:38:55' }, { issue: '20190331-1180', endtime: '2019-03-31 19:39:55' }, { issue: '20190331-1181', endtime: '2019-03-31 19:40:55' }, { issue: '20190331-1182', endtime: '2019-03-31 19:41:55' }, { issue: '20190331-1183', endtime: '2019-03-31 19:42:55' }, { issue: '20190331-1184', endtime: '2019-03-31 19:43:55' }, { issue: '20190331-1185', endtime: '2019-03-31 19:44:55' }, { issue: '20190331-1186', endtime: '2019-03-31 19:45:55' }, { issue: '20190331-1187', endtime: '2019-03-31 19:46:55' }, { issue: '20190331-1188', endtime: '2019-03-31 19:47:55' }, { issue: '20190331-1189', endtime: '2019-03-31 19:48:55' }, { issue: '20190331-1190', endtime: '2019-03-31 19:49:55' }, { issue: '20190331-1191', endtime: '2019-03-31 19:50:55' }, { issue: '20190331-1192', endtime: '2019-03-31 19:51:55' }, { issue: '20190331-1193', endtime: '2019-03-31 19:52:55' }, { issue: '20190331-1194', endtime: '2019-03-31 19:53:55' }, { issue: '20190331-1195', endtime: '2019-03-31 19:54:55' }, { issue: '20190331-1196', endtime: '2019-03-31 19:55:55' }, { issue: '20190331-1197', endtime: '2019-03-31 19:56:55' }, { issue: '20190331-1198', endtime: '2019-03-31 19:57:55' }, { issue: '20190331-1199', endtime: '2019-03-31 19:58:55' }, { issue: '20190331-1200', endtime: '2019-03-31 19:59:55' }, { issue: '20190331-1201', endtime: '2019-03-31 20:00:55' }, { issue: '20190331-1202', endtime: '2019-03-31 20:01:55' }, { issue: '20190331-1203', endtime: '2019-03-31 20:02:55' }, { issue: '20190331-1204', endtime: '2019-03-31 20:03:55' }, { issue: '20190331-1205', endtime: '2019-03-31 20:04:55' }, { issue: '20190331-1206', endtime: '2019-03-31 20:05:55' }, { issue: '20190331-1207', endtime: '2019-03-31 20:06:55' }, { issue: '20190331-1208', endtime: '2019-03-31 20:07:55' }, { issue: '20190331-1209', endtime: '2019-03-31 20:08:55' }, { issue: '20190331-1210', endtime: '2019-03-31 20:09:55' }, { issue: '20190331-1211', endtime: '2019-03-31 20:10:55' }, { issue: '20190331-1212', endtime: '2019-03-31 20:11:55' }, { issue: '20190331-1213', endtime: '2019-03-31 20:12:55' }, { issue: '20190331-1214', endtime: '2019-03-31 20:13:55' }, { issue: '20190331-1215', endtime: '2019-03-31 20:14:55' }, { issue: '20190331-1216', endtime: '2019-03-31 20:15:55' }, { issue: '20190331-1217', endtime: '2019-03-31 20:16:55' }, { issue: '20190331-1218', endtime: '2019-03-31 20:17:55' }, { issue: '20190331-1219', endtime: '2019-03-31 20:18:55' }, { issue: '20190331-1220', endtime: '2019-03-31 20:19:55' }, { issue: '20190331-1221', endtime: '2019-03-31 20:20:55' }, { issue: '20190331-1222', endtime: '2019-03-31 20:21:55' }, { issue: '20190331-1223', endtime: '2019-03-31 20:22:55' }, { issue: '20190331-1224', endtime: '2019-03-31 20:23:55' }, { issue: '20190331-1225', endtime: '2019-03-31 20:24:55' }, { issue: '20190331-1226', endtime: '2019-03-31 20:25:55' }, { issue: '20190331-1227', endtime: '2019-03-31 20:26:55' }, { issue: '20190331-1228', endtime: '2019-03-31 20:27:55' }, { issue: '20190331-1229', endtime: '2019-03-31 20:28:55' }, { issue: '20190331-1230', endtime: '2019-03-31 20:29:55' }, { issue: '20190331-1231', endtime: '2019-03-31 20:30:55' }, { issue: '20190331-1232', endtime: '2019-03-31 20:31:55' }, { issue: '20190331-1233', endtime: '2019-03-31 20:32:55' }, { issue: '20190331-1234', endtime: '2019-03-31 20:33:55' }, { issue: '20190331-1235', endtime: '2019-03-31 20:34:55' }, { issue: '20190331-1236', endtime: '2019-03-31 20:35:55' }, { issue: '20190331-1237', endtime: '2019-03-31 20:36:55' }, { issue: '20190331-1238', endtime: '2019-03-31 20:37:55' }, { issue: '20190331-1239', endtime: '2019-03-31 20:38:55' }, { issue: '20190331-1240', endtime: '2019-03-31 20:39:55' }, { issue: '20190331-1241', endtime: '2019-03-31 20:40:55' }, { issue: '20190331-1242', endtime: '2019-03-31 20:41:55' }, { issue: '20190331-1243', endtime: '2019-03-31 20:42:55' }, { issue: '20190331-1244', endtime: '2019-03-31 20:43:55' }, { issue: '20190331-1245', endtime: '2019-03-31 20:44:55' }, { issue: '20190331-1246', endtime: '2019-03-31 20:45:55' }, { issue: '20190331-1247', endtime: '2019-03-31 20:46:55' }, { issue: '20190331-1248', endtime: '2019-03-31 20:47:55' }, { issue: '20190331-1249', endtime: '2019-03-31 20:48:55' }, { issue: '20190331-1250', endtime: '2019-03-31 20:49:55' }, { issue: '20190331-1251', endtime: '2019-03-31 20:50:55' }, { issue: '20190331-1252', endtime: '2019-03-31 20:51:55' }, { issue: '20190331-1253', endtime: '2019-03-31 20:52:55' }, { issue: '20190331-1254', endtime: '2019-03-31 20:53:55' }, { issue: '20190331-1255', endtime: '2019-03-31 20:54:55' }, { issue: '20190331-1256', endtime: '2019-03-31 20:55:55' }, { issue: '20190331-1257', endtime: '2019-03-31 20:56:55' }, { issue: '20190331-1258', endtime: '2019-03-31 20:57:55' }, { issue: '20190331-1259', endtime: '2019-03-31 20:58:55' }, { issue: '20190331-1260', endtime: '2019-03-31 20:59:55' }, { issue: '20190331-1261', endtime: '2019-03-31 21:00:55' }, { issue: '20190331-1262', endtime: '2019-03-31 21:01:55' }, { issue: '20190331-1263', endtime: '2019-03-31 21:02:55' }, { issue: '20190331-1264', endtime: '2019-03-31 21:03:55' }, { issue: '20190331-1265', endtime: '2019-03-31 21:04:55' }, { issue: '20190331-1266', endtime: '2019-03-31 21:05:55' }, { issue: '20190331-1267', endtime: '2019-03-31 21:06:55' }, { issue: '20190331-1268', endtime: '2019-03-31 21:07:55' }, { issue: '20190331-1269', endtime: '2019-03-31 21:08:55' }, { issue: '20190331-1270', endtime: '2019-03-31 21:09:55' }, { issue: '20190331-1271', endtime: '2019-03-31 21:10:55' }, { issue: '20190331-1272', endtime: '2019-03-31 21:11:55' }, { issue: '20190331-1273', endtime: '2019-03-31 21:12:55' }, { issue: '20190331-1274', endtime: '2019-03-31 21:13:55' }, { issue: '20190331-1275', endtime: '2019-03-31 21:14:55' }, { issue: '20190331-1276', endtime: '2019-03-31 21:15:55' }, { issue: '20190331-1277', endtime: '2019-03-31 21:16:55' }, { issue: '20190331-1278', endtime: '2019-03-31 21:17:55' }, { issue: '20190331-1279', endtime: '2019-03-31 21:18:55' }, { issue: '20190331-1280', endtime: '2019-03-31 21:19:55' }, { issue: '20190331-1281', endtime: '2019-03-31 21:20:55' }, { issue: '20190331-1282', endtime: '2019-03-31 21:21:55' }, { issue: '20190331-1283', endtime: '2019-03-31 21:22:55' }, { issue: '20190331-1284', endtime: '2019-03-31 21:23:55' }, { issue: '20190331-1285', endtime: '2019-03-31 21:24:55' }, { issue: '20190331-1286', endtime: '2019-03-31 21:25:55' }, { issue: '20190331-1287', endtime: '2019-03-31 21:26:55' }, { issue: '20190331-1288', endtime: '2019-03-31 21:27:55' }, { issue: '20190331-1289', endtime: '2019-03-31 21:28:55' }, { issue: '20190331-1290', endtime: '2019-03-31 21:29:55' }, { issue: '20190331-1291', endtime: '2019-03-31 21:30:55' }, { issue: '20190331-1292', endtime: '2019-03-31 21:31:55' }, { issue: '20190331-1293', endtime: '2019-03-31 21:32:55' }, { issue: '20190331-1294', endtime: '2019-03-31 21:33:55' }, { issue: '20190331-1295', endtime: '2019-03-31 21:34:55' }, { issue: '20190331-1296', endtime: '2019-03-31 21:35:55' }, { issue: '20190331-1297', endtime: '2019-03-31 21:36:55' }, { issue: '20190331-1298', endtime: '2019-03-31 21:37:55' }, { issue: '20190331-1299', endtime: '2019-03-31 21:38:55' }, { issue: '20190331-1300', endtime: '2019-03-31 21:39:55' }, { issue: '20190331-1301', endtime: '2019-03-31 21:40:55' }, { issue: '20190331-1302', endtime: '2019-03-31 21:41:55' }, { issue: '20190331-1303', endtime: '2019-03-31 21:42:55' }, { issue: '20190331-1304', endtime: '2019-03-31 21:43:55' }, { issue: '20190331-1305', endtime: '2019-03-31 21:44:55' }, { issue: '20190331-1306', endtime: '2019-03-31 21:45:55' }, { issue: '20190331-1307', endtime: '2019-03-31 21:46:55' }, { issue: '20190331-1308', endtime: '2019-03-31 21:47:55' }, { issue: '20190331-1309', endtime: '2019-03-31 21:48:55' }, { issue: '20190331-1310', endtime: '2019-03-31 21:49:55' }, { issue: '20190331-1311', endtime: '2019-03-31 21:50:55' }, { issue: '20190331-1312', endtime: '2019-03-31 21:51:55' }, { issue: '20190331-1313', endtime: '2019-03-31 21:52:55' }, { issue: '20190331-1314', endtime: '2019-03-31 21:53:55' }, { issue: '20190331-1315', endtime: '2019-03-31 21:54:55' }, { issue: '20190331-1316', endtime: '2019-03-31 21:55:55' }, { issue: '20190331-1317', endtime: '2019-03-31 21:56:55' }, { issue: '20190331-1318', endtime: '2019-03-31 21:57:55' }, { issue: '20190331-1319', endtime: '2019-03-31 21:58:55' }, { issue: '20190331-1320', endtime: '2019-03-31 21:59:55' }, { issue: '20190331-1321', endtime: '2019-03-31 22:00:55' }, { issue: '20190331-1322', endtime: '2019-03-31 22:01:55' }, { issue: '20190331-1323', endtime: '2019-03-31 22:02:55' }, { issue: '20190331-1324', endtime: '2019-03-31 22:03:55' }, { issue: '20190331-1325', endtime: '2019-03-31 22:04:55' }, { issue: '20190331-1326', endtime: '2019-03-31 22:05:55' }, { issue: '20190331-1327', endtime: '2019-03-31 22:06:55' }, { issue: '20190331-1328', endtime: '2019-03-31 22:07:55' }, { issue: '20190331-1329', endtime: '2019-03-31 22:08:55' }, { issue: '20190331-1330', endtime: '2019-03-31 22:09:55' }, { issue: '20190331-1331', endtime: '2019-03-31 22:10:55' }, { issue: '20190331-1332', endtime: '2019-03-31 22:11:55' }, { issue: '20190331-1333', endtime: '2019-03-31 22:12:55' }, { issue: '20190331-1334', endtime: '2019-03-31 22:13:55' }, { issue: '20190331-1335', endtime: '2019-03-31 22:14:55' }, { issue: '20190331-1336', endtime: '2019-03-31 22:15:55' }, { issue: '20190331-1337', endtime: '2019-03-31 22:16:55' }, { issue: '20190331-1338', endtime: '2019-03-31 22:17:55' }, { issue: '20190331-1339', endtime: '2019-03-31 22:18:55' }, { issue: '20190331-1340', endtime: '2019-03-31 22:19:55' }, { issue: '20190331-1341', endtime: '2019-03-31 22:20:55' }, { issue: '20190331-1342', endtime: '2019-03-31 22:21:55' }, { issue: '20190331-1343', endtime: '2019-03-31 22:22:55' }, { issue: '20190331-1344', endtime: '2019-03-31 22:23:55' }, { issue: '20190331-1345', endtime: '2019-03-31 22:24:55' }, { issue: '20190331-1346', endtime: '2019-03-31 22:25:55' }, { issue: '20190331-1347', endtime: '2019-03-31 22:26:55' }, { issue: '20190331-1348', endtime: '2019-03-31 22:27:55' }, { issue: '20190331-1349', endtime: '2019-03-31 22:28:55' }, { issue: '20190331-1350', endtime: '2019-03-31 22:29:55' }, { issue: '20190331-1351', endtime: '2019-03-31 22:30:55' }, { issue: '20190331-1352', endtime: '2019-03-31 22:31:55' }, { issue: '20190331-1353', endtime: '2019-03-31 22:32:55' }, { issue: '20190331-1354', endtime: '2019-03-31 22:33:55' }, { issue: '20190331-1355', endtime: '2019-03-31 22:34:55' }, { issue: '20190331-1356', endtime: '2019-03-31 22:35:55' }, { issue: '20190331-1357', endtime: '2019-03-31 22:36:55' }, { issue: '20190331-1358', endtime: '2019-03-31 22:37:55' }, { issue: '20190331-1359', endtime: '2019-03-31 22:38:55' }, { issue: '20190331-1360', endtime: '2019-03-31 22:39:55' }, { issue: '20190331-1361', endtime: '2019-03-31 22:40:55' }, { issue: '20190331-1362', endtime: '2019-03-31 22:41:55' }, { issue: '20190331-1363', endtime: '2019-03-31 22:42:55' }, { issue: '20190331-1364', endtime: '2019-03-31 22:43:55' }, { issue: '20190331-1365', endtime: '2019-03-31 22:44:55' }, { issue: '20190331-1366', endtime: '2019-03-31 22:45:55' }, { issue: '20190331-1367', endtime: '2019-03-31 22:46:55' }, { issue: '20190331-1368', endtime: '2019-03-31 22:47:55' }, { issue: '20190331-1369', endtime: '2019-03-31 22:48:55' }, { issue: '20190331-1370', endtime: '2019-03-31 22:49:55' }, { issue: '20190331-1371', endtime: '2019-03-31 22:50:55' }, { issue: '20190331-1372', endtime: '2019-03-31 22:51:55' }, { issue: '20190331-1373', endtime: '2019-03-31 22:52:55' }, { issue: '20190331-1374', endtime: '2019-03-31 22:53:55' }, { issue: '20190331-1375', endtime: '2019-03-31 22:54:55' }, { issue: '20190331-1376', endtime: '2019-03-31 22:55:55' }, { issue: '20190331-1377', endtime: '2019-03-31 22:56:55' }, { issue: '20190331-1378', endtime: '2019-03-31 22:57:55' }, { issue: '20190331-1379', endtime: '2019-03-31 22:58:55' }, { issue: '20190331-1380', endtime: '2019-03-31 22:59:55' }, { issue: '20190331-1381', endtime: '2019-03-31 23:00:55' }, { issue: '20190331-1382', endtime: '2019-03-31 23:01:55' }, { issue: '20190331-1383', endtime: '2019-03-31 23:02:55' }, { issue: '20190331-1384', endtime: '2019-03-31 23:03:55' }, { issue: '20190331-1385', endtime: '2019-03-31 23:04:55' }, { issue: '20190331-1386', endtime: '2019-03-31 23:05:55' }, { issue: '20190331-1387', endtime: '2019-03-31 23:06:55' }, { issue: '20190331-1388', endtime: '2019-03-31 23:07:55' }, { issue: '20190331-1389', endtime: '2019-03-31 23:08:55' }, { issue: '20190331-1390', endtime: '2019-03-31 23:09:55' }, { issue: '20190331-1391', endtime: '2019-03-31 23:10:55' }, { issue: '20190331-1392', endtime: '2019-03-31 23:11:55' }, { issue: '20190331-1393', endtime: '2019-03-31 23:12:55' }, { issue: '20190331-1394', endtime: '2019-03-31 23:13:55' }, { issue: '20190331-1395', endtime: '2019-03-31 23:14:55' }, { issue: '20190331-1396', endtime: '2019-03-31 23:15:55' }, { issue: '20190331-1397', endtime: '2019-03-31 23:16:55' }, { issue: '20190331-1398', endtime: '2019-03-31 23:17:55' }, { issue: '20190331-1399', endtime: '2019-03-31 23:18:55' }, { issue: '20190331-1400', endtime: '2019-03-31 23:19:55' }, { issue: '20190331-1401', endtime: '2019-03-31 23:20:55' }, { issue: '20190331-1402', endtime: '2019-03-31 23:21:55' }, { issue: '20190331-1403', endtime: '2019-03-31 23:22:55' }, { issue: '20190331-1404', endtime: '2019-03-31 23:23:55' }, { issue: '20190331-1405', endtime: '2019-03-31 23:24:55' }, { issue: '20190331-1406', endtime: '2019-03-31 23:25:55' }, { issue: '20190331-1407', endtime: '2019-03-31 23:26:55' }, { issue: '20190331-1408', endtime: '2019-03-31 23:27:55' }, { issue: '20190331-1409', endtime: '2019-03-31 23:28:55' }, { issue: '20190331-1410', endtime: '2019-03-31 23:29:55' }, { issue: '20190331-1411', endtime: '2019-03-31 23:30:55' }, { issue: '20190331-1412', endtime: '2019-03-31 23:31:55' }, { issue: '20190331-1413', endtime: '2019-03-31 23:32:55' }, { issue: '20190331-1414', endtime: '2019-03-31 23:33:55' }, { issue: '20190331-1415', endtime: '2019-03-31 23:34:55' }, { issue: '20190331-1416', endtime: '2019-03-31 23:35:55' }, { issue: '20190331-1417', endtime: '2019-03-31 23:36:55' }, { issue: '20190331-1418', endtime: '2019-03-31 23:37:55' }, { issue: '20190331-1419', endtime: '2019-03-31 23:38:55' }, { issue: '20190331-1420', endtime: '2019-03-31 23:39:55' }, { issue: '20190331-1421', endtime: '2019-03-31 23:40:55' }, { issue: '20190331-1422', endtime: '2019-03-31 23:41:55' }, { issue: '20190331-1423', endtime: '2019-03-31 23:42:55' }, { issue: '20190331-1424', endtime: '2019-03-31 23:43:55' }, { issue: '20190331-1425', endtime: '2019-03-31 23:44:55' }, { issue: '20190331-1426', endtime: '2019-03-31 23:45:55' }, { issue: '20190331-1427', endtime: '2019-03-31 23:46:55' }, { issue: '20190331-1428', endtime: '2019-03-31 23:47:55' }, { issue: '20190331-1429', endtime: '2019-03-31 23:48:55' }, { issue: '20190331-1430', endtime: '2019-03-31 23:49:55' }, { issue: '20190331-1431', endtime: '2019-03-31 23:50:55' }, { issue: '20190331-1432', endtime: '2019-03-31 23:51:55' }, { issue: '20190331-1433', endtime: '2019-03-31 23:52:55' }, { issue: '20190331-1434', endtime: '2019-03-31 23:53:55' }, { issue: '20190331-1435', endtime: '2019-03-31 23:54:55' }, { issue: '20190331-1436', endtime: '2019-03-31 23:55:55' }, { issue: '20190331-1437', endtime: '2019-03-31 23:56:55' }, { issue: '20190331-1438', endtime: '2019-03-31 23:57:55' }, { issue: '20190331-1439', endtime: '2019-03-31 23:58:55' }, { issue: '20190331-1440', endtime: '2019-03-31 23:59:55' }],
+                    tomorrow: [
+                        { issue: '20190401-0001', endtime: '2019-04-01 00:00:55' }, { issue: '20190401-0002', endtime: '2019-04-01 00:01:55' }, { issue: '20190401-0003', endtime: '2019-04-01 00:02:55' }, { issue: '20190401-0004', endtime: '2019-04-01 00:03:55' }, { issue: '20190401-0005', endtime: '2019-04-01 00:04:55' }, { issue: '20190401-0006', endtime: '2019-04-01 00:05:55' }, { issue: '20190401-0007', endtime: '2019-04-01 00:06:55' }, { issue: '20190401-0008', endtime: '2019-04-01 00:07:55' }, { issue: '20190401-0009', endtime: '2019-04-01 00:08:55' }, { issue: '20190401-0010', endtime: '2019-04-01 00:09:55' }, { issue: '20190401-0011', endtime: '2019-04-01 00:10:55' }, { issue: '20190401-0012', endtime: '2019-04-01 00:11:55' }, { issue: '20190401-0013', endtime: '2019-04-01 00:12:55' }, { issue: '20190401-0014', endtime: '2019-04-01 00:13:55' }, { issue: '20190401-0015', endtime: '2019-04-01 00:14:55' }, { issue: '20190401-0016', endtime: '2019-04-01 00:15:55' }, { issue: '20190401-0017', endtime: '2019-04-01 00:16:55' }, { issue: '20190401-0018', endtime: '2019-04-01 00:17:55' }, { issue: '20190401-0019', endtime: '2019-04-01 00:18:55' }, { issue: '20190401-0020', endtime: '2019-04-01 00:19:55' }, { issue: '20190401-0021', endtime: '2019-04-01 00:20:55' }, { issue: '20190401-0022', endtime: '2019-04-01 00:21:55' }, { issue: '20190401-0023', endtime: '2019-04-01 00:22:55' }, { issue: '20190401-0024', endtime: '2019-04-01 00:23:55' }, { issue: '20190401-0025', endtime: '2019-04-01 00:24:55' }, { issue: '20190401-0026', endtime: '2019-04-01 00:25:55' }, { issue: '20190401-0027', endtime: '2019-04-01 00:26:55' }, { issue: '20190401-0028', endtime: '2019-04-01 00:27:55' }, { issue: '20190401-0029', endtime: '2019-04-01 00:28:55' }, { issue: '20190401-0030', endtime: '2019-04-01 00:29:55' }, { issue: '20190401-0031', endtime: '2019-04-01 00:30:55' }, { issue: '20190401-0032', endtime: '2019-04-01 00:31:55' }, { issue: '20190401-0033', endtime: '2019-04-01 00:32:55' }, { issue: '20190401-0034', endtime: '2019-04-01 00:33:55' }, { issue: '20190401-0035', endtime: '2019-04-01 00:34:55' }, { issue: '20190401-0036', endtime: '2019-04-01 00:35:55' }, { issue: '20190401-0037', endtime: '2019-04-01 00:36:55' }, { issue: '20190401-0038', endtime: '2019-04-01 00:37:55' }, { issue: '20190401-0039', endtime: '2019-04-01 00:38:55' }, { issue: '20190401-0040', endtime: '2019-04-01 00:39:55' }, { issue: '20190401-0041', endtime: '2019-04-01 00:40:55' }, { issue: '20190401-0042', endtime: '2019-04-01 00:41:55' }, { issue: '20190401-0043', endtime: '2019-04-01 00:42:55' }, { issue: '20190401-0044', endtime: '2019-04-01 00:43:55' }, { issue: '20190401-0045', endtime: '2019-04-01 00:44:55' }, { issue: '20190401-0046', endtime: '2019-04-01 00:45:55' }, { issue: '20190401-0047', endtime: '2019-04-01 00:46:55' }, { issue: '20190401-0048', endtime: '2019-04-01 00:47:55' }, { issue: '20190401-0049', endtime: '2019-04-01 00:48:55' }, { issue: '20190401-0050', endtime: '2019-04-01 00:49:55' }, { issue: '20190401-0051', endtime: '2019-04-01 00:50:55' }, { issue: '20190401-0052', endtime: '2019-04-01 00:51:55' }, { issue: '20190401-0053', endtime: '2019-04-01 00:52:55' }, { issue: '20190401-0054', endtime: '2019-04-01 00:53:55' }, { issue: '20190401-0055', endtime: '2019-04-01 00:54:55' }, { issue: '20190401-0056', endtime: '2019-04-01 00:55:55' }, { issue: '20190401-0057', endtime: '2019-04-01 00:56:55' }, { issue: '20190401-0058', endtime: '2019-04-01 00:57:55' }, { issue: '20190401-0059', endtime: '2019-04-01 00:58:55' }, { issue: '20190401-0060', endtime: '2019-04-01 00:59:55' }, { issue: '20190401-0061', endtime: '2019-04-01 01:00:55' }, { issue: '20190401-0062', endtime: '2019-04-01 01:01:55' }, { issue: '20190401-0063', endtime: '2019-04-01 01:02:55' }, { issue: '20190401-0064', endtime: '2019-04-01 01:03:55' }, { issue: '20190401-0065', endtime: '2019-04-01 01:04:55' }, { issue: '20190401-0066', endtime: '2019-04-01 01:05:55' }, { issue: '20190401-0067', endtime: '2019-04-01 01:06:55' }, { issue: '20190401-0068', endtime: '2019-04-01 01:07:55' }, { issue: '20190401-0069', endtime: '2019-04-01 01:08:55' }, { issue: '20190401-0070', endtime: '2019-04-01 01:09:55' }, { issue: '20190401-0071', endtime: '2019-04-01 01:10:55' }, { issue: '20190401-0072', endtime: '2019-04-01 01:11:55' }, { issue: '20190401-0073', endtime: '2019-04-01 01:12:55' }, { issue: '20190401-0074', endtime: '2019-04-01 01:13:55' }, { issue: '20190401-0075', endtime: '2019-04-01 01:14:55' }, { issue: '20190401-0076', endtime: '2019-04-01 01:15:55' }, { issue: '20190401-0077', endtime: '2019-04-01 01:16:55' }, { issue: '20190401-0078', endtime: '2019-04-01 01:17:55' }, { issue: '20190401-0079', endtime: '2019-04-01 01:18:55' }, { issue: '20190401-0080', endtime: '2019-04-01 01:19:55' }, { issue: '20190401-0081', endtime: '2019-04-01 01:20:55' }, { issue: '20190401-0082', endtime: '2019-04-01 01:21:55' }, { issue: '20190401-0083', endtime: '2019-04-01 01:22:55' }, { issue: '20190401-0084', endtime: '2019-04-01 01:23:55' }, { issue: '20190401-0085', endtime: '2019-04-01 01:24:55' }, { issue: '20190401-0086', endtime: '2019-04-01 01:25:55' }, { issue: '20190401-0087', endtime: '2019-04-01 01:26:55' }, { issue: '20190401-0088', endtime: '2019-04-01 01:27:55' }, { issue: '20190401-0089', endtime: '2019-04-01 01:28:55' }, { issue: '20190401-0090', endtime: '2019-04-01 01:29:55' }, { issue: '20190401-0091', endtime: '2019-04-01 01:30:55' }, { issue: '20190401-0092', endtime: '2019-04-01 01:31:55' }, { issue: '20190401-0093', endtime: '2019-04-01 01:32:55' }, { issue: '20190401-0094', endtime: '2019-04-01 01:33:55' }, { issue: '20190401-0095', endtime: '2019-04-01 01:34:55' }, { issue: '20190401-0096', endtime: '2019-04-01 01:35:55' }, { issue: '20190401-0097', endtime: '2019-04-01 01:36:55' }, { issue: '20190401-0098', endtime: '2019-04-01 01:37:55' }, { issue: '20190401-0099', endtime: '2019-04-01 01:38:55' }, { issue: '20190401-0100', endtime: '2019-04-01 01:39:55' }, { issue: '20190401-0101', endtime: '2019-04-01 01:40:55' }, { issue: '20190401-0102', endtime: '2019-04-01 01:41:55' }, { issue: '20190401-0103', endtime: '2019-04-01 01:42:55' }, { issue: '20190401-0104', endtime: '2019-04-01 01:43:55' }, { issue: '20190401-0105', endtime: '2019-04-01 01:44:55' }, { issue: '20190401-0106', endtime: '2019-04-01 01:45:55' }, { issue: '20190401-0107', endtime: '2019-04-01 01:46:55' }, { issue: '20190401-0108', endtime: '2019-04-01 01:47:55' }, { issue: '20190401-0109', endtime: '2019-04-01 01:48:55' }, { issue: '20190401-0110', endtime: '2019-04-01 01:49:55' }, { issue: '20190401-0111', endtime: '2019-04-01 01:50:55' }, { issue: '20190401-0112', endtime: '2019-04-01 01:51:55' }, { issue: '20190401-0113', endtime: '2019-04-01 01:52:55' }, { issue: '20190401-0114', endtime: '2019-04-01 01:53:55' }, { issue: '20190401-0115', endtime: '2019-04-01 01:54:55' }, { issue: '20190401-0116', endtime: '2019-04-01 01:55:55' }, { issue: '20190401-0117', endtime: '2019-04-01 01:56:55' }, { issue: '20190401-0118', endtime: '2019-04-01 01:57:55' }, { issue: '20190401-0119', endtime: '2019-04-01 01:58:55' }, { issue: '20190401-0120', endtime: '2019-04-01 01:59:55' }, { issue: '20190401-0121', endtime: '2019-04-01 02:00:55' }, { issue: '20190401-0122', endtime: '2019-04-01 02:01:55' }, { issue: '20190401-0123', endtime: '2019-04-01 02:02:55' }, { issue: '20190401-0124', endtime: '2019-04-01 02:03:55' }, { issue: '20190401-0125', endtime: '2019-04-01 02:04:55' }, { issue: '20190401-0126', endtime: '2019-04-01 02:05:55' }, { issue: '20190401-0127', endtime: '2019-04-01 02:06:55' }, { issue: '20190401-0128', endtime: '2019-04-01 02:07:55' }, { issue: '20190401-0129', endtime: '2019-04-01 02:08:55' }, { issue: '20190401-0130', endtime: '2019-04-01 02:09:55' }, { issue: '20190401-0131', endtime: '2019-04-01 02:10:55' }, { issue: '20190401-0132', endtime: '2019-04-01 02:11:55' }, { issue: '20190401-0133', endtime: '2019-04-01 02:12:55' }, { issue: '20190401-0134', endtime: '2019-04-01 02:13:55' }, { issue: '20190401-0135', endtime: '2019-04-01 02:14:55' }, { issue: '20190401-0136', endtime: '2019-04-01 02:15:55' }, { issue: '20190401-0137', endtime: '2019-04-01 02:16:55' }, { issue: '20190401-0138', endtime: '2019-04-01 02:17:55' }, { issue: '20190401-0139', endtime: '2019-04-01 02:18:55' }, { issue: '20190401-0140', endtime: '2019-04-01 02:19:55' }, { issue: '20190401-0141', endtime: '2019-04-01 02:20:55' }, { issue: '20190401-0142', endtime: '2019-04-01 02:21:55' }, { issue: '20190401-0143', endtime: '2019-04-01 02:22:55' }, { issue: '20190401-0144', endtime: '2019-04-01 02:23:55' }, { issue: '20190401-0145', endtime: '2019-04-01 02:24:55' }, { issue: '20190401-0146', endtime: '2019-04-01 02:25:55' }, { issue: '20190401-0147', endtime: '2019-04-01 02:26:55' }, { issue: '20190401-0148', endtime: '2019-04-01 02:27:55' }, { issue: '20190401-0149', endtime: '2019-04-01 02:28:55' }, { issue: '20190401-0150', endtime: '2019-04-01 02:29:55' }, { issue: '20190401-0151', endtime: '2019-04-01 02:30:55' }, { issue: '20190401-0152', endtime: '2019-04-01 02:31:55' }, { issue: '20190401-0153', endtime: '2019-04-01 02:32:55' }, { issue: '20190401-0154', endtime: '2019-04-01 02:33:55' }, { issue: '20190401-0155', endtime: '2019-04-01 02:34:55' }, { issue: '20190401-0156', endtime: '2019-04-01 02:35:55' }, { issue: '20190401-0157', endtime: '2019-04-01 02:36:55' }, { issue: '20190401-0158', endtime: '2019-04-01 02:37:55' }, { issue: '20190401-0159', endtime: '2019-04-01 02:38:55' }, { issue: '20190401-0160', endtime: '2019-04-01 02:39:55' }, { issue: '20190401-0161', endtime: '2019-04-01 02:40:55' }, { issue: '20190401-0162', endtime: '2019-04-01 02:41:55' }, { issue: '20190401-0163', endtime: '2019-04-01 02:42:55' }, { issue: '20190401-0164', endtime: '2019-04-01 02:43:55' }, { issue: '20190401-0165', endtime: '2019-04-01 02:44:55' }, { issue: '20190401-0166', endtime: '2019-04-01 02:45:55' }, { issue: '20190401-0167', endtime: '2019-04-01 02:46:55' }, { issue: '20190401-0168', endtime: '2019-04-01 02:47:55' }, { issue: '20190401-0169', endtime: '2019-04-01 02:48:55' }, { issue: '20190401-0170', endtime: '2019-04-01 02:49:55' }, { issue: '20190401-0171', endtime: '2019-04-01 02:50:55' }, { issue: '20190401-0172', endtime: '2019-04-01 02:51:55' }, { issue: '20190401-0173', endtime: '2019-04-01 02:52:55' }, { issue: '20190401-0174', endtime: '2019-04-01 02:53:55' }, { issue: '20190401-0175', endtime: '2019-04-01 02:54:55' }, { issue: '20190401-0176', endtime: '2019-04-01 02:55:55' }, { issue: '20190401-0177', endtime: '2019-04-01 02:56:55' }, { issue: '20190401-0178', endtime: '2019-04-01 02:57:55' }, { issue: '20190401-0179', endtime: '2019-04-01 02:58:55' }, { issue: '20190401-0180', endtime: '2019-04-01 02:59:55' }, { issue: '20190401-0181', endtime: '2019-04-01 03:00:55' }, { issue: '20190401-0182', endtime: '2019-04-01 03:01:55' }, { issue: '20190401-0183', endtime: '2019-04-01 03:02:55' }, { issue: '20190401-0184', endtime: '2019-04-01 03:03:55' }, { issue: '20190401-0185', endtime: '2019-04-01 03:04:55' }, { issue: '20190401-0186', endtime: '2019-04-01 03:05:55' }, { issue: '20190401-0187', endtime: '2019-04-01 03:06:55' }, { issue: '20190401-0188', endtime: '2019-04-01 03:07:55' }, { issue: '20190401-0189', endtime: '2019-04-01 03:08:55' }, { issue: '20190401-0190', endtime: '2019-04-01 03:09:55' }, { issue: '20190401-0191', endtime: '2019-04-01 03:10:55' }, { issue: '20190401-0192', endtime: '2019-04-01 03:11:55' }, { issue: '20190401-0193', endtime: '2019-04-01 03:12:55' }, { issue: '20190401-0194', endtime: '2019-04-01 03:13:55' }, { issue: '20190401-0195', endtime: '2019-04-01 03:14:55' }, { issue: '20190401-0196', endtime: '2019-04-01 03:15:55' }, { issue: '20190401-0197', endtime: '2019-04-01 03:16:55' }, { issue: '20190401-0198', endtime: '2019-04-01 03:17:55' }, { issue: '20190401-0199', endtime: '2019-04-01 03:18:55' }, { issue: '20190401-0200', endtime: '2019-04-01 03:19:55' }, { issue: '20190401-0201', endtime: '2019-04-01 03:20:55' }, { issue: '20190401-0202', endtime: '2019-04-01 03:21:55' }, { issue: '20190401-0203', endtime: '2019-04-01 03:22:55' }, { issue: '20190401-0204', endtime: '2019-04-01 03:23:55' }, { issue: '20190401-0205', endtime: '2019-04-01 03:24:55' }, { issue: '20190401-0206', endtime: '2019-04-01 03:25:55' }, { issue: '20190401-0207', endtime: '2019-04-01 03:26:55' }, { issue: '20190401-0208', endtime: '2019-04-01 03:27:55' }, { issue: '20190401-0209', endtime: '2019-04-01 03:28:55' }, { issue: '20190401-0210', endtime: '2019-04-01 03:29:55' }, { issue: '20190401-0211', endtime: '2019-04-01 03:30:55' }, { issue: '20190401-0212', endtime: '2019-04-01 03:31:55' }, { issue: '20190401-0213', endtime: '2019-04-01 03:32:55' }, { issue: '20190401-0214', endtime: '2019-04-01 03:33:55' }, { issue: '20190401-0215', endtime: '2019-04-01 03:34:55' }, { issue: '20190401-0216', endtime: '2019-04-01 03:35:55' }, { issue: '20190401-0217', endtime: '2019-04-01 03:36:55' }, { issue: '20190401-0218', endtime: '2019-04-01 03:37:55' }, { issue: '20190401-0219', endtime: '2019-04-01 03:38:55' }, { issue: '20190401-0220', endtime: '2019-04-01 03:39:55' }, { issue: '20190401-0221', endtime: '2019-04-01 03:40:55' }, { issue: '20190401-0222', endtime: '2019-04-01 03:41:55' }, { issue: '20190401-0223', endtime: '2019-04-01 03:42:55' }, { issue: '20190401-0224', endtime: '2019-04-01 03:43:55' }, { issue: '20190401-0225', endtime: '2019-04-01 03:44:55' }, { issue: '20190401-0226', endtime: '2019-04-01 03:45:55' }, { issue: '20190401-0227', endtime: '2019-04-01 03:46:55' }, { issue: '20190401-0228', endtime: '2019-04-01 03:47:55' }, { issue: '20190401-0229', endtime: '2019-04-01 03:48:55' }, { issue: '20190401-0230', endtime: '2019-04-01 03:49:55' }, { issue: '20190401-0231', endtime: '2019-04-01 03:50:55' }, { issue: '20190401-0232', endtime: '2019-04-01 03:51:55' }, { issue: '20190401-0233', endtime: '2019-04-01 03:52:55' }, { issue: '20190401-0234', endtime: '2019-04-01 03:53:55' }, { issue: '20190401-0235', endtime: '2019-04-01 03:54:55' }, { issue: '20190401-0236', endtime: '2019-04-01 03:55:55' }, { issue: '20190401-0237', endtime: '2019-04-01 03:56:55' }, { issue: '20190401-0238', endtime: '2019-04-01 03:57:55' }, { issue: '20190401-0239', endtime: '2019-04-01 03:58:55' }, { issue: '20190401-0240', endtime: '2019-04-01 03:59:55' }, { issue: '20190401-0241', endtime: '2019-04-01 04:00:55' }, { issue: '20190401-0242', endtime: '2019-04-01 04:01:55' }, { issue: '20190401-0243', endtime: '2019-04-01 04:02:55' }, { issue: '20190401-0244', endtime: '2019-04-01 04:03:55' }, { issue: '20190401-0245', endtime: '2019-04-01 04:04:55' }, { issue: '20190401-0246', endtime: '2019-04-01 04:05:55' }, { issue: '20190401-0247', endtime: '2019-04-01 04:06:55' }, { issue: '20190401-0248', endtime: '2019-04-01 04:07:55' }, { issue: '20190401-0249', endtime: '2019-04-01 04:08:55' }, { issue: '20190401-0250', endtime: '2019-04-01 04:09:55' }, { issue: '20190401-0251', endtime: '2019-04-01 04:10:55' }, { issue: '20190401-0252', endtime: '2019-04-01 04:11:55' }, { issue: '20190401-0253', endtime: '2019-04-01 04:12:55' }, { issue: '20190401-0254', endtime: '2019-04-01 04:13:55' }, { issue: '20190401-0255', endtime: '2019-04-01 04:14:55' }, { issue: '20190401-0256', endtime: '2019-04-01 04:15:55' }, { issue: '20190401-0257', endtime: '2019-04-01 04:16:55' }, { issue: '20190401-0258', endtime: '2019-04-01 04:17:55' }, { issue: '20190401-0259', endtime: '2019-04-01 04:18:55' }, { issue: '20190401-0260', endtime: '2019-04-01 04:19:55' }, { issue: '20190401-0261', endtime: '2019-04-01 04:20:55' }, { issue: '20190401-0262', endtime: '2019-04-01 04:21:55' }, { issue: '20190401-0263', endtime: '2019-04-01 04:22:55' }, { issue: '20190401-0264', endtime: '2019-04-01 04:23:55' }, { issue: '20190401-0265', endtime: '2019-04-01 04:24:55' }, { issue: '20190401-0266', endtime: '2019-04-01 04:25:55' }, { issue: '20190401-0267', endtime: '2019-04-01 04:26:55' }, { issue: '20190401-0268', endtime: '2019-04-01 04:27:55' }, { issue: '20190401-0269', endtime: '2019-04-01 04:28:55' }, { issue: '20190401-0270', endtime: '2019-04-01 04:29:55' }, { issue: '20190401-0271', endtime: '2019-04-01 04:30:55' }, { issue: '20190401-0272', endtime: '2019-04-01 04:31:55' }, { issue: '20190401-0273', endtime: '2019-04-01 04:32:55' }, { issue: '20190401-0274', endtime: '2019-04-01 04:33:55' }, { issue: '20190401-0275', endtime: '2019-04-01 04:34:55' }, { issue: '20190401-0276', endtime: '2019-04-01 04:35:55' }, { issue: '20190401-0277', endtime: '2019-04-01 04:36:55' }, { issue: '20190401-0278', endtime: '2019-04-01 04:37:55' }, { issue: '20190401-0279', endtime: '2019-04-01 04:38:55' }, { issue: '20190401-0280', endtime: '2019-04-01 04:39:55' }, { issue: '20190401-0281', endtime: '2019-04-01 04:40:55' }, { issue: '20190401-0282', endtime: '2019-04-01 04:41:55' }, { issue: '20190401-0283', endtime: '2019-04-01 04:42:55' }, { issue: '20190401-0284', endtime: '2019-04-01 04:43:55' }, { issue: '20190401-0285', endtime: '2019-04-01 04:44:55' }, { issue: '20190401-0286', endtime: '2019-04-01 04:45:55' }, { issue: '20190401-0287', endtime: '2019-04-01 04:46:55' }, { issue: '20190401-0288', endtime: '2019-04-01 04:47:55' }, { issue: '20190401-0289', endtime: '2019-04-01 04:48:55' }, { issue: '20190401-0290', endtime: '2019-04-01 04:49:55' }, { issue: '20190401-0291', endtime: '2019-04-01 04:50:55' }, { issue: '20190401-0292', endtime: '2019-04-01 04:51:55' }, { issue: '20190401-0293', endtime: '2019-04-01 04:52:55' }, { issue: '20190401-0294', endtime: '2019-04-01 04:53:55' }, { issue: '20190401-0295', endtime: '2019-04-01 04:54:55' }, { issue: '20190401-0296', endtime: '2019-04-01 04:55:55' }, { issue: '20190401-0297', endtime: '2019-04-01 04:56:55' }, { issue: '20190401-0298', endtime: '2019-04-01 04:57:55' }, { issue: '20190401-0299', endtime: '2019-04-01 04:58:55' }, { issue: '20190401-0300', endtime: '2019-04-01 04:59:55' }, { issue: '20190401-0301', endtime: '2019-04-01 05:00:55' }, { issue: '20190401-0302', endtime: '2019-04-01 05:01:55' }, { issue: '20190401-0303', endtime: '2019-04-01 05:02:55' }, { issue: '20190401-0304', endtime: '2019-04-01 05:03:55' }, { issue: '20190401-0305', endtime: '2019-04-01 05:04:55' }, { issue: '20190401-0306', endtime: '2019-04-01 05:05:55' }, { issue: '20190401-0307', endtime: '2019-04-01 05:06:55' }, { issue: '20190401-0308', endtime: '2019-04-01 05:07:55' }, { issue: '20190401-0309', endtime: '2019-04-01 05:08:55' }, { issue: '20190401-0310', endtime: '2019-04-01 05:09:55' }, { issue: '20190401-0311', endtime: '2019-04-01 05:10:55' }, { issue: '20190401-0312', endtime: '2019-04-01 05:11:55' }, { issue: '20190401-0313', endtime: '2019-04-01 05:12:55' }, { issue: '20190401-0314', endtime: '2019-04-01 05:13:55' }, { issue: '20190401-0315', endtime: '2019-04-01 05:14:55' }, { issue: '20190401-0316', endtime: '2019-04-01 05:15:55' }, { issue: '20190401-0317', endtime: '2019-04-01 05:16:55' }, { issue: '20190401-0318', endtime: '2019-04-01 05:17:55' }, { issue: '20190401-0319', endtime: '2019-04-01 05:18:55' }, { issue: '20190401-0320', endtime: '2019-04-01 05:19:55' }, { issue: '20190401-0321', endtime: '2019-04-01 05:20:55' }, { issue: '20190401-0322', endtime: '2019-04-01 05:21:55' }, { issue: '20190401-0323', endtime: '2019-04-01 05:22:55' }, { issue: '20190401-0324', endtime: '2019-04-01 05:23:55' }, { issue: '20190401-0325', endtime: '2019-04-01 05:24:55' }, { issue: '20190401-0326', endtime: '2019-04-01 05:25:55' }, { issue: '20190401-0327', endtime: '2019-04-01 05:26:55' }, { issue: '20190401-0328', endtime: '2019-04-01 05:27:55' }, { issue: '20190401-0329', endtime: '2019-04-01 05:28:55' }, { issue: '20190401-0330', endtime: '2019-04-01 05:29:55' }, { issue: '20190401-0331', endtime: '2019-04-01 05:30:55' }, { issue: '20190401-0332', endtime: '2019-04-01 05:31:55' }, { issue: '20190401-0333', endtime: '2019-04-01 05:32:55' }, { issue: '20190401-0334', endtime: '2019-04-01 05:33:55' }, { issue: '20190401-0335', endtime: '2019-04-01 05:34:55' }, { issue: '20190401-0336', endtime: '2019-04-01 05:35:55' }, { issue: '20190401-0337', endtime: '2019-04-01 05:36:55' }, { issue: '20190401-0338', endtime: '2019-04-01 05:37:55' }, { issue: '20190401-0339', endtime: '2019-04-01 05:38:55' }, { issue: '20190401-0340', endtime: '2019-04-01 05:39:55' }, { issue: '20190401-0341', endtime: '2019-04-01 05:40:55' }, { issue: '20190401-0342', endtime: '2019-04-01 05:41:55' }, { issue: '20190401-0343', endtime: '2019-04-01 05:42:55' }, { issue: '20190401-0344', endtime: '2019-04-01 05:43:55' }, { issue: '20190401-0345', endtime: '2019-04-01 05:44:55' }, { issue: '20190401-0346', endtime: '2019-04-01 05:45:55' }, { issue: '20190401-0347', endtime: '2019-04-01 05:46:55' }, { issue: '20190401-0348', endtime: '2019-04-01 05:47:55' }, { issue: '20190401-0349', endtime: '2019-04-01 05:48:55' }, { issue: '20190401-0350', endtime: '2019-04-01 05:49:55' }, { issue: '20190401-0351', endtime: '2019-04-01 05:50:55' }, { issue: '20190401-0352', endtime: '2019-04-01 05:51:55' }, { issue: '20190401-0353', endtime: '2019-04-01 05:52:55' }, { issue: '20190401-0354', endtime: '2019-04-01 05:53:55' }, { issue: '20190401-0355', endtime: '2019-04-01 05:54:55' }, { issue: '20190401-0356', endtime: '2019-04-01 05:55:55' }, { issue: '20190401-0357', endtime: '2019-04-01 05:56:55' }, { issue: '20190401-0358', endtime: '2019-04-01 05:57:55' }, { issue: '20190401-0359', endtime: '2019-04-01 05:58:55' }, { issue: '20190401-0360', endtime: '2019-04-01 05:59:55' }, { issue: '20190401-0361', endtime: '2019-04-01 06:00:55' }, { issue: '20190401-0362', endtime: '2019-04-01 06:01:55' }, { issue: '20190401-0363', endtime: '2019-04-01 06:02:55' }, { issue: '20190401-0364', endtime: '2019-04-01 06:03:55' }, { issue: '20190401-0365', endtime: '2019-04-01 06:04:55' }, { issue: '20190401-0366', endtime: '2019-04-01 06:05:55' }, { issue: '20190401-0367', endtime: '2019-04-01 06:06:55' }, { issue: '20190401-0368', endtime: '2019-04-01 06:07:55' }, { issue: '20190401-0369', endtime: '2019-04-01 06:08:55' }, { issue: '20190401-0370', endtime: '2019-04-01 06:09:55' }, { issue: '20190401-0371', endtime: '2019-04-01 06:10:55' }, { issue: '20190401-0372', endtime: '2019-04-01 06:11:55' }, { issue: '20190401-0373', endtime: '2019-04-01 06:12:55' }, { issue: '20190401-0374', endtime: '2019-04-01 06:13:55' }, { issue: '20190401-0375', endtime: '2019-04-01 06:14:55' }, { issue: '20190401-0376', endtime: '2019-04-01 06:15:55' }, { issue: '20190401-0377', endtime: '2019-04-01 06:16:55' }, { issue: '20190401-0378', endtime: '2019-04-01 06:17:55' }, { issue: '20190401-0379', endtime: '2019-04-01 06:18:55' }, { issue: '20190401-0380', endtime: '2019-04-01 06:19:55' }, { issue: '20190401-0381', endtime: '2019-04-01 06:20:55' }, { issue: '20190401-0382', endtime: '2019-04-01 06:21:55' }, { issue: '20190401-0383', endtime: '2019-04-01 06:22:55' }, { issue: '20190401-0384', endtime: '2019-04-01 06:23:55' }, { issue: '20190401-0385', endtime: '2019-04-01 06:24:55' }, { issue: '20190401-0386', endtime: '2019-04-01 06:25:55' }, { issue: '20190401-0387', endtime: '2019-04-01 06:26:55' }, { issue: '20190401-0388', endtime: '2019-04-01 06:27:55' }, { issue: '20190401-0389', endtime: '2019-04-01 06:28:55' }, { issue: '20190401-0390', endtime: '2019-04-01 06:29:55' }, { issue: '20190401-0391', endtime: '2019-04-01 06:30:55' }, { issue: '20190401-0392', endtime: '2019-04-01 06:31:55' }, { issue: '20190401-0393', endtime: '2019-04-01 06:32:55' }, { issue: '20190401-0394', endtime: '2019-04-01 06:33:55' }, { issue: '20190401-0395', endtime: '2019-04-01 06:34:55' }, { issue: '20190401-0396', endtime: '2019-04-01 06:35:55' }, { issue: '20190401-0397', endtime: '2019-04-01 06:36:55' }, { issue: '20190401-0398', endtime: '2019-04-01 06:37:55' }, { issue: '20190401-0399', endtime: '2019-04-01 06:38:55' }, { issue: '20190401-0400', endtime: '2019-04-01 06:39:55' }, { issue: '20190401-0401', endtime: '2019-04-01 06:40:55' }, { issue: '20190401-0402', endtime: '2019-04-01 06:41:55' }, { issue: '20190401-0403', endtime: '2019-04-01 06:42:55' }, { issue: '20190401-0404', endtime: '2019-04-01 06:43:55' }, { issue: '20190401-0405', endtime: '2019-04-01 06:44:55' }, { issue: '20190401-0406', endtime: '2019-04-01 06:45:55' }, { issue: '20190401-0407', endtime: '2019-04-01 06:46:55' }, { issue: '20190401-0408', endtime: '2019-04-01 06:47:55' }, { issue: '20190401-0409', endtime: '2019-04-01 06:48:55' }, { issue: '20190401-0410', endtime: '2019-04-01 06:49:55' }, { issue: '20190401-0411', endtime: '2019-04-01 06:50:55' }, { issue: '20190401-0412', endtime: '2019-04-01 06:51:55' }, { issue: '20190401-0413', endtime: '2019-04-01 06:52:55' }, { issue: '20190401-0414', endtime: '2019-04-01 06:53:55' }, { issue: '20190401-0415', endtime: '2019-04-01 06:54:55' }, { issue: '20190401-0416', endtime: '2019-04-01 06:55:55' }, { issue: '20190401-0417', endtime: '2019-04-01 06:56:55' }, { issue: '20190401-0418', endtime: '2019-04-01 06:57:55' }, { issue: '20190401-0419', endtime: '2019-04-01 06:58:55' }, { issue: '20190401-0420', endtime: '2019-04-01 06:59:55' }, { issue: '20190401-0421', endtime: '2019-04-01 07:00:55' }, { issue: '20190401-0422', endtime: '2019-04-01 07:01:55' }, { issue: '20190401-0423', endtime: '2019-04-01 07:02:55' }, { issue: '20190401-0424', endtime: '2019-04-01 07:03:55' }, { issue: '20190401-0425', endtime: '2019-04-01 07:04:55' }, { issue: '20190401-0426', endtime: '2019-04-01 07:05:55' }, { issue: '20190401-0427', endtime: '2019-04-01 07:06:55' }, { issue: '20190401-0428', endtime: '2019-04-01 07:07:55' }, { issue: '20190401-0429', endtime: '2019-04-01 07:08:55' }, { issue: '20190401-0430', endtime: '2019-04-01 07:09:55' }, { issue: '20190401-0431', endtime: '2019-04-01 07:10:55' }, { issue: '20190401-0432', endtime: '2019-04-01 07:11:55' }, { issue: '20190401-0433', endtime: '2019-04-01 07:12:55' }, { issue: '20190401-0434', endtime: '2019-04-01 07:13:55' }, { issue: '20190401-0435', endtime: '2019-04-01 07:14:55' }, { issue: '20190401-0436', endtime: '2019-04-01 07:15:55' }, { issue: '20190401-0437', endtime: '2019-04-01 07:16:55' }, { issue: '20190401-0438', endtime: '2019-04-01 07:17:55' }, { issue: '20190401-0439', endtime: '2019-04-01 07:18:55' }, { issue: '20190401-0440', endtime: '2019-04-01 07:19:55' }, { issue: '20190401-0441', endtime: '2019-04-01 07:20:55' }, { issue: '20190401-0442', endtime: '2019-04-01 07:21:55' }, { issue: '20190401-0443', endtime: '2019-04-01 07:22:55' }, { issue: '20190401-0444', endtime: '2019-04-01 07:23:55' }, { issue: '20190401-0445', endtime: '2019-04-01 07:24:55' }, { issue: '20190401-0446', endtime: '2019-04-01 07:25:55' }, { issue: '20190401-0447', endtime: '2019-04-01 07:26:55' }, { issue: '20190401-0448', endtime: '2019-04-01 07:27:55' }, { issue: '20190401-0449', endtime: '2019-04-01 07:28:55' }, { issue: '20190401-0450', endtime: '2019-04-01 07:29:55' }, { issue: '20190401-0451', endtime: '2019-04-01 07:30:55' }, { issue: '20190401-0452', endtime: '2019-04-01 07:31:55' }, { issue: '20190401-0453', endtime: '2019-04-01 07:32:55' }, { issue: '20190401-0454', endtime: '2019-04-01 07:33:55' }, { issue: '20190401-0455', endtime: '2019-04-01 07:34:55' }, { issue: '20190401-0456', endtime: '2019-04-01 07:35:55' }, { issue: '20190401-0457', endtime: '2019-04-01 07:36:55' }, { issue: '20190401-0458', endtime: '2019-04-01 07:37:55' }, { issue: '20190401-0459', endtime: '2019-04-01 07:38:55' }, { issue: '20190401-0460', endtime: '2019-04-01 07:39:55' }, { issue: '20190401-0461', endtime: '2019-04-01 07:40:55' }, { issue: '20190401-0462', endtime: '2019-04-01 07:41:55' }, { issue: '20190401-0463', endtime: '2019-04-01 07:42:55' }, { issue: '20190401-0464', endtime: '2019-04-01 07:43:55' }, { issue: '20190401-0465', endtime: '2019-04-01 07:44:55' }, { issue: '20190401-0466', endtime: '2019-04-01 07:45:55' }, { issue: '20190401-0467', endtime: '2019-04-01 07:46:55' }, { issue: '20190401-0468', endtime: '2019-04-01 07:47:55' }, { issue: '20190401-0469', endtime: '2019-04-01 07:48:55' }, { issue: '20190401-0470', endtime: '2019-04-01 07:49:55' }, { issue: '20190401-0471', endtime: '2019-04-01 07:50:55' }, { issue: '20190401-0472', endtime: '2019-04-01 07:51:55' }, { issue: '20190401-0473', endtime: '2019-04-01 07:52:55' }, { issue: '20190401-0474', endtime: '2019-04-01 07:53:55' }, { issue: '20190401-0475', endtime: '2019-04-01 07:54:55' }, { issue: '20190401-0476', endtime: '2019-04-01 07:55:55' }, { issue: '20190401-0477', endtime: '2019-04-01 07:56:55' }, { issue: '20190401-0478', endtime: '2019-04-01 07:57:55' }, { issue: '20190401-0479', endtime: '2019-04-01 07:58:55' }, { issue: '20190401-0480', endtime: '2019-04-01 07:59:55' }, { issue: '20190401-0481', endtime: '2019-04-01 08:00:55' }, { issue: '20190401-0482', endtime: '2019-04-01 08:01:55' }, { issue: '20190401-0483', endtime: '2019-04-01 08:02:55' }, { issue: '20190401-0484', endtime: '2019-04-01 08:03:55' }, { issue: '20190401-0485', endtime: '2019-04-01 08:04:55' }, { issue: '20190401-0486', endtime: '2019-04-01 08:05:55' }, { issue: '20190401-0487', endtime: '2019-04-01 08:06:55' }, { issue: '20190401-0488', endtime: '2019-04-01 08:07:55' }, { issue: '20190401-0489', endtime: '2019-04-01 08:08:55' }, { issue: '20190401-0490', endtime: '2019-04-01 08:09:55' }, { issue: '20190401-0491', endtime: '2019-04-01 08:10:55' }, { issue: '20190401-0492', endtime: '2019-04-01 08:11:55' }, { issue: '20190401-0493', endtime: '2019-04-01 08:12:55' }, { issue: '20190401-0494', endtime: '2019-04-01 08:13:55' }, { issue: '20190401-0495', endtime: '2019-04-01 08:14:55' }, { issue: '20190401-0496', endtime: '2019-04-01 08:15:55' }, { issue: '20190401-0497', endtime: '2019-04-01 08:16:55' }, { issue: '20190401-0498', endtime: '2019-04-01 08:17:55' }, { issue: '20190401-0499', endtime: '2019-04-01 08:18:55' }, { issue: '20190401-0500', endtime: '2019-04-01 08:19:55' }, { issue: '20190401-0501', endtime: '2019-04-01 08:20:55' }, { issue: '20190401-0502', endtime: '2019-04-01 08:21:55' }, { issue: '20190401-0503', endtime: '2019-04-01 08:22:55' }, { issue: '20190401-0504', endtime: '2019-04-01 08:23:55' }, { issue: '20190401-0505', endtime: '2019-04-01 08:24:55' }, { issue: '20190401-0506', endtime: '2019-04-01 08:25:55' }, { issue: '20190401-0507', endtime: '2019-04-01 08:26:55' }, { issue: '20190401-0508', endtime: '2019-04-01 08:27:55' }, { issue: '20190401-0509', endtime: '2019-04-01 08:28:55' }, { issue: '20190401-0510', endtime: '2019-04-01 08:29:55' }, { issue: '20190401-0511', endtime: '2019-04-01 08:30:55' }, { issue: '20190401-0512', endtime: '2019-04-01 08:31:55' }, { issue: '20190401-0513', endtime: '2019-04-01 08:32:55' }, { issue: '20190401-0514', endtime: '2019-04-01 08:33:55' }, { issue: '20190401-0515', endtime: '2019-04-01 08:34:55' }, { issue: '20190401-0516', endtime: '2019-04-01 08:35:55' }, { issue: '20190401-0517', endtime: '2019-04-01 08:36:55' }, { issue: '20190401-0518', endtime: '2019-04-01 08:37:55' }, { issue: '20190401-0519', endtime: '2019-04-01 08:38:55' }, { issue: '20190401-0520', endtime: '2019-04-01 08:39:55' }, { issue: '20190401-0521', endtime: '2019-04-01 08:40:55' }, { issue: '20190401-0522', endtime: '2019-04-01 08:41:55' }, { issue: '20190401-0523', endtime: '2019-04-01 08:42:55' }, { issue: '20190401-0524', endtime: '2019-04-01 08:43:55' }, { issue: '20190401-0525', endtime: '2019-04-01 08:44:55' }, { issue: '20190401-0526', endtime: '2019-04-01 08:45:55' }, { issue: '20190401-0527', endtime: '2019-04-01 08:46:55' }, { issue: '20190401-0528', endtime: '2019-04-01 08:47:55' }, { issue: '20190401-0529', endtime: '2019-04-01 08:48:55' }, { issue: '20190401-0530', endtime: '2019-04-01 08:49:55' }, { issue: '20190401-0531', endtime: '2019-04-01 08:50:55' }, { issue: '20190401-0532', endtime: '2019-04-01 08:51:55' }, { issue: '20190401-0533', endtime: '2019-04-01 08:52:55' }, { issue: '20190401-0534', endtime: '2019-04-01 08:53:55' }, { issue: '20190401-0535', endtime: '2019-04-01 08:54:55' }, { issue: '20190401-0536', endtime: '2019-04-01 08:55:55' }, { issue: '20190401-0537', endtime: '2019-04-01 08:56:55' }, { issue: '20190401-0538', endtime: '2019-04-01 08:57:55' }, { issue: '20190401-0539', endtime: '2019-04-01 08:58:55' }, { issue: '20190401-0540', endtime: '2019-04-01 08:59:55' }, { issue: '20190401-0541', endtime: '2019-04-01 09:00:55' }, { issue: '20190401-0542', endtime: '2019-04-01 09:01:55' }, { issue: '20190401-0543', endtime: '2019-04-01 09:02:55' }, { issue: '20190401-0544', endtime: '2019-04-01 09:03:55' }, { issue: '20190401-0545', endtime: '2019-04-01 09:04:55' }, { issue: '20190401-0546', endtime: '2019-04-01 09:05:55' }, { issue: '20190401-0547', endtime: '2019-04-01 09:06:55' }, { issue: '20190401-0548', endtime: '2019-04-01 09:07:55' }, { issue: '20190401-0549', endtime: '2019-04-01 09:08:55' }, { issue: '20190401-0550', endtime: '2019-04-01 09:09:55' }, { issue: '20190401-0551', endtime: '2019-04-01 09:10:55' }, { issue: '20190401-0552', endtime: '2019-04-01 09:11:55' }, { issue: '20190401-0553', endtime: '2019-04-01 09:12:55' }, { issue: '20190401-0554', endtime: '2019-04-01 09:13:55' }, { issue: '20190401-0555', endtime: '2019-04-01 09:14:55' }, { issue: '20190401-0556', endtime: '2019-04-01 09:15:55' }, { issue: '20190401-0557', endtime: '2019-04-01 09:16:55' }, { issue: '20190401-0558', endtime: '2019-04-01 09:17:55' }, { issue: '20190401-0559', endtime: '2019-04-01 09:18:55' }, { issue: '20190401-0560', endtime: '2019-04-01 09:19:55' }, { issue: '20190401-0561', endtime: '2019-04-01 09:20:55' }, { issue: '20190401-0562', endtime: '2019-04-01 09:21:55' }, { issue: '20190401-0563', endtime: '2019-04-01 09:22:55' }, { issue: '20190401-0564', endtime: '2019-04-01 09:23:55' }, { issue: '20190401-0565', endtime: '2019-04-01 09:24:55' }, { issue: '20190401-0566', endtime: '2019-04-01 09:25:55' }, { issue: '20190401-0567', endtime: '2019-04-01 09:26:55' }, { issue: '20190401-0568', endtime: '2019-04-01 09:27:55' }, { issue: '20190401-0569', endtime: '2019-04-01 09:28:55' }, { issue: '20190401-0570', endtime: '2019-04-01 09:29:55' }, { issue: '20190401-0571', endtime: '2019-04-01 09:30:55' }, { issue: '20190401-0572', endtime: '2019-04-01 09:31:55' }, { issue: '20190401-0573', endtime: '2019-04-01 09:32:55' }, { issue: '20190401-0574', endtime: '2019-04-01 09:33:55' }, { issue: '20190401-0575', endtime: '2019-04-01 09:34:55' }, { issue: '20190401-0576', endtime: '2019-04-01 09:35:55' }, { issue: '20190401-0577', endtime: '2019-04-01 09:36:55' }, { issue: '20190401-0578', endtime: '2019-04-01 09:37:55' }, { issue: '20190401-0579', endtime: '2019-04-01 09:38:55' }, { issue: '20190401-0580', endtime: '2019-04-01 09:39:55' }, { issue: '20190401-0581', endtime: '2019-04-01 09:40:55' }, { issue: '20190401-0582', endtime: '2019-04-01 09:41:55' }, { issue: '20190401-0583', endtime: '2019-04-01 09:42:55' }, { issue: '20190401-0584', endtime: '2019-04-01 09:43:55' }, { issue: '20190401-0585', endtime: '2019-04-01 09:44:55' }, { issue: '20190401-0586', endtime: '2019-04-01 09:45:55' }, { issue: '20190401-0587', endtime: '2019-04-01 09:46:55' }, { issue: '20190401-0588', endtime: '2019-04-01 09:47:55' }, { issue: '20190401-0589', endtime: '2019-04-01 09:48:55' }, { issue: '20190401-0590', endtime: '2019-04-01 09:49:55' }, { issue: '20190401-0591', endtime: '2019-04-01 09:50:55' }, { issue: '20190401-0592', endtime: '2019-04-01 09:51:55' }, { issue: '20190401-0593', endtime: '2019-04-01 09:52:55' }, { issue: '20190401-0594', endtime: '2019-04-01 09:53:55' }, { issue: '20190401-0595', endtime: '2019-04-01 09:54:55' }, { issue: '20190401-0596', endtime: '2019-04-01 09:55:55' }, { issue: '20190401-0597', endtime: '2019-04-01 09:56:55' }, { issue: '20190401-0598', endtime: '2019-04-01 09:57:55' }, { issue: '20190401-0599', endtime: '2019-04-01 09:58:55' }, { issue: '20190401-0600', endtime: '2019-04-01 09:59:55' }, { issue: '20190401-0601', endtime: '2019-04-01 10:00:55' }, { issue: '20190401-0602', endtime: '2019-04-01 10:01:55' }, { issue: '20190401-0603', endtime: '2019-04-01 10:02:55' }, { issue: '20190401-0604', endtime: '2019-04-01 10:03:55' }, { issue: '20190401-0605', endtime: '2019-04-01 10:04:55' }, { issue: '20190401-0606', endtime: '2019-04-01 10:05:55' }, { issue: '20190401-0607', endtime: '2019-04-01 10:06:55' }, { issue: '20190401-0608', endtime: '2019-04-01 10:07:55' }, { issue: '20190401-0609', endtime: '2019-04-01 10:08:55' }, { issue: '20190401-0610', endtime: '2019-04-01 10:09:55' }, { issue: '20190401-0611', endtime: '2019-04-01 10:10:55' }, { issue: '20190401-0612', endtime: '2019-04-01 10:11:55' }, { issue: '20190401-0613', endtime: '2019-04-01 10:12:55' }, { issue: '20190401-0614', endtime: '2019-04-01 10:13:55' }, { issue: '20190401-0615', endtime: '2019-04-01 10:14:55' }, { issue: '20190401-0616', endtime: '2019-04-01 10:15:55' }, { issue: '20190401-0617', endtime: '2019-04-01 10:16:55' }, { issue: '20190401-0618', endtime: '2019-04-01 10:17:55' }, { issue: '20190401-0619', endtime: '2019-04-01 10:18:55' }, { issue: '20190401-0620', endtime: '2019-04-01 10:19:55' }, { issue: '20190401-0621', endtime: '2019-04-01 10:20:55' }, { issue: '20190401-0622', endtime: '2019-04-01 10:21:55' }, { issue: '20190401-0623', endtime: '2019-04-01 10:22:55' }, { issue: '20190401-0624', endtime: '2019-04-01 10:23:55' }, { issue: '20190401-0625', endtime: '2019-04-01 10:24:55' }, { issue: '20190401-0626', endtime: '2019-04-01 10:25:55' }, { issue: '20190401-0627', endtime: '2019-04-01 10:26:55' }, { issue: '20190401-0628', endtime: '2019-04-01 10:27:55' }, { issue: '20190401-0629', endtime: '2019-04-01 10:28:55' }, { issue: '20190401-0630', endtime: '2019-04-01 10:29:55' }, { issue: '20190401-0631', endtime: '2019-04-01 10:30:55' }, { issue: '20190401-0632', endtime: '2019-04-01 10:31:55' }, { issue: '20190401-0633', endtime: '2019-04-01 10:32:55' }, { issue: '20190401-0634', endtime: '2019-04-01 10:33:55' }, { issue: '20190401-0635', endtime: '2019-04-01 10:34:55' }, { issue: '20190401-0636', endtime: '2019-04-01 10:35:55' }, { issue: '20190401-0637', endtime: '2019-04-01 10:36:55' }, { issue: '20190401-0638', endtime: '2019-04-01 10:37:55' }, { issue: '20190401-0639', endtime: '2019-04-01 10:38:55' }, { issue: '20190401-0640', endtime: '2019-04-01 10:39:55' }, { issue: '20190401-0641', endtime: '2019-04-01 10:40:55' }, { issue: '20190401-0642', endtime: '2019-04-01 10:41:55' }, { issue: '20190401-0643', endtime: '2019-04-01 10:42:55' }, { issue: '20190401-0644', endtime: '2019-04-01 10:43:55' }, { issue: '20190401-0645', endtime: '2019-04-01 10:44:55' }, { issue: '20190401-0646', endtime: '2019-04-01 10:45:55' }, { issue: '20190401-0647', endtime: '2019-04-01 10:46:55' }, { issue: '20190401-0648', endtime: '2019-04-01 10:47:55' }, { issue: '20190401-0649', endtime: '2019-04-01 10:48:55' }, { issue: '20190401-0650', endtime: '2019-04-01 10:49:55' }, { issue: '20190401-0651', endtime: '2019-04-01 10:50:55' }, { issue: '20190401-0652', endtime: '2019-04-01 10:51:55' }, { issue: '20190401-0653', endtime: '2019-04-01 10:52:55' }, { issue: '20190401-0654', endtime: '2019-04-01 10:53:55' }, { issue: '20190401-0655', endtime: '2019-04-01 10:54:55' }, { issue: '20190401-0656', endtime: '2019-04-01 10:55:55' }, { issue: '20190401-0657', endtime: '2019-04-01 10:56:55' }, { issue: '20190401-0658', endtime: '2019-04-01 10:57:55' }, { issue: '20190401-0659', endtime: '2019-04-01 10:58:55' }, { issue: '20190401-0660', endtime: '2019-04-01 10:59:55' }, { issue: '20190401-0661', endtime: '2019-04-01 11:00:55' }, { issue: '20190401-0662', endtime: '2019-04-01 11:01:55' }, { issue: '20190401-0663', endtime: '2019-04-01 11:02:55' }, { issue: '20190401-0664', endtime: '2019-04-01 11:03:55' }, { issue: '20190401-0665', endtime: '2019-04-01 11:04:55' }, { issue: '20190401-0666', endtime: '2019-04-01 11:05:55' }, { issue: '20190401-0667', endtime: '2019-04-01 11:06:55' }, { issue: '20190401-0668', endtime: '2019-04-01 11:07:55' }, { issue: '20190401-0669', endtime: '2019-04-01 11:08:55' }, { issue: '20190401-0670', endtime: '2019-04-01 11:09:55' }, { issue: '20190401-0671', endtime: '2019-04-01 11:10:55' }, { issue: '20190401-0672', endtime: '2019-04-01 11:11:55' }, { issue: '20190401-0673', endtime: '2019-04-01 11:12:55' }, { issue: '20190401-0674', endtime: '2019-04-01 11:13:55' }, { issue: '20190401-0675', endtime: '2019-04-01 11:14:55' }, { issue: '20190401-0676', endtime: '2019-04-01 11:15:55' }, { issue: '20190401-0677', endtime: '2019-04-01 11:16:55' }, { issue: '20190401-0678', endtime: '2019-04-01 11:17:55' }, { issue: '20190401-0679', endtime: '2019-04-01 11:18:55' }, { issue: '20190401-0680', endtime: '2019-04-01 11:19:55' }, { issue: '20190401-0681', endtime: '2019-04-01 11:20:55' }, { issue: '20190401-0682', endtime: '2019-04-01 11:21:55' }, { issue: '20190401-0683', endtime: '2019-04-01 11:22:55' }, { issue: '20190401-0684', endtime: '2019-04-01 11:23:55' }, { issue: '20190401-0685', endtime: '2019-04-01 11:24:55' }, { issue: '20190401-0686', endtime: '2019-04-01 11:25:55' }, { issue: '20190401-0687', endtime: '2019-04-01 11:26:55' }, { issue: '20190401-0688', endtime: '2019-04-01 11:27:55' }, { issue: '20190401-0689', endtime: '2019-04-01 11:28:55' }, { issue: '20190401-0690', endtime: '2019-04-01 11:29:55' }, { issue: '20190401-0691', endtime: '2019-04-01 11:30:55' }, { issue: '20190401-0692', endtime: '2019-04-01 11:31:55' }, { issue: '20190401-0693', endtime: '2019-04-01 11:32:55' }, { issue: '20190401-0694', endtime: '2019-04-01 11:33:55' }, { issue: '20190401-0695', endtime: '2019-04-01 11:34:55' }, { issue: '20190401-0696', endtime: '2019-04-01 11:35:55' }, { issue: '20190401-0697', endtime: '2019-04-01 11:36:55' }, { issue: '20190401-0698', endtime: '2019-04-01 11:37:55' }, { issue: '20190401-0699', endtime: '2019-04-01 11:38:55' }, { issue: '20190401-0700', endtime: '2019-04-01 11:39:55' }, { issue: '20190401-0701', endtime: '2019-04-01 11:40:55' }, { issue: '20190401-0702', endtime: '2019-04-01 11:41:55' }, { issue: '20190401-0703', endtime: '2019-04-01 11:42:55' }, { issue: '20190401-0704', endtime: '2019-04-01 11:43:55' }, { issue: '20190401-0705', endtime: '2019-04-01 11:44:55' }, { issue: '20190401-0706', endtime: '2019-04-01 11:45:55' }, { issue: '20190401-0707', endtime: '2019-04-01 11:46:55' }, { issue: '20190401-0708', endtime: '2019-04-01 11:47:55' }, { issue: '20190401-0709', endtime: '2019-04-01 11:48:55' }, { issue: '20190401-0710', endtime: '2019-04-01 11:49:55' }, { issue: '20190401-0711', endtime: '2019-04-01 11:50:55' }, { issue: '20190401-0712', endtime: '2019-04-01 11:51:55' }, { issue: '20190401-0713', endtime: '2019-04-01 11:52:55' }, { issue: '20190401-0714', endtime: '2019-04-01 11:53:55' }, { issue: '20190401-0715', endtime: '2019-04-01 11:54:55' }, { issue: '20190401-0716', endtime: '2019-04-01 11:55:55' }, { issue: '20190401-0717', endtime: '2019-04-01 11:56:55' }, { issue: '20190401-0718', endtime: '2019-04-01 11:57:55' }, { issue: '20190401-0719', endtime: '2019-04-01 11:58:55' }, { issue: '20190401-0720', endtime: '2019-04-01 11:59:55' }, { issue: '20190401-0721', endtime: '2019-04-01 12:00:55' }, { issue: '20190401-0722', endtime: '2019-04-01 12:01:55' }, { issue: '20190401-0723', endtime: '2019-04-01 12:02:55' }, { issue: '20190401-0724', endtime: '2019-04-01 12:03:55' }, { issue: '20190401-0725', endtime: '2019-04-01 12:04:55' }, { issue: '20190401-0726', endtime: '2019-04-01 12:05:55' }, { issue: '20190401-0727', endtime: '2019-04-01 12:06:55' }, { issue: '20190401-0728', endtime: '2019-04-01 12:07:55' }, { issue: '20190401-0729', endtime: '2019-04-01 12:08:55' }, { issue: '20190401-0730', endtime: '2019-04-01 12:09:55' }, { issue: '20190401-0731', endtime: '2019-04-01 12:10:55' }, { issue: '20190401-0732', endtime: '2019-04-01 12:11:55' }, { issue: '20190401-0733', endtime: '2019-04-01 12:12:55' }, { issue: '20190401-0734', endtime: '2019-04-01 12:13:55' }, { issue: '20190401-0735', endtime: '2019-04-01 12:14:55' }, { issue: '20190401-0736', endtime: '2019-04-01 12:15:55' }, { issue: '20190401-0737', endtime: '2019-04-01 12:16:55' }, { issue: '20190401-0738', endtime: '2019-04-01 12:17:55' }, { issue: '20190401-0739', endtime: '2019-04-01 12:18:55' }, { issue: '20190401-0740', endtime: '2019-04-01 12:19:55' }, { issue: '20190401-0741', endtime: '2019-04-01 12:20:55' }, { issue: '20190401-0742', endtime: '2019-04-01 12:21:55' }, { issue: '20190401-0743', endtime: '2019-04-01 12:22:55' }, { issue: '20190401-0744', endtime: '2019-04-01 12:23:55' }, { issue: '20190401-0745', endtime: '2019-04-01 12:24:55' }, { issue: '20190401-0746', endtime: '2019-04-01 12:25:55' }, { issue: '20190401-0747', endtime: '2019-04-01 12:26:55' }, { issue: '20190401-0748', endtime: '2019-04-01 12:27:55' }, { issue: '20190401-0749', endtime: '2019-04-01 12:28:55' }, { issue: '20190401-0750', endtime: '2019-04-01 12:29:55' }, { issue: '20190401-0751', endtime: '2019-04-01 12:30:55' }, { issue: '20190401-0752', endtime: '2019-04-01 12:31:55' }, { issue: '20190401-0753', endtime: '2019-04-01 12:32:55' }, { issue: '20190401-0754', endtime: '2019-04-01 12:33:55' }, { issue: '20190401-0755', endtime: '2019-04-01 12:34:55' }, { issue: '20190401-0756', endtime: '2019-04-01 12:35:55' }, { issue: '20190401-0757', endtime: '2019-04-01 12:36:55' }, { issue: '20190401-0758', endtime: '2019-04-01 12:37:55' }, { issue: '20190401-0759', endtime: '2019-04-01 12:38:55' }, { issue: '20190401-0760', endtime: '2019-04-01 12:39:55' }, { issue: '20190401-0761', endtime: '2019-04-01 12:40:55' }, { issue: '20190401-0762', endtime: '2019-04-01 12:41:55' }, { issue: '20190401-0763', endtime: '2019-04-01 12:42:55' }, { issue: '20190401-0764', endtime: '2019-04-01 12:43:55' }, { issue: '20190401-0765', endtime: '2019-04-01 12:44:55' }, { issue: '20190401-0766', endtime: '2019-04-01 12:45:55' }, { issue: '20190401-0767', endtime: '2019-04-01 12:46:55' }, { issue: '20190401-0768', endtime: '2019-04-01 12:47:55' }, { issue: '20190401-0769', endtime: '2019-04-01 12:48:55' }, { issue: '20190401-0770', endtime: '2019-04-01 12:49:55' }, { issue: '20190401-0771', endtime: '2019-04-01 12:50:55' }, { issue: '20190401-0772', endtime: '2019-04-01 12:51:55' }, { issue: '20190401-0773', endtime: '2019-04-01 12:52:55' }, { issue: '20190401-0774', endtime: '2019-04-01 12:53:55' }, { issue: '20190401-0775', endtime: '2019-04-01 12:54:55' }, { issue: '20190401-0776', endtime: '2019-04-01 12:55:55' }, { issue: '20190401-0777', endtime: '2019-04-01 12:56:55' }, { issue: '20190401-0778', endtime: '2019-04-01 12:57:55' }, { issue: '20190401-0779', endtime: '2019-04-01 12:58:55' }, { issue: '20190401-0780', endtime: '2019-04-01 12:59:55' }, { issue: '20190401-0781', endtime: '2019-04-01 13:00:55' }, { issue: '20190401-0782', endtime: '2019-04-01 13:01:55' }, { issue: '20190401-0783', endtime: '2019-04-01 13:02:55' }, { issue: '20190401-0784', endtime: '2019-04-01 13:03:55' }, { issue: '20190401-0785', endtime: '2019-04-01 13:04:55' }, { issue: '20190401-0786', endtime: '2019-04-01 13:05:55' }, { issue: '20190401-0787', endtime: '2019-04-01 13:06:55' }, { issue: '20190401-0788', endtime: '2019-04-01 13:07:55' }, { issue: '20190401-0789', endtime: '2019-04-01 13:08:55' }, { issue: '20190401-0790', endtime: '2019-04-01 13:09:55' }, { issue: '20190401-0791', endtime: '2019-04-01 13:10:55' }, { issue: '20190401-0792', endtime: '2019-04-01 13:11:55' }, { issue: '20190401-0793', endtime: '2019-04-01 13:12:55' }, { issue: '20190401-0794', endtime: '2019-04-01 13:13:55' }, { issue: '20190401-0795', endtime: '2019-04-01 13:14:55' }, { issue: '20190401-0796', endtime: '2019-04-01 13:15:55' }, { issue: '20190401-0797', endtime: '2019-04-01 13:16:55' }, { issue: '20190401-0798', endtime: '2019-04-01 13:17:55' }, { issue: '20190401-0799', endtime: '2019-04-01 13:18:55' }, { issue: '20190401-0800', endtime: '2019-04-01 13:19:55' }, { issue: '20190401-0801', endtime: '2019-04-01 13:20:55' }, { issue: '20190401-0802', endtime: '2019-04-01 13:21:55' }, { issue: '20190401-0803', endtime: '2019-04-01 13:22:55' }, { issue: '20190401-0804', endtime: '2019-04-01 13:23:55' }, { issue: '20190401-0805', endtime: '2019-04-01 13:24:55' }, { issue: '20190401-0806', endtime: '2019-04-01 13:25:55' }, { issue: '20190401-0807', endtime: '2019-04-01 13:26:55' }, { issue: '20190401-0808', endtime: '2019-04-01 13:27:55' }, { issue: '20190401-0809', endtime: '2019-04-01 13:28:55' }, { issue: '20190401-0810', endtime: '2019-04-01 13:29:55' }, { issue: '20190401-0811', endtime: '2019-04-01 13:30:55' }, { issue: '20190401-0812', endtime: '2019-04-01 13:31:55' }, { issue: '20190401-0813', endtime: '2019-04-01 13:32:55' }, { issue: '20190401-0814', endtime: '2019-04-01 13:33:55' }, { issue: '20190401-0815', endtime: '2019-04-01 13:34:55' }, { issue: '20190401-0816', endtime: '2019-04-01 13:35:55' }, { issue: '20190401-0817', endtime: '2019-04-01 13:36:55' }, { issue: '20190401-0818', endtime: '2019-04-01 13:37:55' }, { issue: '20190401-0819', endtime: '2019-04-01 13:38:55' }, { issue: '20190401-0820', endtime: '2019-04-01 13:39:55' }, { issue: '20190401-0821', endtime: '2019-04-01 13:40:55' }, { issue: '20190401-0822', endtime: '2019-04-01 13:41:55' }, { issue: '20190401-0823', endtime: '2019-04-01 13:42:55' }, { issue: '20190401-0824', endtime: '2019-04-01 13:43:55' }, { issue: '20190401-0825', endtime: '2019-04-01 13:44:55' }, { issue: '20190401-0826', endtime: '2019-04-01 13:45:55' }, { issue: '20190401-0827', endtime: '2019-04-01 13:46:55' }, { issue: '20190401-0828', endtime: '2019-04-01 13:47:55' }, { issue: '20190401-0829', endtime: '2019-04-01 13:48:55' }, { issue: '20190401-0830', endtime: '2019-04-01 13:49:55' }, { issue: '20190401-0831', endtime: '2019-04-01 13:50:55' }, { issue: '20190401-0832', endtime: '2019-04-01 13:51:55' }, { issue: '20190401-0833', endtime: '2019-04-01 13:52:55' }, { issue: '20190401-0834', endtime: '2019-04-01 13:53:55' }, { issue: '20190401-0835', endtime: '2019-04-01 13:54:55' }, { issue: '20190401-0836', endtime: '2019-04-01 13:55:55' }, { issue: '20190401-0837', endtime: '2019-04-01 13:56:55' }, { issue: '20190401-0838', endtime: '2019-04-01 13:57:55' }, { issue: '20190401-0839', endtime: '2019-04-01 13:58:55' }, { issue: '20190401-0840', endtime: '2019-04-01 13:59:55' }, { issue: '20190401-0841', endtime: '2019-04-01 14:00:55' }, { issue: '20190401-0842', endtime: '2019-04-01 14:01:55' }, { issue: '20190401-0843', endtime: '2019-04-01 14:02:55' }, { issue: '20190401-0844', endtime: '2019-04-01 14:03:55' }, { issue: '20190401-0845', endtime: '2019-04-01 14:04:55' }, { issue: '20190401-0846', endtime: '2019-04-01 14:05:55' }, { issue: '20190401-0847', endtime: '2019-04-01 14:06:55' }, { issue: '20190401-0848', endtime: '2019-04-01 14:07:55' }, { issue: '20190401-0849', endtime: '2019-04-01 14:08:55' }, { issue: '20190401-0850', endtime: '2019-04-01 14:09:55' }, { issue: '20190401-0851', endtime: '2019-04-01 14:10:55' }, { issue: '20190401-0852', endtime: '2019-04-01 14:11:55' }, { issue: '20190401-0853', endtime: '2019-04-01 14:12:55' }, { issue: '20190401-0854', endtime: '2019-04-01 14:13:55' }, { issue: '20190401-0855', endtime: '2019-04-01 14:14:55' }, { issue: '20190401-0856', endtime: '2019-04-01 14:15:55' }, { issue: '20190401-0857', endtime: '2019-04-01 14:16:55' }, { issue: '20190401-0858', endtime: '2019-04-01 14:17:55' }, { issue: '20190401-0859', endtime: '2019-04-01 14:18:55' }, { issue: '20190401-0860', endtime: '2019-04-01 14:19:55' }, { issue: '20190401-0861', endtime: '2019-04-01 14:20:55' }, { issue: '20190401-0862', endtime: '2019-04-01 14:21:55' }, { issue: '20190401-0863', endtime: '2019-04-01 14:22:55' }, { issue: '20190401-0864', endtime: '2019-04-01 14:23:55' }, { issue: '20190401-0865', endtime: '2019-04-01 14:24:55' }, { issue: '20190401-0866', endtime: '2019-04-01 14:25:55' }, { issue: '20190401-0867', endtime: '2019-04-01 14:26:55' }, { issue: '20190401-0868', endtime: '2019-04-01 14:27:55' }, { issue: '20190401-0869', endtime: '2019-04-01 14:28:55' }, { issue: '20190401-0870', endtime: '2019-04-01 14:29:55' }, { issue: '20190401-0871', endtime: '2019-04-01 14:30:55' }, { issue: '20190401-0872', endtime: '2019-04-01 14:31:55' }, { issue: '20190401-0873', endtime: '2019-04-01 14:32:55' }, { issue: '20190401-0874', endtime: '2019-04-01 14:33:55' }, { issue: '20190401-0875', endtime: '2019-04-01 14:34:55' }, { issue: '20190401-0876', endtime: '2019-04-01 14:35:55' }, { issue: '20190401-0877', endtime: '2019-04-01 14:36:55' }, { issue: '20190401-0878', endtime: '2019-04-01 14:37:55' }, { issue: '20190401-0879', endtime: '2019-04-01 14:38:55' }, { issue: '20190401-0880', endtime: '2019-04-01 14:39:55' }, { issue: '20190401-0881', endtime: '2019-04-01 14:40:55' }, { issue: '20190401-0882', endtime: '2019-04-01 14:41:55' }, { issue: '20190401-0883', endtime: '2019-04-01 14:42:55' }, { issue: '20190401-0884', endtime: '2019-04-01 14:43:55' }, { issue: '20190401-0885', endtime: '2019-04-01 14:44:55' }, { issue: '20190401-0886', endtime: '2019-04-01 14:45:55' }, { issue: '20190401-0887', endtime: '2019-04-01 14:46:55' }, { issue: '20190401-0888', endtime: '2019-04-01 14:47:55' }, { issue: '20190401-0889', endtime: '2019-04-01 14:48:55' }, { issue: '20190401-0890', endtime: '2019-04-01 14:49:55' }, { issue: '20190401-0891', endtime: '2019-04-01 14:50:55' }, { issue: '20190401-0892', endtime: '2019-04-01 14:51:55' }, { issue: '20190401-0893', endtime: '2019-04-01 14:52:55' }, { issue: '20190401-0894', endtime: '2019-04-01 14:53:55' }, { issue: '20190401-0895', endtime: '2019-04-01 14:54:55' }, { issue: '20190401-0896', endtime: '2019-04-01 14:55:55' }, { issue: '20190401-0897', endtime: '2019-04-01 14:56:55' }, { issue: '20190401-0898', endtime: '2019-04-01 14:57:55' }, { issue: '20190401-0899', endtime: '2019-04-01 14:58:55' }, { issue: '20190401-0900', endtime: '2019-04-01 14:59:55' }, { issue: '20190401-0901', endtime: '2019-04-01 15:00:55' }, { issue: '20190401-0902', endtime: '2019-04-01 15:01:55' }, { issue: '20190401-0903', endtime: '2019-04-01 15:02:55' }, { issue: '20190401-0904', endtime: '2019-04-01 15:03:55' }, { issue: '20190401-0905', endtime: '2019-04-01 15:04:55' }, { issue: '20190401-0906', endtime: '2019-04-01 15:05:55' }, { issue: '20190401-0907', endtime: '2019-04-01 15:06:55' }, { issue: '20190401-0908', endtime: '2019-04-01 15:07:55' }, { issue: '20190401-0909', endtime: '2019-04-01 15:08:55' }, { issue: '20190401-0910', endtime: '2019-04-01 15:09:55' }, { issue: '20190401-0911', endtime: '2019-04-01 15:10:55' }, { issue: '20190401-0912', endtime: '2019-04-01 15:11:55' }, { issue: '20190401-0913', endtime: '2019-04-01 15:12:55' }, { issue: '20190401-0914', endtime: '2019-04-01 15:13:55' }, { issue: '20190401-0915', endtime: '2019-04-01 15:14:55' }, { issue: '20190401-0916', endtime: '2019-04-01 15:15:55' }, { issue: '20190401-0917', endtime: '2019-04-01 15:16:55' }, { issue: '20190401-0918', endtime: '2019-04-01 15:17:55' }, { issue: '20190401-0919', endtime: '2019-04-01 15:18:55' }, { issue: '20190401-0920', endtime: '2019-04-01 15:19:55' }, { issue: '20190401-0921', endtime: '2019-04-01 15:20:55' }, { issue: '20190401-0922', endtime: '2019-04-01 15:21:55' }, { issue: '20190401-0923', endtime: '2019-04-01 15:22:55' }, { issue: '20190401-0924', endtime: '2019-04-01 15:23:55' }, { issue: '20190401-0925', endtime: '2019-04-01 15:24:55' }, { issue: '20190401-0926', endtime: '2019-04-01 15:25:55' }, { issue: '20190401-0927', endtime: '2019-04-01 15:26:55' }, { issue: '20190401-0928', endtime: '2019-04-01 15:27:55' }, { issue: '20190401-0929', endtime: '2019-04-01 15:28:55' }, { issue: '20190401-0930', endtime: '2019-04-01 15:29:55' }, { issue: '20190401-0931', endtime: '2019-04-01 15:30:55' }, { issue: '20190401-0932', endtime: '2019-04-01 15:31:55' }, { issue: '20190401-0933', endtime: '2019-04-01 15:32:55' }, { issue: '20190401-0934', endtime: '2019-04-01 15:33:55' }, { issue: '20190401-0935', endtime: '2019-04-01 15:34:55' }, { issue: '20190401-0936', endtime: '2019-04-01 15:35:55' }, { issue: '20190401-0937', endtime: '2019-04-01 15:36:55' }, { issue: '20190401-0938', endtime: '2019-04-01 15:37:55' }, { issue: '20190401-0939', endtime: '2019-04-01 15:38:55' }, { issue: '20190401-0940', endtime: '2019-04-01 15:39:55' }, { issue: '20190401-0941', endtime: '2019-04-01 15:40:55' }, { issue: '20190401-0942', endtime: '2019-04-01 15:41:55' }, { issue: '20190401-0943', endtime: '2019-04-01 15:42:55' }, { issue: '20190401-0944', endtime: '2019-04-01 15:43:55' }, { issue: '20190401-0945', endtime: '2019-04-01 15:44:55' }, { issue: '20190401-0946', endtime: '2019-04-01 15:45:55' }, { issue: '20190401-0947', endtime: '2019-04-01 15:46:55' }, { issue: '20190401-0948', endtime: '2019-04-01 15:47:55' }, { issue: '20190401-0949', endtime: '2019-04-01 15:48:55' }, { issue: '20190401-0950', endtime: '2019-04-01 15:49:55' }, { issue: '20190401-0951', endtime: '2019-04-01 15:50:55' }, { issue: '20190401-0952', endtime: '2019-04-01 15:51:55' }, { issue: '20190401-0953', endtime: '2019-04-01 15:52:55' }, { issue: '20190401-0954', endtime: '2019-04-01 15:53:55' }, { issue: '20190401-0955', endtime: '2019-04-01 15:54:55' }, { issue: '20190401-0956', endtime: '2019-04-01 15:55:55' }, { issue: '20190401-0957', endtime: '2019-04-01 15:56:55' }, { issue: '20190401-0958', endtime: '2019-04-01 15:57:55' }, { issue: '20190401-0959', endtime: '2019-04-01 15:58:55' }, { issue: '20190401-0960', endtime: '2019-04-01 15:59:55' }, { issue: '20190401-0961', endtime: '2019-04-01 16:00:55' }, { issue: '20190401-0962', endtime: '2019-04-01 16:01:55' }, { issue: '20190401-0963', endtime: '2019-04-01 16:02:55' }, { issue: '20190401-0964', endtime: '2019-04-01 16:03:55' }, { issue: '20190401-0965', endtime: '2019-04-01 16:04:55' }, { issue: '20190401-0966', endtime: '2019-04-01 16:05:55' }, { issue: '20190401-0967', endtime: '2019-04-01 16:06:55' }, { issue: '20190401-0968', endtime: '2019-04-01 16:07:55' }, { issue: '20190401-0969', endtime: '2019-04-01 16:08:55' }, { issue: '20190401-0970', endtime: '2019-04-01 16:09:55' }, { issue: '20190401-0971', endtime: '2019-04-01 16:10:55' }, { issue: '20190401-0972', endtime: '2019-04-01 16:11:55' }, { issue: '20190401-0973', endtime: '2019-04-01 16:12:55' }, { issue: '20190401-0974', endtime: '2019-04-01 16:13:55' }, { issue: '20190401-0975', endtime: '2019-04-01 16:14:55' }, { issue: '20190401-0976', endtime: '2019-04-01 16:15:55' }, { issue: '20190401-0977', endtime: '2019-04-01 16:16:55' }, { issue: '20190401-0978', endtime: '2019-04-01 16:17:55' }, { issue: '20190401-0979', endtime: '2019-04-01 16:18:55' }, { issue: '20190401-0980', endtime: '2019-04-01 16:19:55' }, { issue: '20190401-0981', endtime: '2019-04-01 16:20:55' }, { issue: '20190401-0982', endtime: '2019-04-01 16:21:55' }, { issue: '20190401-0983', endtime: '2019-04-01 16:22:55' }, { issue: '20190401-0984', endtime: '2019-04-01 16:23:55' }, { issue: '20190401-0985', endtime: '2019-04-01 16:24:55' }, { issue: '20190401-0986', endtime: '2019-04-01 16:25:55' }, { issue: '20190401-0987', endtime: '2019-04-01 16:26:55' }, { issue: '20190401-0988', endtime: '2019-04-01 16:27:55' }, { issue: '20190401-0989', endtime: '2019-04-01 16:28:55' }, { issue: '20190401-0990', endtime: '2019-04-01 16:29:55' }, { issue: '20190401-0991', endtime: '2019-04-01 16:30:55' }, { issue: '20190401-0992', endtime: '2019-04-01 16:31:55' }, { issue: '20190401-0993', endtime: '2019-04-01 16:32:55' }, { issue: '20190401-0994', endtime: '2019-04-01 16:33:55' }, { issue: '20190401-0995', endtime: '2019-04-01 16:34:55' }, { issue: '20190401-0996', endtime: '2019-04-01 16:35:55' }, { issue: '20190401-0997', endtime: '2019-04-01 16:36:55' }, { issue: '20190401-0998', endtime: '2019-04-01 16:37:55' }, { issue: '20190401-0999', endtime: '2019-04-01 16:38:55' }, { issue: '20190401-1000', endtime: '2019-04-01 16:39:55' }, { issue: '20190401-1001', endtime: '2019-04-01 16:40:55' }, { issue: '20190401-1002', endtime: '2019-04-01 16:41:55' }, { issue: '20190401-1003', endtime: '2019-04-01 16:42:55' }, { issue: '20190401-1004', endtime: '2019-04-01 16:43:55' }, { issue: '20190401-1005', endtime: '2019-04-01 16:44:55' }, { issue: '20190401-1006', endtime: '2019-04-01 16:45:55' }, { issue: '20190401-1007', endtime: '2019-04-01 16:46:55' }, { issue: '20190401-1008', endtime: '2019-04-01 16:47:55' }, { issue: '20190401-1009', endtime: '2019-04-01 16:48:55' }, { issue: '20190401-1010', endtime: '2019-04-01 16:49:55' }, { issue: '20190401-1011', endtime: '2019-04-01 16:50:55' }, { issue: '20190401-1012', endtime: '2019-04-01 16:51:55' }, { issue: '20190401-1013', endtime: '2019-04-01 16:52:55' }, { issue: '20190401-1014', endtime: '2019-04-01 16:53:55' }, { issue: '20190401-1015', endtime: '2019-04-01 16:54:55' }, { issue: '20190401-1016', endtime: '2019-04-01 16:55:55' }, { issue: '20190401-1017', endtime: '2019-04-01 16:56:55' }, { issue: '20190401-1018', endtime: '2019-04-01 16:57:55' }, { issue: '20190401-1019', endtime: '2019-04-01 16:58:55' }, { issue: '20190401-1020', endtime: '2019-04-01 16:59:55' }, { issue: '20190401-1021', endtime: '2019-04-01 17:00:55' }, { issue: '20190401-1022', endtime: '2019-04-01 17:01:55' }, { issue: '20190401-1023', endtime: '2019-04-01 17:02:55' }, { issue: '20190401-1024', endtime: '2019-04-01 17:03:55' }, { issue: '20190401-1025', endtime: '2019-04-01 17:04:55' }, { issue: '20190401-1026', endtime: '2019-04-01 17:05:55' }, { issue: '20190401-1027', endtime: '2019-04-01 17:06:55' }, { issue: '20190401-1028', endtime: '2019-04-01 17:07:55' }, { issue: '20190401-1029', endtime: '2019-04-01 17:08:55' }, { issue: '20190401-1030', endtime: '2019-04-01 17:09:55' }, { issue: '20190401-1031', endtime: '2019-04-01 17:10:55' }, { issue: '20190401-1032', endtime: '2019-04-01 17:11:55' }, { issue: '20190401-1033', endtime: '2019-04-01 17:12:55' }, { issue: '20190401-1034', endtime: '2019-04-01 17:13:55' }, { issue: '20190401-1035', endtime: '2019-04-01 17:14:55' }, { issue: '20190401-1036', endtime: '2019-04-01 17:15:55' }, { issue: '20190401-1037', endtime: '2019-04-01 17:16:55' }, { issue: '20190401-1038', endtime: '2019-04-01 17:17:55' }, { issue: '20190401-1039', endtime: '2019-04-01 17:18:55' }, { issue: '20190401-1040', endtime: '2019-04-01 17:19:55' }, { issue: '20190401-1041', endtime: '2019-04-01 17:20:55' }, { issue: '20190401-1042', endtime: '2019-04-01 17:21:55' }, { issue: '20190401-1043', endtime: '2019-04-01 17:22:55' }, { issue: '20190401-1044', endtime: '2019-04-01 17:23:55' }, { issue: '20190401-1045', endtime: '2019-04-01 17:24:55' }, { issue: '20190401-1046', endtime: '2019-04-01 17:25:55' }, { issue: '20190401-1047', endtime: '2019-04-01 17:26:55' }, { issue: '20190401-1048', endtime: '2019-04-01 17:27:55' }, { issue: '20190401-1049', endtime: '2019-04-01 17:28:55' }, { issue: '20190401-1050', endtime: '2019-04-01 17:29:55' }, { issue: '20190401-1051', endtime: '2019-04-01 17:30:55' }, { issue: '20190401-1052', endtime: '2019-04-01 17:31:55' }, { issue: '20190401-1053', endtime: '2019-04-01 17:32:55' }, { issue: '20190401-1054', endtime: '2019-04-01 17:33:55' }, { issue: '20190401-1055', endtime: '2019-04-01 17:34:55' }, { issue: '20190401-1056', endtime: '2019-04-01 17:35:55' }, { issue: '20190401-1057', endtime: '2019-04-01 17:36:55' }, { issue: '20190401-1058', endtime: '2019-04-01 17:37:55' }, { issue: '20190401-1059', endtime: '2019-04-01 17:38:55' }, { issue: '20190401-1060', endtime: '2019-04-01 17:39:55' }, { issue: '20190401-1061', endtime: '2019-04-01 17:40:55' }, { issue: '20190401-1062', endtime: '2019-04-01 17:41:55' }, { issue: '20190401-1063', endtime: '2019-04-01 17:42:55' }, { issue: '20190401-1064', endtime: '2019-04-01 17:43:55' }, { issue: '20190401-1065', endtime: '2019-04-01 17:44:55' }, { issue: '20190401-1066', endtime: '2019-04-01 17:45:55' }, { issue: '20190401-1067', endtime: '2019-04-01 17:46:55' }, { issue: '20190401-1068', endtime: '2019-04-01 17:47:55' }, { issue: '20190401-1069', endtime: '2019-04-01 17:48:55' }, { issue: '20190401-1070', endtime: '2019-04-01 17:49:55' }, { issue: '20190401-1071', endtime: '2019-04-01 17:50:55' }, { issue: '20190401-1072', endtime: '2019-04-01 17:51:55' }, { issue: '20190401-1073', endtime: '2019-04-01 17:52:55' }, { issue: '20190401-1074', endtime: '2019-04-01 17:53:55' }, { issue: '20190401-1075', endtime: '2019-04-01 17:54:55' }, { issue: '20190401-1076', endtime: '2019-04-01 17:55:55' }, { issue: '20190401-1077', endtime: '2019-04-01 17:56:55' }, { issue: '20190401-1078', endtime: '2019-04-01 17:57:55' }, { issue: '20190401-1079', endtime: '2019-04-01 17:58:55' }, { issue: '20190401-1080', endtime: '2019-04-01 17:59:55' }, { issue: '20190401-1081', endtime: '2019-04-01 18:00:55' }, { issue: '20190401-1082', endtime: '2019-04-01 18:01:55' }, { issue: '20190401-1083', endtime: '2019-04-01 18:02:55' }, { issue: '20190401-1084', endtime: '2019-04-01 18:03:55' }, { issue: '20190401-1085', endtime: '2019-04-01 18:04:55' }, { issue: '20190401-1086', endtime: '2019-04-01 18:05:55' }, { issue: '20190401-1087', endtime: '2019-04-01 18:06:55' }, { issue: '20190401-1088', endtime: '2019-04-01 18:07:55' }, { issue: '20190401-1089', endtime: '2019-04-01 18:08:55' }, { issue: '20190401-1090', endtime: '2019-04-01 18:09:55' }, { issue: '20190401-1091', endtime: '2019-04-01 18:10:55' }, { issue: '20190401-1092', endtime: '2019-04-01 18:11:55' }, { issue: '20190401-1093', endtime: '2019-04-01 18:12:55' }, { issue: '20190401-1094', endtime: '2019-04-01 18:13:55' }, { issue: '20190401-1095', endtime: '2019-04-01 18:14:55' }, { issue: '20190401-1096', endtime: '2019-04-01 18:15:55' }, { issue: '20190401-1097', endtime: '2019-04-01 18:16:55' }, { issue: '20190401-1098', endtime: '2019-04-01 18:17:55' }, { issue: '20190401-1099', endtime: '2019-04-01 18:18:55' }, { issue: '20190401-1100', endtime: '2019-04-01 18:19:55' }, { issue: '20190401-1101', endtime: '2019-04-01 18:20:55' }, { issue: '20190401-1102', endtime: '2019-04-01 18:21:55' }, { issue: '20190401-1103', endtime: '2019-04-01 18:22:55' }, { issue: '20190401-1104', endtime: '2019-04-01 18:23:55' }, { issue: '20190401-1105', endtime: '2019-04-01 18:24:55' }, { issue: '20190401-1106', endtime: '2019-04-01 18:25:55' }, { issue: '20190401-1107', endtime: '2019-04-01 18:26:55' }, { issue: '20190401-1108', endtime: '2019-04-01 18:27:55' }, { issue: '20190401-1109', endtime: '2019-04-01 18:28:55' }, { issue: '20190401-1110', endtime: '2019-04-01 18:29:55' }, { issue: '20190401-1111', endtime: '2019-04-01 18:30:55' }, { issue: '20190401-1112', endtime: '2019-04-01 18:31:55' }, { issue: '20190401-1113', endtime: '2019-04-01 18:32:55' }, { issue: '20190401-1114', endtime: '2019-04-01 18:33:55' }, { issue: '20190401-1115', endtime: '2019-04-01 18:34:55' }, { issue: '20190401-1116', endtime: '2019-04-01 18:35:55' }, { issue: '20190401-1117', endtime: '2019-04-01 18:36:55' }, { issue: '20190401-1118', endtime: '2019-04-01 18:37:55' }, { issue: '20190401-1119', endtime: '2019-04-01 18:38:55' }, { issue: '20190401-1120', endtime: '2019-04-01 18:39:55' }, { issue: '20190401-1121', endtime: '2019-04-01 18:40:55' }, { issue: '20190401-1122', endtime: '2019-04-01 18:41:55' }, { issue: '20190401-1123', endtime: '2019-04-01 18:42:55' }, { issue: '20190401-1124', endtime: '2019-04-01 18:43:55' }, { issue: '20190401-1125', endtime: '2019-04-01 18:44:55' }, { issue: '20190401-1126', endtime: '2019-04-01 18:45:55' }, { issue: '20190401-1127', endtime: '2019-04-01 18:46:55' }, { issue: '20190401-1128', endtime: '2019-04-01 18:47:55' }, { issue: '20190401-1129', endtime: '2019-04-01 18:48:55' }, { issue: '20190401-1130', endtime: '2019-04-01 18:49:55' }, { issue: '20190401-1131', endtime: '2019-04-01 18:50:55' }, { issue: '20190401-1132', endtime: '2019-04-01 18:51:55' }, { issue: '20190401-1133', endtime: '2019-04-01 18:52:55' }, { issue: '20190401-1134', endtime: '2019-04-01 18:53:55' }, { issue: '20190401-1135', endtime: '2019-04-01 18:54:55' }, { issue: '20190401-1136', endtime: '2019-04-01 18:55:55' }, { issue: '20190401-1137', endtime: '2019-04-01 18:56:55' }, { issue: '20190401-1138', endtime: '2019-04-01 18:57:55' }, { issue: '20190401-1139', endtime: '2019-04-01 18:58:55' }, { issue: '20190401-1140', endtime: '2019-04-01 18:59:55' }, { issue: '20190401-1141', endtime: '2019-04-01 19:00:55' }, { issue: '20190401-1142', endtime: '2019-04-01 19:01:55' }, { issue: '20190401-1143', endtime: '2019-04-01 19:02:55' }, { issue: '20190401-1144', endtime: '2019-04-01 19:03:55' }, { issue: '20190401-1145', endtime: '2019-04-01 19:04:55' }, { issue: '20190401-1146', endtime: '2019-04-01 19:05:55' }, { issue: '20190401-1147', endtime: '2019-04-01 19:06:55' }, { issue: '20190401-1148', endtime: '2019-04-01 19:07:55' }, { issue: '20190401-1149', endtime: '2019-04-01 19:08:55' }, { issue: '20190401-1150', endtime: '2019-04-01 19:09:55' }, { issue: '20190401-1151', endtime: '2019-04-01 19:10:55' }, { issue: '20190401-1152', endtime: '2019-04-01 19:11:55' }, { issue: '20190401-1153', endtime: '2019-04-01 19:12:55' }, { issue: '20190401-1154', endtime: '2019-04-01 19:13:55' }, { issue: '20190401-1155', endtime: '2019-04-01 19:14:55' }, { issue: '20190401-1156', endtime: '2019-04-01 19:15:55' }, { issue: '20190401-1157', endtime: '2019-04-01 19:16:55' }, { issue: '20190401-1158', endtime: '2019-04-01 19:17:55' }, { issue: '20190401-1159', endtime: '2019-04-01 19:18:55' }, { issue: '20190401-1160', endtime: '2019-04-01 19:19:55' }, { issue: '20190401-1161', endtime: '2019-04-01 19:20:55' }, { issue: '20190401-1162', endtime: '2019-04-01 19:21:55' }, { issue: '20190401-1163', endtime: '2019-04-01 19:22:55' }, { issue: '20190401-1164', endtime: '2019-04-01 19:23:55' }, { issue: '20190401-1165', endtime: '2019-04-01 19:24:55' }, { issue: '20190401-1166', endtime: '2019-04-01 19:25:55' }, { issue: '20190401-1167', endtime: '2019-04-01 19:26:55' }, { issue: '20190401-1168', endtime: '2019-04-01 19:27:55' }, { issue: '20190401-1169', endtime: '2019-04-01 19:28:55' }, { issue: '20190401-1170', endtime: '2019-04-01 19:29:55' }, { issue: '20190401-1171', endtime: '2019-04-01 19:30:55' }, { issue: '20190401-1172', endtime: '2019-04-01 19:31:55' }, { issue: '20190401-1173', endtime: '2019-04-01 19:32:55' }, { issue: '20190401-1174', endtime: '2019-04-01 19:33:55' }, { issue: '20190401-1175', endtime: '2019-04-01 19:34:55' }, { issue: '20190401-1176', endtime: '2019-04-01 19:35:55' }, { issue: '20190401-1177', endtime: '2019-04-01 19:36:55' }, { issue: '20190401-1178', endtime: '2019-04-01 19:37:55' }, { issue: '20190401-1179', endtime: '2019-04-01 19:38:55' }, { issue: '20190401-1180', endtime: '2019-04-01 19:39:55' }, { issue: '20190401-1181', endtime: '2019-04-01 19:40:55' }, { issue: '20190401-1182', endtime: '2019-04-01 19:41:55' }, { issue: '20190401-1183', endtime: '2019-04-01 19:42:55' }, { issue: '20190401-1184', endtime: '2019-04-01 19:43:55' }, { issue: '20190401-1185', endtime: '2019-04-01 19:44:55' }, { issue: '20190401-1186', endtime: '2019-04-01 19:45:55' }, { issue: '20190401-1187', endtime: '2019-04-01 19:46:55' }, { issue: '20190401-1188', endtime: '2019-04-01 19:47:55' }, { issue: '20190401-1189', endtime: '2019-04-01 19:48:55' }, { issue: '20190401-1190', endtime: '2019-04-01 19:49:55' }, { issue: '20190401-1191', endtime: '2019-04-01 19:50:55' }, { issue: '20190401-1192', endtime: '2019-04-01 19:51:55' }, { issue: '20190401-1193', endtime: '2019-04-01 19:52:55' }, { issue: '20190401-1194', endtime: '2019-04-01 19:53:55' }, { issue: '20190401-1195', endtime: '2019-04-01 19:54:55' }, { issue: '20190401-1196', endtime: '2019-04-01 19:55:55' }, { issue: '20190401-1197', endtime: '2019-04-01 19:56:55' }, { issue: '20190401-1198', endtime: '2019-04-01 19:57:55' }, { issue: '20190401-1199', endtime: '2019-04-01 19:58:55' }, { issue: '20190401-1200', endtime: '2019-04-01 19:59:55' }, { issue: '20190401-1201', endtime: '2019-04-01 20:00:55' }, { issue: '20190401-1202', endtime: '2019-04-01 20:01:55' }, { issue: '20190401-1203', endtime: '2019-04-01 20:02:55' }, { issue: '20190401-1204', endtime: '2019-04-01 20:03:55' }, { issue: '20190401-1205', endtime: '2019-04-01 20:04:55' }, { issue: '20190401-1206', endtime: '2019-04-01 20:05:55' }, { issue: '20190401-1207', endtime: '2019-04-01 20:06:55' }, { issue: '20190401-1208', endtime: '2019-04-01 20:07:55' }, { issue: '20190401-1209', endtime: '2019-04-01 20:08:55' }, { issue: '20190401-1210', endtime: '2019-04-01 20:09:55' }, { issue: '20190401-1211', endtime: '2019-04-01 20:10:55' }, { issue: '20190401-1212', endtime: '2019-04-01 20:11:55' }, { issue: '20190401-1213', endtime: '2019-04-01 20:12:55' }, { issue: '20190401-1214', endtime: '2019-04-01 20:13:55' }, { issue: '20190401-1215', endtime: '2019-04-01 20:14:55' }, { issue: '20190401-1216', endtime: '2019-04-01 20:15:55' }, { issue: '20190401-1217', endtime: '2019-04-01 20:16:55' }, { issue: '20190401-1218', endtime: '2019-04-01 20:17:55' }, { issue: '20190401-1219', endtime: '2019-04-01 20:18:55' }, { issue: '20190401-1220', endtime: '2019-04-01 20:19:55' }, { issue: '20190401-1221', endtime: '2019-04-01 20:20:55' }, { issue: '20190401-1222', endtime: '2019-04-01 20:21:55' }, { issue: '20190401-1223', endtime: '2019-04-01 20:22:55' }, { issue: '20190401-1224', endtime: '2019-04-01 20:23:55' }, { issue: '20190401-1225', endtime: '2019-04-01 20:24:55' }, { issue: '20190401-1226', endtime: '2019-04-01 20:25:55' }, { issue: '20190401-1227', endtime: '2019-04-01 20:26:55' }, { issue: '20190401-1228', endtime: '2019-04-01 20:27:55' }, { issue: '20190401-1229', endtime: '2019-04-01 20:28:55' }, { issue: '20190401-1230', endtime: '2019-04-01 20:29:55' }, { issue: '20190401-1231', endtime: '2019-04-01 20:30:55' }, { issue: '20190401-1232', endtime: '2019-04-01 20:31:55' }, { issue: '20190401-1233', endtime: '2019-04-01 20:32:55' }, { issue: '20190401-1234', endtime: '2019-04-01 20:33:55' }, { issue: '20190401-1235', endtime: '2019-04-01 20:34:55' }, { issue: '20190401-1236', endtime: '2019-04-01 20:35:55' }, { issue: '20190401-1237', endtime: '2019-04-01 20:36:55' }, { issue: '20190401-1238', endtime: '2019-04-01 20:37:55' }, { issue: '20190401-1239', endtime: '2019-04-01 20:38:55' }, { issue: '20190401-1240', endtime: '2019-04-01 20:39:55' }, { issue: '20190401-1241', endtime: '2019-04-01 20:40:55' }, { issue: '20190401-1242', endtime: '2019-04-01 20:41:55' }, { issue: '20190401-1243', endtime: '2019-04-01 20:42:55' }, { issue: '20190401-1244', endtime: '2019-04-01 20:43:55' }, { issue: '20190401-1245', endtime: '2019-04-01 20:44:55' }, { issue: '20190401-1246', endtime: '2019-04-01 20:45:55' }, { issue: '20190401-1247', endtime: '2019-04-01 20:46:55' }, { issue: '20190401-1248', endtime: '2019-04-01 20:47:55' }, { issue: '20190401-1249', endtime: '2019-04-01 20:48:55' }, { issue: '20190401-1250', endtime: '2019-04-01 20:49:55' }, { issue: '20190401-1251', endtime: '2019-04-01 20:50:55' }, { issue: '20190401-1252', endtime: '2019-04-01 20:51:55' }, { issue: '20190401-1253', endtime: '2019-04-01 20:52:55' }, { issue: '20190401-1254', endtime: '2019-04-01 20:53:55' }, { issue: '20190401-1255', endtime: '2019-04-01 20:54:55' }, { issue: '20190401-1256', endtime: '2019-04-01 20:55:55' }, { issue: '20190401-1257', endtime: '2019-04-01 20:56:55' }, { issue: '20190401-1258', endtime: '2019-04-01 20:57:55' }, { issue: '20190401-1259', endtime: '2019-04-01 20:58:55' }, { issue: '20190401-1260', endtime: '2019-04-01 20:59:55' }, { issue: '20190401-1261', endtime: '2019-04-01 21:00:55' }, { issue: '20190401-1262', endtime: '2019-04-01 21:01:55' }, { issue: '20190401-1263', endtime: '2019-04-01 21:02:55' }, { issue: '20190401-1264', endtime: '2019-04-01 21:03:55' }, { issue: '20190401-1265', endtime: '2019-04-01 21:04:55' }, { issue: '20190401-1266', endtime: '2019-04-01 21:05:55' }, { issue: '20190401-1267', endtime: '2019-04-01 21:06:55' }, { issue: '20190401-1268', endtime: '2019-04-01 21:07:55' }, { issue: '20190401-1269', endtime: '2019-04-01 21:08:55' }, { issue: '20190401-1270', endtime: '2019-04-01 21:09:55' }, { issue: '20190401-1271', endtime: '2019-04-01 21:10:55' }, { issue: '20190401-1272', endtime: '2019-04-01 21:11:55' }, { issue: '20190401-1273', endtime: '2019-04-01 21:12:55' }, { issue: '20190401-1274', endtime: '2019-04-01 21:13:55' }, { issue: '20190401-1275', endtime: '2019-04-01 21:14:55' }, { issue: '20190401-1276', endtime: '2019-04-01 21:15:55' }, { issue: '20190401-1277', endtime: '2019-04-01 21:16:55' }, { issue: '20190401-1278', endtime: '2019-04-01 21:17:55' }, { issue: '20190401-1279', endtime: '2019-04-01 21:18:55' }, { issue: '20190401-1280', endtime: '2019-04-01 21:19:55' }, { issue: '20190401-1281', endtime: '2019-04-01 21:20:55' }, { issue: '20190401-1282', endtime: '2019-04-01 21:21:55' }, { issue: '20190401-1283', endtime: '2019-04-01 21:22:55' }, { issue: '20190401-1284', endtime: '2019-04-01 21:23:55' }, { issue: '20190401-1285', endtime: '2019-04-01 21:24:55' }, { issue: '20190401-1286', endtime: '2019-04-01 21:25:55' }, { issue: '20190401-1287', endtime: '2019-04-01 21:26:55' }, { issue: '20190401-1288', endtime: '2019-04-01 21:27:55' }, { issue: '20190401-1289', endtime: '2019-04-01 21:28:55' }, { issue: '20190401-1290', endtime: '2019-04-01 21:29:55' }, { issue: '20190401-1291', endtime: '2019-04-01 21:30:55' }, { issue: '20190401-1292', endtime: '2019-04-01 21:31:55' }, { issue: '20190401-1293', endtime: '2019-04-01 21:32:55' }, { issue: '20190401-1294', endtime: '2019-04-01 21:33:55' }, { issue: '20190401-1295', endtime: '2019-04-01 21:34:55' }, { issue: '20190401-1296', endtime: '2019-04-01 21:35:55' }, { issue: '20190401-1297', endtime: '2019-04-01 21:36:55' }, { issue: '20190401-1298', endtime: '2019-04-01 21:37:55' }, { issue: '20190401-1299', endtime: '2019-04-01 21:38:55' }, { issue: '20190401-1300', endtime: '2019-04-01 21:39:55' }, { issue: '20190401-1301', endtime: '2019-04-01 21:40:55' }, { issue: '20190401-1302', endtime: '2019-04-01 21:41:55' }, { issue: '20190401-1303', endtime: '2019-04-01 21:42:55' }, { issue: '20190401-1304', endtime: '2019-04-01 21:43:55' }, { issue: '20190401-1305', endtime: '2019-04-01 21:44:55' }, { issue: '20190401-1306', endtime: '2019-04-01 21:45:55' }, { issue: '20190401-1307', endtime: '2019-04-01 21:46:55' }, { issue: '20190401-1308', endtime: '2019-04-01 21:47:55' }, { issue: '20190401-1309', endtime: '2019-04-01 21:48:55' }, { issue: '20190401-1310', endtime: '2019-04-01 21:49:55' }, { issue: '20190401-1311', endtime: '2019-04-01 21:50:55' }, { issue: '20190401-1312', endtime: '2019-04-01 21:51:55' }, { issue: '20190401-1313', endtime: '2019-04-01 21:52:55' }, { issue: '20190401-1314', endtime: '2019-04-01 21:53:55' }, { issue: '20190401-1315', endtime: '2019-04-01 21:54:55' }, { issue: '20190401-1316', endtime: '2019-04-01 21:55:55' }, { issue: '20190401-1317', endtime: '2019-04-01 21:56:55' }, { issue: '20190401-1318', endtime: '2019-04-01 21:57:55' }, { issue: '20190401-1319', endtime: '2019-04-01 21:58:55' }, { issue: '20190401-1320', endtime: '2019-04-01 21:59:55' }, { issue: '20190401-1321', endtime: '2019-04-01 22:00:55' }, { issue: '20190401-1322', endtime: '2019-04-01 22:01:55' }, { issue: '20190401-1323', endtime: '2019-04-01 22:02:55' }, { issue: '20190401-1324', endtime: '2019-04-01 22:03:55' }, { issue: '20190401-1325', endtime: '2019-04-01 22:04:55' }, { issue: '20190401-1326', endtime: '2019-04-01 22:05:55' }, { issue: '20190401-1327', endtime: '2019-04-01 22:06:55' }, { issue: '20190401-1328', endtime: '2019-04-01 22:07:55' }, { issue: '20190401-1329', endtime: '2019-04-01 22:08:55' }, { issue: '20190401-1330', endtime: '2019-04-01 22:09:55' }, { issue: '20190401-1331', endtime: '2019-04-01 22:10:55' }, { issue: '20190401-1332', endtime: '2019-04-01 22:11:55' }, { issue: '20190401-1333', endtime: '2019-04-01 22:12:55' }, { issue: '20190401-1334', endtime: '2019-04-01 22:13:55' }, { issue: '20190401-1335', endtime: '2019-04-01 22:14:55' }, { issue: '20190401-1336', endtime: '2019-04-01 22:15:55' }, { issue: '20190401-1337', endtime: '2019-04-01 22:16:55' }, { issue: '20190401-1338', endtime: '2019-04-01 22:17:55' }, { issue: '20190401-1339', endtime: '2019-04-01 22:18:55' }, { issue: '20190401-1340', endtime: '2019-04-01 22:19:55' }, { issue: '20190401-1341', endtime: '2019-04-01 22:20:55' }, { issue: '20190401-1342', endtime: '2019-04-01 22:21:55' }, { issue: '20190401-1343', endtime: '2019-04-01 22:22:55' }, { issue: '20190401-1344', endtime: '2019-04-01 22:23:55' }, { issue: '20190401-1345', endtime: '2019-04-01 22:24:55' }, { issue: '20190401-1346', endtime: '2019-04-01 22:25:55' }, { issue: '20190401-1347', endtime: '2019-04-01 22:26:55' }, { issue: '20190401-1348', endtime: '2019-04-01 22:27:55' }, { issue: '20190401-1349', endtime: '2019-04-01 22:28:55' }, { issue: '20190401-1350', endtime: '2019-04-01 22:29:55' }, { issue: '20190401-1351', endtime: '2019-04-01 22:30:55' }, { issue: '20190401-1352', endtime: '2019-04-01 22:31:55' }, { issue: '20190401-1353', endtime: '2019-04-01 22:32:55' }, { issue: '20190401-1354', endtime: '2019-04-01 22:33:55' }, { issue: '20190401-1355', endtime: '2019-04-01 22:34:55' }, { issue: '20190401-1356', endtime: '2019-04-01 22:35:55' }, { issue: '20190401-1357', endtime: '2019-04-01 22:36:55' }, { issue: '20190401-1358', endtime: '2019-04-01 22:37:55' }, { issue: '20190401-1359', endtime: '2019-04-01 22:38:55' }, { issue: '20190401-1360', endtime: '2019-04-01 22:39:55' }, { issue: '20190401-1361', endtime: '2019-04-01 22:40:55' }, { issue: '20190401-1362', endtime: '2019-04-01 22:41:55' }, { issue: '20190401-1363', endtime: '2019-04-01 22:42:55' }, { issue: '20190401-1364', endtime: '2019-04-01 22:43:55' }, { issue: '20190401-1365', endtime: '2019-04-01 22:44:55' }, { issue: '20190401-1366', endtime: '2019-04-01 22:45:55' }, { issue: '20190401-1367', endtime: '2019-04-01 22:46:55' }, { issue: '20190401-1368', endtime: '2019-04-01 22:47:55' }, { issue: '20190401-1369', endtime: '2019-04-01 22:48:55' }, { issue: '20190401-1370', endtime: '2019-04-01 22:49:55' }, { issue: '20190401-1371', endtime: '2019-04-01 22:50:55' }, { issue: '20190401-1372', endtime: '2019-04-01 22:51:55' }, { issue: '20190401-1373', endtime: '2019-04-01 22:52:55' }, { issue: '20190401-1374', endtime: '2019-04-01 22:53:55' }, { issue: '20190401-1375', endtime: '2019-04-01 22:54:55' }, { issue: '20190401-1376', endtime: '2019-04-01 22:55:55' }, { issue: '20190401-1377', endtime: '2019-04-01 22:56:55' }, { issue: '20190401-1378', endtime: '2019-04-01 22:57:55' }, { issue: '20190401-1379', endtime: '2019-04-01 22:58:55' }, { issue: '20190401-1380', endtime: '2019-04-01 22:59:55' }, { issue: '20190401-1381', endtime: '2019-04-01 23:00:55' }, { issue: '20190401-1382', endtime: '2019-04-01 23:01:55' }, { issue: '20190401-1383', endtime: '2019-04-01 23:02:55' }, { issue: '20190401-1384', endtime: '2019-04-01 23:03:55' }, { issue: '20190401-1385', endtime: '2019-04-01 23:04:55' }, { issue: '20190401-1386', endtime: '2019-04-01 23:05:55' }, { issue: '20190401-1387', endtime: '2019-04-01 23:06:55' }, { issue: '20190401-1388', endtime: '2019-04-01 23:07:55' }, { issue: '20190401-1389', endtime: '2019-04-01 23:08:55' }, { issue: '20190401-1390', endtime: '2019-04-01 23:09:55' }, { issue: '20190401-1391', endtime: '2019-04-01 23:10:55' }, { issue: '20190401-1392', endtime: '2019-04-01 23:11:55' }, { issue: '20190401-1393', endtime: '2019-04-01 23:12:55' }, { issue: '20190401-1394', endtime: '2019-04-01 23:13:55' }, { issue: '20190401-1395', endtime: '2019-04-01 23:14:55' }, { issue: '20190401-1396', endtime: '2019-04-01 23:15:55' }, { issue: '20190401-1397', endtime: '2019-04-01 23:16:55' }, { issue: '20190401-1398', endtime: '2019-04-01 23:17:55' }, { issue: '20190401-1399', endtime: '2019-04-01 23:18:55' }, { issue: '20190401-1400', endtime: '2019-04-01 23:19:55' }, { issue: '20190401-1401', endtime: '2019-04-01 23:20:55' }, { issue: '20190401-1402', endtime: '2019-04-01 23:21:55' }, { issue: '20190401-1403', endtime: '2019-04-01 23:22:55' }, { issue: '20190401-1404', endtime: '2019-04-01 23:23:55' }, { issue: '20190401-1405', endtime: '2019-04-01 23:24:55' }, { issue: '20190401-1406', endtime: '2019-04-01 23:25:55' }, { issue: '20190401-1407', endtime: '2019-04-01 23:26:55' }, { issue: '20190401-1408', endtime: '2019-04-01 23:27:55' }, { issue: '20190401-1409', endtime: '2019-04-01 23:28:55' }, { issue: '20190401-1410', endtime: '2019-04-01 23:29:55' }, { issue: '20190401-1411', endtime: '2019-04-01 23:30:55' }, { issue: '20190401-1412', endtime: '2019-04-01 23:31:55' }, { issue: '20190401-1413', endtime: '2019-04-01 23:32:55' }, { issue: '20190401-1414', endtime: '2019-04-01 23:33:55' }, { issue: '20190401-1415', endtime: '2019-04-01 23:34:55' }, { issue: '20190401-1416', endtime: '2019-04-01 23:35:55' }, { issue: '20190401-1417', endtime: '2019-04-01 23:36:55' }, { issue: '20190401-1418', endtime: '2019-04-01 23:37:55' }, { issue: '20190401-1419', endtime: '2019-04-01 23:38:55' }, { issue: '20190401-1420', endtime: '2019-04-01 23:39:55' }, { issue: '20190401-1421', endtime: '2019-04-01 23:40:55' }, { issue: '20190401-1422', endtime: '2019-04-01 23:41:55' }, { issue: '20190401-1423', endtime: '2019-04-01 23:42:55' }, { issue: '20190401-1424', endtime: '2019-04-01 23:43:55' }, { issue: '20190401-1425', endtime: '2019-04-01 23:44:55' }, { issue: '20190401-1426', endtime: '2019-04-01 23:45:55' }, { issue: '20190401-1427', endtime: '2019-04-01 23:46:55' }, { issue: '20190401-1428', endtime: '2019-04-01 23:47:55' }, { issue: '20190401-1429', endtime: '2019-04-01 23:48:55' }, { issue: '20190401-1430', endtime: '2019-04-01 23:49:55' }, { issue: '20190401-1431', endtime: '2019-04-01 23:50:55' }, { issue: '20190401-1432', endtime: '2019-04-01 23:51:55' }, { issue: '20190401-1433', endtime: '2019-04-01 23:52:55' }, { issue: '20190401-1434', endtime: '2019-04-01 23:53:55' }, { issue: '20190401-1435', endtime: '2019-04-01 23:54:55' }, { issue: '20190401-1436', endtime: '2019-04-01 23:55:55' }, { issue: '20190401-1437', endtime: '2019-04-01 23:56:55' }, { issue: '20190401-1438', endtime: '2019-04-01 23:57:55' }, { issue: '20190401-1439', endtime: '2019-04-01 23:58:55' }, { issue: '20190401-1440', endtime: '2019-04-01 23:59:55' }]
+                },
+                servertime: '2019-03-31 11:16:23',
+                lotteryid: parseInt(34, 10),
+                ajaxurl: './?controller=game&action=play&curmid=40427',
+                ontimeout: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: './?controller=game&action=play&curmid=40427',
+                        data: "lotteryid=34&flag=gethistory",
+                        success: function (data) {
+
+                            var partn = /<script.*>.*<\/script>/;
+                            if (data == 'empty' && partn.test(data)) {
+                                return;
+                            }
+                            if (data == "empty") return;
+                            if ($.trim(data) == "empty") return;
+                            eval("data=" + data);
+                            processCode(data[0].issue, data[0].code);
+                        }
+                    });
+                },
+                onfinishbuy: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: './?controller=game&action=play&curmid=40427',
+                        data: "lotteryid=34&flag=getprojects",
+                        success: function (data) {
+                            var partn = /<script.*>.*<\/script>/;
+                            if (data == 'empty' && partn.test(data)) {
+                                return;
+                            }
+                            eval("data=" + data);
+                            $(".history_pro", "#history_project").remove();
+                            var html = '';
+                            var selectedcss = '';
+                            $.each(data, function (i, n) {
+                                html += '<tr class="history_pro">';
+                                if (i % 2 == 0) {
+                                    selectedcss = ' class="odd" bgcolor="#CCCCCC" align="center"';
+                                } else {
+                                    selectedcss = ' bgcolor="#CCCCCC" align="center"';
+                                }
+                                html += '<td' + selectedcss + ' height="30"><a href="./index.php?controller=gameinfo&action=gamedetail&id=' + n.projectid + '" target="_blank" title="查看注单详情" class="projectidarea">' + n.projectid + '</a></td>';
+                                html += '<td' + selectedcss + '>' + n.writetime + '</td>';
+                                html += '<td' + selectedcss + '>' + n.methodname + '</td>';
+                                html += '<td' + selectedcss + '>' + n.issue + '</td>';
+                                html += '<td' + selectedcss + '>' + n.modes + '</td>';
+                                if (n.code.length > 20) {
+                                    html += '<td' + selectedcss + '><span class="project_more">号码详情</span><div style="display:none;">' + n.code + '</div></td>';
+                                } else {
+                                    html += '<td' + selectedcss + '>' + n.code + '</td>';
+                                }
+                                html += '<td' + selectedcss + '>' + n.multiple + '</td>';
+                                html += '<td' + selectedcss + '>' + moneyFormat(n.totalprice) + '</td>';
+                                html += '<td' + selectedcss + '>' + (parseInt(n.taskid, 10) > 0 ? "是" : "否") + '</td>';
+                                html += '</tr>';
+                            });
+                            $(html).insertAfter("#project_title");
+                        }
+                    });
+                    //刷新投注记录
+                    betRecord(34);
+                }
+            });
+            if ('09 07 06 03 02 08 01 10 04 05' != '') {
+                processCode('20190331-0676', '09 07 06 03 02 08 01 10 04 05');
+            }
+            $('span[class="project_more"]', "#history_project").live("click", function () {
+                var mme = this;
+                var $h = $('<span style="display: block;" id="task_div">号码详情[<span class="close">关闭</span>]<br><textarea readonly="readonly" class="code1">' + $(mme).next().html() + '</textarea></span>');
+                $(this).openFloat($h, "projects_more");
+                $("span", $(this).parent()).filter(".close").click(function () {
+                    $(mme).closeFloat();
+                });
+            });
+            var iLid = parseInt(34, 10);
+            var position = -(iLid - 1) * 75;
+            $("#right_top_01_02").css("background-position", "0px " + position + "px");
+            //$.alert("hha");
+            function a() {
+                var currentissue = $('.no_old').html();
+                var timeLotteryid = "34";
+                betRecord(timeLotteryid);
+                $.ajax({
+                    type: 'POST',
+                    url: './?controller=game&action=play&curmid=40427',
+                    data: "lotteryid=34&flag=gethistory&currentissue=" + currentissue,
+                    success: function (data) {
+                        if (data == 'empty') {
+                            return;
+                        }
+
+                        if ($.trim(data) == "empty") return;
+                        eval("data=" + data);
+                        processCode(data[0].issue, data[0].code, data.iscurent)
+                        // 5期开奖号码刷新
+                        $.ajax({
+                            type: 'POST',
+                            url: './?controller=game&action=bonuscode&curmid=1',
+                            data: "lotteryid=34&fivehd=5",
+                            success: function (datax) {
+                                var data = eval(datax);
+                                //                                console.log(data);
+                                var html = "";
+                                var mid = 0;
+                                mid = cur_methord.indexOf("前三") > -1 ? 1 : mid;//前三
+                                mid = cur_methord.indexOf("后三") > -1 ? 2 : mid;//后三
+                                mid = cur_methord.indexOf("前二") > -1 ? 3 : mid;//前二
+                                mid = cur_methord.indexOf("后二") > -1 ? 4 : mid;//后二
+                                mid = cur_methord.indexOf("四星") > -1 ? 5 : mid;//四星
+                                mid = cur_methord.indexOf("中三") > -1 ? 6 : mid;//中三
+                                mid = cur_methord.indexOf("三码") == 0 ? 7 : mid;//三码
+                                mid = cur_methord.indexOf("猜冠军") > -1 ? 8 : mid;//三码
+                                mid = cur_methord.indexOf("猜冠亚军") > -1 ? 9 : mid;//三码
+                                mid = cur_methord.indexOf("前四") > -1 ? 12 : mid;//前四
+                                mid = cur_methord.indexOf("前五") > -1 ? 10 : mid;//前五
+                                mid = cur_c_methord.indexOf("冠亚和值") > -1 ? 9 : mid;//pk10冠亚和值大小单双
+                                var test = $(".lableclick").text();
+                                if (cur_methord.indexOf("二码") > -1) {
+                                    if (test.indexOf("前二") > -1) {
+                                        mid = 3;
+                                    } else if (test.indexOf("后二") > -1) {
+                                        mid = 4;
+                                    }
+
+                                }
+                                if (cur_methord.indexOf("不定胆") > -1) {
+                                    //写死，11选5是前二，其他的是后二
+                                    if (test.indexOf("前三") > -1) {
+                                        mid = 1;
+                                    } else if (test.indexOf("后三") > -1) {
+                                        mid = 2;
+                                    }
+                                }
+
+                                if (cur_methord.indexOf("定位胆") > -1) {
+                                    mid = 1;//11选5的定位胆是前三
+                                    if (cur_c_methord.indexOf("1~5") > -1) {
+                                        mid = 10;
+                                    } else {
+                                        mid = 11;
+                                    }
+                                }
+                                cur_jqjq = data;
+                                var gaparr = getcodegap(mid);
+                                var type = "0";
+                                var tzjq = "tzjq";//奖期的class；
+                                if (test.indexOf("和值") > -1 && cur_methord.indexOf("任选") < 0) {
+                                    type = "hz"; tzjq = "tzjqxt";
+                                }
+                                console.log("cur_methord:" + cur_methord + "|cur_c_methord:" + cur_c_methord);
+                                if (cur_methord == 0 && (cur_cz == 27 || cur_cz == 34 || cur_cz == 54)) mid = 8;
+                                for (var i = 0; i < data.length; i++) {
+                                    // html +=  "<li><span class=\"HistoryIssues\">"+data[i].issue+"期</span><span class=\"HistoryNum\">"+data[i].code+"</span></li>";
+                                    //html +=  "<li><span>"+data[i].issue+"期</span><span>";
+                                    var codearr = [];
+                                    if (lotterytype == 2) {
+                                        codearr = data[i].code.split(" ");
+                                    } else {
+                                        codearr = data[i].code.split("");
+                                    }
+                                    for (var j = 0; j < codearr.length; j++) {
+                                        //html+="<i id=\"code"+j+"\">"+codearr[j]+"</i>";
+                                        var issue = data[i].issue;
+                                        //issue=issue.substr(4);
+                                        if (cur_cz == 61) {
+                                            issue = issue.substr(4);
+                                        }
+                                        html += "<li><span class='" + tzjq + "'>" + issue + "</span><span>";
+                                        var codearr = [];
+                                        if (lotterytype == 2) {
+                                            codearr = data[i].code.split(" ");
+                                        } else {
+                                            codearr = data[i].code.split("");
+                                        }
+                                        for (var j = 0; j < codearr.length; j++) {
+                                            html += "<i class=\"code" + j;
+                                            switch (mid) {
+                                                case 1://前三
+                                                    if (j < 3) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 2://后三
+                                                    if (j > 1) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 3://前二
+                                                    if (j < 2) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 4://后二
+                                                    if (isssc && j > 2) {
+                                                        html += " mark";
+                                                    }
+                                                    //3D
+                                                    if (!isssc && j > 0) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 5://四星
+                                                    if (j > 0) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 6://中三
+                                                    if (j > 0 && j < 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 7://三码,11选5 前三
+                                                    if (j < 3) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 8://pk10 猜冠军
+                                                    if (j < 1) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 9://pk10 猜冠亚军
+                                                    if (j < 2) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 10://pk10 1-5
+                                                    if (j < 5) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 11://pk10 6-10
+                                                    if (j > 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 12://pk10 qiansi
+                                                    if (j < 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                            }
+                                            html += "\" >" + codearr[j] + "</i>";
+                                        }
+                                        //html +="</span></li>";
+                                    }
+                                    if (type == "0") {
+                                        html += "</span><span class='tzxt' style='display:none;'>-</span></li>";
+                                    } else {
+                                        changeFormTitle(type);
+                                        $("#tzxt").css("display", "inline-block");
+                                        str = getForm(cur_jqjq[i].code, type, gaparr);
+                                        if (type == "dxds") {
+                                            tzxt = "tzxt dxds";
+                                            html += "</span><span class='" + tzxt + "' style='display:inline-block;width:20%;'>" + str + "</span></li>";
+                                        } else if ((str == "组三" && test == "组三")) {
+                                            //tzxt="tzxt numberType";
+                                            html += "</span><span class='tzxt numberType' style='display:inline-block;'>" + str + "</span></li>";
+                                        } else if (str == "组六" && test == "组六") {
+                                            //tzxt="tzxt numberType";
+                                            html += "</span><span class='tzxt numberType' style='display:inline-block;'>" + str + "</span></li>";
+                                        } else {
+                                            html += "</span><span class='" + tzxt + "' style='display:inline-block;width:18%;'>" + str + "</span></li>";
+                                        }
+                                    }
+
+                                }
+
+                                if (lotterytype == '0') {
+                                    $("#WinnerNumList_div").html(html);
+                                } else if (lotterytype == '2') {
+                                    $("#WinnerNumList_div").html(html);
+                                } else {
+                                    $("#WinnerNumList_div").html(html);
+                                }
+
+                            }
+                        });
+                    }
+                });
+
+                if (timeLotteryid == '33' || timeLotteryid == '34') {
+                    setTimeout(a, 6000);
+                } else {
+                    setTimeout(a, 30000);
+                }
+            } a();
+        });
+    })(jQuery);
+    var lotterytype = 2;
+
+    function processCodeTime(i, curNum) {
+        var p = 34;
+        if (p == 27 || p == 34 || p == 54) {
+            $("#last_code_num" + i).attr("class", "pk10_num_" + curNum);
+        } else if (p == 51 || p == 61) {
+            $("#last_code_num" + i).removeClass();
+            var curNumClass = curNum;
+            if (curNum < 10) {
+                curNumClass = "0" + curNum;
+            }
+            $("#last_code_num" + i).addClass("ball" + curNumClass).html(curNum);
+            if (i == 6) {
+                $("#last_code_num" + i).addClass("last").html(curNum);
+            }
+        } else {
+            $("#last_code_num" + i).html(curNum);
+        }
+    }
+    var codeNumForeach = 0;
+    var issucc = "";
+    var issueAll = "";
+    function processCode(issue, code, iscurent) {
+        //	$('.no_old').html(issue);
+        //alert(issue)
+        if (issueAll == issue) {
+            issueAll = issue;
+            return false;
+        } else {
+            issueAll = issue;
+        }
+        var cStr = '';
+        var aTmp = new Array();
+        //处理中奖号码
+        if (code.indexOf(' ') == -1) {
+            //无空格
+            aTmp = code.split('');
+        } else {
+            //有空格
+            aTmp = code.split(' ');
+        }
+        var p = 34;
+        for (var m = 0; m < 5; m++) {
+            $("#last_code_num" + m).html("");
+        }
+        if (p == 27 || p == 34 || p == 54) {
+            for (var m = 0; m < aTmp.length; m++) {
+                $("#last_code_num" + m).attr("class", "");
+            }
+        }
+        codeNumForeach = 1;
+        $('.no_old').html(issue);
+
+        if (iscurent == 2) {//增加动态抓取sean
+            var latestlot = "<li class=\"qihao1\">" + issue + "<\/li><li class=\"haoma1\">";
+            var sCode = "";
+            for (var ci = 0; ci < aTmp.length; ci++) {
+                sCode += "<span>" + aTmp[ci] + "<\/span>";
+            }
+            var sInsertHtml = latestlot + sCode + "</li>";
+            $(".biaotou").eq(1).after(sInsertHtml);
+            $("li[class=qihao1]:last").remove();
+            $("li[class=haoma1]:last").remove();
+        }
+        var num_single = 0, num_double = 0;
+        //console.log("aTmp.length:"+aTmp.length);
+        var num_codesort = aTmp;//排序
+        if (aTmp.length < 5) {
+            $("#last_code_num3").remove();
+            $("#last_code_num4").remove();
+        }
+
+        for (var ci = 0; ci < aTmp.length; ci++) {
+            var curNum = aTmp[ci];
+            //curNum=parseInt(curNum,10);
+            //		$('#last_code_num'+ci).html(curNum);
+
+
+            setTimeout("processCodeTime(" + ci + "," + curNum + ")", (ci + 1) * 500);
+
+            var code_word = '';
+            if (curNum >= 5) {
+                code_word += '大';
+            } else {
+                code_word += '小';
+            }
+            if (curNum % 2 == 0) {
+                code_word += '双'; num_double++;
+            } else {
+                code_word += '单'; num_single++;
+            }
+            //$('#last_code_word'+ci).html(code_word);
+        }
+        if (lotterytype == 0) {
+            var last_code_desc1 = "组三";
+            if (aTmp[0] == aTmp[1] && aTmp[0] == aTmp[2]) {
+                last_code_desc1 = "豹子";
+            } else if (aTmp[0] != aTmp[1] && aTmp[0] != aTmp[2] && aTmp[1] != aTmp[2]) {
+                last_code_desc1 = "组六";
+            }
+            $("#last_code_desc1").html(last_code_desc1);
+            var last_code_desc2 = "组三";
+            if (aTmp[2] == aTmp[3] && aTmp[2] == aTmp[4]) {
+                last_code_desc2 = "豹子";
+            } else if (aTmp[2] != aTmp[3] && aTmp[2] != aTmp[4] && aTmp[3] != aTmp[4]) {
+                last_code_desc2 = "组六";
+            }
+            $("#last_code_desc2").html(last_code_desc2);
+        } else if (lotterytype == 2) {
+            num_codesort = num_codesort.sort();
+            var last_code_desc1 = num_single + "单" + num_double + "双";
+            $("#last_code_desc1").html(last_code_desc1);
+            var last_code_desc2 = num_codesort[2];
+            $("#last_code_desc2").html(last_code_desc2);
+        } else if (lotterytype == 3) {
+            //cStr += '<div class="bonusnumber"><div>';
+            var total = ups = downs = odds = evens = 0;
+            for (var ci = 0; ci < aTmp.length; ci++) {
+                total += intval(aTmp[ci]);
+                if (intval(aTmp[ci]) < 41) {
+                    ups += 1;
+                } else {
+                    downs += 1;
+                }
+                if (intval(aTmp[ci]) % 2 == 0) {
+                    evens += 1;
+                } else {
+                    odds += 1;
+                }
+                //cStr += '<span class="ball">'+aTmp[ci]+'</span>';
+            }
+            var cheziStr = '和值：' + total + '(';
+            if (total > 810) {
+                cheziStr += '大';
+            } else if (total < 810) {
+                cheziStr += '小';
+            } else {
+                cheziStr += '和';
+            }
+            cheziStr += ',' + (total % 2 == 0 ? '双' : '单') + ')';
+            var cpanStr = '盘面：(';
+            if (ups > downs) {
+                cpanStr += '上';
+            } else if (ups == downs) {
+                cpanStr += '中';
+            } else {
+                cpanStr += '下';
+            }
+            cpanStr += ',';
+            if (odds > evens) {
+                cpanStr += '奇';
+            } else if (odds == evens) {
+                cpanStr += '和';
+            } else {
+                cpanStr += '偶';
+            }
+            cpanStr += ')';
+            $('#last_code_desc1').html(cheziStr);
+            $('#last_code_desc2').html(cpanStr);
+        }
+    }
+    //清空追号方案
+    var cleanTraceIssue = function () {
+        $("input[name^='lt_trace_issues']", $($.lt_id_data.id_tra_issues)).attr("checked", false);
+        $("input[name^='lt_trace_times_']", $($.lt_id_data.id_tra_issues)).val(0).attr("disabled", true);
+        $("span[id^='lt_trace_money_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        //add by neal
+        $("span[id^='lt_trace_accumulatemoney_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_profit_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_currentprofit_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_profitmargin_']", $($.lt_id_data.id_tra_issues)).html('0');
+
+        $("td", $($.lt_id_data.id_tra_issues)).removeClass("selected");
+        $('#lt_trace_hmoney').html(0);
+        $('#lt_trace_money').val(0);
+        $('#lt_trace_count').html(0);
+        $.lt_trace_issue = 0;
+        $.lt_trace_money = 0;
+    };
+    function div_slow_show(showslow_id) {
+        $("#div_slow_id_" + showslow_id).show("slow");
+    }
+    function div_slow_hide(showslow_id) {
+        $("#div_slow_id_" + showslow_id).hide("slow");
+    }
+    var setCookie = function (name, value, expire, path) {
+        //expire=expire||30*24*60*60*1000;
+        var curdate = new Date();
+        var cookie = name + "=" + encodeURIComponent(value) + "; ";
+        if (expire != undefined || expire == 0) {
+            if (expire == -1) {
+                expire = 366 * 86400 * 1000;//保存一年
+            } else {
+                expire = parseInt(expire);
+            }
+            curdate.setTime(curdate.getTime() + expire);
+            cookie += "expires=" + curdate.toUTCString() + "; ";
+        }
+        path = path || "/";
+        cookie += "path=" + path;
+        document.cookie = cookie;
+    };
+    var getCookie = function (name) {
+        var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+        re = new RegExp(re);
+        if (re.test(document.cookie)) {
+            return decodeURIComponent(RegExp.$1);
+        }
+        return '';
+    };
+    setCookie('last_lottery_url', top.location.href);
+</script>
+<style>
+
+TEXTAREA {
+  font: 12px "courier new";
+  vertical-align: middle;
+}
+</style>
+
+<!--<div class="rightcut_st"></div>-->
+
+<div class="RightWinnerNum">
+	<div class="fl lotteryLogoBg">
+		<!-- new新增彩种图标 -->
+		<div class="playIcon_cont">
+			<div class="caizhong_34"></div>
+		</div>
+		<!-- 期号，倒计时 -->
+				<div class="Times" id="countdown_time">
+			<div class="issues">第<span id="current_issue"></span>期</div>
+			<div class="CountDown" id="count_down">00:00:00</div>
+			<!-- <div class="NumShow"></div> -->
+		</div>
+	</div>
+	<!-- 近一期+近五期 -->
+	<div class="ShowNumlist1_5 fl lotteryLogoBg">
+		<!--<div class="nav1_5">
+			<ul>
+				<li><a href="javascript:void(0)" class="curr">近一期</a></li>
+				<li><a href="javascript:void(0)">近五期</a></li>
+			</ul>
+		</div>-->
+				<!-- 出奖号码 -->
+		<div class="WinnerNum  make_transist hideleft showleft " style=" position: absolute; top: 0px;left:0;">
+			<div class="NumIssues"><span>极速PK拾</span>第<span id="nowolddiv" class="no_old">20190331-0676</span>期 <a class="zoushi" target="_blank" href="?controller=game&action=bonuscode&lotteryid=34&issuecount=30"><i class="chart"></i>号码走势</a></div>
+			<ul class="NumListShow pk10List">
+				<li id="last_code_num0"></li>
+				<li id="last_code_num1"></li>
+				<li id="last_code_num2"></li>
+				<li id="last_code_num3"></li>
+				<li id="last_code_num4"></li>
+				<li id="last_code_num5"></li>
+				<li id="last_code_num6"></li>
+				<li id="last_code_num7"></li>
+				<li id="last_code_num8"></li>
+				<li id="last_code_num9"></li>
+			</ul>
+		</div>
+                		<!-- 往期开奖号码 -->
+		<!--<div class="WinnerNumList make_transist hideleft" style=" position: absolute; top: 0px;left:0;">-->
+			<!--<ul id="WinnerNumList_div">-->
+				<!--                  <li><span class="HistoryIssues">1512期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1511期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1510期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1509期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1508期</span><span class="HistoryNum">5.2.2.3.1</span></li>-->
+			<!--</ul>-->
+		</div>
+	</div>
+</div>
+
+<script language="javascript" src="js/web/lottery/jquery.youxi.main.js?v=20190308"></script>
+<script language="javascript" src="js/web/lottery/jquery.youxi.selectarea.js?version=20181221"></script>
+<script language="javascript" src="js/web/lottery/jquery.youxi.trace.js?version=20181221"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<div id="subContent_bet">
+<!--投注页面头部可视代码开始-->
+<div class="bg clearfix">
+
+
+<!--最近开奖 投注记录-->
+
+<div class="panel fr">
+	<div class="panelTitle"><a href="javascript:void(0);" id="tzshow1" class="active" onclick="tozhuShow(1);">最近开奖</a><a href="javascript:void(0);" id="tzshow2" onclick="tozhuShow(2);">投注记录</a></div>
+	<div class="panelCon">
+		<!--近期开奖-->
+		<div class="listH" id="coderecord">
+		<p>
+			<label class="tzjq">奖期</label><label>开奖号码</label><label id="tzxt" class="numberType" style="display: none;">形态</label>
+		</p>
+		<ul id="WinnerNumList_div">
+			<!--<li><span>1218095</span><span><i>7</i><i>8</i><i class="mark">6</i><i class="mark">4</i><i class="mark">7</i></span><span class="numberType">后三</span></li>-->
+		</ul>
+		</div>
+		<!--近期开奖 END-->
+		<!--投注记录-->
+		<div id="betrecord" class="orderList listH" style="display: none;">
+			<ul id="lt_trace_issues_today_bet_title">
+				<span id="td01" style="width: 50%;">期号</span><span id="td02">状态</span><span id="td03">操作</span>
+			</ul>
+			<ul id="lt_trace_issues_today_bet"></ul>
+		</div>
+		<div class="appEntry"><a onclick="showAppDown();" href="javascript:void(0)"></a></div>
+	</div>
+
+</div>
+<!--投注-->
+<form method="post" name="buyform" action="">
+<div class="box">
+	<div class="Menubox title clearfix">
+		<ul id="lotteryType">
+		</ul>
+	</div>
+	<div class="Contentbox" id="lotteryDetail">
+		<div class="minitypeall">
+			<div class="bet_ae_bg">
+				<div class="minitype" id="lt_samll_label"></div>
+				<div class="minitype2" > <span >玩法说明</span><span id="lt_desc" class="help_con"></span>&nbsp;<span id="lt_example">示例</span>
+					<div id="lt_example_div" style="display:none;"></div>
+					&nbsp;&nbsp;<span id="lt_help">帮助</span>
+					<div id="lt_help_div"  style="display:none;"></div>
+				</div>
+				<div  id="poschoose"></div>
+				<div id="lt_selector" class="ball_bg afterClear  "> </div>
+
+				<!--选号区结束 -->
+				<div id="right_04" class="grayBottom" style=display:none;>
+					<div class="right_02_07"></div>
+					<div class="right_02_08"></div>
+				</div>
+			</div>
+				<div class="">
+
+					<!-- new 选号操作 -->
+					<div class="OperationSub_plus">
+						<label>倍数：</label>
+						<span class="PlusSub"><i class="sub"></i>
+						<input id="lt_sel_times"  value="1" type="text" class="txt50" />
+						<i class="plus"></i></span>
+						<label>倍</label>
+						<label>模式</label>
+						<span id="betMoneyMode"></span>
+						<select name="lt_project_modes"  class="select50 fl">
+							<option value="1">元</option>
+							<option value="2">角</option>
+							<option value="3">分</option>
+							<option value="4">厘</option>
+						</select>
+						<label id="wrapshow_l" style="margin-left:10px;">返点：</label>
+						<div id="wrapshow"><span id="nfdprize"></span></div>
+						<label>选择<em id="lt_sel_nums">0</em>注，共￥<em id="lt_sel_money">0</em></label>
+						<!--<a href="#" class="Btn80"></a>--><!-- class="Btn80_dis"为禁用下样式 -->
+						<!--              <input id="lt_sel_insert" type="button" value="选好了" class="formOk Btn80">-->
+						<a id="lt_sel_onekeybet" href="javascript:void(0);" class="throwNow">立即投注</a>
+						<a id="lt_sel_insert" href="javascript:void(0);" class="Btn80">添加</a>
+
+						<!--<a id="lt_random_area" href="javascript:void(0);" style="display: none;" class="random1">机选</a>-->
+						<input type="hidden" id="randomcos" value="" >
+						<input type="hidden" id="randomcosvalue" value="">
+					</div>
+				</div>
+				<input type="hidden" name="lotteryid" id="lotteryid" value="34" />
+				<input type="hidden" name="curmid" id="curmid" value="40427" />
+				<input type="hidden" name="flag" id="flag" value="save" />
+				<input type="hidden" name="poschoose" id="Hidden1" value="" />
+				<div class="GameNumFrom">
+					<!--new div+class-->
+					<!--<div class="clear12"></div>-->
+					<!--new div+class-->
+					<div class="clearfix grayBet" style="clear:both;">
+
+						<!--<div class="clear10"></div>-->
+						<!--new div+class-->
+
+						<!-- 投注项+最近投注 new-->
+						<div class="BetAllBox">
+							<div class="leftCont">
+								<dl class="BetTextarea">
+									<dt>
+										<label>投注项：<em id="singe_bet_count">0</em></label>
+										<a href="javascript:void(0);" id="delteAllNum" class="del"><i class="icon trash"></i>清空</a>
+										<div class="jxuan_box">
+											<p><i class="icon jixuan"></i>机选</p>
+											<ul id="newlt_random_area">
+												<li value="1">机选1注</li>
+												<li value="3">机选3注</li>
+												<li value="5">机选5注</li>
+												<li value="10">机选10注</li>
+											</ul>
+											<!-- <select id="lt_random_area" class="random1" style="margin-left: 0px;outline:none;">
+												<option value="0">&nbsp;机选</option>
+												<option value="1">机选1注</option>
+												<option value="3">机选3注</option>
+												<option value="5">机选5注</option>
+												<option value="10">机选10注</option>
+											</select> -->
+										</div>
+									</dt>
+									<dd class="Tarea">
+										<ul id="lt_cf_content">
+										</ul>
+									</dd>
+								</dl>
+								<div class="bomOperationBox">
+									<div class="part02">
+										<div><!--<span>下注 <span id="lt_cf_count">0</span> 单</span>&nbsp;&nbsp; -->
+											总注数 <span id="lt_cf_nums">0</span> 注，
+											总金额：￥<span id="lt_cf_money">0</span><span style="display:none;">， 起始期：<span id="lt_issues"> </span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+											<label style="display: none;">
+												<input type="checkbox" name="lt_trace_if" id="lt_trace_if_button" value="no">
+												<span>发起追号</span></label>
+												<!--<label>
+						<input name="lt_trace_stop" type="checkbox" value="yes" id="lt_trace_stop" disabled="disabled">
+						<span>中奖后停止追号</span></label>-->
+										</div>
+									</div>
+									<!-- class="btnSubmit_dis"为禁用按钮样式 -->
+									<!--<a><img src="/images/web/imgo_z.jpeg"/> </a>-->
+									<a href="javascript:void(0);" class="btnSubmit " onclick="return(false);" id="lt_sendok">确认投注</a>
+									<a href="javascript:void(0);" class="btnSubmit_zh " id="lt_trace_if_button_div">追号</a>
+								</div>
+							</div>
+							<!--<div class="rightCont">
+								<dl class="RB_BetListBox">
+									<dt>最近投注记录</dt>
+									<dd>
+										<ol id="lt_trace_issues_today_bet_title">
+											<li><span class="td01">玩法</span><span class="td02">状态</span><span class="td03">操作</span></li>
+										</ol>
+										<ul id="lt_trace_issues_today_bet">
+										</ul>
+									</dd>
+								</dl>
+							</div>-->
+						</div>
+						<!-- 投注项+最近投注 end -->
+
+						<div class="tjBox clearfix">
+							<div> </div>
+						</div>
+					</div>
+
+				</div>
+
+		</div>
+	</div>
+</div>
+<!--我要追号-->
+<div class="ZH_bet_layerBox" style="display: none;">
+	<div class="layerShadow_bet"></div>
+	<div id="lt_trace_box1" class="wyzhContent"> <a href="javascript:void(0);" class="close_betLayer">x</a>
+		<div id="lt_trace_label"></div>
+																							<div class="head clearfix">
+			<div class="headContent">
+				<p class="zh_selectP">追号期数：
+					<select class="select3" id="lt_trace_qissueno">
+						<option value="">请选择</option>
+						<option value="5">5期</option>
+						<option value="10">10期</option>
+						<option value="15">15期</option>
+						<option value="20">20期</option>
+						<option value="25">25期</option>
+						<option value="all">全部</option>
+					</select>
+					 总期数：<span class="red" id="lt_trace_count">0</span> 期 	总金额：<span class="red" id="lt_trace_hmoney">0.00</span> 元 <span id="lt_trace_labelhtml"></span> <span class="red" id="lt_trace_alcount" style="display:none;">全部追号期数</span> </p>
+				<!--<p>追号计划： 起始倍数 <input name="" type="text" value="1" size="3" /> 最低收益率  <input name="" type="text" value="50" size="3" />% 追号期数: <input name="" type="text" value="10" size="3" /></p>-->
+
+				<input name="" type="button" value="生成" class="formSC" id="lt_trace_ok" />
+			</div>
+		</div>
+		<div class="zhlist" style="height:28px;" >
+				<table border="0" cellspacing="0" cellpadding="0" class="formTable" width="100%">
+						<tr align="center"><td width="10px">&nbsp;</td><td style="text-align:center" width="30px">序号</td><td width="115px" style="text-align:center">期号</td><td width="90px" style="text-align:center">倍数</td><td width="90px" style="text-align:center">当前投注</td><td width="80px" style="text-align:center">累计投注</td><td width="100px" name="currentprofit[]" style="text-align:center">当期利润</td><td width="120px" style="text-align:center">合计利润</td><td width="70px" id="title_profitmargin" name="profitmargin[]" style="text-align: center; display: block;">利润率</td></tr>
+				</table>
+		</div>
+		<div class="zhlist"  id="lt_trace_issues"></div>
+		<!--中奖停止追号-->
+		<div class="Stop_zhuihao">
+			<input name="lt_trace_stop" type="checkbox" value="yes" id="lt_trace_stop" disabled="disabled">
+			<span>中奖后停止追号</span> <a href="javascript:void(0);" class="btnSubmit " onclick="return(false);" id="lt_sendok_c2">立即投注</a> </div>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+    function tozhuShow(index) {
+        if (index == 1) {
+            $("#coderecord").show();
+            $("#betrecord").hide();
+            $("#tzshow1").addClass('active');
+            $("#tzshow2").removeClass('active');
+
+        } else {
+            $("#coderecord").hide();
+            $("#betrecord").show();
+            $("#tzshow2").addClass('active');
+            $("#tzshow1").removeClass('active');
+        }
+    }
+    function showAppDown() {
+        top.monihowAppDown();
+    }
+
+</script>
+
+</div></div>
+
+
+<!-- <div id="footer">
+    	<p>桌面最佳分辨率为(1366×768)，浏览器请使用IE7.0以上或务必使用谷歌Chrome或者火狐Firefox以达到最佳游戏效果</p>
+        <p>Copyright©2012-2014 版权所有 大众游戏 <a href="/?controller=about">关于我们</a></p>
+         <div id="quickLink"> <a target=_blank href="#" onclick="" class="online">在线客服</a> | <a href="">常见问题</a> | <a href="">玩法介绍</a></div>
+       <!-- <div id="quickLinkDark">在线客服 | 常见问题 | 玩法介绍</div>
+ </div>
+</div>
+
+</div>
+<script>
+   
+//    $(document).ready(function(){
+//        if(!getC('popupad'))
+//            {
+//                $("#popupad").show();
+//            }
+//        
+//        
+//    })
+//
+//    function getC(c_name)
+//    {
+//    if (document.cookie.length>0)
+//      {
+//      c_start=document.cookie.indexOf(c_name + "=")
+//      if (c_start!=-1)
+//        { 
+//        c_start=c_start + c_name.length+1 
+//        c_end=document.cookie.indexOf(";",c_start)
+//        if (c_end==-1) c_end=document.cookie.length
+//        return unescape(document.cookie.substring(c_start,c_end))
+//        } 
+//      }
+//    return ""
+//    }
+//    
+//    
+//    function setC(c_name,value,expiredays)
+//    {
+//    var exdate=new Date()
+//    exdate.setDate(exdate.getDate()+expiredays)
+//    document.cookie=c_name+ "=" +escape(value)+
+//    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+//    }    
+//
+//    function opoupad()
+//    {
+//        $("#popupad").hide();
+//        setC('popupad', '1', 3600);
+//    }
+//    
+    //autoAlertPrize();
+
+</script>
+
+
+
+
+ <div style='display:none;'><a href='http://www.live800.com'>客服</a></div>-->
+
+<!--<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>-->
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    //投注记录查询
+    betRecord(34);
+</script>                         

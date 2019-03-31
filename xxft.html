@@ -1,0 +1,1269 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/web/base.css?v=20190318" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/web/layout.css?v=20190203" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/web/lottery_frame.css" media="all" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/web/wish_style.css?v=20190316"/>
+<title>::::大众游戏::::</title>
+
+<script type="text/javascript" src="js/web/png/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="js/web/jquery-1.7.min.js"></script>
+
+
+<script type="text/javascript" src="js/web/iframe.js"></script>
+<!--消息框代码开始-->
+<script type="text/javascript" src="js/web/dialogUI/jquery.dialogUI.js"></script>
+<script type="text/javascript" src="js/web/dialogUI/jquery.dragdrop.js"></script>
+<link href="js/web/dialogUI/dialogUI.css" media="all" type="text/css" rel="stylesheet"/>
+<!--消息框代码结束-->
+<script type="text/javascript" src="js/web/main.js?v=20190308"></script>
+
+</head>
+    <body><link href="css/web/11to5.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="/js/web/tab.js"></script>
+<script src="js/common/calendar/jquery.dyndatetime.js" type="text/javascript"></script>
+<script src="js/common/calendar/lang/calendar-utf8.js" type="text/javascript"></script>
+<link href="js/common/calendar/css/calendar-blue.css" media="all" type="text/css" rel="stylesheet">
+<!--------------------->
+<script language="javascript" src="js/web/common.js"></script>
+<script language="javascript" src="js/web/lottery/youxi_lang_zh.js?v=20171226"></script>
+<script language="javascript" src="js/web/Tab_query.js"></script>
+
+<script language="javascript">
+    function intval(mixed_var, base) {
+        var tmp;
+        var type = typeof (mixed_var);
+        if (type === 'boolean') {
+            return +mixed_var;
+        } else if (type === 'string') {
+            tmp = parseInt(mixed_var, base || 10);
+            return (isNaN(tmp) || !isFinite(tmp)) ? 0 : tmp;
+        } else if (type === 'number' && isFinite(mixed_var)) {
+            return mixed_var | 0;
+        } else {
+            return 0;
+        }
+    }
+    function show_on() {
+        $("#lt_help_div").show("slow");
+    }
+    function close_on() {
+        $("#lt_help_div").hide("slow");
+    }
+    (function ($) {
+        $(document).ready(function () {
+            $.gameInit({
+                cnLotteryName: '幸运飞艇',
+                data_label: [
+                    {
+                        isnew: "0", isdefault: "1", title: "定位胆", label: [{
+                            gtitle: '定位胆', label: [{
+                                methoddesc: '在第一名，第二名，第三名，第四名，第五名任意位置上任意选择1个或1个以上号码。',
+                                methodhelp: '从第一名，第二名，第三名，第四名，第五名任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。',
+                                methodexample: '投注方案：1；开奖号码第一名：1，即中定位胆第一名一等奖。',
+                                selectarea: {
+                                    type: 'digital',
+                                    layout: [
+                                        { title: '第一名', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 },
+                                        { title: '第二名', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 },
+                                        { title: '第三名', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 },
+                                        { title: '第四名', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 },
+                                        { title: '第五名', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }
+                                    ],
+                                    noBigIndex: 5,
+                                    isButton: true
+                                },
+                                show_str: 'X,X,X,X,X',
+                                code_sp: '',
+                                methodid: 33966,
+                                name: '第1~5名【复式】',
+                                prize: { 1: '17.00' },
+                                prizegroup: [],
+                                nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                                modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                                desc: '第1~5名【复式】', maxcodecount: 0
+                            }, {
+                                methoddesc: '在第六名，第七名，第八名，第九名，第拾名任意位置上任意选择1个或1个以上号码。',
+                                methodhelp: '从第六名，第七名，第八名，第九名，第拾名任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。',
+                                methodexample: '投注方案：1；开奖号码第六名：1，即中定位胆第六名一等奖。',
+                                selectarea: {
+                                    type: 'digital',
+                                    layout: [
+                                        { title: '第六名', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 },
+                                        { title: '第七名', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 },
+                                        { title: '第八名', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 },
+                                        { title: '第九名', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 },
+                                        { title: '第拾名', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }
+                                    ],
+                                    noBigIndex: 5,
+                                    isButton: true
+                                },
+                                show_str: 'X,X,X,X,X',
+                                code_sp: '',
+                                methodid: 33971,
+                                name: '第6~10名【复式】',
+                                prize: { 1: '17.00' },
+                                prizegroup: [],
+                                nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                                modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                                desc: '第6~10名【复式】', maxcodecount: 0
+                            }]
+                        }]
+                    },
+                {
+                    isnew: "0", isdefault: "0", title: "猜前五名", label: [{
+                        gtitle: '猜前五名', label: [{
+                            methoddesc: '从第一位、第二位、第三位、第四位、第五位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择5个不重复的号码组成一注，所选号码与当期顺序开出的10个号码中的前5个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，第四位选择04，第五位选择05，开奖号码顺序为01，02，03 04 05，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }, { title: '第四位', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 }, { title: '第五位', no: '01|02|03|04|05|06|07|08|09|10', place: 4, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X|X|X',
+                            code_sp: '&',
+                            methodid: 33984,
+                            name: '复式',
+                            prize: { 1: '51408.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '51408.00', defaultprize: 51408.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个五位数号码组成一注。',
+                            methodhelp: '手动输入5个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前5个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03 04 05，开奖号码为是01 02 03 04 05，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33984,
+                            name: '单式',
+                            prize: { 1: '51408.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '51408.00', defaultprize: 51408.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前四名", label: [{
+                        gtitle: '猜前四名', label: [{
+                            methoddesc: '从第一位、第二位、第三位、第四位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择4个不重复的号码组成一注，所选号码与当期顺序开出的10个号码中的前4个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，第四位选择04，开奖号码顺序为01，02，03 04 *，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }, { title: '第四位', no: '01|02|03|04|05|06|07|08|09|10', place: 3, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X|X',
+                            code_sp: '&',
+                            methodid: 33982,
+                            name: '复式',
+                            prize: { 1: '8568.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '8568.00', defaultprize: 8568.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个四位数号码组成一注。',
+                            methodhelp: '手动输入4个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前4个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03 04，开奖号码为是01 02 03 04 *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33982,
+                            name: '单式',
+                            prize: { 1: '8568.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '8568.00', defaultprize: 8568.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前三名", label: [{
+                        gtitle: '猜前三名', label: [{
+                            methoddesc: '从第一位、第二位、第三位中至少各选择1个号码。',
+                            methodhelp: '从01-11共11个号码中选择3个不重复的号码组成一注，所选号码与当期顺序摇出的5个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，第三位选择03，开奖号码顺序为01，02，03 * *，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }, { title: '第三位', no: '01|02|03|04|05|06|07|08|09|10', place: 2, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X|X',
+                            code_sp: '&',
+                            methodid: 33962,
+                            name: '复式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个三位数号码组成一注。',
+                            methodhelp: '手动输入3个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03，开奖号码为是01 02 03 * *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33962,
+                            name: '单式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜前二名", label: [{
+                        gtitle: '猜前二名', label: [{
+                            methoddesc: '从第一位、第二位中至少各选择1个号码。',
+                            methodhelp: '从01-11共11个号码中选择3个不重复的号码组成一注，所选号码与当期顺序摇出的5个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，开奖号码顺序为01，02 * *，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '第一位', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '第二位', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X|X',
+                            code_sp: '&',
+                            methodid: 33969,
+                            name: '复式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个三位数号码组成一注。',
+                            methodhelp: '手动输入3个号码组成一注，所输入的号码与当期顺序摇出的10个号码中的前3个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入01 02 03，开奖号码为是01 02 03 * *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33962,
+                            name: '单式',
+                            prize: { 1: '1224.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '1224.00', defaultprize: 1224.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜冠亚军", label: [{
+                        gtitle: '猜冠亚军', label: [{
+                            methoddesc: '从第一位、第二位中至少各选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择2个不重复的号码组成一注，所选号码与当期顺序摇出的10个号码中的前2个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：第一位选择01，第二位选择02，开奖号码顺序为01，02，**********，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '冠军', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }, { title: '亚军', no: '01|02|03|04|05|06|07|08|09|10', place: 1, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X,X,-,-,-',
+                            code_sp: ' ',
+                            methodid: 33960,
+                            name: '复式',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }, {
+                            methoddesc: '手动输入号码，至少输入1个两位数号码组成一注。',
+                            methodhelp: '手动输入2个号码组成一注，所输入的号码与当期顺序摇出的5个号码中的前2个号码相同，且顺序一致，即为中奖。',
+                            methodexample: '如：手动输入 01 02，开奖号码为01 02 * * *，即为中奖。',
+                            selectarea: { type: 'input' },
+                            show_str: 'X',
+                            code_sp: ';',
+                            methodid: 33960,
+                            name: '单式',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '单式', maxcodecount: 0
+                        }, {
+                            methoddesc: '从3-19中任意选择1个或1个以上的和值号码。',
+                            methodhelp: '所选数值等于开奖号码的冠军位、亚军位二个数字相加之和，即为中奖。',
+                            methodexample: '投注方案：和值3；开奖号码前二位：01,02，即中直选和值。',
+                            selectarea: {
+                                type: 'digital',
+                                layout: [{ title: '', no: '3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19', place: 0, cols: 1 }
+                                ],
+                                noBigIndex: 5,
+                                isButton: false
+                            },
+                            show_str: 'X',
+                            code_sp: ',',
+                            methodid: 33985,
+                            name: '直选和值',
+                            prize: { 1: '153.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '153.00', defaultprize: 153.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '和值', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "猜冠军", label: [{
+                        gtitle: '猜冠军', label: [{
+                            methoddesc: '第一位至少选择1个号码。',
+                            methodhelp: '从01-10共10个号码中选择1个号码组成一注，所选号码与当期顺序摇出的10个号码中的前1个号码相同即为中奖。',
+                            methodexample: '如：第一位选择01，开奖号码顺序为01，* * * * * * * * * ，即为中奖。',
+                            selectarea: { type: 'digital', layout: [{ title: '冠军', no: '01|02|03|04|05|06|07|08|09|10', place: 0, cols: 1 }], noBigIndex: 5, isButton: true },
+                            show_str: 'X',
+                            code_sp: ' ',
+                            methodid: 33958,
+                            name: '复式',
+                            prize: { 1: '17.00' },
+                            prizegroup: [],
+                            nfdprize: { levs: '17.00', defaultprize: 17.00, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '复式', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "大小单双", label: [{
+                        gtitle: '大小单双', label: [{
+                            methoddesc: '从第一名、第二名、第三名中的“大、小、单、双”中至少选一个组成一注。',
+                            methodhelp: '对第一名、第二名、第三的“大（56789）小（01234）、单（13579）双（02468）”形态进行购买，所选号码的位置、形态与开奖号码的位置、形态相同，即为中奖。',
+                            methodexample: '投注方案：第一名小；开奖号码第一名：小，即中第一名大小单双一等奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '第一名', no: '大|小|单|双', place: 0, cols: 1 },
+                                     { title: '第二名', no: '大|小|单|双', place: 1, cols: 1 },
+                                             { title: '第三名', no: '大|小|单|双', place: 2, cols: 1 }]
+                            },
+                            show_str: 'X,X,X',
+                            code_sp: '',
+                            methodid: 33978,
+                            name: '前一名',
+                            prize: { 1: '3.40' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.40', defaultprize: 3.40, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '前一名', maxcodecount: 0
+                        }, {
+                            methoddesc: '从“大、双”中至少选一个组成一注。',
+                            methodhelp: '以冠军车号和亚军车号之和大小来判断胜负，“冠亚和”大于11为大，小于或等于11为小，双数为双，单数为单，所选形态与开奖号码冠亚军和值形态一致即为中奖。',
+                            methodexample: '投注方案：双，冠亚军号码和值为双数即中奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '大双', no: '大|双', place: 0, cols: 1 }]
+                            },
+                            show_str: 'X',
+                            code_sp: '',
+                            methodid: 33995,
+                            name: '冠亚和值大双',
+                            prize: { 1: '3.83' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.825', defaultprize: 3.83, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '冠亚和值大双', maxcodecount: 0
+                        }, {
+                            methoddesc: '从“小、单”中至少选一个组成一注。',
+                            methodhelp: '以冠军车号和亚军车号之和大小来判断胜负，“冠亚和”大于11为大，小于或等于11为小，双数为双，单数为单，所选形态与开奖号码冠亚军和值形态一致即为中奖。',
+                            methodexample: '投注方案：单，冠亚军号码和值为单数即中奖。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '小单', no: '小|单', place: 0, cols: 1 }]
+                            },
+                            show_str: 'X',
+                            code_sp: '',
+                            methodid: 33997,
+                            name: '冠亚和值小单',
+                            prize: { 1: '3.06' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.060', defaultprize: 3.06, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '冠亚和值小单', maxcodecount: 0
+                        }]
+                    }]
+                }, {
+                    isnew: "0", isdefault: "0", title: "龙虎", label: [{
+                        gtitle: '龙虎斗', label: [{
+                            methoddesc: '任意选择一个号码组成一注。',
+                            methodhelp: '从1v10 2v9 3v8 4v7 5v6 中的龙，虎 至少选择一个，选择龙时，指定位号前者大于后者即为中奖；选择虎时，指定位号后者大于前者即为中奖。',
+                            methodexample: '龙虎是由两两名次进行号码PK，第一名VS第十名、第二名VS第九名、第三名VS第八名、第四名VS第七名、第五名VS第六名。',
+                            selectarea: {
+                                type: 'dxds',
+                                layout: [{ title: '一 VS 十', no: '龙|虎', place: 0, cols: 1 },
+                                     { title: '二 VS 九', no: '龙|虎', place: 1, cols: 1 },
+                                             { title: '三 VS 八', no: '龙|虎', place: 2, cols: 1 },
+                                             { title: '四 VS 七', no: '龙|虎', place: 3, cols: 1 },
+                                             { title: '五 VS 六', no: '龙|虎', place: 4, cols: 1 }]
+                            },
+                            show_str: 'X,X,X,X,X',
+                            code_sp: '|',
+                            methodid: 33989,
+                            name: '一 VS 十',
+                            prize: { 1: '3.40' },
+                            prizegroup: [],
+                            nfdprize: { levs: '3.400', defaultprize: 3.40, userdiffpoint: 0 },
+                            modes: [{ modeid: 1, name: '元', rate: 1 }, { modeid: 2, name: '角', rate: 0.1 }, { modeid: 3, name: '分', rate: 0.01 }, { modeid: 4, name: '厘', rate: 0.001 }],
+                            desc: '龙虎斗', maxcodecount: 0
+                        }]
+                    }]
+                }],
+                cur_issue: { issue: '20190330131', endtime: '2019-03-30 23:58:20' },
+                issues: {//所有的可追号期数集合
+                    today: [
+                        { issue: '20190330131', endtime: '2019-03-30 23:58:20' }, { issue: '20190330132', endtime: '2019-03-31 00:03:20' }, { issue: '20190330133', endtime: '2019-03-31 00:08:20' }, { issue: '20190330134', endtime: '2019-03-31 00:13:20' }, { issue: '20190330135', endtime: '2019-03-31 00:18:20' }, { issue: '20190330136', endtime: '2019-03-31 00:23:20' }, { issue: '20190330137', endtime: '2019-03-31 00:28:20' }, { issue: '20190330138', endtime: '2019-03-31 00:33:20' }, { issue: '20190330139', endtime: '2019-03-31 00:38:20' }, { issue: '20190330140', endtime: '2019-03-31 00:43:20' }, { issue: '20190330141', endtime: '2019-03-31 00:48:20' }, { issue: '20190330142', endtime: '2019-03-31 00:53:20' }, { issue: '20190330143', endtime: '2019-03-31 00:58:20' }, { issue: '20190330144', endtime: '2019-03-31 01:03:20' }, { issue: '20190330145', endtime: '2019-03-31 01:08:20' }, { issue: '20190330146', endtime: '2019-03-31 01:13:20' }, { issue: '20190330147', endtime: '2019-03-31 01:18:20' }, { issue: '20190330148', endtime: '2019-03-31 01:23:20' }, { issue: '20190330149', endtime: '2019-03-31 01:28:20' }, { issue: '20190330150', endtime: '2019-03-31 01:33:20' }, { issue: '20190330151', endtime: '2019-03-31 01:38:20' }, { issue: '20190330152', endtime: '2019-03-31 01:43:20' }, { issue: '20190330153', endtime: '2019-03-31 01:48:20' }, { issue: '20190330154', endtime: '2019-03-31 01:53:20' }, { issue: '20190330155', endtime: '2019-03-31 01:58:20' }, { issue: '20190330156', endtime: '2019-03-31 02:03:20' }, { issue: '20190330157', endtime: '2019-03-31 02:08:20' }, { issue: '20190330158', endtime: '2019-03-31 02:13:20' }, { issue: '20190330159', endtime: '2019-03-31 02:18:20' }, { issue: '20190330160', endtime: '2019-03-31 02:23:20' }, { issue: '20190330161', endtime: '2019-03-31 02:28:20' }, { issue: '20190330162', endtime: '2019-03-31 02:33:20' }, { issue: '20190330163', endtime: '2019-03-31 02:38:20' }, { issue: '20190330164', endtime: '2019-03-31 02:43:20' }, { issue: '20190330165', endtime: '2019-03-31 02:48:20' }, { issue: '20190330166', endtime: '2019-03-31 02:53:20' }, { issue: '20190330167', endtime: '2019-03-31 02:58:20' }, { issue: '20190330168', endtime: '2019-03-31 03:03:20' }, { issue: '20190330169', endtime: '2019-03-31 03:08:20' }, { issue: '20190330170', endtime: '2019-03-31 03:13:20' }, { issue: '20190330171', endtime: '2019-03-31 03:18:20' }, { issue: '20190330172', endtime: '2019-03-31 03:23:20' }, { issue: '20190330173', endtime: '2019-03-31 03:28:20' }, { issue: '20190330174', endtime: '2019-03-31 03:33:20' }, { issue: '20190330175', endtime: '2019-03-31 03:38:20' }, { issue: '20190330176', endtime: '2019-03-31 03:43:20' }, { issue: '20190330177', endtime: '2019-03-31 03:48:20' }, { issue: '20190330178', endtime: '2019-03-31 03:53:20' }, { issue: '20190330179', endtime: '2019-03-31 03:58:20' }, { issue: '20190330180', endtime: '2019-03-31 04:03:20' }],
+                    tomorrow: [
+                        { issue: '20190331001', endtime: '2019-03-31 13:08:20' }, { issue: '20190331002', endtime: '2019-03-31 13:13:20' }, { issue: '20190331003', endtime: '2019-03-31 13:18:20' }, { issue: '20190331004', endtime: '2019-03-31 13:23:20' }, { issue: '20190331005', endtime: '2019-03-31 13:28:20' }, { issue: '20190331006', endtime: '2019-03-31 13:33:20' }, { issue: '20190331007', endtime: '2019-03-31 13:38:20' }, { issue: '20190331008', endtime: '2019-03-31 13:43:20' }, { issue: '20190331009', endtime: '2019-03-31 13:48:20' }, { issue: '20190331010', endtime: '2019-03-31 13:53:20' }, { issue: '20190331011', endtime: '2019-03-31 13:58:20' }, { issue: '20190331012', endtime: '2019-03-31 14:03:20' }, { issue: '20190331013', endtime: '2019-03-31 14:08:20' }, { issue: '20190331014', endtime: '2019-03-31 14:13:20' }, { issue: '20190331015', endtime: '2019-03-31 14:18:20' }, { issue: '20190331016', endtime: '2019-03-31 14:23:20' }, { issue: '20190331017', endtime: '2019-03-31 14:28:20' }, { issue: '20190331018', endtime: '2019-03-31 14:33:20' }, { issue: '20190331019', endtime: '2019-03-31 14:38:20' }, { issue: '20190331020', endtime: '2019-03-31 14:43:20' }, { issue: '20190331021', endtime: '2019-03-31 14:48:20' }, { issue: '20190331022', endtime: '2019-03-31 14:53:20' }, { issue: '20190331023', endtime: '2019-03-31 14:58:20' }, { issue: '20190331024', endtime: '2019-03-31 15:03:20' }, { issue: '20190331025', endtime: '2019-03-31 15:08:20' }, { issue: '20190331026', endtime: '2019-03-31 15:13:20' }, { issue: '20190331027', endtime: '2019-03-31 15:18:20' }, { issue: '20190331028', endtime: '2019-03-31 15:23:20' }, { issue: '20190331029', endtime: '2019-03-31 15:28:20' }, { issue: '20190331030', endtime: '2019-03-31 15:33:20' }, { issue: '20190331031', endtime: '2019-03-31 15:38:20' }, { issue: '20190331032', endtime: '2019-03-31 15:43:20' }, { issue: '20190331033', endtime: '2019-03-31 15:48:20' }, { issue: '20190331034', endtime: '2019-03-31 15:53:20' }, { issue: '20190331035', endtime: '2019-03-31 15:58:20' }, { issue: '20190331036', endtime: '2019-03-31 16:03:20' }, { issue: '20190331037', endtime: '2019-03-31 16:08:20' }, { issue: '20190331038', endtime: '2019-03-31 16:13:20' }, { issue: '20190331039', endtime: '2019-03-31 16:18:20' }, { issue: '20190331040', endtime: '2019-03-31 16:23:20' }, { issue: '20190331041', endtime: '2019-03-31 16:28:20' }, { issue: '20190331042', endtime: '2019-03-31 16:33:20' }, { issue: '20190331043', endtime: '2019-03-31 16:38:20' }, { issue: '20190331044', endtime: '2019-03-31 16:43:20' }, { issue: '20190331045', endtime: '2019-03-31 16:48:20' }, { issue: '20190331046', endtime: '2019-03-31 16:53:20' }, { issue: '20190331047', endtime: '2019-03-31 16:58:20' }, { issue: '20190331048', endtime: '2019-03-31 17:03:20' }, { issue: '20190331049', endtime: '2019-03-31 17:08:20' }, { issue: '20190331050', endtime: '2019-03-31 17:13:20' }, { issue: '20190331051', endtime: '2019-03-31 17:18:20' }, { issue: '20190331052', endtime: '2019-03-31 17:23:20' }, { issue: '20190331053', endtime: '2019-03-31 17:28:20' }, { issue: '20190331054', endtime: '2019-03-31 17:33:20' }, { issue: '20190331055', endtime: '2019-03-31 17:38:20' }, { issue: '20190331056', endtime: '2019-03-31 17:43:20' }, { issue: '20190331057', endtime: '2019-03-31 17:48:20' }, { issue: '20190331058', endtime: '2019-03-31 17:53:20' }, { issue: '20190331059', endtime: '2019-03-31 17:58:20' }, { issue: '20190331060', endtime: '2019-03-31 18:03:20' }, { issue: '20190331061', endtime: '2019-03-31 18:08:20' }, { issue: '20190331062', endtime: '2019-03-31 18:13:20' }, { issue: '20190331063', endtime: '2019-03-31 18:18:20' }, { issue: '20190331064', endtime: '2019-03-31 18:23:20' }, { issue: '20190331065', endtime: '2019-03-31 18:28:20' }, { issue: '20190331066', endtime: '2019-03-31 18:33:20' }, { issue: '20190331067', endtime: '2019-03-31 18:38:20' }, { issue: '20190331068', endtime: '2019-03-31 18:43:20' }, { issue: '20190331069', endtime: '2019-03-31 18:48:20' }, { issue: '20190331070', endtime: '2019-03-31 18:53:20' }, { issue: '20190331071', endtime: '2019-03-31 18:58:20' }, { issue: '20190331072', endtime: '2019-03-31 19:03:20' }, { issue: '20190331073', endtime: '2019-03-31 19:08:20' }, { issue: '20190331074', endtime: '2019-03-31 19:13:20' }, { issue: '20190331075', endtime: '2019-03-31 19:18:20' }, { issue: '20190331076', endtime: '2019-03-31 19:23:20' }, { issue: '20190331077', endtime: '2019-03-31 19:28:20' }, { issue: '20190331078', endtime: '2019-03-31 19:33:20' }, { issue: '20190331079', endtime: '2019-03-31 19:38:20' }, { issue: '20190331080', endtime: '2019-03-31 19:43:20' }, { issue: '20190331081', endtime: '2019-03-31 19:48:20' }, { issue: '20190331082', endtime: '2019-03-31 19:53:20' }, { issue: '20190331083', endtime: '2019-03-31 19:58:20' }, { issue: '20190331084', endtime: '2019-03-31 20:03:20' }, { issue: '20190331085', endtime: '2019-03-31 20:08:20' }, { issue: '20190331086', endtime: '2019-03-31 20:13:20' }, { issue: '20190331087', endtime: '2019-03-31 20:18:20' }, { issue: '20190331088', endtime: '2019-03-31 20:23:20' }, { issue: '20190331089', endtime: '2019-03-31 20:28:20' }, { issue: '20190331090', endtime: '2019-03-31 20:33:20' }, { issue: '20190331091', endtime: '2019-03-31 20:38:20' }, { issue: '20190331092', endtime: '2019-03-31 20:43:20' }, { issue: '20190331093', endtime: '2019-03-31 20:48:20' }, { issue: '20190331094', endtime: '2019-03-31 20:53:20' }, { issue: '20190331095', endtime: '2019-03-31 20:58:20' }, { issue: '20190331096', endtime: '2019-03-31 21:03:20' }, { issue: '20190331097', endtime: '2019-03-31 21:08:20' }, { issue: '20190331098', endtime: '2019-03-31 21:13:20' }, { issue: '20190331099', endtime: '2019-03-31 21:18:20' }, { issue: '20190331100', endtime: '2019-03-31 21:23:20' }, { issue: '20190331101', endtime: '2019-03-31 21:28:20' }, { issue: '20190331102', endtime: '2019-03-31 21:33:20' }, { issue: '20190331103', endtime: '2019-03-31 21:38:20' }, { issue: '20190331104', endtime: '2019-03-31 21:43:20' }, { issue: '20190331105', endtime: '2019-03-31 21:48:20' }, { issue: '20190331106', endtime: '2019-03-31 21:53:20' }, { issue: '20190331107', endtime: '2019-03-31 21:58:20' }, { issue: '20190331108', endtime: '2019-03-31 22:03:20' }, { issue: '20190331109', endtime: '2019-03-31 22:08:20' }, { issue: '20190331110', endtime: '2019-03-31 22:13:20' }, { issue: '20190331111', endtime: '2019-03-31 22:18:20' }, { issue: '20190331112', endtime: '2019-03-31 22:23:20' }, { issue: '20190331113', endtime: '2019-03-31 22:28:20' }, { issue: '20190331114', endtime: '2019-03-31 22:33:20' }, { issue: '20190331115', endtime: '2019-03-31 22:38:20' }, { issue: '20190331116', endtime: '2019-03-31 22:43:20' }, { issue: '20190331117', endtime: '2019-03-31 22:48:20' }, { issue: '20190331118', endtime: '2019-03-31 22:53:20' }, { issue: '20190331119', endtime: '2019-03-31 22:58:20' }, { issue: '20190331120', endtime: '2019-03-31 23:03:20' }, { issue: '20190331121', endtime: '2019-03-31 23:08:20' }, { issue: '20190331122', endtime: '2019-03-31 23:13:20' }, { issue: '20190331123', endtime: '2019-03-31 23:18:20' }, { issue: '20190331124', endtime: '2019-03-31 23:23:20' }, { issue: '20190331125', endtime: '2019-03-31 23:28:20' }, { issue: '20190331126', endtime: '2019-03-31 23:33:20' }, { issue: '20190331127', endtime: '2019-03-31 23:38:20' }, { issue: '20190331128', endtime: '2019-03-31 23:43:20' }, { issue: '20190331129', endtime: '2019-03-31 23:48:20' }, { issue: '20190331130', endtime: '2019-03-31 23:53:20' }, { issue: '20190331131', endtime: '2019-03-31 23:58:20' }, { issue: '20190331132', endtime: '2019-04-01 00:03:20' }, { issue: '20190331133', endtime: '2019-04-01 00:08:20' }, { issue: '20190331134', endtime: '2019-04-01 00:13:20' }, { issue: '20190331135', endtime: '2019-04-01 00:18:20' }, { issue: '20190331136', endtime: '2019-04-01 00:23:20' }, { issue: '20190331137', endtime: '2019-04-01 00:28:20' }, { issue: '20190331138', endtime: '2019-04-01 00:33:20' }, { issue: '20190331139', endtime: '2019-04-01 00:38:20' }, { issue: '20190331140', endtime: '2019-04-01 00:43:20' }, { issue: '20190331141', endtime: '2019-04-01 00:48:20' }, { issue: '20190331142', endtime: '2019-04-01 00:53:20' }, { issue: '20190331143', endtime: '2019-04-01 00:58:20' }, { issue: '20190331144', endtime: '2019-04-01 01:03:20' }, { issue: '20190331145', endtime: '2019-04-01 01:08:20' }, { issue: '20190331146', endtime: '2019-04-01 01:13:20' }, { issue: '20190331147', endtime: '2019-04-01 01:18:20' }, { issue: '20190331148', endtime: '2019-04-01 01:23:20' }, { issue: '20190331149', endtime: '2019-04-01 01:28:20' }, { issue: '20190331150', endtime: '2019-04-01 01:33:20' }, { issue: '20190331151', endtime: '2019-04-01 01:38:20' }, { issue: '20190331152', endtime: '2019-04-01 01:43:20' }, { issue: '20190331153', endtime: '2019-04-01 01:48:20' }, { issue: '20190331154', endtime: '2019-04-01 01:53:20' }, { issue: '20190331155', endtime: '2019-04-01 01:58:20' }, { issue: '20190331156', endtime: '2019-04-01 02:03:20' }, { issue: '20190331157', endtime: '2019-04-01 02:08:20' }, { issue: '20190331158', endtime: '2019-04-01 02:13:20' }, { issue: '20190331159', endtime: '2019-04-01 02:18:20' }, { issue: '20190331160', endtime: '2019-04-01 02:23:20' }, { issue: '20190331161', endtime: '2019-04-01 02:28:20' }, { issue: '20190331162', endtime: '2019-04-01 02:33:20' }, { issue: '20190331163', endtime: '2019-04-01 02:38:20' }, { issue: '20190331164', endtime: '2019-04-01 02:43:20' }, { issue: '20190331165', endtime: '2019-04-01 02:48:20' }, { issue: '20190331166', endtime: '2019-04-01 02:53:20' }, { issue: '20190331167', endtime: '2019-04-01 02:58:20' }, { issue: '20190331168', endtime: '2019-04-01 03:03:20' }, { issue: '20190331169', endtime: '2019-04-01 03:08:20' }, { issue: '20190331170', endtime: '2019-04-01 03:13:20' }, { issue: '20190331171', endtime: '2019-04-01 03:18:20' }, { issue: '20190331172', endtime: '2019-04-01 03:23:20' }, { issue: '20190331173', endtime: '2019-04-01 03:28:20' }, { issue: '20190331174', endtime: '2019-04-01 03:33:20' }, { issue: '20190331175', endtime: '2019-04-01 03:38:20' }, { issue: '20190331176', endtime: '2019-04-01 03:43:20' }, { issue: '20190331177', endtime: '2019-04-01 03:48:20' }, { issue: '20190331178', endtime: '2019-04-01 03:53:20' }, { issue: '20190331179', endtime: '2019-04-01 03:58:20' }, { issue: '20190331180', endtime: '2019-04-01 04:03:20' }]
+                },
+                servertime: '2019-03-30 23:53:55',
+                lotteryid: parseInt(54, 10),
+                ajaxurl: './?controller=game&action=play&curmid=42427',
+                ontimeout: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: './?controller=game&action=play&curmid=42427',
+                        data: "lotteryid=54&flag=gethistory",
+                        success: function (data) {
+
+                            var partn = /<script.*>.*<\/script>/;
+                            if (data == 'empty' && partn.test(data)) {
+                                return;
+                            }
+                            if (data == "empty") return;
+                            if ($.trim(data) == "empty") return;
+                            eval("data=" + data);
+                            processCode(data[0].issue, data[0].code);
+                        }
+                    });
+                },
+                onfinishbuy: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: './?controller=game&action=play&curmid=42427',
+                        data: "lotteryid=54&flag=getprojects",
+                        success: function (data) {
+                            var partn = /<script.*>.*<\/script>/;
+                            if (data == 'empty' && partn.test(data)) {
+                                return;
+                            }
+                            eval("data=" + data);
+                            $(".history_pro", "#history_project").remove();
+                            var html = '';
+                            var selectedcss = '';
+                            $.each(data, function (i, n) {
+                                html += '<tr class="history_pro">';
+                                if (i % 2 == 0) {
+                                    selectedcss = ' class="odd" bgcolor="#CCCCCC" align="center"';
+                                } else {
+                                    selectedcss = ' bgcolor="#CCCCCC" align="center"';
+                                }
+                                html += '<td' + selectedcss + ' height="30"><a href="./index.php?controller=gameinfo&action=gamedetail&id=' + n.projectid + '" target="_blank" title="查看注单详情" class="projectidarea">' + n.projectid + '</a></td>';
+                                html += '<td' + selectedcss + '>' + n.writetime + '</td>';
+                                html += '<td' + selectedcss + '>' + n.methodname + '</td>';
+                                html += '<td' + selectedcss + '>' + n.issue + '</td>';
+                                html += '<td' + selectedcss + '>' + n.modes + '</td>';
+                                if (n.code.length > 20) {
+                                    html += '<td' + selectedcss + '><span class="project_more">号码详情</span><div style="display:none;">' + n.code + '</div></td>';
+                                } else {
+                                    html += '<td' + selectedcss + '>' + n.code + '</td>';
+                                }
+                                html += '<td' + selectedcss + '>' + n.multiple + '</td>';
+                                html += '<td' + selectedcss + '>' + moneyFormat(n.totalprice) + '</td>';
+                                html += '<td' + selectedcss + '>' + (parseInt(n.taskid, 10) > 0 ? "是" : "否") + '</td>';
+                                html += '</tr>';
+                            });
+                            $(html).insertAfter("#project_title");
+                        }
+                    });
+                    //刷新投注记录
+                    betRecord(54);
+                }
+            });
+            if ('03 09 01 07 08 04 10 05 02 06' != '') {
+                processCode('20190330129', '03 09 01 07 08 04 10 05 02 06');
+            }
+            $('span[class="project_more"]', "#history_project").live("click", function () {
+                var mme = this;
+                var $h = $('<span style="display: block;" id="task_div">号码详情[<span class="close">关闭</span>]<br><textarea readonly="readonly" class="code1">' + $(mme).next().html() + '</textarea></span>');
+                $(this).openFloat($h, "projects_more");
+                $("span", $(this).parent()).filter(".close").click(function () {
+                    $(mme).closeFloat();
+                });
+            });
+            var iLid = parseInt(54, 10);
+            var position = -(iLid - 1) * 75;
+            $("#right_top_01_02").css("background-position", "0px " + position + "px");
+            //$.alert("hha");
+            function a() {
+                var currentissue = $('.no_old').html();
+                var timeLotteryid = "54";
+                betRecord(timeLotteryid);
+                $.ajax({
+                    type: 'POST',
+                    url: './?controller=game&action=play&curmid=42427',
+                    data: "lotteryid=54&flag=gethistory&currentissue=" + currentissue,
+                    success: function (data) {
+                        if (data == 'empty') {
+                            return;
+                        }
+
+                        if ($.trim(data) == "empty") return;
+                        eval("data=" + data);
+                        processCode(data[0].issue, data[0].code, data.iscurent)
+                        // 5期开奖号码刷新
+                        $.ajax({
+                            type: 'POST',
+                            url: './?controller=game&action=bonuscode&curmid=1',
+                            data: "lotteryid=54&fivehd=5",
+                            success: function (datax) {
+                                var data = eval(datax);
+                                //                                console.log(data);
+                                var html = "";
+                                var mid = 0;
+                                mid = cur_methord.indexOf("前三") > -1 ? 1 : mid;//前三
+                                mid = cur_methord.indexOf("后三") > -1 ? 2 : mid;//后三
+                                mid = cur_methord.indexOf("前二") > -1 ? 3 : mid;//前二
+                                mid = cur_methord.indexOf("后二") > -1 ? 4 : mid;//后二
+                                mid = cur_methord.indexOf("四星") > -1 ? 5 : mid;//四星
+                                mid = cur_methord.indexOf("中三") > -1 ? 6 : mid;//中三
+                                mid = cur_methord.indexOf("三码") == 0 ? 7 : mid;//三码
+                                mid = cur_methord.indexOf("猜冠军") > -1 ? 8 : mid;//三码
+                                mid = cur_methord.indexOf("猜冠亚军") > -1 ? 9 : mid;//三码
+                                mid = cur_methord.indexOf("前四") > -1 ? 12 : mid;//前四
+                                mid = cur_methord.indexOf("前五") > -1 ? 10 : mid;//前五
+                                mid = cur_c_methord.indexOf("冠亚和值") > -1 ? 9 : mid;//pk10冠亚和值大小单双
+                                var test = $(".lableclick").text();
+                                if (cur_methord.indexOf("二码") > -1) {
+                                    if (test.indexOf("前二") > -1) {
+                                        mid = 3;
+                                    } else if (test.indexOf("后二") > -1) {
+                                        mid = 4;
+                                    }
+
+                                }
+                                if (cur_methord.indexOf("不定胆") > -1) {
+                                    //写死，11选5是前二，其他的是后二
+                                    if (test.indexOf("前三") > -1) {
+                                        mid = 1;
+                                    } else if (test.indexOf("后三") > -1) {
+                                        mid = 2;
+                                    }
+                                }
+
+                                if (cur_methord.indexOf("定位胆") > -1) {
+                                    mid = 1;//11选5的定位胆是前三
+                                    if (cur_c_methord.indexOf("1~5") > -1) {
+                                        mid = 10;
+                                    } else {
+                                        mid = 11;
+                                    }
+                                }
+                                cur_jqjq = data;
+                                var gaparr = getcodegap(mid);
+                                var type = "0";
+                                var tzjq = "tzjq";//奖期的class；
+                                if (test.indexOf("和值") > -1 && cur_methord.indexOf("任选") < 0) {
+                                    type = "hz"; tzjq = "tzjqxt";
+                                }
+                                console.log("cur_methord:" + cur_methord + "|cur_c_methord:" + cur_c_methord);
+                                if (cur_methord == 0 && (cur_cz == 27 || cur_cz == 34 || cur_cz == 54)) mid = 8;
+                                for (var i = 0; i < data.length; i++) {
+                                    // html +=  "<li><span class=\"HistoryIssues\">"+data[i].issue+"期</span><span class=\"HistoryNum\">"+data[i].code+"</span></li>";
+                                    //html +=  "<li><span>"+data[i].issue+"期</span><span>";
+                                    var codearr = [];
+                                    if (lotterytype == 2) {
+                                        codearr = data[i].code.split(" ");
+                                    } else {
+                                        codearr = data[i].code.split("");
+                                    }
+                                    for (var j = 0; j < codearr.length; j++) {
+                                        //html+="<i id=\"code"+j+"\">"+codearr[j]+"</i>";
+                                        var issue = data[i].issue;
+                                        //issue=issue.substr(4);
+                                        if (cur_cz == 61) {
+                                            issue = issue.substr(4);
+                                        }
+                                        html += "<li><span class='" + tzjq + "'>" + issue + "</span><span>";
+                                        var codearr = [];
+                                        if (lotterytype == 2) {
+                                            codearr = data[i].code.split(" ");
+                                        } else {
+                                            codearr = data[i].code.split("");
+                                        }
+                                        for (var j = 0; j < codearr.length; j++) {
+                                            html += "<i class=\"code" + j;
+                                            switch (mid) {
+                                                case 1://前三
+                                                    if (j < 3) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 2://后三
+                                                    if (j > 1) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 3://前二
+                                                    if (j < 2) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 4://后二
+                                                    if (isssc && j > 2) {
+                                                        html += " mark";
+                                                    }
+                                                    //3D
+                                                    if (!isssc && j > 0) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 5://四星
+                                                    if (j > 0) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 6://中三
+                                                    if (j > 0 && j < 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 7://三码,11选5 前三
+                                                    if (j < 3) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 8://pk10 猜冠军
+                                                    if (j < 1) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 9://pk10 猜冠亚军
+                                                    if (j < 2) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 10://pk10 1-5
+                                                    if (j < 5) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 11://pk10 6-10
+                                                    if (j > 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                                case 12://pk10 qiansi
+                                                    if (j < 4) {
+                                                        html += " mark";
+                                                    }
+                                                    break;
+                                            }
+                                            html += "\" >" + codearr[j] + "</i>";
+                                        }
+                                        //html +="</span></li>";
+                                    }
+                                    if (type == "0") {
+                                        html += "</span><span class='tzxt' style='display:none;'>-</span></li>";
+                                    } else {
+                                        changeFormTitle(type);
+                                        $("#tzxt").css("display", "inline-block");
+                                        str = getForm(cur_jqjq[i].code, type, gaparr);
+                                        if (type == "dxds") {
+                                            tzxt = "tzxt dxds";
+                                            html += "</span><span class='" + tzxt + "' style='display:inline-block;width:20%;'>" + str + "</span></li>";
+                                        } else if ((str == "组三" && test == "组三")) {
+                                            //tzxt="tzxt numberType";
+                                            html += "</span><span class='tzxt numberType' style='display:inline-block;'>" + str + "</span></li>";
+                                        } else if (str == "组六" && test == "组六") {
+                                            //tzxt="tzxt numberType";
+                                            html += "</span><span class='tzxt numberType' style='display:inline-block;'>" + str + "</span></li>";
+                                        } else {
+                                            html += "</span><span class='" + tzxt + "' style='display:inline-block;width:18%;'>" + str + "</span></li>";
+                                        }
+                                    }
+
+                                }
+
+                                if (lotterytype == '0') {
+                                    $("#WinnerNumList_div").html(html);
+                                } else if (lotterytype == '2') {
+                                    $("#WinnerNumList_div").html(html);
+                                } else {
+                                    $("#WinnerNumList_div").html(html);
+                                }
+
+                            }
+                        });
+                    }
+                });
+
+                if (timeLotteryid == '33' || timeLotteryid == '34') {
+                    setTimeout(a, 6000);
+                } else {
+                    setTimeout(a, 30000);
+                }
+            } a();
+        });
+    })(jQuery);
+    var lotterytype = 2;
+
+    function processCodeTime(i, curNum) {
+        var p = 54;
+        if (p == 27 || p == 34 || p == 54) {
+            $("#last_code_num" + i).attr("class", "pk10_num_" + curNum);
+        } else if (p == 51 || p == 61) {
+            $("#last_code_num" + i).removeClass();
+            var curNumClass = curNum;
+            if (curNum < 10) {
+                curNumClass = "0" + curNum;
+            }
+            $("#last_code_num" + i).addClass("ball" + curNumClass).html(curNum);
+            if (i == 6) {
+                $("#last_code_num" + i).addClass("last").html(curNum);
+            }
+        } else {
+            $("#last_code_num" + i).html(curNum);
+        }
+    }
+    var codeNumForeach = 0;
+    var issucc = "";
+    var issueAll = "";
+    function processCode(issue, code, iscurent) {
+        //	$('.no_old').html(issue);
+        //alert(issue)
+        if (issueAll == issue) {
+            issueAll = issue;
+            return false;
+        } else {
+            issueAll = issue;
+        }
+        var cStr = '';
+        var aTmp = new Array();
+        //处理中奖号码
+        if (code.indexOf(' ') == -1) {
+            //无空格
+            aTmp = code.split('');
+        } else {
+            //有空格
+            aTmp = code.split(' ');
+        }
+        var p = 54;
+        for (var m = 0; m < 5; m++) {
+            $("#last_code_num" + m).html("");
+        }
+        if (p == 27 || p == 34 || p == 54) {
+            for (var m = 0; m < aTmp.length; m++) {
+                $("#last_code_num" + m).attr("class", "");
+            }
+        }
+        codeNumForeach = 1;
+        $('.no_old').html(issue);
+
+        if (iscurent == 2) {//增加动态抓取sean
+            var latestlot = "<li class=\"qihao1\">" + issue + "<\/li><li class=\"haoma1\">";
+            var sCode = "";
+            for (var ci = 0; ci < aTmp.length; ci++) {
+                sCode += "<span>" + aTmp[ci] + "<\/span>";
+            }
+            var sInsertHtml = latestlot + sCode + "</li>";
+            $(".biaotou").eq(1).after(sInsertHtml);
+            $("li[class=qihao1]:last").remove();
+            $("li[class=haoma1]:last").remove();
+        }
+        var num_single = 0, num_double = 0;
+        //console.log("aTmp.length:"+aTmp.length);
+        var num_codesort = aTmp;//排序
+        if (aTmp.length < 5) {
+            $("#last_code_num3").remove();
+            $("#last_code_num4").remove();
+        }
+
+        for (var ci = 0; ci < aTmp.length; ci++) {
+            var curNum = aTmp[ci];
+            //curNum=parseInt(curNum,10);
+            //		$('#last_code_num'+ci).html(curNum);
+
+
+            setTimeout("processCodeTime(" + ci + "," + curNum + ")", (ci + 1) * 500);
+
+            var code_word = '';
+            if (curNum >= 5) {
+                code_word += '大';
+            } else {
+                code_word += '小';
+            }
+            if (curNum % 2 == 0) {
+                code_word += '双'; num_double++;
+            } else {
+                code_word += '单'; num_single++;
+            }
+            //$('#last_code_word'+ci).html(code_word);
+        }
+        if (lotterytype == 0) {
+            var last_code_desc1 = "组三";
+            if (aTmp[0] == aTmp[1] && aTmp[0] == aTmp[2]) {
+                last_code_desc1 = "豹子";
+            } else if (aTmp[0] != aTmp[1] && aTmp[0] != aTmp[2] && aTmp[1] != aTmp[2]) {
+                last_code_desc1 = "组六";
+            }
+            $("#last_code_desc1").html(last_code_desc1);
+            var last_code_desc2 = "组三";
+            if (aTmp[2] == aTmp[3] && aTmp[2] == aTmp[4]) {
+                last_code_desc2 = "豹子";
+            } else if (aTmp[2] != aTmp[3] && aTmp[2] != aTmp[4] && aTmp[3] != aTmp[4]) {
+                last_code_desc2 = "组六";
+            }
+            $("#last_code_desc2").html(last_code_desc2);
+        } else if (lotterytype == 2) {
+            num_codesort = num_codesort.sort();
+            var last_code_desc1 = num_single + "单" + num_double + "双";
+            $("#last_code_desc1").html(last_code_desc1);
+            var last_code_desc2 = num_codesort[2];
+            $("#last_code_desc2").html(last_code_desc2);
+        } else if (lotterytype == 3) {
+            //cStr += '<div class="bonusnumber"><div>';
+            var total = ups = downs = odds = evens = 0;
+            for (var ci = 0; ci < aTmp.length; ci++) {
+                total += intval(aTmp[ci]);
+                if (intval(aTmp[ci]) < 41) {
+                    ups += 1;
+                } else {
+                    downs += 1;
+                }
+                if (intval(aTmp[ci]) % 2 == 0) {
+                    evens += 1;
+                } else {
+                    odds += 1;
+                }
+                //cStr += '<span class="ball">'+aTmp[ci]+'</span>';
+            }
+            var cheziStr = '和值：' + total + '(';
+            if (total > 810) {
+                cheziStr += '大';
+            } else if (total < 810) {
+                cheziStr += '小';
+            } else {
+                cheziStr += '和';
+            }
+            cheziStr += ',' + (total % 2 == 0 ? '双' : '单') + ')';
+            var cpanStr = '盘面：(';
+            if (ups > downs) {
+                cpanStr += '上';
+            } else if (ups == downs) {
+                cpanStr += '中';
+            } else {
+                cpanStr += '下';
+            }
+            cpanStr += ',';
+            if (odds > evens) {
+                cpanStr += '奇';
+            } else if (odds == evens) {
+                cpanStr += '和';
+            } else {
+                cpanStr += '偶';
+            }
+            cpanStr += ')';
+            $('#last_code_desc1').html(cheziStr);
+            $('#last_code_desc2').html(cpanStr);
+        }
+    }
+    //清空追号方案
+    var cleanTraceIssue = function () {
+        $("input[name^='lt_trace_issues']", $($.lt_id_data.id_tra_issues)).attr("checked", false);
+        $("input[name^='lt_trace_times_']", $($.lt_id_data.id_tra_issues)).val(0).attr("disabled", true);
+        $("span[id^='lt_trace_money_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        //add by neal
+        $("span[id^='lt_trace_accumulatemoney_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_profit_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_currentprofit_']", $($.lt_id_data.id_tra_issues)).html('0.00');
+        $("span[id^='lt_trace_profitmargin_']", $($.lt_id_data.id_tra_issues)).html('0');
+
+        $("td", $($.lt_id_data.id_tra_issues)).removeClass("selected");
+        $('#lt_trace_hmoney').html(0);
+        $('#lt_trace_money').val(0);
+        $('#lt_trace_count').html(0);
+        $.lt_trace_issue = 0;
+        $.lt_trace_money = 0;
+    };
+    function div_slow_show(showslow_id) {
+        $("#div_slow_id_" + showslow_id).show("slow");
+    }
+    function div_slow_hide(showslow_id) {
+        $("#div_slow_id_" + showslow_id).hide("slow");
+    }
+    var setCookie = function (name, value, expire, path) {
+        //expire=expire||30*24*60*60*1000;
+        var curdate = new Date();
+        var cookie = name + "=" + encodeURIComponent(value) + "; ";
+        if (expire != undefined || expire == 0) {
+            if (expire == -1) {
+                expire = 366 * 86400 * 1000;//保存一年
+            } else {
+                expire = parseInt(expire);
+            }
+            curdate.setTime(curdate.getTime() + expire);
+            cookie += "expires=" + curdate.toUTCString() + "; ";
+        }
+        path = path || "/";
+        cookie += "path=" + path;
+        document.cookie = cookie;
+    };
+    var getCookie = function (name) {
+        var re = "(?:; )?" + encodeURIComponent(name) + "=([^;]*);?";
+        re = new RegExp(re);
+        if (re.test(document.cookie)) {
+            return decodeURIComponent(RegExp.$1);
+        }
+        return '';
+    };
+    setCookie('last_lottery_url', top.location.href);
+</script>
+<style>
+
+TEXTAREA {
+  font: 12px "courier new";
+  vertical-align: middle;
+}
+</style>
+
+<!--<div class="rightcut_st"></div>-->
+
+<div class="RightWinnerNum">
+	<div class="fl lotteryLogoBg">
+		<!-- new新增彩种图标 -->
+		<div class="playIcon_cont">
+			<div class="caizhong_54"></div>
+		</div>
+		<!-- 期号，倒计时 -->
+				<div class="Times" id="countdown_time">
+			<div class="issues">第<span id="current_issue"></span>期</div>
+			<div class="CountDown" id="count_down">00:00:00</div>
+			<!-- <div class="NumShow"></div> -->
+		</div>
+	</div>
+	<!-- 近一期+近五期 -->
+	<div class="ShowNumlist1_5 fl lotteryLogoBg">
+		<!--<div class="nav1_5">
+			<ul>
+				<li><a href="javascript:void(0)" class="curr">近一期</a></li>
+				<li><a href="javascript:void(0)">近五期</a></li>
+			</ul>
+		</div>-->
+				<!-- 出奖号码 -->
+		<div class="WinnerNum  make_transist hideleft showleft " style=" position: absolute; top: 0px;left:0;">
+			<div class="NumIssues"><span>幸运飞艇</span>第<span id="nowolddiv" class="no_old">20190330129</span>期 <a class="zoushi" target="_blank" href="?controller=game&action=bonuscode&lotteryid=54&issuecount=30"><i class="chart"></i>号码走势</a></div>
+			<ul class="NumListShow pk10List">
+				<li id="last_code_num0"></li>
+				<li id="last_code_num1"></li>
+				<li id="last_code_num2"></li>
+				<li id="last_code_num3"></li>
+				<li id="last_code_num4"></li>
+				<li id="last_code_num5"></li>
+				<li id="last_code_num6"></li>
+				<li id="last_code_num7"></li>
+				<li id="last_code_num8"></li>
+				<li id="last_code_num9"></li>
+			</ul>
+		</div>
+                		<!-- 往期开奖号码 -->
+		<!--<div class="WinnerNumList make_transist hideleft" style=" position: absolute; top: 0px;left:0;">-->
+			<!--<ul id="WinnerNumList_div">-->
+				<!--                  <li><span class="HistoryIssues">1512期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1511期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1510期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1509期</span><span class="HistoryNum">5.2.2.3.1</span></li>
+                  <li><span class="HistoryIssues">1508期</span><span class="HistoryNum">5.2.2.3.1</span></li>-->
+			<!--</ul>-->
+		</div>
+	</div>
+</div>
+
+<script language="javascript" src="js/web/lottery/jquery.youxi.main.js?v=20190308"></script>
+<script language="javascript" src="js/web/lottery/jquery.youxi.selectarea.js?version=20181221"></script>
+<script language="javascript" src="js/web/lottery/jquery.youxi.trace.js?version=20181221"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<div id="subContent_bet">
+<!--投注页面头部可视代码开始-->
+<div class="bg clearfix">
+
+
+<!--最近开奖 投注记录-->
+
+<div class="panel fr">
+	<div class="panelTitle"><a href="javascript:void(0);" id="tzshow1" class="active" onclick="tozhuShow(1);">最近开奖</a><a href="javascript:void(0);" id="tzshow2" onclick="tozhuShow(2);">投注记录</a></div>
+	<div class="panelCon">
+		<!--近期开奖-->
+		<div class="listH" id="coderecord">
+		<p>
+			<label class="tzjq">奖期</label><label>开奖号码</label><label id="tzxt" class="numberType" style="display: none;">形态</label>
+		</p>
+		<ul id="WinnerNumList_div">
+			<!--<li><span>1218095</span><span><i>7</i><i>8</i><i class="mark">6</i><i class="mark">4</i><i class="mark">7</i></span><span class="numberType">后三</span></li>-->
+		</ul>
+		</div>
+		<!--近期开奖 END-->
+		<!--投注记录-->
+		<div id="betrecord" class="orderList listH" style="display: none;">
+			<ul id="lt_trace_issues_today_bet_title">
+				<span id="td01" style="width: 50%;">期号</span><span id="td02">状态</span><span id="td03">操作</span>
+			</ul>
+			<ul id="lt_trace_issues_today_bet"></ul>
+		</div>
+		<div class="appEntry"><a onclick="showAppDown();" href="javascript:void(0)"></a></div>
+	</div>
+
+</div>
+<!--投注-->
+<form method="post" name="buyform" action="">
+<div class="box">
+	<div class="Menubox title clearfix">
+		<ul id="lotteryType">
+		</ul>
+	</div>
+	<div class="Contentbox" id="lotteryDetail">
+		<div class="minitypeall">
+			<div class="bet_ae_bg">
+				<div class="minitype" id="lt_samll_label"></div>
+				<div class="minitype2" > <span >玩法说明</span><span id="lt_desc" class="help_con"></span>&nbsp;<span id="lt_example">示例</span>
+					<div id="lt_example_div" style="display:none;"></div>
+					&nbsp;&nbsp;<span id="lt_help">帮助</span>
+					<div id="lt_help_div"  style="display:none;"></div>
+				</div>
+				<div  id="poschoose"></div>
+				<div id="lt_selector" class="ball_bg afterClear  "> </div>
+
+				<!--选号区结束 -->
+				<div id="right_04" class="grayBottom" style=display:none;>
+					<div class="right_02_07"></div>
+					<div class="right_02_08"></div>
+				</div>
+			</div>
+				<div class="">
+
+					<!-- new 选号操作 -->
+					<div class="OperationSub_plus">
+						<label>倍数：</label>
+						<span class="PlusSub"><i class="sub"></i>
+						<input id="lt_sel_times"  value="1" type="text" class="txt50" />
+						<i class="plus"></i></span>
+						<label>倍</label>
+						<label>模式</label>
+						<span id="betMoneyMode"></span>
+						<select name="lt_project_modes"  class="select50 fl">
+							<option value="1">元</option>
+							<option value="2">角</option>
+							<option value="3">分</option>
+						</select>
+						<label id="wrapshow_l" style="margin-left:10px;">返点：</label>
+						<div id="wrapshow"><span id="nfdprize"></span></div>
+						<label>选择<em id="lt_sel_nums">0</em>注，共￥<em id="lt_sel_money">0</em></label>
+						<!--<a href="#" class="Btn80"></a>--><!-- class="Btn80_dis"为禁用下样式 -->
+						<!--              <input id="lt_sel_insert" type="button" value="选好了" class="formOk Btn80">-->
+						<a id="lt_sel_insert" href="javascript:void(0);" class="Btn80">添加</a>
+
+						<!--<a id="lt_random_area" href="javascript:void(0);" style="display: none;" class="random1">机选</a>-->
+						<input type="hidden" id="randomcos" value="" >
+						<input type="hidden" id="randomcosvalue" value="">
+					</div>
+				</div>
+				<input type="hidden" name="lotteryid" id="lotteryid" value="54" />
+				<input type="hidden" name="curmid" id="curmid" value="42427" />
+				<input type="hidden" name="flag" id="flag" value="save" />
+				<input type="hidden" name="poschoose" id="Hidden1" value="" />
+				<div class="GameNumFrom">
+					<!--new div+class-->
+					<!--<div class="clear12"></div>-->
+					<!--new div+class-->
+					<div class="clearfix grayBet" style="clear:both;">
+
+						<!--<div class="clear10"></div>-->
+						<!--new div+class-->
+
+						<!-- 投注项+最近投注 new-->
+						<div class="BetAllBox">
+							<div class="leftCont">
+								<dl class="BetTextarea">
+									<dt>
+										<label>投注项：<em id="singe_bet_count">0</em></label>
+										<a href="javascript:void(0);" id="delteAllNum" class="del"><i class="icon trash"></i>清空</a>
+										<div class="jxuan_box">
+											<p><i class="icon jixuan"></i>机选</p>
+											<ul id="newlt_random_area">
+												<li value="1">机选1注</li>
+												<li value="3">机选3注</li>
+												<li value="5">机选5注</li>
+												<li value="10">机选10注</li>
+											</ul>
+											<!-- <select id="lt_random_area" class="random1" style="margin-left: 0px;outline:none;">
+												<option value="0">&nbsp;机选</option>
+												<option value="1">机选1注</option>
+												<option value="3">机选3注</option>
+												<option value="5">机选5注</option>
+												<option value="10">机选10注</option>
+											</select> -->
+										</div>
+									</dt>
+									<dd class="Tarea">
+										<ul id="lt_cf_content">
+										</ul>
+									</dd>
+								</dl>
+								<div class="bomOperationBox">
+									<div class="part02">
+										<div><!--<span>下注 <span id="lt_cf_count">0</span> 单</span>&nbsp;&nbsp; -->
+											总注数 <span id="lt_cf_nums">0</span> 注，
+											总金额：￥<span id="lt_cf_money">0</span><span style="display:none;">， 起始期：<span id="lt_issues"> </span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+											<label style="display: none;">
+												<input type="checkbox" name="lt_trace_if" id="lt_trace_if_button" value="no">
+												<span>发起追号</span></label>
+												<!--<label>
+						<input name="lt_trace_stop" type="checkbox" value="yes" id="lt_trace_stop" disabled="disabled">
+						<span>中奖后停止追号</span></label>-->
+										</div>
+									</div>
+									<!-- class="btnSubmit_dis"为禁用按钮样式 -->
+									<!--<a><img src="/images/web/imgo_z.jpeg"/> </a>-->
+									<a href="javascript:void(0);" class="btnSubmit " onclick="return(false);" id="lt_sendok">确认投注</a>
+								</div>
+							</div>
+							<!--<div class="rightCont">
+								<dl class="RB_BetListBox">
+									<dt>最近投注记录</dt>
+									<dd>
+										<ol id="lt_trace_issues_today_bet_title">
+											<li><span class="td01">玩法</span><span class="td02">状态</span><span class="td03">操作</span></li>
+										</ol>
+										<ul id="lt_trace_issues_today_bet">
+										</ul>
+									</dd>
+								</dl>
+							</div>-->
+						</div>
+						<!-- 投注项+最近投注 end -->
+
+						<div class="tjBox clearfix">
+							<div> </div>
+						</div>
+					</div>
+
+				</div>
+
+		</div>
+	</div>
+</div>
+<!--我要追号-->
+<div class="ZH_bet_layerBox" style="display: none;">
+	<div class="layerShadow_bet"></div>
+	<div id="lt_trace_box1" class="wyzhContent"> <a href="javascript:void(0);" class="close_betLayer">x</a>
+		<div id="lt_trace_label"></div>
+																							<div class="head clearfix">
+			<div class="headContent">
+				<p class="zh_selectP">追号期数：
+					<select class="select3" id="lt_trace_qissueno">
+						<option value="">请选择</option>
+						<option value="5">5期</option>
+						<option value="10">10期</option>
+						<option value="15">15期</option>
+						<option value="20">20期</option>
+						<option value="25">25期</option>
+						<option value="all">全部</option>
+					</select>
+					 总期数：<span class="red" id="lt_trace_count">0</span> 期 	总金额：<span class="red" id="lt_trace_hmoney">0.00</span> 元 <span id="lt_trace_labelhtml"></span> <span class="red" id="lt_trace_alcount" style="display:none;">全部追号期数</span> </p>
+				<!--<p>追号计划： 起始倍数 <input name="" type="text" value="1" size="3" /> 最低收益率  <input name="" type="text" value="50" size="3" />% 追号期数: <input name="" type="text" value="10" size="3" /></p>-->
+
+				<input name="" type="button" value="生成" class="formSC" id="lt_trace_ok" />
+			</div>
+		</div>
+		<div class="zhlist" style="height:28px;" >
+				<table border="0" cellspacing="0" cellpadding="0" class="formTable" width="100%">
+						<tr align="center"><td width="10px">&nbsp;</td><td style="text-align:center" width="30px">序号</td><td width="115px" style="text-align:center">期号</td><td width="90px" style="text-align:center">倍数</td><td width="90px" style="text-align:center">当前投注</td><td width="80px" style="text-align:center">累计投注</td><td width="100px" name="currentprofit[]" style="text-align:center">当期利润</td><td width="120px" style="text-align:center">合计利润</td><td width="70px" id="title_profitmargin" name="profitmargin[]" style="text-align: center; display: block;">利润率</td></tr>
+				</table>
+		</div>
+		<div class="zhlist"  id="lt_trace_issues"></div>
+		<!--中奖停止追号-->
+		<div class="Stop_zhuihao">
+			<input name="lt_trace_stop" type="checkbox" value="yes" id="lt_trace_stop" disabled="disabled">
+			<span>中奖后停止追号</span> <a href="javascript:void(0);" class="btnSubmit " onclick="return(false);" id="lt_sendok_c2">立即投注</a> </div>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+    function tozhuShow(index) {
+        if (index == 1) {
+            $("#coderecord").show();
+            $("#betrecord").hide();
+            $("#tzshow1").addClass('active');
+            $("#tzshow2").removeClass('active');
+
+        } else {
+            $("#coderecord").hide();
+            $("#betrecord").show();
+            $("#tzshow2").addClass('active');
+            $("#tzshow1").removeClass('active');
+        }
+    }
+    function showAppDown() {
+        top.monihowAppDown();
+    }
+
+</script>
+
+</div></div>
+
+
+<!-- <div id="footer">
+    	<p>桌面最佳分辨率为(1366×768)，浏览器请使用IE7.0以上或务必使用谷歌Chrome或者火狐Firefox以达到最佳游戏效果</p>
+        <p>Copyright©2012-2014 版权所有 心博天下 <a href="/?controller=about">关于我们</a></p>
+         <div id="quickLink"> <a target=_blank href="#" onclick="" class="online">在线客服</a> | <a href="">常见问题</a> | <a href="">玩法介绍</a></div>
+       <!-- <div id="quickLinkDark">在线客服 | 常见问题 | 玩法介绍</div>
+ </div>
+</div>
+
+</div>
+<script>
+   
+//    $(document).ready(function(){
+//        if(!getC('popupad'))
+//            {
+//                $("#popupad").show();
+//            }
+//        
+//        
+//    })
+//
+//    function getC(c_name)
+//    {
+//    if (document.cookie.length>0)
+//      {
+//      c_start=document.cookie.indexOf(c_name + "=")
+//      if (c_start!=-1)
+//        { 
+//        c_start=c_start + c_name.length+1 
+//        c_end=document.cookie.indexOf(";",c_start)
+//        if (c_end==-1) c_end=document.cookie.length
+//        return unescape(document.cookie.substring(c_start,c_end))
+//        } 
+//      }
+//    return ""
+//    }
+//    
+//    
+//    function setC(c_name,value,expiredays)
+//    {
+//    var exdate=new Date()
+//    exdate.setDate(exdate.getDate()+expiredays)
+//    document.cookie=c_name+ "=" +escape(value)+
+//    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+//    }    
+//
+//    function opoupad()
+//    {
+//        $("#popupad").hide();
+//        setC('popupad', '1', 3600);
+//    }
+//    
+    //autoAlertPrize();
+
+</script>
+
+
+
+
+ <div style='display:none;'><a href='http://www.live800.com'>客服</a></div>-->
+
+<!--<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>-->
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    //投注记录查询
+    betRecord(54);
+</script>                         

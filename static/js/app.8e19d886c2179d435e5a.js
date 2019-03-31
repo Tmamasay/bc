@@ -11688,12 +11688,12 @@ webpackJsonp([0], [, , function (t, e, a) {
                                     break;
                                 case "nologin":
                                     window.store.dispatch("user.personalInfo.logout.action", !1), window.router.replace({
-                                        path: "/login"
+                                        path: "/login.html"
                                     }), u = !u;
                                     break;
                                 case "duplicateLogin":
                                     window.store.dispatch("user.personalInfo.logout.action", !1), window.router.replace({
-                                        path: "/login"
+                                        path: "/login.html"
                                     }), i({
                                         msg: a.msg
                                     }), u = !u;
@@ -12103,7 +12103,7 @@ webpackJsonp([0], [, , function (t, e, a) {
         i = a.n(s);
     e.a = {
         helpRoutes: {
-            path: "/help",
+            path: "/gonggao.html",
             component: i.a,
             name: "help",
             meta: {
@@ -12153,7 +12153,7 @@ webpackJsonp([0], [, , function (t, e, a) {
         l = a.n(o);
     e.a = {
         loginRouter: {
-            path: "/login",
+            path: "/login.html",
             component: i.a,
             name: "login",
             meta: {
@@ -12171,7 +12171,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         registerRouter: {
-            path: "/register",
+            path: "/res.html",
             component: l.a,
             name: "register",
             meta: {
@@ -12711,7 +12711,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 if (!s) {
                     if (n.a(t.query)) switch (i()(t.query)[0]) {
                         case "billNo":
-                            "true" === t.query.agent ? window.store.state.user.loginToPath = "/memberCenter/agentBetRecord" : window.store.state.user.loginToPath = "/memberCenter/betRecord";
+                            "true" === t.query.agent ? window.store.state.user.loginToPath = "/memberCenter/agentBetRecord" : window.store.state.user.loginToPath = "/recoder.html";
                             break;
                         case "id":
                         case "periodNo":
@@ -12720,7 +12720,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                         default:
                             window.store.state.user.loginToPath = t.path
                     } else window.store.state.user.loginToPath = t.path;
-                    return window.router.replace("/login"), document.getElementById("headTitle").innerHTML = null == o ? "" : null == window.router.app._route.meta.title ? o.name + "-活动" : o.name + "-" + window.router.app._route.meta.title, window.store.dispatch("commitTurning", !1), !1
+                    return window.router.replace("/login.html"), document.getElementById("headTitle").innerHTML = null == o ? "" : null == window.router.app._route.meta.title ? o.name + "-活动" : o.name + "-" + window.router.app._route.meta.title, window.store.dispatch("commitTurning", !1), !1
                 }
                 window.store.state.user.loginName = s
             }
@@ -15658,7 +15658,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                     Action: "checkPaymentTypeUse",
                     Requirement: {}
                 }).then(function (a) {
-                    "success" === a.code ? e(l.g, a.data) : "other" === a.code ? window.router.push("/login") : window.layer.msgWarn(a.msg), t()
+                    "success" === a.code ? e(l.g, a.data) : "other" === a.code ? window.router.push("/login.html") : window.layer.msgWarn(a.msg), t()
                 })
             })
         }), r()(s, l.b, function (t, e) {
@@ -17413,7 +17413,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 this.showMoneyFlag = !1, this.$store.state.site.isOpening ? window.layer.confirm("开奖进行中，是否要中断开奖", ["确定", "取消"], function () {
                     window.store.state.lt.stopOpen = !0
                 }) : this.$store.dispatch(l.LOGOUT_ACTION, {}).then(function (t) {
-                    window.router.push("/login")
+                    window.router.push("/login.html")
                 }).catch(function (e) {
                     return window.layer.msgWarn(e.msg), !("" === t.$store.state.user.loginName || null === t.$store.state.user.loginName)
                 })
@@ -17952,7 +17952,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             logOut: function () {
                 var t = this;
                 this.$store.dispatch(i.LOGOUT_ACTION, {}).then(function (t) {
-                    window.router.push("/login")
+                    window.router.push("/login.html")
                 }).catch(function (e) {
                     return window.layer.msgWarn(e.msg), !("" === t.$store.state.user.loginName || null === t.$store.state.user.loginName)
                 })
@@ -18040,7 +18040,7 @@ webpackJsonp([0], [, , function (t, e, a) {
         },
         methods: {
             pushGame: function (t, e) {
-                void 0 === localStorage.getItem("user.loginName") || null === localStorage.getItem("user.loginName") || "" === localStorage.getItem("user.loginName") ? (window.store.state.user.loginToPath = "/lottery/" + t + "/" + e, window.router.push("/login")) : (s.x(), window.router.push("/lottery/" + t + "/" + e))
+                void 0 === localStorage.getItem("user.loginName") || null === localStorage.getItem("user.loginName") || "" === localStorage.getItem("user.loginName") ? (window.store.state.user.loginToPath = "/lottery/" + t + "/" + e, window.router.push("/login.html")) : (s.x(), window.router.push("/lottery/" + t + "/" + e))
             },
             setFitLotteryCSS: function (t, e, a) {
                 return s.w(t, e, a)
@@ -24393,7 +24393,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 return this.$store.state.site.noIssueNeed.indexOf(this.$route.params.code) > -1
             },
             moreHref: function () {
-                return "betRecord" === this.whichRecord ? "/memberCenter/betRecord?lotteryFrom=" + this.lotteryUrl : "/memberCenter/seekOrder?lotteryFrom=" + this.lotteryUrl
+                return "betRecord" === this.whichRecord ? "/recoder.html?lotteryFrom=" + this.lotteryUrl : "/memberCenter/seekOrder?lotteryFrom=" + this.lotteryUrl
             },
             betRecordList: function () {
                 return this.$store.state.lt.BetRecord ? this.$store.state.lt.BetRecord : []
@@ -24454,7 +24454,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 return this.$store.state.lt.lottery.lotteryType + "/" + this.$store.state.lt.lottery.lotteryCode
             },
             moreHref: function () {
-                return "betRecord" === this.whichRecord ? "/memberCenter/betRecord?lotteryFrom=" + this.lotteryUrl : "/memberCenter/seekOrder?lotteryFrom=" + this.lotteryUrl
+                return "betRecord" === this.whichRecord ? "/recoder.html?lotteryFrom=" + this.lotteryUrl : "/memberCenter/seekOrder?lotteryFrom=" + this.lotteryUrl
             },
             isCTCP: function () {
                 return "CTSSC" === this.$route.params.type || "CTBSC" === this.$route.params.type || "CTK3" === this.$route.params.type
@@ -25992,7 +25992,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeRouteEnter: function (t, e, a) {
-            window.store.state.user.loginName || localStorage.getItem("user.loginName") ? a() : (window.store.dispatch("commitTurning", !1), window.router.replace("/login"))
+            window.store.state.user.loginName || localStorage.getItem("user.loginName") ? a() : (window.store.dispatch("commitTurning", !1), window.router.replace("/login.html"))
         },
         created: function () {
             var t = this;
@@ -26219,7 +26219,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                         branchName: this.BranchName
                     }).then(function (t) {
                         window.layer.alert(t.msg, function () {
-                            window.router.push("/memberCenter/manageBankcard")
+                            window.router.push("/card.html")
                         })
                     }).catch(function (e) {
                         t.isSubmit = !0, window.layer.msgWarn(e.msg)
@@ -26247,13 +26247,13 @@ webpackJsonp([0], [, , function (t, e, a) {
                                     })
                                 },
                                 no: function () {
-                                    window.router.push("/memberCenter/manageBankcard")
+                                    window.router.push("/card.html")
                                 },
                                 cancel: function () {
-                                    window.router.push("/memberCenter/manageBankcard")
+                                    window.router.push("/card.html")
                                 }
                             }) : window.layer.alert(e.msg, function () {
-                                window.router.push("/memberCenter/manageBankcard")
+                                window.router.push("/card.html")
                             })
                         }).catch(function (e) {
                             t.isSubmit = !0, window.layer.msgWarn(e.msg)
@@ -28766,7 +28766,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeRouteEnter: function (t, e, a) {
             window.store.dispatch("commitTurning", !1);
@@ -28775,8 +28775,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                 n = window.store.state.site.config,
                 o = s.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "";
             if (s.a(n) && s.a(n.siteId)) {
-                if ("yingjia" === r || -1 !== i.indexOf(Number(n.siteId))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), ""
-            } else if (s.a(o) && s.a(o.siteId) && ("yingjia" === r || -1 !== i.indexOf(Number(n.siteId)))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), "";
+                if ("yingjia" === r || -1 !== i.indexOf(Number(n.siteId))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+            } else if (s.a(o) && s.a(o.siteId) && ("yingjia" === r || -1 !== i.indexOf(Number(n.siteId)))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), "";
             a(function (t) {
                 var e = t.$route.query.Q,
                     a = {
@@ -28856,7 +28856,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                         userName: localStorage.getItem("user.loginName")
                     }).then(function (t) {
                         window.layer.confirm(t.msg, ["确定"], function () {
-                            window.router.push("/memberCenter/securityCenter")
+                            window.router.push("/mymo.html")
                         })
                     }).catch(function (t) {
                         window.layer.msgWarn(t.msg)
@@ -28935,7 +28935,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            localStorage.getItem("user.loginName") || localStorage.getItem("user.userName") || window.router.push("/login")
+            localStorage.getItem("user.loginName") || localStorage.getItem("user.userName") || window.router.push("/login.html")
         },
         beforeDestroy: function () {
             document.removeEventListener("keyup", this.keyupHandler)
@@ -28944,7 +28944,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             window.store.state.user.checkPwd ? a(function (t) {
                 var a = o.a(localStorage.getItem("user.pwdEncodeType")) ? localStorage.getItem("user.pwdEncodeType") : "0";
                 a = Number(a) ? a : "0", e.path && "/" !== e.path && "/verifyPwd" !== e.path && a && "0" !== a && window.layer.msgWarn("请依指示完成密码修改")
-            }) : o.a(t.query.Q) && "ResetPwd" === t.query.Q ? "/login" === e.path ? window.location.href = "/login" : a("/login") : "/verifyPwd" === e.path ? window.location.href = e.path : a("/verifyPwd")
+            }) : o.a(t.query.Q) && "ResetPwd" === t.query.Q ? "/login.html" === e.path ? window.location.href = "/login.html" : a("/login.html") : "/verifyPwd" === e.path ? window.location.href = e.path : a("/verifyPwd")
         },
         beforeRouteLeave: function (t, e, a) {
             window.store.state.user.verifyAction = "", window.store.state.user.verifyData = {}, window.store.state.user.checkPwd = !1, a()
@@ -28983,16 +28983,16 @@ webpackJsonp([0], [, , function (t, e, a) {
                     var e = window.store.state.user.verifyAction,
                         a = window.store.state.user.verifyData;
                     this.$store.dispatch(i[e], a).then(function (e) {
-                        if ("error" === e.code) return void window.router.push("/login");
+                        if ("error" === e.code) return void window.router.push("/login.html");
                         "success" === e.code && t.$store.dispatch(i.USER_UPDATE_PWD, {
                             password: n()(t.password),
                             userName: localStorage.getItem("user.userName")
                         }).then(function (e) {
                             t.$store.state.user.pwdEncodeType = 0, localStorage.setItem("user.pwdEncodeType", t.$store.state.user.pwdEncodeType), t.isFind ? t.$store.dispatch(i.LOGOUT_ACTION, {}).then(function (t) {
-                                window.layer.url(e.msg, "/login")
+                                window.layer.url(e.msg, "/login.html")
                             }).catch(function (e) {
                                 return window.layer.msgWarn(e.msg), !("" === t.$store.state.user.loginName || null === t.$store.state.user.loginName)
-                            }) : window.layer.url(e.msg, "/memberCenter/securityCenter")
+                            }) : window.layer.url(e.msg, "/mymo.html")
                         }).catch(function (e) {
                             window.layer.msgWarn(e.msg), t.addKeyUp()
                         })
@@ -29105,7 +29105,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                         var e = window.store.state.user.verifyAction,
                             i = window.store.state.user.verifyData;
                         this.$store.dispatch(s[e], i).then(function (e) {
-                            if ("error" === e.code) return void window.router.push("/login");
+                            if ("error" === e.code) return void window.router.push("/login.html");
                             "success" === e.code && t.toSetQuestion()
                         }).catch(function (t) {
                             window.layer.url("不合法操作", "/")
@@ -29129,7 +29129,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 this.$store.dispatch(s.USER_SET_QUESTION, {
                     userQuestionLsit: e
                 }).then(function (t) {
-                    window.layer.url(t.msg, "/memberCenter/securityCenter")
+                    window.layer.url(t.msg, "/mymo.html")
                 }).catch(function (e) {
                     window.layer.msgWarn(e.msg), t.addKeyUp()
                 })
@@ -29176,14 +29176,14 @@ webpackJsonp([0], [, , function (t, e, a) {
                         "success" === a.code ? (window.store.commit(n.SECURITY_MUTATION_INITDATA, a.data), t()) : e(a)
                     })
                 }).then(function (s) {
-                    "1" === window.store.state.user.userHasSafePwd ? window.store.state.user.checkSafePwd ? a() : u.a(t.query.Q) && "ResetSafePwd" === t.query.Q ? "/memberCenter/securityCenter" === e.path ? window.location.href = e.path : a("/memberCenter/securityCenter") : "/verifySafePwd" === e.path ? window.location.href = e.path : a("/verifySafePwd") : a()
+                    "1" === window.store.state.user.userHasSafePwd ? window.store.state.user.checkSafePwd ? a() : u.a(t.query.Q) && "ResetSafePwd" === t.query.Q ? "/mymo.html" === e.path ? window.location.href = e.path : a("/mymo.html") : "/verifySafePwd" === e.path ? window.location.href = e.path : a("/verifySafePwd") : a()
                 }).catch(function (t) {
                     window.store.dispatch("commitTurning", !1), a(!1)
                 })
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeRouteLeave: function (t, e, a) {
             window.store.state.user.verifyAction = "", window.store.state.user.verifyData = {}, window.store.state.user.checkSafePwd = !1, a()
@@ -29227,7 +29227,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                     var e = window.store.state.user.verifyAction,
                         a = window.store.state.user.verifyData;
                     this.$store.dispatch(n[e], a).then(function (e) {
-                        if ("error" === e.code) return void window.router.push("/login");
+                        if ("error" === e.code) return void window.router.push("/login.html");
                         "success" === e.code && t.toSetSafePwd()
                     }).catch(function (t) {
                         window.layer.url("不合法操作", "/")
@@ -29255,10 +29255,10 @@ webpackJsonp([0], [, , function (t, e, a) {
                                         window.layer.close(t), window.router.push("/withdraw")
                                     },
                                     no: function (t) {
-                                        window.layer.close(t), window.router.push("/memberCenter/securityCenter")
+                                        window.layer.close(t), window.router.push("/mymo.html")
                                     },
                                     cancel: function () {
-                                        window.router.push("/memberCenter/securityCenter")
+                                        window.router.push("/mymo.html")
                                     }
                                 });
                                 else if (!u.a(s) || 0 === s.length) {
@@ -29272,10 +29272,10 @@ webpackJsonp([0], [, , function (t, e, a) {
                                             window.layer.close(t), window.router.push("/memberCenter/setBankcard?Q=" + a)
                                         },
                                         no: function (t) {
-                                            window.layer.close(t), window.router.push("/memberCenter/securityCenter")
+                                            window.layer.close(t), window.router.push("/mymo.html")
                                         },
                                         cancel: function () {
-                                            window.router.push("/memberCenter/securityCenter")
+                                            window.router.push("/mymo.html")
                                         }
                                     }), window.layer.setSafePwd;
                                     window.layer.open({
@@ -29295,25 +29295,25 @@ webpackJsonp([0], [, , function (t, e, a) {
                                                     window.layer.close(t), window.router.push("/memberCenter/setBankcard")
                                                 },
                                                 no: function (t) {
-                                                    window.layer.close(t), window.router.push("/memberCenter/manageBankcard")
+                                                    window.layer.close(t), window.router.push("/card.html")
                                                 },
                                                 cancel: function () {
-                                                    window.router.push("/memberCenter/manageBankcard")
+                                                    window.router.push("/card.html")
                                                 }
                                             })
                                         },
                                         no: function (t) {
-                                            window.layer.close(t), window.router.push("/memberCenter/securityCenter")
+                                            window.layer.close(t), window.router.push("/mymo.html")
                                         },
                                         cancel: function () {
-                                            window.router.push("/memberCenter/securityCenter")
+                                            window.router.push("/mymo.html")
                                         }
                                     })
                                 }
                             });
                             break;
                         default:
-                            window.layer.url(e.msg, "/memberCenter/securityCenter")
+                            window.layer.url(e.msg, "/mymo.html")
                     }
                 }).catch(function (e) {
                     window.layer.msgWarn(e.msg), t.addKeyUp()
@@ -29329,7 +29329,7 @@ webpackJsonp([0], [, , function (t, e, a) {
     var s = a(20);
     e.default = {
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         created: function () {
             var t = this;
@@ -29425,7 +29425,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeDestroy: function () {
             document.removeEventListener("keyup", this.keyupHandler)
@@ -29488,7 +29488,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeDestroy: function () {
             document.removeEventListener("keyup", this.keyupHandler)
@@ -29529,8 +29529,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                     n = r.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "",
                     o = r.a(window.store.state.site.config.customSite) ? window.store.state.site.config.customSite : "";
                 if (r.a(i) && r.a(i.siteId)) {
-                    if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), ""
-                } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), "";
+                    if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+                } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), "";
                 a(function (t) {
                     var a = localStorage.getItem("user.pwdEncodeType");
                     e.path && "/" !== e.path && a && "0" !== a && window.layer.msgWarn("请依指示完成密码修改")
@@ -29542,8 +29542,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                         n = r.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "",
                         o = r.a(window.store.state.site.config.customSite) ? window.store.state.site.config.customSite : "";
                     if (r.a(i) && r.a(i.siteId)) {
-                        if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), ""
-                    } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), "";
+                        if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+                    } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), "";
                     a(function (t) {
                         var a = r.a(localStorage.getItem("user.pwdEncodeType")) ? localStorage.getItem("user.pwdEncodeType") : "0";
                         a = Number(a) ? a : "0", e.path && "/" !== e.path && a && "0" !== a && window.layer.msgWarn("请依指示完成密码修改")
@@ -29593,7 +29593,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeDestroy: function () {
             document.removeEventListener("keyup", this.keyupHandler)
@@ -29667,7 +29667,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                     userQuestionLsit: a,
                     userName: localStorage.getItem("user.userName")
                 }).then(function (t) {
-                    if ("error" === t.code) return void window.router.push("/login");
+                    if ("error" === t.code) return void window.router.push("/login.html");
                     "setSafePwd?Q=ResetSafePwd&F=Question" === e ? window.store.state.user.checkSafePwd = !0 : "/setQuestion" === e ? window.store.state.user.checkSafeQuestion = !0 : "setPwd?Q=ResetPwd&F=Question" === e && (window.store.state.user.checkPwd = !0), window.layer.url(t.msg, e)
                 }).catch(function (e) {
                     (e.data.ErrorTimes >= 3 || e.data.needValid) && (t.isNeedValid = !0, t.getVCode()), e.msg.indexOf("请联系在线客服") > -1 && (e.msg = e.msg.replace(/<br><br> 请联系在线客服/g, "")), window.layer.msgWarn(e.msg), t.addKeyUp()
@@ -29706,7 +29706,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }
         },
         beforeCreate: function () {
-            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login")
+            null === localStorage.getItem("user.loginName") && null === sessionStorage.getItem("isFind") && window.router.push("/login.html")
         },
         beforeDestroy: function () {
             document.removeEventListener("keyup", this.keyupHandler)
@@ -29744,7 +29744,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                     safePwd: o()(this.safePwd),
                     userName: localStorage.getItem("user.userName")
                 }).then(function (e) {
-                    if ("error" === e.code) return void window.router.push("/login");
+                    if ("error" === e.code) return void window.router.push("/login.html");
                     r.a(t.nextUrl) && "/setSafePwd" !== t.nextUrl ? "setPwd?Q=ResetPwd&F=SafePwd" === t.nextUrl && (window.store.state.user.checkPwd = !0) : window.store.state.user.checkSafePwd = !0, window.layer.url(e.msg, "" === t.nextUrl ? "/setSafePwd" : t.nextUrl)
                 }).catch(function (e) {
                     (e.data.ErrorTimes >= 3 || e.data.needValid) && (t.isNeedValid = !0, t.getVCode()), t.checkRetuenMsg(e.msg), window.layer.msgWarn(e.msg), t.addKeyUp()
@@ -29776,8 +29776,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                     n = r.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "",
                     o = r.a(window.store.state.site.config.customSite) ? window.store.state.site.config.customSite : "";
                 if (r.a(i) && r.a(i.siteId)) {
-                    if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), ""
-                } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), "";
+                    if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+                } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), "";
                 a(function (t) {
                     var a = r.a(localStorage.getItem("user.pwdEncodeType")) ? localStorage.getItem("user.pwdEncodeType") : "0";
                     a = Number(a) ? a : "0", e.path && "/" !== e.path && a && "0" !== a && window.layer.msgWarn("请依指示完成密码修改")
@@ -29789,8 +29789,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                         n = r.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "",
                         o = r.a(window.store.state.site.config.customSite) ? window.store.state.site.config.customSite : "";
                     if (r.a(i) && r.a(i.siteId)) {
-                        if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), ""
-                    } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/memberCenter/securityCenter"), window.layer.msgWarn("请联系客服修改密码"), "";
+                        if ("yingjia" === o || -1 !== s.indexOf(Number(i.siteId))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+                    } else if (r.a(n) && r.a(n.siteId) && ("yingjia" === o || -1 !== s.indexOf(Number(n.siteId)))) return window.router.push("/mymo.html"), window.layer.msgWarn("请联系客服修改密码"), "";
                     a(function (t) {
                         var a = r.a(localStorage.getItem("user.pwdEncodeType")) ? localStorage.getItem("user.pwdEncodeType") : "0";
                         a = Number(a) ? a : "0", e.path && "/" !== e.path && a && "0" !== a && window.layer.msgWarn("请依指示完成密码修改")
@@ -31454,8 +31454,8 @@ webpackJsonp([0], [, , function (t, e, a) {
                 o = window.store.state.site.config,
                 l = r.a(localStorage.getItem("site.config")) ? JSON.parse(localStorage.getItem("site.config")) : "";
             if (r.a(o) && r.a(o.siteId)) {
-                if ("yingjia" === n || -1 !== s.indexOf(Number(o.siteId))) return window.router.push("/login"), window.layer.msgWarn("请联系客服修改密码"), ""
-            } else if (r.a(l) && r.a(l.siteId) && ("yingjia" === n || -1 !== s.indexOf(Number(o.siteId)))) return window.router.push("/login"), window.layer.msgWarn("请联系客服修改密码"), "";
+                if ("yingjia" === n || -1 !== s.indexOf(Number(o.siteId))) return window.router.push("/login.html"), window.layer.msgWarn("请联系客服修改密码"), ""
+            } else if (r.a(l) && r.a(l.siteId) && ("yingjia" === n || -1 !== s.indexOf(Number(o.siteId)))) return window.router.push("/login.html"), window.layer.msgWarn("请联系客服修改密码"), "";
             window.store.dispatch(i.VERIFICATIONCODE_ACTION).then(function (t) {
                 a(function (e) {
                     e.validImg = "data:image/JPEG;base64," + t.data.codePhoto
@@ -32697,7 +32697,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             i.a.all(u).then(function (t) {
                 var i = window.store.state.user.userHasSafePwd;
                 if ("0" === window.store.state.user.pwdEncodeType) {
-                    var r = "/login" === e.path ? "/" : e.path;
+                    var r = "/login.html" === e.path ? "/" : e.path;
                     "1" !== i ? a.i(h.a)(window.store.state.withdraw.userBankList) && 0 !== window.store.state.withdraw.userBankList.length || window.store.state.withdraw.bankCardDisabled ? window.layer.confirm("您还未设置安全密码，无法提现，是否先去设置安全密码?", ["确定", "取消"], function () {
                         s("/setSafePwd?Q=withdraw")
                     }, function () {
@@ -36937,7 +36937,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/login"
+                        path: "/login.html"
                     }
                 }
             }, [t._v("亲，请登录")]), t._v(" "), a("i", {
@@ -36949,7 +36949,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/register"
+                        path: "/res.html"
                     }
                 }
             }, [t._v("用户注册")])], 1), t._v(" "), a("a", {
@@ -36988,7 +36988,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/personalInfo"
+                        path: "/mymo.html"
                     }
                 }
             }, [a("img", {
@@ -37045,7 +37045,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/securityCenter"
+                        path: "/mymo.html"
                     }
                 },
                 nativeOn: {
@@ -37061,7 +37061,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("i"), t._v(" "), a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/betRecord"
+                        path: "/recoder.html"
                     }
                 },
                 nativeOn: {
@@ -37083,7 +37083,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [t._v("交易记录")]), t._v(" "), a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/personalInfo"
+                        path: "/mymo.html"
                     }
                 },
                 nativeOn: {
@@ -37094,7 +37094,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [t._v("个人信息")]), t._v(" "), a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/securityCenter"
+                        path: "/mymo.html"
                     }
                 },
                 nativeOn: {
@@ -43042,13 +43042,13 @@ webpackJsonp([0], [, , function (t, e, a) {
                 staticClass: "loginRegister"
             }, [a("router-link", {
                 attrs: {
-                    to: "/login"
+                    to: "/login.html"
                 }
             }, [a("i", {
                 staticClass: "iconfont"
             }, [t._v("")]), t._v("登 录")]), t._v(" "), a("router-link", {
                 attrs: {
-                    to: "/register"
+                    to: "/res.html"
                 }
             }, [a("i", {
                 staticClass: "iconfont"
@@ -44467,7 +44467,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/personalInfo"
+                        path: "/mymo.html"
                     }
                 }
             }, [t._v("\n        个人资料\n    ")]), t._v(" "), a("router-link", {
@@ -47108,7 +47108,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 staticClass: "sildeSession"
             }, [t._m(0), t._v(" "), a("li", {}, [a("router-link", {
                 attrs: {
-                    to: "/memberCenter/personalInfo"
+                    to: "/mymo.html"
                 },
                 nativeOn: {
                     click: function (e) {
@@ -47117,7 +47117,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 }
             }, [t._v("个人信息")])], 1), t._v(" "), a("li", {}, [a("router-link", {
                 attrs: {
-                    to: "/memberCenter/securityCenter"
+                    to: "/mymo.html"
                 },
                 nativeOn: {
                     click: function (e) {
@@ -47126,7 +47126,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 }
             }, [t._v("安全中心")])], 1), t._v(" "), a("li", {}, [a("router-link", {
                 attrs: {
-                    to: "/memberCenter/manageBankcard"
+                    to: "/card.html"
                 },
                 nativeOn: {
                     click: function (e) {
@@ -47153,7 +47153,7 @@ webpackJsonp([0], [, , function (t, e, a) {
                 staticClass: "sildeSession"
             }, [t._m(1), t._v(" "), a("li", [a("router-link", {
                 attrs: {
-                    to: "/memberCenter/betRecord"
+                    to: "/recoder.html"
                 },
                 nativeOn: {
                     click: function (e) {
@@ -47300,7 +47300,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             var t = this,
                 e = t.$createElement,
                 a = t._self._c || e;
-            return a("h3", [a("span", [t._v("")]), t._v("消息管理")])
+            return a("h3", [a("span", [t._v("")]), t._v("消息管理")])
         }]
     }
 }, function (t, e) {
@@ -48165,7 +48165,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/memberCenter/securityCenter"
+                        path: "/mymo.html"
                     }
                 }
             }, [t._v("我的账户")])], 1), t._v(" "), a("li", {
@@ -48180,7 +48180,7 @@ webpackJsonp([0], [, , function (t, e, a) {
             }, [a("router-link", {
                 attrs: {
                     to: {
-                        path: "/help"
+                        path: "/gonggao.html"
                     }
                 }
             }, [t._v("帮助指南")])], 1), t._v(" "), a("span")])])])

@@ -1,0 +1,1680 @@
+@charset "utf-8";
+/* CSS Document */
+.red { /*color:red;*/ color:#d13737;}
+.red1 {color:#ffffff; font-size:16px;}
+.red2 {color:red; font-size:20px; font-weight:bold;}
+.yellow2 {color:#f59316; font-size:14px; font-weight:none; }
+.red3 {color:red; font-size:14px; font-weight:bold; }
+.red4 {color:red; font-size:14px; font-weight:bold;}
+*{-webkit-user-drag: none;}
+
+#subContent_bet {
+    clear:both;
+    width:100%; margin:0px auto;
+}
+#subContent_bet .bg {
+    /*padding:8px;*/
+    width:100%;
+}
+
+#subContent_bet_re {
+    clear:both;
+/*    width:98%;*/
+    margin:0 auto;
+    min-height:336px;
+}
+
+
+
+#siderbar {
+    _display:inline;
+    overflow:hidden;
+}
+
+#siderbar .list {
+}
+#siderbar .list li {
+    float:left;
+
+}
+#siderbar .list li a {
+	display:block;
+    min-width:70px;
+	padding:0 5px;
+	text-align:center;
+    height:40px;
+    line-height:40px;
+    text-indent:0;
+    blr:expression(this.onFocus=this.blur());
+    font-size:14px;
+    outline:none;
+    color:#ffffff;
+    background: #2a7fd0;
+}
+#siderbar .list a:focus { -moz-outline-style: none; }
+#siderbar .list a:hover {
+    text-decoration:none;
+    color:#fff;
+    text-indent:0;
+    background: #e1ae00;
+
+}
+#siderbar .list .current a, #siderbar .list .current a:hover {
+    color:#ffffff;
+    background:#e1ae00;
+	box-shadow:inset 0 -2px 2px rgba(0,0,0,0.1);
+}
+
+#mainContent {
+    background:#dedede;
+    _display:inline;
+    color:#333;
+    position:relative;
+    border-radius: 5px;
+	overflow:hidden;
+}
+#mainContent a {color:#ffffff;}
+#mainContent .topName {
+    background:#2a7fd0;
+    /*height:44px;*/
+    line-height:44px;
+    font-size:15px;
+    color:#FFFFFF;
+    text-indent:50px;
+    overflow:hidden;
+}
+
+
+
+#address {
+    top:0;
+    position:absolute;
+    top:10px;
+    right:20px;
+}
+#contentBox {
+    width:100%;
+    margin:0 auto;
+    overflow-y: auto;
+    height:550px;
+}
+#contentBox #mainFrame{width:98%; margin: 10px auto; overflow: hidden; display: block;}
+.formTable {
+    /*border:1px solid #A7ADBB;*/
+    color:#FFFFFF;
+}
+/*.formTable tr td {
+    border:1px solid #ccc;
+    color:#FFFFFF;
+}*/
+.formTable th ,
+.formTable td {
+    /*border-top:1px solid #666;*/
+    /*border-bottom:1px solid #666;*/
+    /*border-right:1px solid #666;*/
+    padding:4px 10px;
+    vertical-align:middle;
+}
+.formTable th {
+    text-align:right;
+}
+.formTable .odd th ,
+.formTable .odd td {
+    background-color:#EFEFEF;
+}
+.formTable .even th ,
+.formTable .even td {
+    background-color:#F6F6F6;
+}
+
+.formCheck ,
+.formNext ,
+.formBack ,
+.formSubmit ,
+.formReset ,
+.formChange ,
+.formLibd ,
+.formZjbd ,
+.formSame ,
+.formWord ,
+.formCancel {
+    /*background:url(../../images/web/bt.gif) no-repeat;*/
+    width:91px;
+    height:35px;
+    color:#F09610;
+    border:0;
+    cursor:pointer;
+    font-size: 0px;/*IE hack*/
+    display:inline-block;/*IE hack*/
+    line-height: 0px;/*IE hack*/
+    margin:15px 20px;
+    overflow:hidden;
+    _text-indent:0;
+}
+.formNext {background-position:0 -28px;}
+.formBack {background-position:0 -56px;}
+.formSubmit {background-position:0 -84px;}
+.formReset {background-position:0 -112px;}
+.formChange {background-position:0 -140px;}
+.formLibd {background-position:0 -202px;}
+.formZjbd {background-position:0 -230px;}
+.formSame {background-position:0 -258px;}
+.formCancel {background-position:0 -314px;}
+.formWord {text-align:center;  text-indent:0; line-height:35px; font-size:12px; color:#fff; font-weight:bold; width:81px; margin:0 5px; background: #d8c6a0;}
+.formOk {
+    background:url(../../images/web/btn_add.png) no-repeat;
+    width:127px;
+    height:36px;
+    margin-right:5px;
+    border:0;
+    color:#EEF1F2;
+    cursor:pointer;
+    font-size: 0px;/*IE hack*/
+    display:inline-block;/*IE hack*/
+    line-height: 0px;/*IE hack*/
+    overflow:hidden;
+
+    _text-indent:0;
+}
+.bt_cancel {
+    float:right;
+    background:url(../../images/web/bt_cancel.gif) no-repeat;
+    width:91px;
+    height:28px;
+    margin:0 5px;
+    border:0;
+    color:#EEF1F2;
+    cursor:pointer;
+    font-size: 0px;/*IE hack*/
+    display:inline-block;/*IE hack*/
+    line-height: 0px;/*IE hack*/
+    overflow:hidden;
+    text-indent:-9999px;
+    _text-indent:0;
+}
+.grayTable {
+    border:1px solid #828A97;
+    margin-bottom:10px;
+}
+.grayTable th {
+    background-color:#8F98A3;
+    border:1px solid #D5D8DE;
+    text-align:center;
+    padding:2px;
+    border-left:0;
+}
+.grayTable td {
+    border:1px solid #8F98A3;
+    background-color:#EFEFEF;
+    text-align:center;
+    padding:2px;
+    border-left:0;
+    border-bottom:0;
+}
+.grayTable .left {text-align:left; text-indent:20px;}
+.grayTable .left_noindent {text-align:left;}
+
+#point {
+    background:url(../../images/web/point.gif) no-repeat 8px 0;
+    line-height:27px;
+    padding-left:50px;
+    margin-bottom:12px;
+}
+
+#error {
+    background:url(../../images/web/attention.png) no-repeat 0 0;
+    _height:64px;
+    min-height:64px;
+    width:400px;
+    margin:0 auto;
+    line-height:22px;
+    padding:16px 0 0 74px;
+}
+#error .title {
+    color:#E45E00;
+    margin-bottom:20px;
+}
+
+.dotTitle { font-size:12px;margin:10px 0; font-size:14px;}
+
+#newsList {color:#000;}
+#newsList li {
+    line-height:28px;
+    height:28px;
+    padding:0 20px;
+    width:670px;
+    float:left;
+}
+#newsList .even {
+    background-color:#EFEFEF;
+    border-top:1px solid #FFF;
+    border-bottom:1px solid #ddd;
+}
+#newsList .odd {
+    background-color:#F6F6F6;
+    border-top:1px solid #FFF;
+    border-bottom:1px solid #ddd;
+}
+#newsList a {float:left; color:#000;}
+#newsList .date {float:right; color:#666;font-family:"\5b8b\4f53";}
+
+
+#appraise {text-align:left; color:#000;}
+#appraise .question {
+    background:url(../../images/web/dot12.gif) no-repeat 15px 4px;
+    padding-left:50px;
+    padding:5px 0 0 50px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+#appraise .answer {
+    background:url(../../images/web/dot13.gif) no-repeat;
+    padding:5px 0 0;
+    margin-bottom:10px;
+    line-height:18px;
+}
+#appraise .answer .border {padding:8px 15px;border:1px solid #FF6A00;border-top:0; background-color:#fff;}
+
+#newsDetail .title{
+    border-top:1px solid #fff;
+    background-color:#EFEFEF;
+    text-align:center;
+    padding:8px 0 0;
+    line-height:20px;
+}
+#newsDetail .date{
+    border-bottom:1px solid #fff;
+    background-color:#EFEFEF;
+    text-align:center;
+    color:#666;
+    padding:0 0 8px 0;
+    line-height:20px;
+    font-family:"\5b8b\4f53";
+}
+#newsDetail .detail {
+    padding:10px ;
+    border-bottom:1px solid #fff;
+    line-height:30px;
+}
+#newsDetail .back {
+    text-align:right;
+    padding:10px;
+}
+#newsDetail .back a {
+    display:inline-block;
+    background:url(../../images/web/back.gif) no-repeat;
+    width:46px;
+    height:15px;
+    line-height:5000px;
+    overflow:hidden;
+}
+
+
+#one1 {width:102px;}
+#one2 {width:104px;}
+#one3 {width:104px;}
+#one4 {width:103px;}
+#one1.hover ,
+#one2.hover ,
+#one3.hover ,
+#one4.hover { background:url(../../images/web/gameMethod02.gif) no-repeat;}
+#one1.hover {background-position:0 0;}
+#one2.hover {background-position:-102px 0;}
+#one3.hover {background-position:-206px 0;}
+#one4.hover {background-position:-310px 0;}
+
+#playinfo_menu0 {width:102px;}
+#playinfo_menu1 {width:104px;}
+#playinfo_menu2 {width:104px;}
+#playinfo_menu3 {width:103px;}
+#playinfo_menu0.hover ,
+#playinfo_menu1.hover ,
+#playinfo_menu2.hover ,
+#playinfo_menu3.hover {background:url(../../images/web/gameMethod02.gif) no-repeat;}
+#playinfo_menu0.hover {background-position:0 0;}
+#playinfo_menu1.hover {background-position:-102px 0;}
+#playinfo_menu2.hover {background-position:-206px 0;}
+#playinfo_menu3.hover {background-position:-310px 0;}
+
+
+
+.gameMethod ,
+.gameMethod th ,
+.gameMethod td {
+    border:1px solid #fff;
+    border-collapse:collapse;
+    padding:5px;
+}
+
+#subNav {
+    background:url(../../images/web/subNav.png) no-repeat right -27px;
+    padding-right:13px;
+    height:27px;
+    float:left;
+    display:inline;
+    margin:-8px 0 0;
+    position:relative;
+}
+#subNav .bg {
+    background:url(../../images/web/subNav.png) no-repeat;
+    height:27px;
+    line-height:32px;
+    overflow:hidden;
+    padding:0 10px 0 23px;
+    float:left;
+}
+#subNav .current {
+    color:#B5ED58;
+    font-weight:bold;
+}
+
+
+/*------------------------------------*/
+#lottery {
+    background:url(../../images/web/bg01.png) no-repeat;
+    width:360px;
+    height:83px;
+    float:left;
+    _display:inline;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+#lottery .one {
+    background:url(../../images/web/ssclogo.png) no-repeat;
+    width:75px;
+    height:83px;
+    float:left;
+    _display:inline;
+    margin:0 4px 0 10px;
+    text-indent:-9999px;
+    overflow:hidden;
+}
+#lottery .ico_CQSSC {background-position:0 0;}
+#lottery .ico_HLJSSC {background-position:0 -83px;}
+#lottery .ico_JX-SSC {background-position:0 -166px;}
+#lottery .ico_XJSSC {background-position:0 -249px;}
+#lottery .ico_SSL {background-position:0 -332px;}
+#lottery .ico_SD11Y {background-position:0 -664px;}
+#lottery .ico_JX11-5 {background-position:0 -582px;}
+#lottery .ico_GD11-5 {background-position:0 -747px;}
+#lottery .ico_CQ11-5 {background-position:0 -830px;}
+#lottery .ico_BJKL8 {background-position:0 -498px;}
+#lottery .ico_fucai3d {background-position:0 -498px;}
+#lottery .ico_ticaip3 {background-position:0 -498px;}
+
+#lottery .two {
+    float:left;
+    text-align:center;
+    width:144px;
+    line-height:20px;
+    padding:10px 0 0;
+}
+#lottery .three {
+    float:right;
+    width:126px;
+    text-align:center;
+    padding:10px 0 0;
+    position:relative;
+}
+#lottery .time {
+    position:absolute;
+    left:10px;
+    top:41px;
+    width:104px;
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:18px;
+    color:#b5ed58;
+}
+/*----------------------------------------*/
+#lottery2 {
+    background:url(../../images/web/lottery1.gif) no-repeat;
+    width:930px;
+    height:83px;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+#lottery2 .one {
+    float:left;
+    width:98px;
+    height:83px;
+    text-align:center;
+    _display:inline;
+    overflow:hidden;
+    background:url(../../images/web/lottery2.gif) no-repeat right top;
+}
+#lottery2 .one span {
+    width:75px;
+    height:83px;
+    float:left;
+    background:url(../../images/web/ssclogo.png) no-repeat;
+    margin:0 11px;
+    _display:inline;
+    text-indent:-999px;
+    overflow:hidden;
+}
+#lottery2 .one .ico_CQSSC {background-position:0 0;}
+#lottery2 .one .ico_HLJSSC {background-position:0 -83px;}
+#lottery2 .one .ico_JX-SSC {background-position:0 -166px;}
+#lottery2 .one .ico_XJSSC {background-position:0 -249px;}
+#lottery2 .one .ico_SSL {background-position:0 -332px;}
+#lottery2 .one .ico_SD11Y {background-position:0 -664px;}
+#lottery2 .one .ico_JX11-5 {background-position:0 -582px;}
+#lottery2 .one .ico_GD11-5 {background-position:0 -747px;}
+#lottery2 .one .ico_CQ11-5 {background-position:0 -830px;}
+#lottery2 .one .ico_BJKL8 {background-position:0 -498px;}
+#lottery2 .one .ico_fucai3d {background-position:0 -995px;}
+#lottery2 .one .ico_ticaip3 {background-position:0 -915px;}
+
+#lottery2 .two {
+    float:left;
+    height:83px;
+    _display:inline;
+    overflow:hidden;
+    background:url(../../images/web/lottery2.gif) no-repeat right top;
+    padding:0 15px;
+    width:308px;
+}
+#lottery2 .two .title {
+    width:308px;
+    text-align:center;
+    height:35px;
+    line-height:35px;
+    overflow:hidden;
+}
+#lottery2 .two .num ,
+#lottery2 .two .num2 {
+    background:url(../../images/web/lottery3.gif) no-repeat;
+    width:308px;
+    height:40px;
+    overflow:hidden;
+}
+#lottery2 .two .num ul {
+    float:left;
+}
+#lottery2 .two .num li {
+    background:url(../../images/web/lottery4.gif) no-repeat left top;
+    margin-left:-2px;
+    _display:inline;
+    float:left;
+    padding: 0 8px 0 10px;
+}
+#lottery2 .two .link {
+    float:right;
+    width:68px;
+    _display:inline;
+    line-height:18px;
+    color:#000;
+    padding:3px 0 0;
+}
+#lottery2 .two .ssl li {
+    padding: 0 22px 0 24px;
+}
+#lottery2 .two .num .each {
+    display:inline-block;
+    background:url(../../images/web/lottery5.gif) no-repeat;
+    width:32px;
+    height:32px;
+    text-align:center;
+    line-height:23px;
+    color:#fff;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+    margin:4px 0;
+}
+#lottery2 .two .eachRow {
+    color:#000;
+    height:18px;
+    overflow:hidden;
+    padding:1px 0 1px 5px;
+    line-height:18px;
+}
+#lottery2 .two .dot {
+    float:left;
+    background:url(../../images/web/dot.png) no-repeat;
+    width:18px;
+    height:18px;
+    text-align:center;
+    color:#fff;
+    margin:0 1px;
+}
+#lottery2 .two .info {float:left; padding-left:10px; white-space:nowrap; width:93px; overflow:hidden;}
+#lottery2 .three {
+    float:right;
+    width:200px;
+    overflow:hidden;
+    height:66px;
+    _display:inline;
+    overflow:hidden;
+    background:url(../../images/web/lottery2.gif) no-repeat right top;
+    padding:17px 20px ;
+}
+#lottery2 .four {
+    text-align:center;
+    width:128px;
+    float:right;
+    overflow:hidden;
+}
+#lottery2 .four .title {
+    height:42px;
+    line-height:42px;
+    font-size:18px;
+}
+#lottery2 .four .time {
+    background:url(../../images/web/lottery8.gif) no-repeat;
+    width:106px;
+    height:26px;
+    text-align:center;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:18px;
+    margin:0 auto;
+    color:#B5ED58;
+}
+#lottery2 .five {
+    float:left;
+    background:url(../../images/web/lottery2.gif) no-repeat right top;
+    width:106px;
+    overflow:hidden;
+    text-align:center;
+    padding:17px 10px;
+}
+/*----------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+#winNum {
+    float:right;
+    _display:inline;
+    background:url(../../images/web/bg02.png) no-repeat;
+    width:560px;
+    height:83px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+#winNum.bjkl8 {background:url(../../images/web/bg14.png) no-repeat;}
+#winNum .one {
+    float:left;
+    _display:inline;
+    width:144px;
+    text-align:center;
+    margin-left:12px;
+}
+#winNum .one .num {
+    padding:10px 0 0;
+    height:35px;
+    line-height:16px;
+}
+#winNum .bt {
+    display:inline-block;
+    width:64px;
+    height:26px;
+    margin:0 4px;
+    color:#B5ED58;
+    line-height:26px;
+    overflow:hidden;
+}
+#winNum .bt:hover {text-decoration:none;}
+#winNum .two {
+    width:355px;
+    float:right;
+    _display:inline;
+    margin:18px 25px 0 0;
+}
+#winNum .two .each {
+    width:59px;
+    float:left;
+    padding:0 6px;
+}
+#winNum .two .blueBox ,
+#winNum .two .orangeBox ,
+#winNum .two .redBox ,
+#winNum .two .greenBox ,
+#winNum .two .grayBox {
+    float:left;
+    background:url(../../images/web/ball.png) no-repeat;
+    width:44px;
+    height:46px;
+    text-align:center;
+    line-height:36px;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:18px;
+    color:#000;
+    font-weight:bold;
+    overflow:hidden;
+}
+#winNum .two .orangeBox {background-position:0 -46px;}
+#winNum .two .redBox {background-position:0 -92px;}
+#winNum .two .greenBox {background-position:0 -138px;}
+#winNum .two .grayBox {background-position:0 -184px;}
+#winNum .two .word {
+    width:1em;
+    color:#000;
+    float:right;
+    overflow:hidden;
+    font-weight:bold;
+}
+#winNum .two .eachRow {
+    color:#000;
+    height:20px;
+    overflow:hidden;
+    padding:2px 0 2px 10px;
+}
+#winNum .two .dot {
+    display:inline-block;
+    background:url(../../images/web/dot.png) no-repeat;
+    width:20px;
+    height:20px;
+    text-align:center;
+    line-height:20px;
+    color:#fff;
+    margin:0 2px;
+}
+
+.box{
+  width:877px;
+	float:left;
+  background: #fff;
+  min-height: 868px;
+   border-right: 1px solid #ddd;
+}
+.box .title {background:#e3e3e3; position:relative; width:100%; float:left;}
+.box .title ul#lotteryType{float:left;padding-left: 20px;}
+/*.box .title ul#lotteryType{ width:680px; float:left; height:33px; margin:3px 0 0 5px; float:left;}*/
+
+.box .title ul#lotteryType li{ float:left;display: block; margin-right:1px; height:100%; line-height:45px; text-align:center;}
+.box .title ul#lotteryType li .m{display: block;padding: 0 4px;height: 100%; min-width:55px;cursor:pointer; transition: all .2s;}
+.box .title ul#lotteryType li .m:hover,.box .title ul#lotteryType li.hover .m{ background:#d8c6a0;color: #fff;}
+
+
+
+
+.bet_ae_bg{overflow:hidden;}
+#lotteryDetail {width:100%; min-height:340px; float:left;}
+#lt_trace_issues_bet tr{color:#393939; background:#e8e8e8;}
+.margin0 { margin-left:0px;color:#fff;font-size:14px;}
+.margin10 { margin-left:10px;color:#fff;font-size:14px;}
+.minitype {
+
+}
+.PlayGameLayout{ background: url(../../images/web/right_playBox_repeat_bg.png) repeat-y; width:100%; min-height:340px; float:left;}
+.SecondPlayClass{width:100%; float:left; margin:10px 0;}
+.SecondPlayClass_List .play_title{ float:left; font-size:14px;height:22px; line-height:22px; margin:0 15px;}
+.SecondPlayClass_List .play_detail{ float:left;max-width: 85%;}
+.SecondPlayClass_List .play_detail label{
+    font-size:14px; background:none;border:1px solid transparent; padding:2px 5px; display:inline-block; margin:0 5px; height:18px; line-height:18px; border-radius: 15px;
+    transition: all .2s linear;
+}
+.SecondPlayClass_List .play_detail label:hover{ background:none;border: 1px solid #d8c6a0;}
+.SecondPlayClass_List .play_detail label.lableclick{
+  border-radius: 15px;color: #d8c6a0;
+  border: 1px solid #d8c6a0;}
+.lableclick{
+    background: #bc3131;
+    color: white;
+}
+.minitype{
+  margin-bottom: 10px;
+}
+.minitype label{
+    margin-right:10px;
+    padding: 2px 7px 2px 7px;
+    cursor: pointer;
+}
+.minitype label .posChoose{
+  margin-right: 5px;
+}
+
+.minitype2 { border-top:1px solid #eee; overflow:hidden; padding:10px 20px; position:relative; clear:both; font-size:12px;
+}
+.minitype2 #lt_example{display:inline-block; height:16px; line-height:16px; padding:2px 5px; color:#fff; margin:0 3px; border-radius:3px;background:#d8c6a0;}
+.minitype2 #lt_example:hover{background:#e8d4a9}
+.minitype2 #lt_help{display:inline-block; height:16px; line-height:16px; padding:2px 5px; color:#fff; margin:0 3px; border-radius:3px;background:#54a65e;}
+.minitype2 #lt_help:hover{background:#64bf6f;}
+.minitype2 .random1{ background:#4493e4; color:#fff;padding:3px 8px; float:right;  right:0; border-radius:3px;}
+.minitype2 .random1:hover{ background:#5dbdef; color:#fff;}
+.minitypeall{
+  position: relative;
+}
+#lotteryDetail a {}
+#lotteryDetail .grayTop {
+    height:10px;
+    overflow:hidden;
+    /*background-color:#5c5c5c;*/
+}
+
+.OperationSub_plus .random1{
+      border: none;
+    background: none;
+    float: left;
+    margin-top: 5px;
+    margin-left: 8px;
+    width: 80px;
+    background: #5353a2;
+  }
+  .OperationSub_plus select.random1{color: #fff;font-size:13px;}
+/*.OperationSub_plus .random1:hover{ background:#5dbdef; color:#fff;}*/
+
+
+
+#lotteryDetail .grayBottom {
+/*    background-color:#5c5c5c;*/
+    background:none;
+    height:5px;
+    overflow:hidden;
+    line-height:5px;
+}
+#lotteryDetail .grayContent {
+    /*background-color:#5c5c5c;*/
+    padding:10px 10px 10px 20px;
+}
+#lotteryDetail .grayContent::after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#lotteryDetail .grayBet {
+}
+.num_input {
+    /*background:url(../../images/web/input_01.jpg) no-repeat;*/
+    width:59px;
+    height:26px;
+    border:none;
+    color:#666666F;
+    line-height:26px;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+}
+.input03 {
+    /*background:url(../../images/web/input_02.gif) no-repeat;*/
+    background:#ffffff;
+    width:100px;
+    height:20px;
+    border:none;
+    color:#292929;
+    line-height:20px;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    margin-right:3px;
+}
+
+.inputdesc {background:none; color:#bbb; padding:0 0 10px 20px; font-size: 12px;}
+#lotteryDetail .each {width:100%; float:left; margin:10px 0 0 0px;
+}
+
+
+#lotteryDetail .each .name { background:url(../../images/web/ListOfBet_Tit.png) no-repeat center; width:60px; height:40px; text-align:center; line-height:40px; font-size:14px; font-weight:bold; float:left;
+}
+#lotteryDetail .each .name_2 { background:none; width:60px; height:40px; text-align:center; line-height:40px; font-size:14px; font-weight:bold; float:left; visibility:hidden;
+}
+#lotteryDetail .each .numList{float:left; }
+#lotteryDetail .each .numList li { width:40px; height:40px; background: #fff;border-radius:50%; line-height:40px; text-align:center; font-size:18px; display:inline-block; color:#777; cursor:pointer; margin:0 4px; box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+#lotteryDetail .each .numList li:hover{
+  color: #fb9a49;
+  box-shadow: 0 1px 5px rgba(255, 136, 50, 0.3);
+}
+#lotteryDetail .each .numList li.selected { background:linear-gradient(#feb74c,#ff874d); color: #fff;box-shadow: 0 2px 8px rgba(255, 136, 50, 0.5);}
+#lotteryDetail .each .numList li.selected:hover{ color: #fff;}
+#lotteryDetail .each .twoRow li {
+    height:35px;
+    overflow:hidden;
+    padding:3px 0 0;
+    line-height:16px;
+    font-size:14px;
+}
+#lotteryDetail .each .twoRow .selected {
+    height:35px;
+    overflow:hidden;
+    padding:3px 0 0;
+    line-height:16px;
+    font-size:14px;
+}
+#lotteryDetail .each .bigBt li {
+    width:80px;
+    height:40px;
+    line-height:40px;
+    border-radius: 3px;
+    margin-bottom:5px;
+}
+
+
+#lotteryDetail .each .selectType { width:28px; height:28px; line-height:28px; text-align:center; display:block; float:left; font-size:14px; cursor:pointer; margin:0 3px; border:1px solid #ddd; border-radius:5px; background: #fff;
+}
+#lotteryDetail .each .selectType:hover {border-color: #ffbe88;color:#fb9a49;}
+
+
+/*新增快三 20151124 mx*/
+#lotteryDetail .each_k3 { float:left; width:100%;}
+#lotteryDetail .each_k3 .name { background:url(../../images/web/ListOfBet_Tit.png) no-repeat center; width:70px; height:40px; text-align:center; line-height:40px; font-size:14px; font-weight:bold; float:left;
+}
+#lotteryDetail .each_k3 .name_2 { background:none; width:70px; height:40px; text-align:center; line-height:40px; font-size:14px; font-weight:bold; float:left; visibility:hidden;
+}
+#lotteryDetail .each_k3 .numList{ float:left; width:90%;}
+#lotteryDetail .each_k3 .numList li{ background:#fff; width:85px; height:40px; border-radius:5px;margin: 0 6px  6px;line-height:40px; text-align:center; font-size:22px;display:inline-block; color:#666; cursor:pointer; float:left; box-shadow: 0 1px 5px rgba(0,0,0,.2); }
+#lotteryDetail .each_k3 .numList li:hover { color: #fb9a49;box-shadow: 0 1px 5px rgba(255, 136, 50, 0.3);}
+#lotteryDetail .each_k3 .numList li.selected{ background:linear-gradient(#feb74c,#ff874d); color: #fff;box-shadow: 0 2px 8px rgba(255, 136, 50, 0.5);}
+#lotteryDetail .each_k3 .numList li.sthtx{    width: 200px;height: 60px;line-height: 60px;float: none;margin: 30px auto;clear: both;display: block;position: relative;left: -30px}
+
+.btnList { float:right; margin-top:5px;}
+
+
+/*六合彩*/
+#lotteryDetail .lhc .each .numList li.ball03, #lotteryDetail .lhc .each .numList li.ball06, #lotteryDetail .lhc .each .numList li.ball09, #lotteryDetail .lhc .each .numList li.ball12, #lotteryDetail .lhc .each .numList li.ball15, #lotteryDetail .lhc .each .numList li.ball18, #lotteryDetail .lhc .each .numList li.ball21, #lotteryDetail .lhc .each .numList li.ball24{
+    border: 1px solid #f6526d;
+    color: #f6526d;
+}
+#lotteryDetail .lhc .each .numList li.ball02, #lotteryDetail .lhc .each .numList li.ball05, #lotteryDetail .lhc .each .numList li.ball08, #lotteryDetail .lhc .each .numList li.ball11, #lotteryDetail .lhc .each .numList li.ball17, #lotteryDetail .lhc .each .numList li.ball20, #lotteryDetail .lhc .each .numList li.ball23, #lotteryDetail .lhc .each .numList li.ball26{
+    border: 1px solid #499cf0;
+    color: #499cf0;
+}
+#lotteryDetail .lhc .each .numList li.ball01, #lotteryDetail .lhc .each .numList li.ball04, #lotteryDetail .lhc .each .numList li.ball07, #lotteryDetail .lhc .each .numList li.ball10, #lotteryDetail .lhc .each .numList li.ball16, #lotteryDetail .lhc .each .numList li.ball19, #lotteryDetail .lhc .each .numList li.ball22, #lotteryDetail .lhc .each .numList li.ball25{
+    border: 1px solid #23d89e;
+    color: #23d89e;
+}
+#lotteryDetail .lhc .each .numList li.ball00, #lotteryDetail .lhc .each .numList li.ball13, #lotteryDetail .lhc .each .numList li.ball14, #lotteryDetail .lhc .each .numList li.ball27{
+    border: 1px solid #000;
+    color: #000;
+}
+
+#lotteryDetail .lhc .each .numList li.ball03.selected, #lotteryDetail .lhc .each .numList li.ball06.selected, #lotteryDetail .lhc .each .numList li.ball09.selected, #lotteryDetail .lhc .each .numList li.ball12.selected, #lotteryDetail .lhc .each .numList li.ball15.selected, #lotteryDetail .lhc .each .numList li.ball18.selected, #lotteryDetail .lhc .each .numList li.ball18.selected, #lotteryDetail .lhc .each .numList li.ball21.selected, #lotteryDetail .lhc .each .numList li.ball24.selected{
+    border: 1px solid #f6526d;
+    background: #f6526d;
+    color: #fff;
+}
+#lotteryDetail .lhc .each .numList li.ball02.selected, #lotteryDetail .lhc .each .numList li.ball05.selected, #lotteryDetail .lhc .each .numList li.ball08.selected, #lotteryDetail .lhc .each .numList li.ball11.selected, #lotteryDetail .lhc .each .numList li.ball17.selected, #lotteryDetail .lhc .each .numList li.ball20.selected, #lotteryDetail .lhc .each .numList li.ball23.selected, #lotteryDetail .lhc .each .numList li.ball26.selected{
+    border: 1px solid #499cf0;
+    background: #499cf0;
+    color: #fff;
+}
+#lotteryDetail .lhc .each .numList li.ball01.selected, #lotteryDetail .lhc .each .numList li.ball04.selected, #lotteryDetail .lhc .each .numList li.ball07.selected,#lotteryDetail .lhc .each .numList li.ball10.selected, #lotteryDetail .lhc .each .numList li.ball16.selected, #lotteryDetail .lhc .each .numList li.ball19.selected, #lotteryDetail .lhc .each .numList li.ball22.selected, #lotteryDetail .lhc .each .numList li.ball25.selected{
+    border: 1px solid #23d89e;
+    background: #23d89e;
+    color: #fff;
+}
+#lotteryDetail .lhc .each .numList li.ball00.selected, #lotteryDetail .lhc .each .numList li.ball13.selected, #lotteryDetail .lhc .each .numList li.ball14.selected, #lotteryDetail .lhc .each .numList li.ball27.selected{
+    border: 1px solid #23d89e;
+    background: #000;
+    color: #fff;
+}
+
+#lotteryDetail .lhc .each .numList{
+    width: 90%;
+}
+#lotteryDetail .lhc{
+    position:relative;
+}
+#lotteryDetail .lhc .btnList {
+    position: absolute;
+    top: 12px;
+    left: 690px;
+    width: 220px;
+}
+#lotteryDetail .lhc .btnList li{
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 1px;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sx,#lotteryDetail .lhc .each .numList li.lhc-ws{
+    width: 35%;
+    text-align: left;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sx::after,#lotteryDetail .lhc .each .numList li.lhc-ws::after,#lotteryDetail .lhc .each .numList li.lhc-sb::after{
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px dotted #666;
+    font-size: 18px;
+}
+/*2017 生肖（鸡）
+.lhc-sx.sx01::after {
+    content: "10，22，34，46";
+}
+.lhc-sx.sx02::after {
+    content: "09，21，33，45";
+}
+.lhc-sx.sx03::after {
+    content: "08，20，32，44";
+}
+.lhc-sx.sx04::after {
+    content: "07，19，31，43";
+}
+.lhc-sx.sx05::after {
+    content: "06，18，30，42";
+}
+.lhc-sx.sx06::after {
+    content: "05，17，29，41";
+}
+.lhc-sx.sx07::after {
+    content: "04，16，28，40";
+}
+.lhc-sx.sx08::after {
+    content: "03，15，27，39";
+}
+.lhc-sx.sx09::after {
+    content: "02，14，26，38";
+}
+.lhc-sx.sx10::after {
+    content: "01，13，25，37，49";
+}
+.lhc-sx.sx11::after {
+    content: "12，24，36，48";
+}
+.lhc-sx.sx12::after {
+    content: "11，23，35，47";
+}*/
+
+/**
+2018生肖（狗）
+**/
+/*.lhc-sx.sx01::after {*/
+    /*content: "11，23，35，47";*/
+/*}*/
+/*.lhc-sx.sx02::after {*/
+    /*content: "10，22，34，46";*/
+/*}*/
+/*.lhc-sx.sx03::after {*/
+    /*content: "09，21，33，45";*/
+/*}*/
+/*.lhc-sx.sx04::after {*/
+    /*content: "08，20，32，44";*/
+/*}*/
+/*.lhc-sx.sx05::after {*/
+    /*content: "07，19，31，43";*/
+/*}*/
+/*.lhc-sx.sx06::after {*/
+    /*content: "06，18，30，42";*/
+/*}*/
+/*.lhc-sx.sx07::after {*/
+    /*content: "05，17，29，41";*/
+/*}*/
+/*.lhc-sx.sx08::after {*/
+    /*content: "04，16，28，40";*/
+/*}*/
+/*.lhc-sx.sx09::after {*/
+    /*content: "03，15，27，39";*/
+/*}*/
+/*.lhc-sx.sx10::after {*/
+    /*content: "02，14，26，38";*/
+/*}*/
+/*.lhc-sx.sx11::after {*/
+    /*content: "01，13，25，37，49";*/
+/*}*/
+/*.lhc-sx.sx12::after {*/
+    /*content: "12，24，36，48";*/
+/*}*/
+/**
+2019生肖（猪） 开始
+**/
+
+.lhc-sx.sx01::after {
+    content: "12，24，36，48";
+}
+.lhc-sx.sx02::after {
+    content: "11，23，35，47";
+}
+.lhc-sx.sx03::after {
+    content: "10，22，34，46";
+}
+.lhc-sx.sx04::after {
+    content: "09，21，33，45";
+}
+.lhc-sx.sx05::after {
+    content: "08，20，32，44";
+}
+.lhc-sx.sx06::after {
+    content: "07，19，31，43";
+}
+.lhc-sx.sx07::after {
+    content: "06，18，30，42";
+}
+.lhc-sx.sx08::after {
+    content: "05，17，29，41";
+}
+.lhc-sx.sx09::after {
+    content: "04，16，28，40";
+}
+.lhc-sx.sx10::after {
+    content: "03，15，27，39";
+}
+.lhc-sx.sx11::after {
+    content: "02，14，26，38";
+}
+.lhc-sx.sx12::after {
+    content: "01，13，25，37，49";
+}
+/*!***/
+/*2019生肖（猪） 结束*/
+/***!*/
+.lhc-ws.ws01::after {
+    content: "10，20，30，40";
+}
+.lhc-ws.ws02::after {
+    content: "01，11，21，31，41";
+}
+.lhc-ws.ws03::after {
+    content: "02，12，22，32，42";
+}
+.lhc-ws.ws04::after {
+    content: "03，13，23，33，43";
+}
+.lhc-ws.ws05::after {
+    content: "04，14，24，34，44";
+}
+.lhc-ws.ws06::after {
+    content: "05，15，25，35，45";
+}
+.lhc-ws.ws07::after {
+    content: "06，16，26，36，46";
+}
+.lhc-ws.ws08::after {
+    content: "07，17，27，37，47";
+}
+.lhc-ws.ws09::after {
+    content: "08，18，28，38，48";
+}
+.lhc-ws.ws10::after {
+    content: "09，19，29，39，49";
+}
+
+#lotteryDetail .lhc .each .numList li.lhc-sb {
+    width: 97%;
+    border-radius: 5px;
+    float: left;
+    text-align: left;
+    padding-left: 15px;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb1 {
+    color: #f6526d;
+    border: 1px solid #f6526d;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb2 {
+    color: #499cf0;
+    border: 1px solid #499cf0;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb3 {
+    color: #23d89e;
+    border: 1px solid #23d89e;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb1.selected {
+    color: #fff;
+    background: #f6526d;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb2.selected {
+    color: #fff;
+    background: #499cf0;
+}
+#lotteryDetail .lhc .each .numList li.lhc-sb.sb3.selected {
+    color: #fff;
+    background: #23d89e;
+}
+.lhc-sb.sb1::after {
+    content: "03，06，09，12，15，18，21，24";
+}
+.lhc-sb.sb2::after {
+    content: "02，05，08，11，17，20，23，26";
+}
+.lhc-sb.sb3::after {
+    content: "01，04，07，10，16，19，22，25";
+}
+.WinnerNum .lhcList li{
+    font-size: 24px !important;
+}
+
+.WinnerNum .lhcList li:last-child{
+    position: relative;
+}
+.WinnerNum .lhcList li:last-child::before{
+    position: absolute;
+    height: 40px;
+    width: 1px;
+    content: "";
+    border-left: 1px dotted #aaa;
+    top: 10px;
+    left: -13px;
+}
+.WinnerNum .lhcList li.ball01, .WinnerNum .lhcList li.ball02, .WinnerNum .lhcList li.ball07, .WinnerNum .lhcList li.ball08, .WinnerNum .lhcList li.ball12, .WinnerNum .lhcList li.ball13, .WinnerNum .lhcList li.ball18, .WinnerNum .lhcList li.ball19, .WinnerNum .lhcList li.ball23, .WinnerNum .lhcList li.ball24, .WinnerNum .lhcList li.ball29, .WinnerNum .lhcList li.ball30, .WinnerNum .lhcList li.ball34, .WinnerNum .lhcList li.ball35, .WinnerNum .lhcList li.ball40, .WinnerNum .lhcList li.ball45, .WinnerNum .lhcList li.ball46{
+    background: url(../../images/web/gameBall_num_lhc.png) no-repeat 0 0  !important;
+    color: #f6526d !important;
+}
+.WinnerNum .lhcList li.ball03,.WinnerNum .lhcList li.ball04,.WinnerNum .lhcList li.ball09,.WinnerNum .lhcList li.ball10,.WinnerNum .lhcList li.ball14,.WinnerNum .lhcList li.ball15,.WinnerNum .lhcList li.ball20,.WinnerNum .lhcList li.ball25,.WinnerNum .lhcList li.ball26,.WinnerNum .lhcList li.ball31,.WinnerNum .lhcList li.ball36,.WinnerNum .lhcList li.ball37,.WinnerNum .lhcList li.ball41,.WinnerNum .lhcList li.ball42,.WinnerNum .lhcList li.ball47,.WinnerNum .lhcList li.ball48{
+    background: url(../../images/web/gameBall_num_lhc.png) no-repeat 0 -63px !important;
+    color: #6f58fe !important;
+}
+.WinnerNum .lhcList li.ball05, .WinnerNum .lhcList li.ball06, .WinnerNum .lhcList li.ball11, .WinnerNum .lhcList li.ball16, .WinnerNum .lhcList li.ball17, .WinnerNum .lhcList li.ball21, .WinnerNum .lhcList li.ball22, .WinnerNum .lhcList li.ball27, .WinnerNum .lhcList li.ball28, .WinnerNum .lhcList li.ball32, .WinnerNum .lhcList li.ball33, .WinnerNum .lhcList li.ball38, .WinnerNum .lhcList li.ball39, .WinnerNum .lhcList li.ball43, .WinnerNum .lhcList li.ball44, .WinnerNum .lhcList li.ball49{
+    background: url(../../images/web/gameBall_num_lhc.png) no-repeat 0 -126px !important;
+    color: #23d89e !important;
+}
+
+
+
+.grayTitle {
+    background:url(../../images/web/bg08.gif) repeat-x;
+    height:30px;
+    padding:0 10px 0 20px;
+    line-height:30px;
+    margin:10px 0 0;
+}
+.grayTitle .qk {
+    background:url(../../images/web/bg09.gif) no-repeat;
+    width:50px;
+    height:20px;
+    line-height:20px;
+    float:right;
+    text-align:center;
+    margin:4px 0 0;
+}
+.grayTitle .qk:hover {text-decoration:none;}
+.lottery_list {	}
+.whiteDetail {
+    clear:both;
+    width:100%;
+    height:81px;
+    overflow-y:scroll;
+    margin:0 auto;
+    color:#2d363b;
+}
+.table_line {
+    margin-top:5px;
+    width:870px;
+    height:27px;
+    line-height:27px;
+    color:#393939;
+    font-size:12px;
+    background:#e8e8e8;
+}
+
+.shuang{
+    background:#f7f7f7;
+}
+
+.table_line th a{
+    color:#FFF;
+}
+.table_line th{
+    color:#393939;
+    vertical-align:middle;
+    height:25px;
+    line-height:25px;
+    text-align:left;
+    /*background:url(../../images/web/bodyBg11.png);*/
+}
+.table_line th img{display:none;}
+.table_line td{
+    color:#393939;
+    vertical-align:middle;
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    /*background:url(../../images/web/bodyBg11.png);*/
+}
+
+
+.tjBox {
+}
+.choose {
+}
+.choose span{}
+
+ .floatL .red1{color:#292929;}
+  .floatL .yellow2{color:#292929;}
+.tjBt {
+    background:url(../../images/web/btn_buy.png) no-repeat;
+    width:127px;
+    height:36px;
+    line-height:36px;
+
+    font-size: 0px;/*IE hack*/
+    display:inline-block;/*IE hack*/
+    line-height: 0px;/*IE hack*/
+    overflow:hidden;
+}
+.blackTitle {
+    clear:both;
+    background:url(../../images/web/bg10.gif) no-repeat;
+    height:29px;
+    line-height:29px;
+    padding:6px 13px;
+    color:#fff;
+}
+.wyzhBt {
+    background:url(../../images/web/bg11.gif) no-repeat;
+    width:73px;
+    height:29px;
+    line-height:2000px;
+    float:left;
+    _display:inline;
+    overflow:hidden;
+    margin-right:10px;
+}
+
+.wyzhContent {
+  width:908px;
+  margin-top: 10px;
+  float: left;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-454px;
+  margin-top:-300px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  z-index:100;
+}
+.layerShadow_bet{ background:#000; position:absolute;width:100%; height:100%; top:0; right:0;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5; z-index:0;}
+.wyzhContent .close_betLayer{ width:40px; height:40px; text-align:center; line-height:40px; background:#ff6262; display:block; right:0px; top:0px; position: absolute; font-size:18px; z-index:999;}
+.wyzhContent .threeTab  {
+    height:40px;
+    color:#fff;
+    line-height:40px;
+}
+.wyzhContent .threeTab li {float:left; text-align:center; height:40px; cursor:pointer;}
+.wyzhContent .threeTab li.one{}
+.wyzhContent .threeTab a {float:left; text-align:center; height:40px; cursor:pointer; color:#fff; font-size:14px;}
+#lotteryDetail .wyzhContent .threeTab a {
+    /*color:#333*/
+}
+.wyzhContent .threeTab a:hover {text-decoration:none;}
+.wyzhContent .threeTab .one a {width:82px;}
+.wyzhContent .threeTab .two a{width:69px;}
+.wyzhContent .threeTab .three a{width:74px;}
+.wyzhContent .threeTab .current {background:url(../../images/web/zhTab.gif) no-repeat;}
+.wyzhContent .threeTab .one .current {background-position:0 -45px;}
+.wyzhContent .threeTab .two .current {background-position:-82px -45px;}
+.wyzhContent .threeTab .three .current {background-position:-151px -45px;}
+
+.wyzhContent .twoTab  {
+
+    height:45px;
+    color:#fff;
+    line-height:32px;
+}
+.wyzhContent .twoTab li {float:left; text-align:center; height:45px; cursor:pointer;}
+.wyzhContent .twoTab a {float:left; text-align:center; height:45px; cursor:pointer; color:#fff; font-size:14px;}
+#lotteryDetail .wyzhContent .twoTab a {color:#fff}
+.wyzhContent .twoTab a:hover {text-decoration:none;}
+.wyzhContent .twoTab .one a {width:81px;}
+.wyzhContent .twoTab .two a{width:74px;}
+.wyzhContent .twoTab .current {background:url(../../images/web/zhTab2.gif) no-repeat;}
+.wyzhContent .twoTab .one .current {background-position:0 -45px;}
+.wyzhContent .twoTab .two .current {background-position:-81px -45px;}
+
+.wyzhContent .head {
+    background-color:#fff;
+    padding:5px 10px;
+    line-height:30px;
+    margin-bottom:1px;
+    color:#232323;
+}
+input, select{background:#fff; border:1px solid  #ddd; border-radius: 2px;}
+
+.wyzhContent .head .headContent {
+    float:left;
+    width: 100%;
+}
+.zh_selectP{width:680px;float: left;height:25px; line-height: 25px; margin-top: 10px; font-size:12px;}
+.zh_selectP select{ float: none !important;}
+.zh_selectP .input02{ width: 25px; text-align: center; height: 16px; line-height: 16px;}
+.wyzhContent .head .formSC {
+  border: 1px solid #d7ba7b;
+  border-radius: 20px;
+  background: #e2cda0;
+  line-height: 33px;
+  color: #fff;
+  text-align: center;
+  width: 90px;
+  height: 35px;
+  display: block;
+  float: right;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.tableBox {
+    width: 870px;
+    height: 300px;
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
+.tableBox th ,
+.tableBox td {border:1px solid #fff; border-collapse:collapse; text-align:center;}
+.tableBox th {
+    background-color:#AEAEAE;
+}
+.tableBox td {
+    background-color:#DAD9D9;
+}
+
+#zjjl10  {color:#000;}
+#zjjl10  a {color:#000;}
+#zjjl10 .titleBt {
+  display:block;
+  text-indent:-9999px;
+  overflow:hidden;
+  background:url(../../images/web/bg13.gif) no-repeat;
+  width:143px;
+  height:29px;
+  margin:8px 0 0 32px;
+
+}
+.textareaLong {
+  width:740px;
+  height:114px;
+  margin-right:4px;
+  border: 1px solid #ddd;
+  color: #666;
+  line-height: 20px;
+  padding-left:5px;
+  outline: none;
+}
+.play_title{
+  float:left;
+}
+.play_detail{
+}
+
+
+.methodgroupname{
+    font-weight: bold;
+    margin-left: 20px;
+    /*padding-right: 30px;*/
+}
+.methodgroupname_2{
+    font-weight: bold;
+    margin-left: 22px;
+    padding-right: 30px;
+}
+.methodgroupname_3{
+    font-weight: bold;
+    margin-left: 38px;
+}
+.ball_bg{
+  background: #f5f5f5;
+}
+
+#log {
+    background-color:#000000;
+    width:982px;
+    height:202px;
+    margin:10px auto 0px auto;
+    padding-top:0px;
+}
+.table_banner {
+    width:982px;
+    height:202px;
+    margin-left:0px;
+    color:#FFFFFF;
+    float:left;
+}
+.table_log {
+    width:730px;
+    height:250px;
+    border:1px solid #4d4d4d;
+    margin-left:19px;
+    color:#FFFFFF;
+    float:left;
+}
+.table_my {
+    background:url(../../images/web/bodyBg13.gif) no-repeat;
+    vertical-align:top;
+    vertical-align:text-top;
+}
+.table_my td{
+    height:20px;
+    padding-top:1px;
+    text-align:center;
+    background:url(../../images/web/bodyBg14.png);
+}
+.table_my td a{
+    color:#00CC00;
+}
+.tx {
+    float:left;
+    width:208px;
+    height:252px;
+    background:url(../../images/web/bodyBg15.jpg) no-repeat;
+    margin-left:7px;
+    color:#FFFFFF;
+}
+.txlb {
+    width:190px;
+    height:128px;
+    background-color:#340039;
+    margin:61px 9px 5px 9px;
+    color:#FFFFFF;
+}
+.txlb ul li { margin:2px 4px 2px 4px;}
+.txlb ul li h4 {float:right; color:#b98730;}
+txan {height:63px; width:190;5px 9px 0px 9px;}
+.txan ul li { float:left;}
+.txan_01 { padding-left:9px;}
+.txan_01 p{ text-align:right; font-size:16px;}
+.txan_02 { height:46px; width:115px; margin:3px;}
+
+.task_div_bet {
+    background-color: #e5a316;
+    border: 1px double #7A7079;
+    color: #FFFFFF;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 01;
+    margin-top: -200px;
+    margin-left: -117px;
+}
+.task_div {
+    background-color: #e5a316;
+    border: 1px double #e5a316;
+    color: #FFFFFF;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 01;
+}
+.code {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #1B5C84 #1B5C84 #1B5C84 -moz-use-text-color;
+    border-style: double double double none;
+    border-width: 1px 1px 1px 0;
+    color: #000000;
+    height: 100px;
+    overflow-y: auto;
+    text-align: left;
+    width: 366px !important;
+    resize: none;
+}
+TEXTAREA {
+    font: 12px "courier new";
+    vertical-align: middle;
+}
+.zhlist {
+    height: 175px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: #f7f7f7;
+    /*border-left: #2B2B2B 1px solid;*/
+    /*border-right: #2B2B2B 1px solid;*/
+}
+.zhlist tr{
+    color:#393939;
+    background:#e8e8e8;
+}
+
+.white { color:#fff; }
+.yellow {color:#696969;}
+
+
+/*.lottery_area {  background-color:#f3f3f3;border-radius: 5px;}*/
+.lottery_area {}
+.lottery_area .lottery_table{
+    /*background:url(../../images/web/lottery_table_bg.jpg) repeat-x;*/
+    /*background: url(../../images/web/left_msg_bg_2.png) repeat;*/
+    background:#ffffff;
+    /*border:1px #7c7c7c solid;*/
+    overflow:hidden;
+
+}
+.lottery_area .lottery_table .lottery_num{  background:url(../../images/web/lottery_num_1.png) no-repeat;}
+
+.lottery_area .lottery_table .lottery_num .lo_title ul li { color:#d5d5d5;}
+
+.lottery_area .lottery_table .lottery_num .lo_title ul li a{ color:#aa0000;}
+.lottery_area .lottery_table .lottery_num .lo_title ul li a:hover{ color:#aa0000;}
+
+.lottery_area .lottery_table .lottery_num .lo_title .lo_date{ font-size:15px; color:#FFFFFF;}
+
+.lottery_area .lottery_table .lottery_num .num_open {color:#ffffff;}
+.lottery_area .lottery_table .lottery_num .num_open .each{ color:#ffffff; text-align:center; }
+
+
+.lottery_area .lottery_table .lottery_next{ color:#eeeeee; font-size:13px;}
+
+.lottery_area .lottery_table .lottery_next ul li label{ color:#ffffff; font-size:15px;}
+.lottery_area .lottery_table .lottery_next .countdown{ background:url(../../images/web/lottery_time.png) no-repeat; color:#FFFFFF; font-size:20px;}
+.lottery_area .lottery_table .lottery_next .countdown label{ float:left; font-size:20px; margin-left:10px;margin-right:14px; color:#FFFFFF;}
+#count_down {}
+#count_down div { }
+
+#footer {
+    clear:both;
+    width:784px;
+    height:70px;
+    margin:5px auto;
+    text-align:center;
+    color:#2d363b;
+    line-height:20px;
+    padding:3px 0 0;
+    position:relative;
+}
+
+#footer a{
+    color:#b80b0b;
+}
+#footer a:hover{
+    border-bottom:1px solid #b80b0b;
+}
+
+/*-----------------玩法说明样式---------------------*/
+.minitype .help_label {font-weight:bold;color:#ff4364;}
+.minitype .help_con { color:#FFFFFF;}
+.minitype .help_exp { color:#fce578; font-weight: bold; cursor:pointer}
+.minitype .help_help { color:#ff91a2; font-weight:bold; cursor:pointer}
+.minitype .help_count { color:#a8beff; font-weight:bold; cursor:pointer}
+#lt_example_div {
+    background: none repeat scroll 0 0 #2d363b;
+    border: 1px solid #D5D8DE;
+    color: #FFFFFF;
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 3px 5px;
+    position:fixed;
+    text-align: left;
+    width: 308px;
+    z-index: 9;
+}
+
+#lt_count_div {
+    background: none repeat scroll 0 0 #2d363b;
+    border: 1px solid #D5D8DE;
+    color: #FFFFFF;
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 3px 5px;
+    position: absolute;
+    text-align: left;
+    width: 308px;
+}
+
+#lt_help_div {
+    background: none repeat scroll 0 0 #2d363b;
+    border: 1px solid #D5D8DE;
+    color: #FFFFFF;
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 3px 5px;
+    position: fixed;
+    text-align: left;
+    width: 308px;
+    z-index: 9;
+}
+
+/*------------追号按钮配色--------------*/
+#lt_trace_label { background:#1b1b1b; }
+#lt_trace_label li a{color: #fff;}
+#lt_trace_label li a.current { background:#e0ad4c; color: #fff;}
+.Stop_zhuihao{width:100%;height:45px;line-height:45px;background:#ccc; border-top:1px solid #eee;color:#333;text-indent:1.5em;}
+
+#lt_trace_label #button111,#button12,#button13{float: left;cursor: pointer; margin:0px; width:91px; height:40px; line-height:40px; text-align:center;}
+
+.wyzhContent.my_bet{
+    width:768px; ;height: 34px;line-height: 34px; color:#fff;font-weight: bold;padding-left:6px; background:#232222;margin-top: 10px;
+}
+
+.ad_575{
+    height: 40px;
+    width: 575px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 15px;
+    background: #2a7fd0;
+    line-height: 40px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.ad_575 .closeBtn{ display:block; float:right; width:30px; height:30px; border-radius:50%; cursor:pointer; margin:5px; background:url(../../layer/default/close.png) no-repeat center #0356a2;}
+.ad_575 .closeBtn:hover{ transform:rotate(360deg); transition:all 0.3s;}
+.ad_590{
+    width: 590px;
+    margin: 0px auto;
+    /* border: 6px solid gray; */
+    color: #DF6C20;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background:#e9e9e9;
+}
+.ad_554{
+    width: 554px;
+    margin: 0px auto;
+    padding: 10px;
+}
+.lottery_area .lottery_table .lottery_next ul li label{padding:0px;}
+.lottery_next ul #lottery_next_title{width:415px; height:50px; text-align:center; color:#d13737; font-size:20px; line-height:50px;}
+.lottery_next ul #lottery_next_issue, .lottery_next ul #lottery_next_time{width:204px; height:77px; border-right:1px #c8c7cc solid ; float:left;}
+.lottery_next ul #lottery_next_time{border:0px;}
+.lottery_next ul #lottery_next_issue label, .lottery_next #lottery_next_time label{width:80px; margin-left:30px; font-size:14px; color:#898989; display:block;}
+.lottery_next ul #lottery_next_issue span, .lottery_next #lottery_next_time span{width:179px; margin-left:30px; color:#898989; font-size:20px; display:block; line-height: 55px;}
+.lottery_next #lottery_next_time span{color:#393939; font-size:30px; font-weight:bold;}

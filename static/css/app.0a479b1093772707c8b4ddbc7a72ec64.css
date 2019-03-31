@@ -1166,7 +1166,7 @@ table {
     border: 1px solid #e1e1e2;
     padding-top: 20px;
     font-size: 14px;
-    background: url(/static/local/img/home/loginBg.png) no-repeat 450px 220px #fff
+    background: url(/static/local/img/home/login.htmlBg.png) no-repeat 450px 220px #fff
 }
 
 .registerPage h3 {

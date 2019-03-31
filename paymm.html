@@ -22,7 +22,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title id="headTitle">鑫亿彩-帮助指南</title>
+    <title id="headTitle">鑫亿彩-设置安全密码</title>
     <script>
         (function () {
             var IEvar = '9'
@@ -46,16 +46,16 @@
                 };
             }
         })();
-        (function () {
-            if (location.href.search('CanPc') > -1) {
-                sessionStorage.setItem('CanPc', 1)
-            }
-            var u = navigator.userAgent
-            if (!!u.match(/AppleWebKit.*Mobile.*/) && !sessionStorage.getItem('CanPc') && location.href.indexOf(
-                    '//m.') < 0) {
-                location.href = location.href.replace('www.', '').replace('//', '//m.').replace('.html', '')
-            }
-        })();
+        // (function () {
+        //     if (location.href.search('CanPc') > -1) {
+        //         sessionStorage.setItem('CanPc', 1)
+        //     }
+        //     var u = navigator.userAgent
+        //     if (!!u.match(/AppleWebKit.*Mobile.*/) && !sessionStorage.getItem('CanPc') && location.href.indexOf(
+        //             '//m.') < 0) {
+        //         location.href = location.href.replace('www.', '').replace('//', '//m.').replace('.html', '')
+        //     }
+        // })();
         (function () {
             if (typeof (Promise) === 'undefined') {
                 document.write('<script src="/static/local/js/common/es6-promise.auto.min.js"><\/script>')
@@ -72,7 +72,7 @@
             return false
         }
     </script>
-    <link href="/static/css/app.0a479b1093772707c8b4ddbc7a72ec64.css" rel="stylesheet">
+    <link href="/static/css/app.494b84cb285e583686316845e572b995.css" rel="stylesheet">
     <link href="/static/local/css/common/layer.css" type="text/css" rel="styleSheet" id="layermcss">
     <style type="text/css">
         .vue-slider-component {
@@ -351,7 +351,7 @@
             overflow: hidden;
             position: absolute !important
         }
-        .isshow{
+        .isshow {
             display: none
         }
     </style>
@@ -360,72 +360,77 @@
 </head>
 
 <body>
-    <div id="app" class="help">
+    <div id="app" class="setSafePwd">
         <div>
             <div data-v-d539ba84 class="header head3">
                 <div data-v-18d75892 data-v-d539ba84 id="HeaderTop">
                     <div data-v-18d75892 class="snav">
                         <div data-v-18d75892 class="container">
-              <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="/home.html"
-                  class="router-link-exact-active curr">Hi，欢迎来到鑫亿彩!<span data-v-18d75892 class="red"
-                    style="display: none;"></span></a> <ins data-v-18d75892> | </ins> <a data-v-18d75892
-                  class="betNavMore">全部彩票</a></div>
-              <ul data-v-18d75892 class="snavInfo snavInfo_null">
-                <li data-v-18d75892><a data-v-18d75892 href="/login.html" class>亲，请登录</a> <i data-v-18d75892
-                    class="vertical"></i></li>
-                <li data-v-18d75892><a data-v-18d75892 href="/res.html" class>用户注册</a></li> <a
-                  data-v-18d75892 class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
-                    data-v-18d75892></span></a>
-              </ul>
-              <ul data-v-18d75892 class="snavInfo snavInfo_true" >
-                <li data-v-18d75892 class="userName MsgShow"><a data-v-18d75892 id="userName"
-                    class="_personalInfo"><a data-v-18d75892 href="./mymo.html" class>
-                    <!-- <img data-v-18d75892 alt src> -->
-                     <i data-v-18d75892 class="usershow"></i></a></a> <a data-v-18d75892><a
-                      data-v-18d75892 href="/memberCenter/letter" class><span data-v-18d75892>0</span></a>
-                    <div data-v-18d75892 class="messageShow MessageShowContent hide"><i data-v-18d75892></i>
-                      <dl data-v-18d75892>
-                        <dt data-v-18d75892>
-                          <p data-v-18d75892><a data-v-18d75892 href="/memberCenter/letter" class>
-                              我的未读消息(<small data-v-18d75892>0</small>) </a></p> <a data-v-18d75892
-                            href="/memberCenter/letter" class> 更多 </a>
-                        </dt>
-                      </dl>
+                            <div data-v-18d75892 class="snavAll"><a data-v-18d75892 href="/home" class>Hi，欢迎来到鑫亿彩!<span
+                                        data-v-18d75892 class="red" style="display: none;"></span></a> <ins
+                                    data-v-18d75892> | </ins> <a data-v-18d75892 class="betNavMore">全部彩票</a></div>
+                            <ul data-v-18d75892 class="snavInfo" style="display: none;">
+                                <li data-v-18d75892><a data-v-18d75892 href="/login.html" class>亲，请登录</a> <i
+                                        data-v-18d75892 class="vertical"></i></li>
+                                <li data-v-18d75892><a data-v-18d75892 href="/res.html" class>用户注册</a></li> <a
+                                    data-v-18d75892 class="serviceLink ServiceBtn"><i data-v-18d75892
+                                        class="iconfont"></i> <span data-v-18d75892></span></a>
+                            </ul>
+                            <ul data-v-18d75892 class="snavInfo" style>
+                                <li data-v-18d75892 class="userName MsgShow"><a data-v-18d75892 id="userName"
+                                        class="_personalInfo"><a data-v-18d75892 href="/mymo.html" class>
+                                            <i data-v-18d75892 class="usershow"></i></a></a>
+                                    <a data-v-18d75892><a data-v-18d75892 href="/mymo.html" class><span
+                                                data-v-18d75892>0</span></a>
+                                        <div data-v-18d75892 class="messageShow MessageShowContent hide"><i
+                                                data-v-18d75892></i>
+                                            <dl data-v-18d75892>
+                                                <dt data-v-18d75892>
+                                                    <p data-v-18d75892><a data-v-18d75892 href="/memberCenter/letter"
+                                                            class> 我的未读消息(<small data-v-18d75892>0</small>) </a></p> <a
+                                                        data-v-18d75892 href="/memberCenter/letter" class> 更多 </a>
+                                                </dt>
+                                            </dl>
+                                        </div>
+                                    </a></li>
+                                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="/mymo.html" class>我的账户 <i
+                                            data-v-18d75892 class="iconfont"></i></a>
+                                    <!-- <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a
+                                            data-v-18d75892 href="/recoder.html" class>投注记录</a> <a
+                                            data-v-18d75892 href="/memberCenter/BillRecord" class>交易记录</a> <a
+                                            data-v-18d75892 href="/mymo.html" class>个人信息</a> <a
+                                            data-v-18d75892 href="/mymo.html" class>安全中心</a> <a
+                                            data-v-18d75892 href="/memberCenter/agentReport" class>代理中心</a></div> -->
+                                </li>
+                                <li data-v-18d75892>余额：
+                                    <span data-v-18d75892 class="GetMoney getMoney monenyed"><em
+                                            data-v-18d75892>0.00</em>
+                                        <!-- <i data-v-18d75892 id="icon" class="iconfont"></i> <i
+                                            data-v-18d75892>隐藏</i></span> <span data-v-18d75892
+                                        class="ShowMoney showMoney" style="display: none;">已隐藏
+                                        <i data-v-18d75892>显示</i></span> -->
+                                </li>
+                                <li data-v-18d75892><a data-v-18d75892 href="chongzhi.html">充值</a></li>
+                                <li data-v-18d75892><a data-v-18d75892 href="./tixian.html">提现</a></li>
+                                <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
+                                    class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
+                                        data-v-18d75892></span></a>
+                            </ul>
+                            <ul data-v-18d75892></ul>
+                        </div>
                     </div>
-                  </a></li>
-                <li data-v-18d75892 class="HoverShow"><a data-v-18d75892 href="./mymo.html"
-                    class>我的账户 <i data-v-18d75892 class="iconfont"></i></a>
-                  <div data-v-18d75892 class="accountList hide"><i data-v-18d75892></i> <a data-v-18d75892
-                      href="/recoder.html" class>投注记录</a> <a data-v-18d75892
-                      href="/memberCenter/BillRecord" class>交易记录</a> <a data-v-18d75892
-                      href="/mymo.html" class>个人信息</a> <a data-v-18d75892
-                      href="/mymo.html" class>安全中心</a>
-                    <!---->
-                  </div>
-                </li>
-                <li data-v-18d75892>余额：
-                  <!----> <span data-v-18d75892 class="ShowMoney showMoney monenyed">0.00
-                    <!-- <i data-v-18d75892>显示</i></span></li> -->
-                <li data-v-18d75892><a data-v-18d75892 href="chongzhi.html">充值</a></li>
-                <li data-v-18d75892><a data-v-18d75892 href="./tixian.html">提现</a></li>
-                <li data-v-18d75892><a data-v-18d75892 class="LoginOut">退出</a></li> <a data-v-18d75892
-                  class="serviceLink ServiceBtn"><i data-v-18d75892 class="iconfont"></i> <span
-                    data-v-18d75892></span></a>
-              </ul>
-              <ul data-v-18d75892></ul>
-            </div>
-                    </div>
-                    <div data-v-18d75892 id="cardBoxId" class="cardBox hide">
+                    <div data-v-18d75892 id="cardBoxId" class="cardBox hide" style="top: 29px; left: 459.43px;">
                         <div data-v-da0d86b6 data-v-18d75892 class="card">
-                            <div data-v-da0d86b6 class="cardLeft"><img data-v-da0d86b6 src alt>
+                            <div data-v-da0d86b6 class="cardLeft"><img data-v-da0d86b6
+                                    src="../../../static/local/img/common/1EF6FC3ACCBCD762.jpg" alt>
                                 <h6 data-v-da0d86b6>昵称未设置</h6>
                             </div>
                             <div data-v-da0d86b6 class="cardInfo">
                                 <ul data-v-da0d86b6>
-                                    <li data-v-da0d86b6>性别：</li>
-                                    <li data-v-da0d86b6>账号：</li>
-                                    <li data-v-da0d86b6>等级：</li>
-                                    <li data-v-da0d86b6>累计中奖：</li>
+                                    <li data-v-da0d86b6>性别：保密</li>
+                                    <li data-v-da0d86b6>账号：na***4</li>
+                                    <li data-v-da0d86b6>等级：VIP1</li>
+                                    <li data-v-da0d86b6>累计中奖：0</li>
                                 </ul>
                             </div>
                             <ul data-v-da0d86b6 class="cardIcon">
@@ -452,7 +457,7 @@
                 <div data-v-783aad40 data-v-d539ba84 class="nav" style="display: block;">
                     <div data-v-783aad40 class="container fix">
                         <h3 data-v-783aad40><a data-v-783aad40 href="/home" class><img data-v-783aad40
-                                    src="/static/local/img//uploads/images/b00259ff-80c0-4b2d-9b6c-f7f7e67856b6.png"></a>
+                                    src="../../../static/local/img//uploads/images/B256/b00259ff-80c0-4b2d-9b6c-f7f7e67856b6.png"></a>
                         </h3>
                         <ul data-v-783aad40 class="navItem fix flr">
                             <li data-v-783aad40 class><a data-v-783aad40 href="/home.html" class>首页</a></li>
@@ -460,53 +465,38 @@
                             <!-- <li data-v-783aad40 class><a data-v-783aad40 href="/activity" class>活动中心</a>
                             </li>
                             <li data-v-783aad40 class><a data-v-783aad40 href="/mobile" class>手机购彩</a></li> -->
-                            <li data-v-783aad40 class="mymo_null"><a data-v-783aad40 href="/res.html"
-                                class>我的账户</a></li>
-                                <li data-v-783aad40 class="mymo_true"><a data-v-783aad40 href="/mymo.html"
-                                class>我的账户</a></li>
-                            <li data-v-783aad40 class="curr"><a data-v-783aad40 href="/gonggao.html"
-                                    class="router-link-exact-active curr">帮助指南</a></li> <span data-v-783aad40></span>
+                            <li data-v-783aad40 class><a data-v-783aad40 href="/mymo.html"
+                                    class>我的账户</a></li>
+                            <li data-v-783aad40 class><a data-v-783aad40 href="/gonggao.html" class>帮助指南</a></li>
+                            <span data-v-783aad40></span>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div data-v-e8e45132 class="container fix pt15">
-                <div data-v-9a8f09e0 data-v-e8e45132 class="helpSlider">
-                    <h2 data-v-9a8f09e0>Help</h2>
-                    <ul data-v-9a8f09e0 class="helpMenu">
-                        <li data-v-9a8f09e0 class="curr"><a data-v-9a8f09e0> 如何注册</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 如何购彩</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 如何充值</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 如何提现</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 手机如何购彩</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 客服中心</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 什么是安全码</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 如何绑定银行卡</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 账户安全</a></li>
-                        <li data-v-9a8f09e0 class><a data-v-9a8f09e0> 常见问题综合解答</a></li>
+            <div data-v-266ab90b s="[object Object]" class="container notSign fix pt15">
+                <div data-v-266ab90b class="userMain mgb10">
+                    <ul data-v-266ab90b class="queue">
+                        <!---->
+                        <li data-v-266ab90b ><span data-v-266ab90b>设置安全密码</span><i
+                                data-v-266ab90b></i></li>
+                        <li data-v-266ab90b class="now"><span data-v-266ab90b>完成</span><i data-v-266ab90b></i></li>
                     </ul>
-                </div>
-                <div data-v-e81c5550 data-v-e8e45132 class="helpContent">
-                    <h4 data-v-e81c5550 class="_title">如何注册</h4>
-                    <div data-v-e81c5550 class="_content helpArtical">
-                        <p
-                            style="box-sizing:inherit; font-family:'Microsoft YaHei'; font-size:14px; word-wrap:break-word; color:rgb(102, 102, 102); margin:0px !important; padding:0px !important;">
-                            <span style="box-sizing:inherit; font-size:12px;">点击网站右上角＂用户注册＂按钮，就可以进入用户注册页面；</span></p>
-                        <p
-                            style="box-sizing:inherit; font-family:'Microsoft YaHei'; font-size:14px; word-wrap:break-word; color:rgb(102, 102, 102); margin:0px !important; padding:0px !important;">
-                            按照提示，填写注册信息，即可完成<span style="box-sizing:inherit; font-size:12px;">注册</span>；</p>
-                        <p
-                            style="box-sizing:inherit; font-family:'Microsoft YaHei'; font-size:14px; word-wrap:break-word; color:rgb(102, 102, 102); margin:0px !important; padding:0px !important;">
-                            账号为4-15位字符，支持数字和字母，禁止以0开头；</p>
-                        <p
-                            style="box-sizing:inherit; font-family:'Microsoft YaHei'; font-size:14px; word-wrap:break-word; color:rgb(102, 102, 102); margin:0px !important; padding:0px !important;">
-                            密码为6-16位字符，支持数字、字母、符号；</p>
-                        <p
-                            style="box-sizing:inherit; font-family:'Microsoft YaHei'; font-size:14px; word-wrap:break-word; color:rgb(102, 102, 102); margin:0px !important; padding:0px !important;">
-                            注册完成后，系统将随机分配一张头像，进入＂我的账户＂＂个人信息＂可以修改头像和设置昵称；</p>
-                        <p style="display:none;"></p>
-                        <p></p>
-                    </div>
+                    <ul data-v-266ab90b class="submitContent mglr30 mgt15">
+                        <li data-v-266ab90b><span data-v-266ab90b>登录密码：</span> <input data-v-266ab90b
+                                type="password" style="display: none;"> <input data-v-266ab90b tag="登录密码"
+                                type="password" autocomplete="off" placeholder="请输入登录密码" maxlength="6"
+                                class="userInput pwd"> <em data-v-266ab90b class="verifyWrong" style="display: none;"><i
+                                    data-v-266ab90b></i></em> <em data-v-266ab90b class="verifyRight"
+                                style="display: none;"><i data-v-266ab90b></i></em></li>
+                        <li data-v-266ab90b><span data-v-266ab90b>取款密码：</span> <input data-v-266ab90b
+                                type="password" style="display: none;"> <input data-v-266ab90b tag="取款密码"
+                                type="password" autocomplete="off" placeholder="请再次输入取款密码" maxlength="6"
+                                class="userInput _no_paste atmpwd"> <em data-v-266ab90b class="verifyWrong"
+                                style="display: none;"><i data-v-266ab90b></i></em> <em data-v-266ab90b
+                                class="verifyRight" style="display: none;"><i data-v-266ab90b></i></em></li>
+                        <li data-v-266ab90b><span data-v-266ab90b></span> <a data-v-266ab90b
+                                class="submitCZ submitBtn">确定</a></li>
+                    </ul>
                 </div>
             </div>
             <div data-v-6e6663f0 class="footer mgt40">
@@ -530,11 +520,11 @@
                                 <ul data-v-6e6663f0 class="serviceExperience">
                                     <li data-v-6e6663f0>昨日充值到账平均时间
                                         <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0
-                                                style="width: 2.71429%;"></span></p> <em data-v-6e6663f0>0'19</em><i
+                                                style="width: 7%;"></span></p> <em data-v-6e6663f0>0'49</em><i
                                             data-v-6e6663f0>秒</i></li>
                                     <li data-v-6e6663f0>昨日提现到账平均时间
                                         <p data-v-6e6663f0 class="footBar"><span data-v-6e6663f0
-                                                style="width: 22.4286%;"></span></p> <em data-v-6e6663f0>1'57</em><i
+                                                style="width: 17.4286%;"></span></p> <em data-v-6e6663f0>1'22</em><i
                                             data-v-6e6663f0>秒</i></li>
                                 </ul>
                             </li>
@@ -563,7 +553,7 @@
             <!---->
             <!---->
             <div class="layermbox layermbox2 layermshow" style="display: none;">
-                <div id="profit" class="laymshade"></div>
+                <div id="profit" class="laymshade" style="display: none;"></div>
                 <div class="layermmain">
                     <div class="section">
                         <div id="notShow" class="layermchild  layermanim">
@@ -578,33 +568,81 @@
     <script src="/static/local/js/common/layer.m.js"></script>
     <script src="/static/local/js/common/laypage.js"></script>
     <script src="/static/local/js/common/xss.min.js"></script>
-    <script type="text/javascript" src="/static/js/manifest.178f0388419058262eb8.js"></script>
-    <script type="text/javascript" src="/static/js/vendor.6f6a549ca23ad8b3db5f.js"></script>
-    <!-- <script type="text/javascript" src="/static/js/app.8e19d886c2179d435e5a.js"></script> -->
+    <script type="text/javascript" src="/static/js/manifest.b087bbe953e2331d7ae5.js"></script>
+    <script type="text/javascript" src="/static/js/vendor.45b4d0332c0e26d1e7cb.js"></script>
+    <!-- <script type="text/javascript" src="/static/js/app.e616060ca43b17ef233a.js"></script> -->
     <script src="https://js.users.51.la/19560031.js"></script>
-    <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+       <script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
   <script>
     var user_data=localStorage.getItem("userinfo")==0?0:JSON.parse(localStorage.getItem("userinfo"))
     // console.log(user_data.Token)
   if(user_data){
     $('.snavInfo_null').addClass('isshow');
     $('.snavInfo_true').removeClass('isshow');
-    $('.mymo_null').addClass('isshow');
+     $('.mymo_null').addClass('isshow');
     $('.mymo_true').removeClass('isshow');
-    $('.monenyed').html(user_data.LogHava);
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+     $('.monenyed').html(user_data.LogHava)
     $('.usershow').html(user_data.LogAccount);
   }else{
-      $('.snavInfo_null').removeClass('isshow');
+    $('.snavInfo_null').removeClass('isshow');
     $('.snavInfo_true').addClass('isshow');
     $('.mymo_null').removeClass('isshow');
     $('.mymo_true').addClass('isshow');
-     $('.usershow').html('');
+    $('.login_null').addClass('isshow');
+     $('.login_true').removeClass('isshow');
+    $('.usershow').html('');
   }
-  $('.LoginOut').click(function() {
+  $('.submitCZ').click(function () {
+        // var code=$('.usercode').val();
+        // var code="NN6EZZg%2fNXI%3d";
+            var _parms= {
+                "strUser":user_data.LogUid,
+                "strPwd":$('.pwd').val()+'',
+                "strATMPwd":$('.atmpwd').val()+''
+                }
+           
+                if(!_parms.strPwd){
+                    alert('请输入登录密码');
+                    return false;
+                }
+                 if(!_parms.strATMPwd){
+                    alert('请输入取款密码');
+                    return false;
+                }
+         $.ajax({
+             type: "POST",
+             headers:{
+                            "auth":user_data.Token
+                        },
+             url: "http://www.chinadecen.com:85/mobileApi/Member/Fun_SetATM",
+             data:_parms,
+            //  beforeSend: function(request) {
+            //     request.setRequestHeader("auth", user_data.Token);
+            //     },
+            // headers:{http://192.168.0.151:46096
+            //     "auth":user_data.Token
+            //     },
+            //  ContentType: "application/json",
+		        datType: "JSON",
+             success: function(res){
+                 if(+res.Code===1){
+                //    alert(res.Message)
+                   window.location.href='./card.html'
+                 }else{
+                     alert(res.Message)
+                 }
+              console.log(res)
+              }
+         });
+        
+        })
+        $('.LoginOut').click(function() {
     localStorage.setItem("userinfo",0);
      window.location.href='./login.html'
   })
-  </script>
+    </script>
 </body>
 
 </html>
